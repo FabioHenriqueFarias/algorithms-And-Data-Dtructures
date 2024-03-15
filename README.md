@@ -7,4 +7,5 @@ Algorithms
 └── Recursion
     └── Search
 
-Based on: [Road Map](https://roadmap.sh/computer-science){:target="_blank"}
+Based on: <a href="https://roadmap.sh/computer-science" target="_blank">Road Map</a>
+
