@@ -1,8 +1,8 @@
-// O merge sort, ou ordenação por mistura, é um algoritmo de ordenação eficiente que utiliza o conceito de dividir para conquistar. 
+// Merge sort, or mix sort, is an efficient sorting algorithm that uses the concept of divide and conquer.
 
-// 1.Ele divide a lista em sublistas menores.
-// 2.ordena essas sublistas 
-// 3.Em seguida, combina-as para obter a lista ordenada final.
+// 1.It divides a list into smaller sublists.
+// 2.order these sublists
+// 3.Then combine them to get the final ordered list.
 
 #include <stdio.h>
 
