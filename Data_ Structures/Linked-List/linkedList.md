@@ -12,7 +12,7 @@ Ao contrário de estruturas de dados estáticas, como arrays, onde os elementos 
 Essa flexibilidade torna as listas encadeadas uma escolha popular em muitas aplicações, especialmente quando o tamanho da lista é desconhecido antecipadamente ou sujeito a alterações frequentes. No entanto, é importante notar que o acesso aos elementos em uma lista encadeada pode ser menos eficiente do que em estruturas de dados estáticas, já que o acesso sequencial pode exigir a travessia de todos os nós anteriores até chegar ao desejado.
 
 ![Ilustração de uma linked list com três nós
-](linkedlist_01-1.png)
+](assents/linkedlist_01-1.png)
 
 Aqui você pode ver que os endereços dos nós não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801 , em vez de 201 como seria de esperar.
 
@@ -24,7 +24,7 @@ Mesmo que os nós não estejam em uma memória contígua, os nós são armazenad
 
 Um Nó (Node) é a unidade básica de uma lista encadeada (Linked List) em computação.  Imagine a lista como uma corrente onde cada elo é um Nó.
 
-![alt text](linkedlist_02.png)
+![alt text](assents/linkedlist_02.png)
 
 Cada Nó possui pelo menos dois componentes:
 
@@ -73,7 +73,7 @@ int main() {
 
 Crianmos 3 nós.
 
-![Mostrando os três nós que criamos com o código acima](linkedlist_03.png)
+![Mostrando os três nós que criamos com o código acima](assents/linkedlist_03.png)
 
 ## Vincular os nós em uma lista encadeada
 
@@ -91,7 +91,7 @@ newNode2->next = newNode3;
 Nesse caso, newNode1 aponta para newNode2 como seu próximo nó, e newNode2 aponta para newNode3. Isso cria uma sequência ordenada em que cada nó conhece o próximo nó na lista.
 
 ![Ilustração de uma lista vinculada não vazia
-](linkedlist_04.png)
+](assents/linkedlist_04.png)
 
 ## Operações comuns em Listas Encadeadas
 
@@ -112,4 +112,13 @@ Na leitura da lista, o objetivo é acessar um elemento específico na lista.
 
 Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para acessar determinado elemento é necessario percorrer toda a lista, você precisa visitar cada nó uma vez.
 
+| - | Complexidade |
+|---|---|
+| Escrita | O(1) |
+| Remoção | O(1) |
+| Leitura | O(1) |
+
+
 Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
+
+> Neste repositorio possui como fazer uma Linked List em três linguagens C, Javascript e Rust.
