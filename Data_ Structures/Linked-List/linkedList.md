@@ -3,6 +3,7 @@
 Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam nós para armazenar elementos que não estão armazenados em locais de memória contíguos.
 
 **Os Exemplos serão exemplificados em Linguagem C.**
+> Neste repositorio possui como fazer uma Linked List em três linguagens C, Javascript e Rust.
 
 ## O que é uma Linked List?
 Uma lista encadeada é uma estrutura de dados que consiste em uma sequência de elementos, chamados de nós. Cada nó contém dados e um ponteiro (ou referência) para o próximo nó na lista. Essa característica de "vinculação" entre os nós é fundamental para a estrutura, permitindo que os elementos sejam organizados de forma dinâmica na memória.
@@ -121,4 +122,3 @@ Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para
 
 Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
 
-> Neste repositorio possui como fazer uma Linked List em três linguagens C, Javascript e Rust.
