@@ -197,95 +197,36 @@ Essa técnica é especialmente valiosa em algoritmos complexos, nos quais a simp
 O Merge Sort exemplifica como a abordagem "Dividir para Conquistar" pode ser aplicada com sucesso para resolver problemas complexos de maneira eficiente.
 
 ```
-#include <stdio.h>
+Função mergeSort(lista):
+    Se o tamanho da lista for menor ou igual a 1, retorne a lista
 
-// Função para mesclar duas sublistas ordenadas
-void merge(int arr[], int left, int middle, int right) {
-    int i, j, k;
-    int n1 = middle - left + 1;
-    int n2 = right - middle;
+    Divida a lista ao meio em duas sublistas, esquerda e direita
 
-    // Cria subvetores temporários
-    int L[n1], R[n2];
+    Aplicar mergeSort na sublista esquerda
+    Aplicar mergeSort na sublista direita
 
-    // Copia os dados para os subvetores L[] e R[]
-    for (i = 0; i < n1; i++)
-        L[i] = arr[left + i];
-    for (j = 0; j < n2; j++)
-        R[j] = arr[middle + 1 + j];
+    Combine as duas sublistas ordenadas usando a função merge
+    
+    Retorne a lista combinada
 
-    // Mescla os subvetores de volta em arr[left..right]
-    i = 0; // Índice inicial do primeiro subvetor
-    j = 0; // Índice inicial do segundo subvetor
-    k = left; // Índice inicial do vetor mesclado
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            i++;
-        } else {
-            arr[k] = R[j];
-            j++;
-        }
-        k++;
-    }
+Função merge(esquerda, direita):
+    Inicializar uma lista vazia resultante
+    Enquanto houver elementos em ambas as listas esquerda e direita:
+        Se o primeiro elemento da lista esquerda for menor que o primeiro elemento da lista direita:
+            Adicione o primeiro elemento da lista esquerda à lista resultante
+            Remova o primeiro elemento da lista esquerda
+        Senão:
+            Adicione o primeiro elemento da lista direita à lista resultante
+            Remova o primeiro elemento da lista direita
+    Adicione todos os elementos restantes da lista esquerda à lista resultante
+    Adicione todos os elementos restantes da lista direita à lista resultante
 
-    // Copia os elementos restantes de L[], se houver
-    while (i < n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
-    }
+    Retorne a lista resultante
 
-    // Copia os elementos restantes de R[], se houver
-    while (j < n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
-    }
-}
-
-// Função principal que implementa o algoritmo Merge Sort
-void mergeSort(int arr[], int left, int right) {
-    if (left < right) {
-        // Encontra o ponto médio do vetor
-        int middle = left + (right - left) / 2;
-
-        // Classifica a primeira metade
-        mergeSort(arr, left, middle);
-        // Classifica a segunda metade
-        mergeSort(arr, middle + 1, right);
-
-        // Mescla as duas metades ordenadas
-        merge(arr, left, middle, right);
-    }
-}
-
-// Função de utilidade para imprimir um vetor de tamanho n
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
-}
-
-// Programa principal
-int main() {
-    int arr[] = {12, 11, 13, 5, 6, 7};
-    int arr_size = sizeof(arr) / sizeof(arr[0]);
-
-    printf("Array original:\n");
-    printArray(arr, arr_size);
-
-    mergeSort(arr, 0, arr_size - 1);
-
-    printf("\nArray ordenado usando Merge Sort:\n");
-    printArray(arr, arr_size);
-    return 0;
-}
 
 ```
 
-Este código implementa o algoritmo Merge Sort em C. Ele classifica um array de inteiros em ordem crescente. O algoritmo é dividido em duas funções principais: mergeSort, que implementa a lógica de dividir e mesclar, e merge, que mescla duas sublistas ordenadas em uma única lista ordenada. O programa principal demonstra o uso do Merge Sort ordenando um array de exemplo e exibindo o resultado antes e depois da ordenação.
-
+Este pseudocódigo implementa o algoritmo Merge Sort, que classifica uma lista de números inteiros em ordem crescente. A função mergeSort é responsável por dividir a lista em sublistas menores e, em seguida, mesclar essas sublistas ordenadas usando a função merge. O programa principal demonstra o uso do Merge Sort ordenando uma lista de exemplo e exibindo o resultado antes e depois da ordenação.
 
 ### Programação dinâmica
 
