@@ -1,3 +1,6 @@
+# Algoritmos e Estrutura de Dados
+Este repositório tem como objetivo principal apresentar temas relacionados a algoritmos e estruturas de dados, oferecendo exemplos de código para ilustrar conceitos.
+
 ## Estrutura Repositório:
 
 
@@ -12,5 +15,5 @@ Data_Structures
     |-- Linked-List
 ```
 
-Based on: <a href="https://roadmap.sh/computer-science" target="_blank">Road Map</a>
+Baseado em: <a href="https://roadmap.sh/computer-science" target="_blank">Road Map</a>
 
