@@ -269,3 +269,20 @@ Já na abordagem "Bottom-up", também conhecida como tabulation, a solução ót
 A abordagem "Top-Down" da programação dinâmica oferece diversas vantagens. Ao começar com o problema principal e dividi-lo em subproblemas menores, reflete diretamente a maneira como muitas pessoas abordam problemas complexos. Além disso, a estrutura recursiva dessa abordagem pode ser mais intuitiva para alguns desenvolvedores, especialmente aqueles familiarizados com a recursão. Em termos de simplicidade conceitual, a abordagem "Top-Down" pode ser mais fácil de entender e explicar em alguns casos, especialmente para iniciantes.
 
 Por outro lado, na abordagem "Bottom-Up", há algumas desvantagens a serem consideradas. Se não for implementada corretamente com memoização, a abordagem "Bottom-Up" pode resultar em cálculos desnecessários, o que pode reduzir a eficiência do algoritmo. Além disso, a implementação correta da memoização pode adicionar complexidade ao código, especialmente para problemas mais complexos. Também é importante notar que a abordagem "Bottom-Up" pode ter potencial para estouro de pilha (stack overflow) em problemas com muitas chamadas recursivas, dependendo da profundidade da recursão.
+
+### 
+
+
+
+## Referências
+
+Cory Althoff: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/" target="_blank">Livro - Cientista da Computação Autodidata
+</a>
+
+Daniel Rosa: <a href="https://www.freecodecamp.org/portuguese/news/algoritmo-de-dividir-para-conquistar-significado-explicado-e-com-exemplos/" target="_blank">Algoritmo de dividir para conquistar
+</a>
+
+Victor Matheus R. de Carvalho: <a href="https://lamfo-unb.github.io/2019/05/30/Programacao-Dinamica/" target="_blank">Programação Dinâmica
+</a>
+
+Paulo Feofiloff: <a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dynamic-programming.html" target="_blank">Programação Dinâmica
