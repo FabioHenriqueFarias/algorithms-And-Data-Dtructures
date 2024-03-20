@@ -230,15 +230,42 @@ Este pseudocódigo implementa o algoritmo Merge Sort, que classifica uma lista d
 
 ### Programação dinâmica
 
-A programação dinâmica é uma técnica de desenvolvimento de algoritmos que busca resolver um problema complexo através da combinação de soluções para subproblemas menores. Essa abordagem permite otimizar a resolução de problemas que podem ser divididos em partes menores e mais simples.
+"Programação dinâmica é um nome sofisticado para [recursão] com uma tabela. Em vez de resolver subproblemas recursivamente, resolva-os sequencialmente e armazene suas soluções em uma tabela. O truque é resolvê-los na ordem certa para que sempre que a solução de um subproblema for necessária, ela já esteja disponível na tabela." - Ian Parberry
 
-Por exemplo, considere o problema de encontrar o menor caminho entre duas cidades em um mapa. Com a programação dinâmica, podemos seguir os seguintes passos:
-
-1. Dividir o mapa em subproblemas menores, como encontrar o menor caminho entre cidades adjacentes.
-2. Calcular o menor caminho entre cada par de cidades adjacentes utilizando uma técnica adequada, como o algoritmo de Dijkstra (será explicado posteriormente).
-3. Utilizar as soluções pré-calculadas para encontrar o menor caminho entre as duas cidades desejadas.
-
-Essa abordagem nos permite evitar recálculos desnecessários e otimizar o processo de encontrar o menor caminho entre as cidades, tornando a solução mais eficiente e escalável.
+A programação dinâmica é uma técnica de desenvolvimento de algoritmos que visa resolver problemas complexos combinando soluções para subproblemas menores. A essência dessa técnica é evitar cálculos repetidos na busca pela solução ótima de um problema recursivo, o que é alcançado através da criação de uma estrutura de memória para armazenar esses resultados. Existem duas abordagens principais para implementar a programação dinâmica: a abordagem "Top-Down" e a abordagem "Bottom-up", ambas visando eficiência e otimização.
 
 
+#### Abordagem “Top-Down”
 
+Na abordagem "Top-Down", também conhecida como memoization, começamos com a solução geral ótima que desejamos encontrar e, em seguida, analisamos quais subproblemas precisam ser resolvidos até chegarmos a um subproblema com uma solução trivial. Durante esses cálculos, os resultados são armazenados para reutilização futura. O algoritmo consulta a tabela para verificar se a solução ótima do subproblema já foi calculada. Se sim, o valor é simplesmente extraído; caso contrário, o algoritmo resolve o subproblema e armazena o resultado na tabela.
+
+
+#### Abordagem “Bottom-up”
+
+Já na abordagem "Bottom-up", também conhecida como tabulation, a solução ótima começa a ser calculada a partir do subproblema mais trivial e avança gradualmente para os subproblemas mais complexos. Nessa abordagem, as soluções são calculadas e armazenadas em uma tabela, começando pelos casos base e avançando até o problema original. Isso elimina a necessidade de recursão e garante que cada subproblema seja resolvido apenas uma vez, tornando o algoritmo eficiente e escalável.
+
+
+**Abordagem "Bottom-up" da Programação Dinâmica**
+
+1. **Divisão em subproblemas**: Inicialmente, dividimos o mapa em subproblemas menores. Um desses subproblemas é encontrar o menor caminho entre cidades adjacentes, pois essa informação poderá servir para calcular o menor caminho entre quaisquer duas cidades no mapa.
+
+2. **Cálculo dos caminhos menores**: Em seguida, calculamos o menor caminho entre cada par de cidades adjacentes. Isso pode ser feito utilizando uma técnica apropriada, como o algoritmo de Dijkstra, que é amplamente utilizado para encontrar os caminhos mais curtos em grafos ponderados.
+
+3. **Utilização das soluções pré-calculadas**: Por fim, utilizamos as soluções pré-calculadas para encontrar o menor caminho entre as duas cidades desejadas. Isso é feito combinando os caminhos menores entre cidades adjacentes de forma a percorrer o caminho mais curto possível entre as duas cidades específicas.
+
+**Abordagem "Top-Down" da Programação Dinâmica**
+
+1. **Divisão em subproblemas**: Começamos identificando o problema principal de encontrar o menor caminho entre duas cidades específicas em um mapa. Em seguida, analisamos quais subproblemas são necessários para resolver esse problema. Um desses subproblemas pode ser encontrar o menor caminho entre duas cidades que estão mais próximas uma da outra no mapa, e assim por diante, até chegarmos a um subproblema trivial.
+
+2. **Memoization (Armazenamento de resultados)**: Durante o processo de resolução dos subproblemas, armazenamos os resultados em uma tabela (ou outra estrutura de dados adequada). Assim, quando precisarmos resolver o mesmo subproblema novamente, podemos simplesmente recuperar o resultado armazenado, em vez de recalculá-lo.
+
+3. **Resolução recursiva**: Com os resultados dos subproblemas armazenados, podemos resolver o problema original de forma recursiva, consultando a tabela para encontrar os resultados dos subproblemas necessários.
+
+4. **Obtenção da solução final**: Com o resultado do problema original calculado recursivamente, temos a solução para o menor caminho entre as duas cidades desejadas.
+
+
+#### "Top-Down"  vs "Bottom-up"
+
+A abordagem "Top-Down" da programação dinâmica oferece diversas vantagens. Ao começar com o problema principal e dividi-lo em subproblemas menores, reflete diretamente a maneira como muitas pessoas abordam problemas complexos. Além disso, a estrutura recursiva dessa abordagem pode ser mais intuitiva para alguns desenvolvedores, especialmente aqueles familiarizados com a recursão. Em termos de simplicidade conceitual, a abordagem "Top-Down" pode ser mais fácil de entender e explicar em alguns casos, especialmente para iniciantes.
+
+Por outro lado, na abordagem "Bottom-Up", há algumas desvantagens a serem consideradas. Se não for implementada corretamente com memoização, a abordagem "Bottom-Up" pode resultar em cálculos desnecessários, o que pode reduzir a eficiência do algoritmo. Além disso, a implementação correta da memoização pode adicionar complexidade ao código, especialmente para problemas mais complexos. Também é importante notar que a abordagem "Bottom-Up" pode ter potencial para estouro de pilha (stack overflow) em problemas com muitas chamadas recursivas, dependendo da profundidade da recursão.
