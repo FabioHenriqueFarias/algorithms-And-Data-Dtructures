@@ -22,7 +22,7 @@ Portanto, determinar o melhor algoritmo de ordenação para um problema específ
 
 ## Um pouco sobre a complexidade de alguns algitmos de ordenação
 
-Uma das formas mais comuns de comparar algoritmos de ordenação é através da <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/Asymptotic_Notation" target="_blank">asymptotic notation</a>, sendo a "Big O" do pior caso a mais conhecida. Essa notação nos permite descrever o desempenho do pior caso de um algoritmo em termos de seu crescimento relativo em relação ao tamanho dos dados de entrada.
+Uma das formas mais comuns de comparar algoritmos de ordenação é através da <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation" target="_blank">asymptotic notation</a>, sendo a "Big O" do pior caso a mais conhecida. Essa notação nos permite descrever o desempenho do pior caso de um algoritmo em termos de seu crescimento relativo em relação ao tamanho dos dados de entrada.
 
 Os algoritmos de ordenação podem ser classificados de acordo com sua complexidade temporal ou de armazenamento, ou seja, a quantidade de tempo que eles levam para ordenar uma coleção de dados e o espaço que consomem.
 
