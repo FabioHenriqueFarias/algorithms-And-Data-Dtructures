@@ -230,7 +230,7 @@ Este pseudocódigo implementa o algoritmo Merge Sort, que classifica uma lista d
 
 ### Programação dinâmica
 
-"Programação dinâmica é um nome sofisticado para [recursão] com uma tabela. Em vez de resolver subproblemas recursivamente, resolva-os sequencialmente e armazene suas soluções em uma tabela. O truque é resolvê-los na ordem certa para que sempre que a solução de um subproblema for necessária, ela já esteja disponível na tabela." - Ian Parberry
+"Programação dinâmica é um nome sofisticado para [recursão] com uma tabela. Em vez de resolver subproblemas recursivamente, resolva-os sequencialmente e armazene suas soluções em uma tabela. O truque é resolvê-los na ordem certa para que sempre que a solução de um subproblema for necessária, ela já esteja disponível na tabela." - Ian Parberry (Problems on Algorithms)
 
 A programação dinâmica é uma técnica de desenvolvimento de algoritmos que visa resolver problemas complexos combinando soluções para subproblemas menores. A essência dessa técnica é evitar cálculos repetidos na busca pela solução ótima de um problema recursivo, o que é alcançado através da criação de uma estrutura de memória para armazenar esses resultados. Existem duas abordagens principais para implementar a programação dinâmica: a abordagem "Top-Down" e a abordagem "Bottom-up", ambas visando eficiência e otimização.
 
@@ -270,7 +270,9 @@ A abordagem "Top-Down" da programação dinâmica oferece diversas vantagens. Ao
 
 Por outro lado, na abordagem "Bottom-Up", há algumas desvantagens a serem consideradas. Se não for implementada corretamente com memoização, a abordagem "Bottom-Up" pode resultar em cálculos desnecessários, o que pode reduzir a eficiência do algoritmo. Além disso, a implementação correta da memoização pode adicionar complexidade ao código, especialmente para problemas mais complexos. Também é importante notar que a abordagem "Bottom-Up" pode ter potencial para estouro de pilha (stack overflow) em problemas com muitas chamadas recursivas, dependendo da profundidade da recursão.
 
-### 
+### Algoritmo guloso ou míope
+
+"Um algoritmo ganancioso começa com uma solução para um subproblema muito pequeno e aumenta-o sucessivamente até uma solução para o grande problema. O aumento é feito de forma “ganancioso”, isto é, prestando atenção ao ganho local ou de curto prazo, sem se preocupar se isso levará a uma boa solução global ou de longo prazo. Como na vida real, algoritmos gananciosos às vezes levam à melhor solução, às vezes a soluções muito boas e às vezes a soluções ruins. O truque é determinar quando ser ganancioso." - Ian Parberry (Problems on Algorithms)
 
 
 
@@ -285,4 +287,7 @@ Daniel Rosa: <a href="https://www.freecodecamp.org/portuguese/news/algoritmo-de-
 Victor Matheus R. de Carvalho: <a href="https://lamfo-unb.github.io/2019/05/30/Programacao-Dinamica/" target="_blank">Programação Dinâmica
 </a>
 
-Paulo Feofiloff: <a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dynamic-programming.html" target="_blank">Programação Dinâmica
+Paulo Feofiloff: <a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/dynamic-programming.html" target="_blank">Programação Dinâmica</a>
+
+Paulo Feofiloff: <a href="https://lamfo-unb.github.io/2019/05/30/Programacao-Dinamica/" target="_blank">Método Guloso
+</a>
