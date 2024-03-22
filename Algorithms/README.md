@@ -274,9 +274,40 @@ Por outro lado, na abordagem "Bottom-Up", há algumas desvantagens a serem consi
 
 "Um algoritmo ganancioso começa com uma solução para um subproblema muito pequeno e aumenta-o sucessivamente até uma solução para o grande problema. O aumento é feito de forma “ganancioso”, isto é, prestando atenção ao ganho local ou de curto prazo, sem se preocupar se isso levará a uma boa solução global ou de longo prazo. Como na vida real, algoritmos gananciosos às vezes levam à melhor solução, às vezes a soluções muito boas e às vezes a soluções ruins. O truque é determinar quando ser ganancioso." - Ian Parberry (Problems on Algorithms)
 
+A estratégia gulosa é comparável à abordagem de um montanhista que opta por seguir sempre "para cima", na direção da "maior elevação", na esperança de alcançar o pico mais alto da montanha. No entanto, como é amplamente conhecido, essa estratégia nem sempre conduz ao resultado desejado.
+
+Um algoritmo guloso seleciona, em cada iteração, o objeto que parece ser o melhor no momento. Esse objeto escolhido é então incorporado à solução que o algoritmo está construindo.
+
+Um algoritmo guloso é míope: ele toma decisões com base nas informações disponíveis na iteração corrente, sem considerar as consequências que essas decisões terão no futuro. Além disso, um algoritmo guloso jamais se arrepende ou volta atrás: as escolhas que faz em cada iteração são definitivas.
+
+Algoritmos gulosos nem sempre garantem soluções ótimas, porém são eficazes na resolução de muitos problemas.
+
+Aqui um exemplo de um algoritmo de Dijkstra que é um algoritmo guloso.
+
+```
+função Dijkstra(G, origem):
+    distância = novo array com tamanho igual ao número de vértices em G
+    para cada vértice v em G:
+        distância[v] = infinito
+    distância[origem] = 0
+    conjuntoS = conjunto vazio
+    enquanto conjuntoS não contém todos os vértices:
+        u = vértice em G - conjuntoS com a menor distância[v]
+        adicionar u ao conjuntoS
+        para cada vértice v adjacente a u:
+            se distância[u] + peso da aresta(u, v) < distância[v]:
+                distância[v] = distância[u] + peso da aresta(u, v)
+    retornar distância
+
+```
+
+Neste pseudo código, G é o grafo ponderado, origem é o vértice de onde se inicia a busca pelo menor caminho. O algoritmo mantém um conjunto de vértices já processados (conjuntoS) e calcula as distâncias mínimas de origem para todos os outros vértices usando a abordagem gulosa. Ele seleciona o vértice mais próximo do conjunto de vértices ainda não processados a cada iteração e atualiza as distâncias conforme necessário. No final, retorna um array contendo as distâncias mínimas de origem para todos os outros vértices do grafo.
 
 
 ## Referências
+
+Thomas Cormen - <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática
+</a>
 
 Cory Althoff: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/" target="_blank">Livro - Cientista da Computação Autodidata
 </a>
