@@ -9,6 +9,7 @@
      - [Inserção de um Novo Nó](#inserção-de-um-novo-nó)
      - [Remoção de um Nó Existente](#remoção-de-um-nó-existente)
      - [Leitura da Lista](#leitura-da-lista)
+- [Referências](#referências)
 
 
 **Os Exemplos serão exemplificados em Linguagem C.**
