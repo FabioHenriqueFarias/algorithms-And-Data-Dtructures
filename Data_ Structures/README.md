@@ -1,6 +1,20 @@
 # Estrutura de Dados
 
-Dados necessitam de estruturas organizadas e formatadas para serem facilmente recuperados. Po isso, é fundamental implementar estruturas que possibilitem essa organização e recuperação eficientes.
+## Sumário
+
+- [O que são Dados?](#o-que-são-dados)
+- [O Que são Estruturas de Dados?](#o-que-são-estruturas-de-dados)
+- [Características das Estruturas de dados](#características-das-estruturas-de-dados)
+    - [Estruturas Lineares e Estruturas Não Lineares](#estruturas-lineares-e-estruturas-não-lineares)
+        - [Estruturas Lineares:](#estruturas-lineares)
+        - [Estruturas não Lineares:](#estruturas-não-lineares)
+    - [Estruturas Homogêneas e Estruturas Heterogêneas](#estruturas-homogêneas-e-estruturas-heterogêneas)
+        - [Estruturas Homogêneas](#estruturas-homogêneas)
+        - [Estruturas Heterogêneas](#estruturas-heterogêneas)
+    - [Estruturas Estáticas e Estruturas Dinâmicas](#estruturas-estáticas-e-estruturas-dinâmicas)
+        - [Estruturas Estáticas](#estruturas-estáticas)
+        - [Estruturas Dinâmicas](#estruturas-dinâmicas)
+- [Estruturas de Dados Comuns:](#estruturas-de-dados-comuns)
 
 ## O que são Dados?
 
@@ -48,9 +62,9 @@ Conforme mencionado anteriormente, cada estrutura de dados possui característic
 - Estruturas Homogêneas e Estruturas Heterogêneas.
 - Estruturas Estáticas e Estruturas Dinâmicas.  
 
-## Estruturas Lineares e Estruturas Não Lineares.
+### Estruturas Lineares e Estruturas Não Lineares
 
-### Estruturas Lineares:
+#### Estruturas Lineares:
 
 Uma estrutura de dados em que os elementos são organizados sequencial ou linearmente, com novos elementos sendo adicionados após o último elemento da lista. 
 
@@ -66,30 +80,32 @@ Em uma estrutura de dados não linear, não há um único nível envolvido, impo
 
 Um exemplo ilustrativo é uma rede social, onde os usuários estão interconectados de várias maneiras, formando uma teia de conexões. Cada usuário pode ter múltiplos amigos, e esses amigos, por sua vez, podem possuir suas próprias conexões, criando uma rede complexa e não linear. Essa estrutura não segue uma organização linear simples e não é hierárquica, o que significa que não há uma única linha de conexões.
 
-## Estruturas Homogêneas e Estruturas Heterogêneas.
+### Estruturas Homogêneas e Estruturas Heterogêneas
 
-### Estruturas Homogêneas
+#### Estruturas Homogêneas
 As estruturas de dados homogêneas são aquelas em que todos os elementos possuem o mesmo tipo de dado (como tipo int, tipo float, etc.) na memória do computador.
 
 Um exemplo é uma lista de nomes, onde todos os elementos são nomes.
 
-### Estruturas Heterogêneas
+#### Estruturas Heterogêneas
 Diferentemente das estruturas homogêneas, as estruturas heterogêneas permitem a manipulação de um conjunto de informações de tipos de dados primitivos diferentes, mantendo um relacionamento lógico entre eles.
 
 Um exemplo de estrutura heterogênea é um cardápio, onde você possui o nome da comida e seu respectivo valor. Nesse caso, temos dois tipos de dados diferentes: o nome da comida (provavelmente uma string) e o valor (talvez um número de ponto flutuante para representar o preço). Apesar de serem tipos diferentes, eles estão logicamente relacionados dentro da mesma estrutura de dados.
 
-## Estruturas Estáticas e Estruturas Dinâmicas
+### Estruturas Estáticas e Estruturas Dinâmicas
 
-### Estruturas Estáticas
+#### Estruturas Estáticas
 As estruturas de dados estáticas possuem um tamanho fixo, no qual os dados armazenados podem ser modificados sem alterar o espaço de memória alocado.
 
 Um exemplo concreto de uma estrutura estática pode ser encontrada em uma lista de alunos de uma turma. Nessa lista, o tamanho é fixo e limitado ao número de alunos matriculados naquela turma específica. Portanto, o tamanho da lista é estático, uma vez que não pode ser facilmente alterado sem a necessidade de adicionar ou remover novas salas de aula para acomodar mais ou menos alunos.
-### Estruturas Dinâmicas    
+
+#### Estruturas Dinâmicas    
+
 As estruturas de dados dinâmicas não têm um tamanho fixo, o que significa que podem variar em tamanho por meio da alocação de memória em tempo de execução.
 
 Por exemplo, considere uma lista de tarefas em um aplicativo de gerenciamento de tarefas. Nesse contexto, os usuários podem adicionar, remover ou modificar tarefas a qualquer momento. O número de tarefas na lista pode variar conforme as necessidades e atividades do usuário. A estrutura de dados subjacente para armazenar essas tarefas é dinâmica, pois pode crescer conforme novas tarefas são adicionadas ou encolher à medida que as tarefas existentes são concluídas, ou removidas.
 
-## Algumas estruturas de Dados que iremos abordar neste repositório
+## Estruturas de Dados Comuns: 
 
 - Array (Arranjo)
 - Linked List (Lista Encadeada)

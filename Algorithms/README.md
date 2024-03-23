@@ -17,6 +17,9 @@
     - ["Top-Down" vs "Bottom-up"](#top-down-vs-bottom-up)
     - [Algoritmo guloso ou míope](#algoritmo-guloso-ou-míope)
     - [Algoritmos Backtracking](#algoritmos-backtracking)
+- [Algoritmos Específicos](#algoritmos-específicos)
+    - [Algoritmos de Ordenação (sorting algorithms)](#algoritmos-de-ordenação-sorting-algorithms)
+    - [Algoritmo de busca (searching algorithm)](#algoritmo-de-busca-searching-algorithm)
 - [Referências](#referências)
 
 
@@ -333,7 +336,52 @@ O algoritmo começa construindo uma solução parcial e, se essa solução não 
 
 Em essência, o backtracking explora recursivamente todas as escolhas possíveis, decidindo se cada escolha leva a uma solução válida e, se não, retrocede para explorar outras opções. Isso continua até que todas as soluções viáveis tenham sido encontradas ou até que não haja mais opções a serem exploradas.
 
+*Exemplo:*
 
+```
+função podeColocarRainha(tabuleiro, linha, coluna, N):
+    para cada i de 1 até linha-1:
+        se tabuleiro[i][coluna] == 1:
+            retorna Falso
+        se coluna - (linha - i) > 0 e tabuleiro[i][coluna - (linha - i)] == 1:
+            retorna Falso
+        se coluna + (linha - i) <= N e tabuleiro[i][coluna + (linha - i)] == 1:
+            retorna Falso
+    retorna Verdadeiro
+
+função resolveNQueens(tabuleiro, linha, N):
+    se linha > N:
+        imprimir tabuleiro
+        retorna
+    para cada coluna de 1 até N:
+        se podeColocarRainha(tabuleiro, linha, coluna, N):
+            tabuleiro[linha][coluna] = 1
+            resolveNQueens(tabuleiro, linha + 1, N)
+            tabuleiro[linha][coluna] = 0
+
+função NQueens(N):
+    tabuleiro[N][N] = 0
+    resolveNQueens(tabuleiro, 1, N)
+
+NQueens(4)  // Exemplo com um tabuleiro de 4x4
+
+```
+
+Neste exemplo, podeColocarRainha verifica se é possível colocar uma rainha em uma determinada posição no tabuleiro, considerando as rainhas já colocadas anteriormente. `resolveNQueens` é a função principal que tenta colocar rainhas em todas as linhas do tabuleiro, chamando recursivamente a si mesma para as linhas subsequentes. `NQueens` é a função de entrada que inicializa o tabuleiro e chama `resolveNQueens` para começar a busca. Este algoritmo encontrará todas as soluções possíveis para o problema das *N* rainhas em um tabuleiro de tamanho *N*.
+
+## Algoritmos Específicos
+
+Existem conjuntos de algoritmos que são projetados para resolver problemas específicos de forma eficiente e precisa.
+
+### Algoritmos de Ordenação (sorting algorithms)
+
+Algoritmos de ordenação são ferramentas fundamentais para organizar conjuntos de dados em uma ordem específica, como crescente, decrescente ou alfabética.
+
+Essas técnicas são aplicáveis em uma variedade de cenários, desde a organização de bancos de dados até a otimização de algoritmos de busca.
+
+### Algoritmo de busca (searching algorithm)
+
+Algoritmos de busca, também conhecidos como algoritmos de pesquisa, são métodos utilizados para encontrar um ou mais elementos específicos em uma coleção de dados. Esses algoritmos são essenciais em muitos contextos, como em bancos de dados, processamento de linguagem natural, inteligência artificial, entre outros.
 
 ## Referências
 
