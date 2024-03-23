@@ -1,5 +1,26 @@
 # Algoritmos
 
+## Sumário
+
+- [O que é um algoritmo?](#o-que-é-um-algoritmo)
+- [Análise de Algoritmos](#análise-de-algoritmos)
+- [Tipos de Algoritmos:](#tipos-de-algoritmos)
+  - [Algoritmos sequênciais:](#algoritmos-sequênciais)
+  - [Algoritmos de Seleção:](#algoritmos-de-seleção)
+  - [Algoritmos de Repetição:](#algoritmos-de-repetição)
+  - [Algoritmos Recursivos](#algoritmos-recursivos)
+- [Técnicas de projeto de algoritmos](#técnicas-de-projeto-de-algoritmos)
+  - [Dividir para conquistar](#dividir-para-conquistar)
+  - [Programação dinâmica](#programação-dinâmica)
+    - [Abordagem “Top-Down”](#abordagem-top-down)
+    - [Abordagem “Bottom-up”](#abordagem-bottom-up)
+    - ["Top-Down" vs "Bottom-up"](#top-down-vs-bottom-up)
+    - [Algoritmo guloso ou míope](#algoritmo-guloso-ou-míope)
+    - [Algoritmos Backtracking](#algoritmos-backtracking)
+- [Referências](#referências)
+
+
+
 ## O que é um algoritmo?
 **Donald Knuth** descreve um algoritmo como um processo definido, eficaz e finito que recebe entradas e produz saídas com base nessas entradas.
 
@@ -64,11 +85,12 @@ Neste caso, o número de iterações do loop (determinado pelo valor do argument
 
 Como a parte mais importante de um algoritmo é aquela que cresce mais rapidamente à medida que "n" aumenta, os cientistas da computação usam a notação Big O para expressar a eficiência de um algoritmo. A notação Big O é uma representação matemática que descreve como os requisitos de tempo ou espaço de um algoritmo aumentam à medida que o tamanho da entrada aumenta. Iremos falar mais sobre esse tema em ``asymptotic notation``.
 
-## Tipós de Algoritmos:
+## Tipos de Algoritmos:
 
 Existem diferentes tipos de algoritmos, onde cada um tem sua respectiva estrutura e formato, projetados para lidar com uma variedade de problemas computacionais. A escolha do tipo de algoritmo mais apropriado depende da natureza do problema a ser resolvido e dos requisitos específicos de eficiência e desempenho.
 
-### Algoritmos sequênciais 
+### Algoritmos sequênciais:
+
 Os algoritmos sequenciais são estruturas simples e diretas, compostas por uma série de passos ou instruções que são executadas em ordem, sem desvios ou repetições, até que o processo seja concluído. São ideais para resolver problemas que podem ser resolvidos seguindo uma sequência lógica de ações.
 
 
@@ -103,7 +125,7 @@ Neste exemplo, as instruções seguem uma ordem sequencial, iniciando com a decl
 
 
 
-### Algoritmos de Seleção
+### Algoritmos de Seleção:
 
 Os algoritmos de seleção são fundamentais quando há a necessidade de escolher uma opção específica entre várias possibilidades, tudo isso baseado em critérios ou condições predefinidas. São especialmente úteis em situações em que múltiplas alternativas estão disponíveis e uma decisão precisa ser tomada com base em um determinado critério.
 
@@ -125,7 +147,7 @@ Fim escolha
 
 Neste caso, cada valor resultará em uma ação diferente, conforme especificado nos casos individuais. Essa abordagem oferece uma maneira clara e organizada de lidar com várias opções, tornando o código mais legível e fácil de entender.
 
-### Algoritmos de Repetição
+### Algoritmos de Repetição:
 
 Os algoritmos de repetição permitem que uma instrução ou uma sequência de instruções seja executada mais de uma vez, quando necessário. Esses algoritmos são usados para automatizar tarefas repetitivas e lidar com conjuntos de dados. Para implementar repetições em um algoritmo, é necessário utilizar uma instrução de repetição.
 
@@ -157,7 +179,7 @@ Escreva("O valor do contador é: ", contador)
 Neste exemplo, o algoritmo inicializa um contador como zero e, em seguida, utiliza um laço de repetição for para incrementar o contador de 1 a 10. Ao final do laço, o valor do contador é exibido. Este é um exemplo simples de como utilizar uma estrutura de repetição para contar.
 
 
-### Algoritmos Recursivos
+### Algoritmos Recursivos:
 
 
 Um algoritmo recursivo é uma abordagem na qual um problema é resolvido ao dividi-lo em instâncias menores ou mais simples do próprio problema, repetindo esse processo até que essas instâncias atinjam um ponto onde possam ser resolvidas diretamente, sem mais subdivisões. Esse conceito é conhecido como recursão.
@@ -302,6 +324,15 @@ função Dijkstra(G, origem):
 ```
 
 Neste pseudo código, G é o grafo ponderado, origem é o vértice de onde se inicia a busca pelo menor caminho. O algoritmo mantém um conjunto de vértices já processados (conjuntoS) e calcula as distâncias mínimas de origem para todos os outros vértices usando a abordagem gulosa. Ele seleciona o vértice mais próximo do conjunto de vértices ainda não processados a cada iteração e atualiza as distâncias conforme necessário. No final, retorna um array contendo as distâncias mínimas de origem para todos os outros vértices do grafo.
+
+### Algoritmos Backtracking
+
+Backtracking é uma técnica algorítmica utilizada para encontrar todas as soluções viáveis de um problema. É uma forma sistemática de busca que explora todas as possibilidades, semelhante a uma abordagem de força bruta.
+
+O algoritmo começa construindo uma solução parcial e, se essa solução não for adequada ou não puder ser estendida para uma solução completa, ele retrocede (daí o termo "backtracking") e tenta outras alternativas. Essa abordagem é particularmente útil para problemas que possuem múltiplas soluções.
+
+Em essência, o backtracking explora recursivamente todas as escolhas possíveis, decidindo se cada escolha leva a uma solução válida e, se não, retrocede para explorar outras opções. Isso continua até que todas as soluções viáveis tenham sido encontradas ou até que não haja mais opções a serem exploradas.
+
 
 
 ## Referências
