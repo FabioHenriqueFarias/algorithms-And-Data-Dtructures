@@ -8,9 +8,11 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
 Algorithms
 |-- Sorting
 |   |-- MergeSort
-|-- Recursion
-|    |-- Search
+|-- Search 
+|    |-- Recursion
 |
+Asymptotic_Notation
+    | -- 
 Data_Structures
     |-- Linked-List
 ```
