@@ -1,11 +1,23 @@
 # Linked List
 
-Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam nós para armazenar elementos que não estão armazenados em locais de memória contíguos.
+## Sumário
+
+- [O que é uma Linked List?](#o-que-é-uma-linked-list)
+- [O que é um Nó?](#o-que-é-um-nó)
+- [Vincular os nós em uma lista encadeada](#vincular-os-nós-em-uma-lista-encadeada)
+- [Operações comuns em Listas Encadeadas](#operações-comuns-em-listas-encadeadas)
+     - [Inserção de um Novo Nó](#inserção-de-um-novo-nó)
+     - [Remoção de um Nó Existente](#remoção-de-um-nó-existente)
+     - [Leitura da Lista](#leitura-da-lista)
+
 
 **Os Exemplos serão exemplificados em Linguagem C.**
 > Neste repositorio possui como fazer uma Linked List em três linguagens C, Javascript e Rust.
 
 ## O que é uma Linked List?
+
+Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam nós para armazenar elementos que não estão armazenados em locais de memória contíguos.
+
 Uma lista encadeada é uma estrutura de dados que consiste em uma sequência de elementos, chamados de nós. Cada nó contém dados e um ponteiro (ou referência) para o próximo nó na lista. Essa característica de "vinculação" entre os nós é fundamental para a estrutura, permitindo que os elementos sejam organizados de forma dinâmica na memória.
 
 Ao contrário de estruturas de dados estáticas, como arrays, onde os elementos são armazenados em posições contíguas de memória, os nós de uma lista encadeada podem estar dispersos em diferentes locais da memória. Isso confere flexibilidade à lista, pois novos elementos podem ser adicionados ou removidos de forma eficiente, sem a necessidade de realocação contígua de memória.
@@ -15,7 +27,7 @@ Essa flexibilidade torna as listas encadeadas uma escolha popular em muitas apli
 ![Ilustração de uma linked list com três nós
 ](assents/linkedlist_01-1.png)
 
-Aqui você pode ver que os endereços dos nós não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801 , em vez de 201 como seria de esperar.
+Aqui você pode ver que os endereços dos nós não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801, em vez de 201 como seria de esperar.
 
 Então, como os nós são armazenados linearmente?
 
@@ -122,3 +134,13 @@ Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para
 
 Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
 
+## Referências
+
+Palistha: <a href="https://www.freecodecamp.org/news/how-linked-lists-work/" target="_blank" >How Does a Linked List Work?</a>
+
+João Arthur Brunet: <a href="https://joaoarthurbm.github.io/eda/posts/linkedlist/" target="_blank" >Listas Ligadas (LinkedList)
+</a>
+
+
+Thomas Cormen - <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática | Capítulo 10.2
+</a>
