@@ -1,5 +1,15 @@
 # Algoritmos de Ordenação 
 
+# Sumário
+
+- [O que é um Algoritmo de Ordenação?](#o-que-é-um-algoritmo-de-ordenação)
+- [Impotância](#impotância)
+- [ Qual o melhor algoritmo de Ordenação?](#qual-o-melhor-algoritmo-de-ordenação)
+- [Um pouco sobre a complexidade de alguns algitmos de ordenação](#um-pouco-sobre-a-complexidade-de-alguns-algitmos-de-ordenação)
+- [Referências](#referências)
+
+## O que é um Algoritmo de Ordenação?
+
 Os algoritmos de ordenação são conjuntos de instruções projetados para receber uma matriz ou lista como entrada e organizar seus elementos em uma ordem específica.
 
 As ordenações mais comuns são numéricas ou alfabéticas (também conhecidas como lexicográficas) e podem ser em ordem crescente (por exemplo, de A a Z ou de 0 a 9) ou decrescente (de Z a A ou de 9 a 0).
