@@ -21,7 +21,6 @@ void connectNode(struct Node* node1, struct Node* node2) {
     node1->next = node2;
 }
 
-
 // Função para imprimir os elementos da lista encadeada
 void printList(struct Node* head) {
     struct Node* temp = head;
