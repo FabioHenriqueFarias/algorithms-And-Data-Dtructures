@@ -130,7 +130,7 @@ Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para
 |---|---|
 | Escrita | O(1) |
 | Remoção | O(1) |
-| Leitura | O(1) |
+| Leitura | O(n) |
 
 
 Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
