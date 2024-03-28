@@ -16,3 +16,5 @@ int adicionarElementoArrayInicio(int* array, int elemento);
 int adicionarElementoArrayFim(int* array, int elemento);
 
 int excluirArray(int* array);
+
+#endif // ARRAY_H

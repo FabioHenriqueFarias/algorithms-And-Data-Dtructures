@@ -18,6 +18,9 @@ int* criacaoArray(int tamanho){
 }
 
 int verificarEspacoArray(int* array){
+    int tamanho = sizeof(array) / sizeof(array[0]);
+
+
     for(int i = 0; i < tamanho; i++){
         if(array[i] == -1){
             return 1; // Retorna 1 se houver espaço disponível
