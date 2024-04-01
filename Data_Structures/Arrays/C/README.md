@@ -9,7 +9,7 @@
 
 ## Divisão:
 
-Este projeto consiste na implementação de um array em linguagem C, dividido em três arquivos principais: main.c, array.h, e array.c. O main.c é o arquivo principal do programa, array.h contém os métodos disponíveis para manipulação do array, enquanto array.c apresenta a implementação dos métodos declarados em array.h.
+Estes códigos consistem na implementação de um array em linguagem C, dividido em três arquivos principais: main.c, array.h, e array.c. O main.c é o arquivo principal do programa, array.h contém os métodos disponíveis para manipulação do array, enquanto array.c apresenta a implementação dos métodos declarados em array.h.
 
 ### main.c
 
