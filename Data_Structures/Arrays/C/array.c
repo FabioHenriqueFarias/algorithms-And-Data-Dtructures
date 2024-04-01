@@ -1,4 +1,5 @@
 #include "array.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 
@@ -89,7 +90,7 @@ int adicionarElementoArray(int* array, int elemento, int posicao){
 
     int tamanho = sizeof(array) / sizeof(array[0]);
 
-    if (verificarEspacoArray < 1) {
+    if (tamanho < 1) {
         array = incrementarArray(array);
     }
 
@@ -106,7 +107,7 @@ int adicionarElementoArray(int* array, int elemento, int posicao){
     return 1;
 }
 
-adicionarElementoArrayInicio(int* array, int elemento){
+int adicionarElementoArrayInicio(int* array, int elemento){
 
     int tamanho = sizeof(array) / sizeof(array[0]);
 
