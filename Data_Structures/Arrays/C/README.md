@@ -6,6 +6,7 @@
     - [main.c](#mainc)
     - [array.h](#arrayh)
     - [array.c](#arrayc)
+- [Rodando o programa com GCC](#rodando-o-programa-com-gcc)
 
 ## Divisão:
 
@@ -22,3 +23,11 @@ O arquivo `array.h` contém as declarações das funções disponíveis para man
 ### array.c
 
 O arquivo `array.c` contém a implementação das funções declaradas em `array.h`. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, no array.
+
+## Rodando o programa com GCC: 
+
+O comando para rodar o código pelo compilador GCC:
+
+```
+gcc main.c array.c -o programa
+```
