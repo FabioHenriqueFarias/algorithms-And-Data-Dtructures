@@ -14,19 +14,18 @@ class Array:
             if self.array[i] is None:
                 self.array[i] = elemento
                 return self.array
-
-        # Se chegou aqui, significa que o array estava cheio e já foi aumentado
+            
         self.array[posicao] = elemento
         return self.array
 
 
-    
     def removerElemento(self, posicao):
         if posicao < 0 or posicao >= self.tamanho:
             return "Posição inválida"
         for i in range(posicao, self.tamanho - 1):
             self.array[i] = self.array[i + 1]
-        self.array.pop() 
+        self.array.pop()
+        self.tamanho -= 1 
         return self.array
     
     def buscarElemento(self, elemento):
@@ -48,6 +47,7 @@ class Array:
         for i in range(0, self.tamanho - 1):
             self.array[i] = self.array[i + 1]
         self.array.pop()
+        self.tamanho -= 1
         return self.array
     
     def aumentarArray(self):
