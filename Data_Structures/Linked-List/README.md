@@ -135,6 +135,10 @@ Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para
 
 Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
 
+## Implementações
+
+Neste repositório, você encontrará a implementação de uma estrutura de dados Linked List em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Rust">Rust</a>
+
 ## Referências
 
 Palistha: <a href="https://www.freecodecamp.org/news/how-linked-lists-work/" target="_blank" >How Does a Linked List Work?</a>
