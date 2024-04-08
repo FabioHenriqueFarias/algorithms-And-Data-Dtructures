@@ -13,10 +13,11 @@ Estes códigos representam a implementação de uma estrutura de array em Python
 
 ### main.py
 
+O arquivo `main.py` é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 ### _array.py
 
-
+O arquivo `array.py` contém a implementação das funções. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, no array.
 
 
 
