@@ -16,6 +16,7 @@
         - [Remoção no Meio](#remoção-no-meio)
         - [Remoção no Fim](#remoção-no-fim)
     - [Leitura](#leitura)
+- [Implementações](#implementações)
 - [Referências](#referências)
 
 
