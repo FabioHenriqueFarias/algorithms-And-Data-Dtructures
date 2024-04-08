@@ -20,6 +20,3 @@ O arquivo `main.py` é o ponto de entrada do programa. Aqui,   ocorre a iniciali
 O arquivo `array.py` contém a implementação das funções. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, no array.
 
 
-
-
-

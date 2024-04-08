@@ -168,6 +168,10 @@ Isso acontece porque, ao acessar um elemento específico do array, o acesso dire
 
 Essa característica torna a leitura de um array uma operação eficiente e rápida, independentemente do tamanho do array.
 
+## Implementações
+
+Neste repositório, você encontrará a implementação de uma estrutura de dados de array em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Arrays/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Arrays/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Arrays/Rust">Rust</a>
+
 ## Referências
 
 Geek for Geeks: <a href="https://www.geeksforgeeks.org/what-is-array/">O que é um Array?</a>
