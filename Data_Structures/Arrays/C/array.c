@@ -3,133 +3,167 @@
 #include <stdlib.h>
 
 
-int* criacaoArray(int tamanho){
-    int* array = (int*) malloc(tamanho * sizeof(int));
-
-    if (array == NULL) {
+Array criacaoArray(int tamanho) {
+    Array novoArray;
+    novoArray.array = (int*) malloc(tamanho * sizeof(int));
+    if (novoArray.array == NULL) {
         printf("Erro ao alocar memória.\n");
         exit(1);
     }
+    novoArray.tamanho = tamanho;
+    for(int i = 0; i < tamanho; i++) {
+        novoArray.array[i] = -1;
+    }
+    return novoArray;
+}
+
+Array incrementarArray(Array array){
+    int tamanho = array.tamanho;
+    int novoTamanho = tamanho * 2; // Dobrando o tamanho do array
+
+    Array novoArray;
+    novoArray.array = (int*)realloc(novoArray.array, novoTamanho * sizeof(int));
+
+    if (novoArray.array == NULL) {
+        printf("Erro ao realocar memória.\n");
+        exit(1);
+    } // Erro na realocação do array
+
+    // Inicializando os novos elementos com -1
+    for (int i = tamanho; i < novoTamanho; i++) {
+        novoArray.array[i] = -1;
+    }
 
     for(int i = 0; i < tamanho; i++){
-        array[i] = -1;
-    }
+        novoArray.array[i] = array.array[i];
+    } // Copiando os elementos do array antigo para o novo
+
+    array.array = novoArray.array;
+    novoArray.tamanho = novoTamanho;
 
     return array;
 }
 
-int verificarEspacoArray(int* array){
-    int tamanho = sizeof(array) / sizeof(array[0]);
+int removerElemento(Array array, int posicao){
 
+    int tamanho = array.tamanho;
+
+    if(posicao < 0 || posicao >= tamanho){
+        return 0;
+    } // Verifica se a posição é válida
+
+    for(int i = posicao; i < tamanho - 1; i++){
+        array.array[i] = array.array[i + 1];
+    } // Deslocando os elementos
+
+    return 1;
+}
+
+int removerElementoInicio(Array array){
+
+    int tamanho = array.tamanho;
+
+    for(int i = 0; i < tamanho - 1; i++){
+        array.array[i] = array.array[i + 1];
+    } // Deslocando os elementos
+    
+    return 1;
+}
+
+int removerElementoFim(Array array){
+    
+    int tamanho = array.tamanho;
+    
+    array.array[tamanho - 1] = 0;
+
+    return 1;
+    
+}
+
+
+int adicionarElementoArray(Array array, int elemento, int posicao){
+
+    int tamanho = array.tamanho;
+
+    if (array.tamanho + 1 < tamanho) {
+        array = incrementarArray(array);
+    } // Verifica se há espaço disponível
+
+    if(posicao < 0 || posicao >= tamanho){
+        return 0;
+    } // Verifica se a posição é válida
+
+    for(int i = tamanho - 1; i > posicao; i--){
+        array.array[i] = array.array[i - 1];
+    } // Deslocando os elementos
+
+    array.array[posicao] = elemento;
+
+    return 1;
+}
+
+int adicionarElementoArrayInicio(Array array, int elemento){
+
+    int tamanho = array.tamanho;
+
+    if (array.tamanho + 1 < tamanho) {
+        array = incrementarArray(array);
+    } // Verifica se há espaço disponível
+
+    for(int i = tamanho - 1; i > 0; i--){
+        array.array[i] = array.array[i - 1];
+    } // Deslocando os elementos
+
+    array.array[0] = elemento;
+
+    return 1;
+}
+
+int adicionarElementoArrayFim(Array array, int elemento){
+
+    int tamanho = array.tamanho;
+
+    if (array.tamanho + 1 < tamanho) {
+        array = incrementarArray(array);
+    } // Verifica se há espaço disponível
+
+    array.array[tamanho] = elemento;
+
+    return 1;
+}
+
+int buscarElementoArray(Array array, int elemento){
+    int tamanho = array.tamanho;
 
     for(int i = 0; i < tamanho; i++){
-        if(array[i] == -1){
-            return 1; // Retorna 1 se houver espaço disponível
+        if(array.array[i] == elemento){
+            return i;
         }
     }
 
-    return 0; // Retorna 0 se não houver espaço disponível
+    return -1;
 }
 
-int* incrementarArray(int* array){
-    int tamanho = sizeof(array) / sizeof(array[0]);
-    int novoTamanho = tamanho * 2; // Dobra o tamanho do array
-
-    array = (int*)realloc(array, novoTamanho * sizeof(int));
-
-     if (array == NULL) {
-        printf("Erro ao realocar memória.\n");
-        exit(1);
-    }
-
-    // Inicializa os novos elementos com -1
-    for (int i = tamanho; i < novoTamanho; i++) {
-        array[i] = -1;
-    }
-
-    return array;
-}
-
-int removerElemento(int* array, int posicao){
-
-    int tamanho = sizeof(array) / sizeof(array[0]);
-
-    if(posicao < 0 || posicao >= tamanho){
-        return 0;
-    }
-    for(int i = posicao; i < tamanho - 1; i++){
-        array[i] = array[i + 1];
-    }
+int excluirArray(Array array){
+    free(array.array);
+    array.array = NULL;
+    array.tamanho = 0;
 
     return 1;
 }
 
-int removerElementoInicio(int* array){
-
-    int tamanho = sizeof(array) / sizeof(array[0]);
-
-    for(int i = 0; i < tamanho - 1; i++){
-        array[i] = array[i + 1];
-    }
-    
-    return 1;
+int tamanhoArray(Array array) {
+    return array.tamanho;
 }
 
-int removerElementoFim(int* array){
-    
-        int tamanho = sizeof(array) / sizeof(array[0]);
-    
-        array[tamanho - 1] = 0;
-    
-        return 1;
-    
-}
+void imprimirArray(Array array){
+    int tamanho = array.tamanho;
 
+    printf("Tamanho do array: %d\n", tamanho);
 
-int adicionarElementoArray(int* array, int elemento, int posicao){
-
-    int tamanho = sizeof(array) / sizeof(array[0]);
-
-    if (tamanho < 1) {
-        array = incrementarArray(array);
+    for(int i = 0; i < tamanho; i++){
+        printf("Indice: %d, Elemento: %d \n",i, array.array[i]);
     }
 
-    if(posicao < 0 || posicao >= tamanho){
-        return 0;
-    }
-
-    for(int i = tamanho - 1; i > posicao; i--){
-        array[i] = array[i - 1];
-    }
-
-    array[posicao] = elemento;
-
-    return 1;
-}
-
-int adicionarElementoArrayInicio(int* array, int elemento){
-
-    int tamanho = sizeof(array) / sizeof(array[0]);
-
-    for(int i = tamanho - 1; i > 0; i--){
-        array[i] = array[i - 1];
-    }
-
-    array[0] = elemento;
-
-    return 1;
-}
-
-int adicionarElementoArrayFim(int* array, int elemento){
-
-    int tamanho = sizeof(array) / sizeof(array[0]);
-
-    array[tamanho] = elemento;
-
-    return 1;
-}
-
-int excluirArray(int* array){
-    free(array);
-    return 1;
+    printf("\n");
 }

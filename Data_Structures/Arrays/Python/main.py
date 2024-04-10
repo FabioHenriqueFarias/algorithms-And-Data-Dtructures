@@ -15,7 +15,7 @@ print("Saída 1: ")
 meu_array.exibirArray()
 print("\n")
 
-# Remocendo o elemento na posição 2
+# Removendo o elemento na posição 2
 meu_array.removerElemento(2)
 
 # Exemplo de saída 2: 
@@ -31,7 +31,7 @@ print("Saída 3: ")
 meu_array.exibirArray()
 print("\n")
 
-# Buscando o elemento 2
+# Buscando o elemento pelo valor
 print("Posição: ", meu_array.buscarElemento(8))
 print("\n")
 

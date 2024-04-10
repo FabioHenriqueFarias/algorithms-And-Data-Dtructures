@@ -22,7 +22,22 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### array.c
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/C/array.c">`array.c`</a> contém a implementação das funções declaradas em `array.h`. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, no array.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/C/array.c">`array.c`</a> contém uma implementação das funções necessárias para manipulação de arrays em C. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
+
+As funções implementadas são as seguintes:
+
+- Criar o array
+- Adicionar um novo elemento em uma posição específica no array.
+- Adicionar um novo elemento no final do array.
+- Adicionar um novo elemento no início do array.
+- Buscar um elemento no array e retorna sua posição.
+- Remover um elemento de uma posição específica no array.
+- Remover o primeiro elemento do array.
+- Remover o último  elemento do array.
+- Retornar o tamanho atual do array.
+- Aumentar o tamanho do array dobrando sua capacidade.
+- Limpar todos os elementos do array.
+- Imprimir os elementos presentes no array.
 
 ## Rodando o programa com GCC: 
 

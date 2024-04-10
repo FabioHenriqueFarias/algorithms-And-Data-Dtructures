@@ -1,20 +1,22 @@
 #ifndef ARRAY_H
 #define ARRAY_H
 
-int* criacaoArray(int tamanho);
+typedef struct {
+    int *array;
+    int tamanho;
+} Array;
 
-int removerElemento(int* array, int posicao);
-
-int removerElementoInicio(int* array);
-
-int removerElementoFim(int* array);
-
-int adicionarElementoArray(int* array, int elemento, int posicao);
-
-int adicionarElementoArrayInicio(int* array, int elemento);
-
-int adicionarElementoArrayFim(int* array, int elemento);
-
-int excluirArray(int* array);
+Array criacaoArray(int tamanho);
+Array incrementarArray(Array array);
+int removerElemento(Array array, int posicao);
+int removerElementoInicio(Array array);
+int removerElementoFim(Array array);
+int adicionarElementoArray(Array array, int elemento, int posicao);
+int adicionarElementoArrayInicio(Array array, int elemento);
+int adicionarElementoArrayFim(Array array, int elemento);
+int excluirArray(Array array);
+int tamanhoArray(Array array);
+int buscarElementoArray(Array array, int elemento);
+void imprimirArray(Array array);
 
 #endif // ARRAY_H
