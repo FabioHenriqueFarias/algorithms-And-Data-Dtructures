@@ -20,4 +20,9 @@ fn main(){
     array.remover_elemento(2);
 
     array.print_array();
+
+    array.excluir_array();
+
+    array.print_array();
+
 }

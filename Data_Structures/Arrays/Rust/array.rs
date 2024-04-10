@@ -48,6 +48,14 @@ impl<T> Array<T> where T: Debug {
         }
     }
 
+    pub fn excluir_array(&mut self){
+        self.elements.clear();
+    }
+
+    pub fn aumentar_tamanho_array(&mut self, tamanho: usize){
+        self.elements.reserve(tamanho);
+    }
+
     pub fn print_array(&self){
         println!("Conteúdo da Array:");
         for element in &self.elements {

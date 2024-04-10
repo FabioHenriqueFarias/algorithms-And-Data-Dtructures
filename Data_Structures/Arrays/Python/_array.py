@@ -28,6 +28,11 @@ class Array:
         self.tamanho -= 1 
         return self.array
     
+    def removerUltimoElemento(self):
+        self.array.pop()
+        self.tamanho -= 1
+        return self.array
+    
     def buscarElemento(self, elemento):
         for i in range(self.tamanho):
             if self.array[i] == elemento:
@@ -60,6 +65,26 @@ class Array:
         self.array = novoArray
         self.tamanho = novo_tamanho
         return self.array 
+
+    def adicionarElementoFinal(self, elemento):
+        if self.array[self.tamanho - 1] is not None:
+            self.array = self.aumentarArray()
+        self.array[self.tamanho] = elemento
+        self.tamanho += 1
+        return self.array
+
+    def adicionarElementoInicio(self, elemento):
+        if self.array[self.tamanho - 1] is not None:
+            self.array = self.aumentarArray()
+        for i in range(self.tamanho, 0, -1):
+            self.array[i] = self.array[i - 1]
+        self.array[0] = elemento
+        self.tamanho += 1
+        return self.array
+
+    def tamanhoLista(self):
+        return self.tamanho
+
 
 
     
