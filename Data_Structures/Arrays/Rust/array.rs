@@ -19,6 +19,18 @@ impl<T> Array<T> where T: Debug {
         }
     }
 
+    pub fn buscar_elemento(&self, posicao: usize) -> Option<&T>{
+        if posicao < self.elements.len() {
+            Some(&self.elements[posicao])
+        }else{
+            None
+        }
+    }
+
+    pub fn tamanho_array(&self) -> usize {
+        self.elements.len()
+    }
+
     pub fn remover_elemento_inicio(&mut self) -> Option<T> {
         if self.elements.is_empty() {
             None
@@ -52,8 +64,8 @@ impl<T> Array<T> where T: Debug {
         self.elements.clear();
     }
 
-    pub fn aumentar_tamanho_array(&mut self, tamanho: usize){
-        self.elements.reserve(tamanho);
+    fn aumentar_tamanho_array(&mut self, tamanho: usize){
+        self.elements.reserve(tamanho*2);
     }
 
     pub fn print_array(&self){

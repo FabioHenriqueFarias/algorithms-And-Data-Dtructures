@@ -19,6 +19,9 @@ fn main(){
     array.remover_elemento_fim();
     array.remover_elemento(2);
 
+    println!("{:?}", array.buscar_elemento(2));
+    println!("{:?}", array.tamanho_array());
+
     array.print_array();
 
     array.excluir_array();

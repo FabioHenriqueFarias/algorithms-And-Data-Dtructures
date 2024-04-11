@@ -15,4 +15,19 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### array.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/Rust/array.rs">`array.rs`</a> abriga a implementação dos métodos utilizados para operar em um array. Cada função é definida com a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, no array.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/Rust/array.rs">`array.rs`</a> abriga a implementação dos métodos necessárias para manipulação de arrays em Rust. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
+
+As funções implementadas são as seguintes:
+
+- Criar o array
+- Adicionar um novo elemento em uma posição específica no array.
+- Adicionar um novo elemento no final do array.
+- Adicionar um novo elemento no início do array.
+- Buscar um elemento no array e retorna sua posição.
+- Remover um elemento de uma posição específica no array.
+- Remover o primeiro elemento do array.
+- Remover o último  elemento do array.
+- Retornar o tamanho atual do array.
+- Aumentar o tamanho do array dobrando sua capacidade.
+- Limpar todos os elementos do array.
+- Imprimir os elementos presentes no array.
