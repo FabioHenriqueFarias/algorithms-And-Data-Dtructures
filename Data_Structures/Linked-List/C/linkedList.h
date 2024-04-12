@@ -16,5 +16,9 @@ typedef struct {
 Node* newNode(int data);
 LinkedList* newLinkedList();
 void printList(LinkedList* list);
+void appendNode(LinkedList* list, int data);
+void pushNode(LinkedList* list, int data);
+int size(LinkedList* list);
+void appendNodeIndex(LinkedList* list, int data, int index);
 
 #endif // LINKEDLIST_H
