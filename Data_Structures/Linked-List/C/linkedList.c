@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <linkedList.h>
+#include "linkedList.h"
 
 
 
@@ -17,15 +17,19 @@ Node* newNode(int data) {
 }
 
 // Função para criar uma nova lista encadeada
-LinkedList newLinkedList() {
-    LinkedList list;
-    list.head = NULL;
+LinkedList* newLinkedList() {
+    LinkedList* list = (LinkedList*)malloc(sizeof(LinkedList));
+    if (list == NULL) {
+        printf("Erro: Não foi possível alocar memória para a nova lista encadeada.\n");
+        exit(1);
+    }
+    list->head = NULL;
     return list;
 }
 
 // Função para adicionar um novo nó no final da lista
 void appendNode(LinkedList list, int data) {
-    struct Node* node = newNode(data);
+    Node* node = newNode(data);
     if (list.head == NULL) {
         list.head = node;
         return;
@@ -40,20 +44,15 @@ void appendNode(LinkedList list, int data) {
 
 // Função para adicionar um novo nó no início da lista
 void pushNode(LinkedList list, int data) {
-    Node node = newNode(data);
+    Node* node = newNode(data);
     Node* temp = list.head;
-    list.head = &node;
-    node.next = temp;
-}
-
-// Função para ligar os nós
-void connectNode(Node node1, Node node2) {
-    node1->next = node2;
+    list.head = node;
+    node->next = temp;
 }
 
 // Função para imprimir os elementos da lista encadeada
-void printList(LinkedList list) {
-    Node* temp = list.head;
+void printList(LinkedList* list) {
+    Node* temp = list->head;
     while (temp != NULL) {
         printf("%d ", temp->data);
         temp = temp->next;

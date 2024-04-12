@@ -2,19 +2,19 @@
 #define LINKEDLIST_H
 
 // Definição da estrutura do nó
-typedef struct {
+typedef struct Node {
     int data;
-    struct Node* next;} 
-    Node;
+    struct Node* next;
+} Node;
 
 // Definição da estrutura da lista encadeada
 typedef struct {
-       struct Node* head;
+    Node* head;
 } LinkedList;
 
-Node newNode(int data);
-LinkedList newLinkedList();
-void connectNode(Node node, Node nextNode);
-void printList(LinkedList list);
+// Protótipos das funções
+Node* newNode(int data);
+LinkedList* newLinkedList();
+void printList(LinkedList* list);
 
 #endif // LINKEDLIST_H
