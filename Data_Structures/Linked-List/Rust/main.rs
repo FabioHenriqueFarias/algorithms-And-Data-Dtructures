@@ -9,6 +9,20 @@ fn main() {
     list.append(2);
     list.append(3);
 
-    println!("Lista Encadeada:");
+    println!("Lista Encadeada: ");
+    list.print();
+
+    list.prepend(9);
+    list.prepend(5);
+
+    println!("Lista Encadeada Tamanho: ");
+    list.size();
+
+    println!("Lista Encadeada: ");
+    list.size();
+
+    list.insert(7, 2);
+
+    println!("Lista Encadeada: ");
     list.print();
 }
