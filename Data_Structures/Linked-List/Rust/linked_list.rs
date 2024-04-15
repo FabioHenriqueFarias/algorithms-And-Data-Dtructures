@@ -57,18 +57,29 @@ impl LinkedList {
 
     pub fn remove(&mut self, data: i32) {
         let mut current = &mut self.head;
+        let mut found = false;
+    
+        // Percorre a lista enquanto houver nós e o nó a ser removido não for encontrado
         while let Some(ref mut node) = current {
             if node.data == data {
-                *current = std::mem::replace(&mut node.next, None);
-                break;
+                // Se os dados correspondem, atualiza a cabeça da lista para o próximo nó
+                *current = node.next.take();
+                found = true; // Indica que o nó foi encontrado e removido
+                break; // Sai do loop após remover o nó
             } else {
+                // Se os dados não correspondem, atualiza a referência para apontar para o próximo nó
                 current = &mut node.next;
             }
         }
+    
+        if !found {
+            println!("Erro: O elemento a ser removido não foi encontrado na lista.");
+        }
     }
+    
+    
 
-
-    Método para retornar o tamanho da lista
+    // Método para retornar o tamanho da lista
     pub fn size(&self) -> i32 {
         let mut current = &self.head;
         let mut size = 0;
