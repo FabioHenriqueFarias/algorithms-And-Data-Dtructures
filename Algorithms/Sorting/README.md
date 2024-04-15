@@ -3,22 +3,26 @@
 # Sumário
 
 - [O que é um Algoritmo de Ordenação?](#o-que-é-um-algoritmo-de-ordenação)
-- [Impotância](#impotância)
-- [ Qual o melhor algoritmo de Ordenação?](#qual-o-melhor-algoritmo-de-ordenação)
-- [Um pouco sobre a complexidade de alguns algitmos de ordenação](#um-pouco-sobre-a-complexidade-de-alguns-algitmos-de-ordenação)
+- [Importância](#impotância)
+- [Qual o melhor algoritmo de Ordenação?](#qual-o-melhor-algoritmo-de-ordenação)
+- [Um pouco sobre a complexidade de alguns algoritmos de ordenação](#um-pouco-sobre-a-complexidade-de-alguns-algitmos-de-ordenação)
 - [Referências](#referências)
 
 ## O que é um Algoritmo de Ordenação?
 
-Os algoritmos de ordenação são conjuntos de instruções projetados para receber uma matriz ou lista como entrada e organizar seus elementos em uma ordem específica.
+Os algoritmos de ordenação são conjuntos de instruções sofisticados que organizam elementos de uma matriz ou lista em uma sequência determinada. Esses algoritmos são essenciais para a eficiência de operações de busca e recuperação de dados, pois uma coleção ordenada permite implementações mais rápidas e eficazes.
 
-As ordenações mais comuns são numéricas ou alfabéticas (também conhecidas como lexicográficas) e podem ser em ordem crescente (por exemplo, de A a Z ou de 0 a 9) ou decrescente (de Z a A ou de 9 a 0).
+As ordenações mais usuais são realizadas com base em critérios numéricos ou alfabéticos, conhecidos também como **lexicográficos**. Dependendo da necessidade, esses algoritmos podem classificar os elementos em ordem ascendente, como de A a Z ou de 0 a 9, facilitando a localização do início da sequência, ou em ordem descendente, de Z a A ou de 9 a 0, o que pode ser útil para identificar rapidamente os maiores valores ou últimos elementos.
 
-## Impotância
 
-Os algoritmos de ordenação são fundamentais para mitigar a complexidade de problemas computacionais. Eles desempenham um papel crucial em uma variedade de aplicações, incluindo algoritmos de busca, operações em bancos de dados, métodos de divisão e conquista, manipulação de estruturas de dados e em muitos outros contextos.
+## Importância
 
-Ao organizar os dados de entrada de maneira ordenada, esses algoritmos facilitam e agilizam a execução de operações subsequentes, tornando possível uma análise mais eficiente e a aplicação de técnicas como busca binária, manipulação de grandes conjuntos de dados e otimização de algoritmos.
+Os algoritmos de ordenação são pilares essenciais na redução da complexidade de desafios computacionais. Eles são vitais em uma vasta gama de aplicações, desde algoritmos de busca e operações em bancos de dados até métodos de divisão e conquista, gerenciamento de estruturas de dados e muito mais.
+
+Esses algoritmos não apenas organizam os dados de entrada de forma sistemática, mas também potencializam a eficácia de operações subsequentes. Ao estabelecer uma ordem lógica, eles permitem uma análise mais rápida e a implementação de técnicas avançadas como a busca binária. Além disso, são fundamentais na manipulação eficiente de grandes volumes de dados e na otimização de algoritmos complexos, contribuindo significativamente para a economia de tempo e recursos computacionais.
+
+A ordenação eficaz é um componente crítico no design de software, pois influencia diretamente a desempenho e a escalabilidade de sistemas. Algoritmos de ordenação bem projetados são capazes de lidar com dados em grande escala, garantindo que aplicações como motores de busca e sistemas de análise de dados funcionem com a máxima eficiência.
+
 
 ## Qual o melhor algoritmo de Ordenação?
 
@@ -30,7 +34,7 @@ Ao avaliar diferentes algoritmos de ordenação, é importante considerar seus t
 
 Portanto, determinar o melhor algoritmo de ordenação para um problema específico requer uma análise detalhada dos requisitos e características individuais desse problema. Ao considerar fatores como o tamanho dos dados, a disponibilidade de memória e a necessidade de ordenação em tempo real, é possível escolher o algoritmo que melhor se adapta às necessidades específicas da aplicação em questão. Essa abordagem sob medida permite otimizar o desempenho e a eficiência da ordenação, garantindo uma solução eficaz e adequada para o problema em mãos.
 
-## Um pouco sobre a complexidade de alguns algitmos de ordenação
+## Um pouco sobre a complexidade de alguns algoritmos de ordenação
 
 Uma das formas mais comuns de comparar algoritmos de ordenação é através da <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation" target="_blank">asymptotic notation</a>, sendo a "Big O" do pior caso a mais conhecida. Essa notação nos permite descrever o desempenho do pior caso de um algoritmo em termos de seu crescimento relativo em relação ao tamanho dos dados de entrada.
 
@@ -39,4 +43,10 @@ Os algoritmos de ordenação podem ser classificados de acordo com sua complexid
 ## Referências
 
 Cayo Dias: <a href="https://www.freecodecamp.org/portuguese/news/algoritmos-de-ordenacao-explicados-com-exemplos-em-python-java-e-c/" target="_blank"> Algoritmos de ordenação</a>  
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a> 
+
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> <br>
+
+Livro: <a href="https://www.grupogen.com.br/e-book-algoritmos-thomas-cormen-9788595159914">Algoritmos: Teoria e Prática</a> 
 
