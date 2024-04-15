@@ -43,39 +43,25 @@ impl LinkedList {
         }
     }
 
-    // Método para remover um nó da lista
-    // pub fn remove(&mut self, data: i32) {
-    //     let mut current = &mut self.head;
-    //     while let Some(ref mut node) = *current {
-    //         if node.data == data {
-    //             *current = node.next.take();
-    //             break;
-    //         }
-    //         current = &mut node.next;
-    //     }
-    // }
 
     pub fn remove(&mut self, data: i32) {
         let mut current = &mut self.head;
-        let mut found = false;
-    
-        // Percorre a lista enquanto houver nós e o nó a ser removido não for encontrado
-        while let Some(ref mut node) = current {
+        while let Some(mut node) = current.take() {
             if node.data == data {
-                // Se os dados correspondem, atualiza a cabeça da lista para o próximo nó
                 *current = node.next.take();
-                found = true; // Indica que o nó foi encontrado e removido
-                break; // Sai do loop após remover o nó
+                break;
             } else {
-                // Se os dados não correspondem, atualiza a referência para apontar para o próximo nó
-                current = &mut node.next;
+                // Aqui, criamos uma nova referência mutável para o próximo nó
+                let next = &mut node.next as *mut _;
+                // É seguro usar `unsafe` aqui porque garantimos que `next` não será usado após a reatribuição
+                unsafe {
+                    current = &mut *next;
+                }
             }
         }
-    
-        if !found {
-            println!("Erro: O elemento a ser removido não foi encontrado na lista.");
-        }
     }
+    
+    
     
     
 

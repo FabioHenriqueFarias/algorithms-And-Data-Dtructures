@@ -18,6 +18,8 @@ fn main() {
     println!("Lista Encadeada Tamanho: ");
     list.size();
 
+    list.remove(9);
+
     println!("Lista Encadeada: ");
     list.size();
 
