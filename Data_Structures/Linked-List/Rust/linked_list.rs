@@ -44,26 +44,19 @@ impl LinkedList {
     }
 
 
-    pub fn remove(&mut self, data: i32) {
-        let mut current = &mut self.head;
-        while let Some(mut node) = current.take() {
-            if node.data == data {
-                *current = node.next.take();
-                break;
-            } else {
-                // Aqui, criamos uma nova referência mutável para o próximo nó
-                let next = &mut node.next as *mut _;
-                // É seguro usar `unsafe` aqui porque garantimos que `next` não será usado após a reatribuição
-                unsafe {
-                    current = &mut *next;
-                }
-            }
-        }
-    }
-    
-    
-    
-    
+    // pub fn remove(&mut self, data: i32) {
+    //     let mut current = &mut self.head;
+    //     while let Some(node) = current {
+    //         if node.data == data {
+    //             let next = node.next.take();
+    //             *current = next;
+    //             break;
+    //         } else {
+    //             current = &mut node.next;
+    //         }
+    //     }
+    // }
+
 
     // Método para retornar o tamanho da lista
     pub fn size(&self) -> i32 {

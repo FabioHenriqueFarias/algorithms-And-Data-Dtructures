@@ -14,11 +14,11 @@ fn main() {
 
     list.prepend(9);
     list.prepend(5);
-
-    println!("Lista Encadeada Tamanho: ");
     list.size();
 
-    list.remove(9);
+    println!("Lista Encadeada Tamanho: ");
+
+    // list.remove(9);
 
     println!("Lista Encadeada: ");
     list.size();
