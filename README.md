@@ -4,13 +4,16 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
 ## Estrutura Repositório:
 
 - [Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms)
-    - [Search](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
-        - [BinarySearch](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/BinarySearch)
-    - [Sorting](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting)
-- [Asymptotic_Notation](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation)
-- [Data_Structures](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures)
+    - [Recursion](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
+    - [Search Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
+        - [Binary Search](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/BinarySearch)
+    - [Sorting Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting)
+        - [Merge Sort](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/BinarySearch)
+- [Asymptotic Notation](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation)
+- [Data Structures](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures)
     - [Arrays](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures)   
     - [Linked List](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List)   
+
 
 
 Baseado em: <a href="https://roadmap.sh/computer-science" target="_blank">Road Map</a>
