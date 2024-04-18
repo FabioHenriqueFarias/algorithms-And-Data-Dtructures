@@ -46,7 +46,7 @@ Além do tempo, a complexidade de espaço também é importante, pois alguns alg
 
 ## Alguns algoritmos de Busca 
 
-- [Busca Binária]()
+- [Busca Binária](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/BinarySearch)
 
 ## Referências
 
