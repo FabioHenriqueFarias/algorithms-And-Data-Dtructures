@@ -1,5 +1,6 @@
-
 use crate::node::Node;
+
+use std::io::{self, Write};
 
 pub struct LinkedList {
     pub head: Option<Box<Node>>,
@@ -43,38 +44,21 @@ impl LinkedList {
         }
     }
 
-
+    // Método para remover um nó da lista
     pub fn remove(&mut self, value: i32) {
-        let mut prev: Option<&mut Box<Node>> = None;
-        let mut curr = self.head.as_mut();
-
-        while let Some(ref mut node) = curr {
-            if node.data == value {
-                if prev.is_none() {
-                    // Removing head node
-                    self.head = node.next.take();
-                } else {
-                    // Removing non-head node
-                    prev.unwrap().next = node.next.take();
-                }
-
-                // Deallocate the removed node's memory (optional for efficiency)
-                unsafe {
-                    // Option 1: Using Box::dealloc (potentially unsafe)
-                    Box::dealloc(*node);
-
-                    // Option 2: Using mem::forget (safer, but requires understanding)
-                    // mem::forget(*node); // Consider using this for safety
-                }
-
-                return;
+        let mut curr = &mut self.head;
+        while let Some(mut boxed_node) = curr.take() {
+            if boxed_node.data == value {
+                *curr = boxed_node.next.take();
+            } else {
+                let next = boxed_node.next.take();
+                *curr = Some(boxed_node);
+                curr = &mut curr.as_mut().unwrap().next;
+                *curr = next;
             }
-            prev = Some(curr);
-            curr = curr.as_mut()?.next.as_mut();
         }
     }
-
-
+    
 
     // Método para retornar o tamanho da lista
     pub fn size(&self) -> i32 {
@@ -90,9 +74,13 @@ impl LinkedList {
     // Método para imprimir a lista
     pub fn print(&self) {
         let mut current = &self.head;
+        print!("Lista Encadeada: ");
+        io::stdout().flush().unwrap();
         while let Some(node) = current {
-            println!("{}", node.data);
+            print!("{}, ", node.data);
+            io::stdout().flush().unwrap();
             current = &node.next;
         }
+        println!();
     }
 }
