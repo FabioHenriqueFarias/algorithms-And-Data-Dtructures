@@ -44,18 +44,36 @@ impl LinkedList {
     }
 
 
-    // pub fn remove(&mut self, data: i32) {
-    //     let mut current = &mut self.head;
-    //     while let Some(node) = current {
-    //         if node.data == data {
-    //             let next = node.next.take();
-    //             *current = next;
-    //             break;
-    //         } else {
-    //             current = &mut node.next;
-    //         }
-    //     }
-    // }
+    pub fn remove(&mut self, value: i32) {
+        let mut prev: Option<&mut Box<Node>> = None;
+        let mut curr = self.head.as_mut();
+
+        while let Some(ref mut node) = curr {
+            if node.data == value {
+                if prev.is_none() {
+                    // Removing head node
+                    self.head = node.next.take();
+                } else {
+                    // Removing non-head node
+                    prev.unwrap().next = node.next.take();
+                }
+
+                // Deallocate the removed node's memory (optional for efficiency)
+                unsafe {
+                    // Option 1: Using Box::dealloc (potentially unsafe)
+                    Box::dealloc(*node);
+
+                    // Option 2: Using mem::forget (safer, but requires understanding)
+                    // mem::forget(*node); // Consider using this for safety
+                }
+
+                return;
+            }
+            prev = Some(curr);
+            curr = curr.as_mut()?.next.as_mut();
+        }
+    }
+
 
 
     // Método para retornar o tamanho da lista

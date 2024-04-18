@@ -18,7 +18,7 @@ fn main() {
 
     println!("Lista Encadeada Tamanho: ");
 
-    // list.remove(9);
+    list.remove(9);
 
     println!("Lista Encadeada: ");
     list.size();
