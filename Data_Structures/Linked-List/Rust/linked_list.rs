@@ -58,7 +58,6 @@ impl LinkedList {
             }
         }
     }
-    
 
     // Método para retornar o tamanho da lista
     pub fn size(&self) -> i32 {
