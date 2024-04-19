@@ -20,7 +20,7 @@ O Merge Sort é amplamente utilizado, muito devido sua baixa <a href="#complexid
 Primeiro, você usa a recursão para
 quebrar continuamente sua lista pela metade até que sua lista original se torne uma ou mais sublistas contendo apenas um número.
 
-![Merge Sort](assents/image01.png)
+![Merge Sort](../assents/image01.png)
 
 ### 1 - Divisão:
 - Iniciamos dividindo a lista original em duas sublistas de tamanho igual:<br>
