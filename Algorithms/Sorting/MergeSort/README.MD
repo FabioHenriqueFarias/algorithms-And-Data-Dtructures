@@ -66,13 +66,12 @@ classificadas:<br>
     ```
 
 
-
 ## Complexidade
 
 A <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation">Complexidade Assintótica</a> deste Algoritmo é de ``O(n * log n)`` no pior caso, tornando esse algoritmo uma ótima  opção para algoritmos de ordenação.
 
 Uma característica importante é que sua eficiência é ``(n∗log n)``
-tanto para o melhor caso, pior caso quanto para o caso médio. Isso significa que não apenas o Merge Sort possui uma complexidade de tempo mínima ``Ω(n∗log n)``,  mas também de melhor caso ``Θ(n∗log n)`` e tem uma cota superior ``O(n * log n)``. Essa propriedade nos oferece a garantia de que, independentemente da disposição dos dados no array, a ordenação será realizada de maneira eficiente.
+tanto para o melhor caso, pior caso quanto para o caso médio. Isso significa que não apenas o Merge Sort possui uma complexidade de tempo mínima ``Ω(n∗log n)``,  mas também de caso médio de ``Θ(n∗log n)`` e tem uma cota superior de ``O(n * log n)``. Essa propriedade vai nos oferecer a garantia de que, independentemente da disposição dos dados no array, a ordenação será realizada de maneira eficiente.
 
 ## Referências
 

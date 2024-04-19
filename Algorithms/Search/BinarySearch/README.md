@@ -2,10 +2,14 @@
 
 ## Sumário
 
-- [O que é]()
-- [Como Funciona?]()
-- [Complexidade]()
-- [Referência]()
+- [O que é](#o-que-é)
+- [Como Funciona?](#como-funciona)
+    - [1° Passo:](#1°-passo)
+    - [2° Passo:](#2°-passo)
+    - [3° Passo:](#3°-passo)
+    - [4° Passo:](#4°-passo)
+- [Complexidade](#complexidade)
+- [Referência](#referências)
 
 ## O que é?
 
@@ -77,6 +81,18 @@ Como `x == mid`, isso significa que encontramos o valor desejado. Portanto, reto
 
 ## Complexidade?
 
+A  <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation">Complexidade Assintótica</a>  deste algoritmo é de `O(log n)` no pior caso, tornando-o uma excelente opção para algoritmos de pesquisa. Até mesmo ordenar um conjunto de dados para utilizar a pesquisa binária pode ser uma escolha vantajosa.
+
+Uma característica crucial é sua eficiência constante, `O(1)`, no melhor caso, quando o elemento está exatamente no meio do conjunto. A Binary Search demonstra uma complexidade de tempo mínima, `Ω(O(1))`, indicando seu desempenho ótimo em cenários ideais. Além disso, no caso médio, sua complexidade é `Θ(O(log n))`, representando uma eficiência consistente em diversas situações.
+
+É importante observar que a Binary Search possui uma cota superior `O(n * log n)`, o que significa que mesmo em cenários menos ideais, seu desempenho ainda é muito bom em comparação com algoritmos de busca menos eficientes.
+
 ## Referências
 
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a> 
 
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> <br>
+
+Livro: <a href="https://www.grupogen.com.br/e-book-algoritmos-thomas-cormen-9788595159914">Algoritmos: Teoria e Prática</a> 
+
+Programiz: <a href="https://www.programiz.com/dsa/binary-search">Binary Search</a> 
