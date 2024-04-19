@@ -23,7 +23,9 @@ Esses passos são repetidos até que o valor desejado seja encontrado ou até qu
 
 Consideremos um array com os seguintes dados: `[3, 4, 5, 6, 7, 8, 9]`, onde os elementos estão previamente ordenados.
 
-![Matrix Inicial](../assents/01.png)
+<img src="../assents/01.png" alt="Matrix Inicial" style="display: block; margin-left: auto; margin-right: auto;">
+
+<br>
 
 O número que estamos procurando é número `4`.
 
@@ -31,13 +33,15 @@ O número que estamos procurando é número `4`.
 
 Inicialmente, são definidas duas variáveis: `low` para representar o limite inferior e `high` para representar o limite superior. Estas variáveis vão ajudar a delimitar a área de busca durante o processo de pesquisa binária.
 
-![Configurando os Ponteiros](../assents/02.png)
+<img src="../assents/02.png" alt="Configurando os Ponteiros" style="display: block; margin-left: auto; margin-right: auto;">
 
 ### 2° Passo:
 
 Agora, é necessário calcular o índice do elemento que está no meio do array, utilizando a fórmula `(low + high) / 2`. Neste caso, o elemento na posição 4, com o valor `6`, será o elemento do meio. Esse valor é armazenado na variável `mid`.
 
-![Elemento intermediário](../assents/03.png)
+<img src="../assents/03.png" alt="Elemento intermediário" style="display: block; margin-left: auto; margin-right: auto;">
+
+<br>
 
 Depois de calcular o índice do elemento do meio, podemos compará-lo com o valor que estamos procurando, representado por x.
 
@@ -63,7 +67,9 @@ Calculamos o índice do elemento que está no meio do array novamente, utilizand
 
 Neste caso, o elemento na posição 2, com o valor `4`, será o elemento do meio. Esse valor é armazenado na variável `mid`.
 
-![Encontrando o elemento intermediário](../assents/04.png)
+<img src="../assents/04.png" alt="Encontrando o elemento intermediário" style="display: block; margin-left: auto; margin-right: auto;">
+
+<br>
 
 Podemos então comparar novamente o elemento do meio com o valor que estamos procurando, representado por `x`.
 
