@@ -5,6 +5,7 @@
 - [Divisão](#divisão)
     - [main.rs](#mainrs)
     - [array.rs](#arrayrs)
+- [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
 
 ## Divisão 
 Estes arquivos constituem a implementação de um array em Rust, organizados em dois arquivos principais: `main.rs` e `array.rs`. O arquivo `main.rs` serve como ponto de entrada do programa, enquanto `array.rs` contém os métodos disponíveis para manipulação do array, juntamente com suas implementações.
@@ -31,3 +32,21 @@ As funções implementadas são as seguintes:
 - Aumentar o tamanho do array dobrando sua capacidade.
 - Limpar todos os elementos do array.
 - Imprimir os elementos presentes no array.
+
+## Rodando o programa com Rust:
+
+Você pode compilar e executar o código Rust usando `rustc`, o compilador da linguagem Rust. 
+
+Para compilar e executar o programa, você pode usar o seguinte comando:
+
+```
+rustc main.rs
+```
+
+Isso compilará o código e gerará um executável chamado `main`. Você pode então executá-lo com o seguinte comando:
+
+```
+./main
+```
+
+Isso executará o programa, que pode crir um Array.

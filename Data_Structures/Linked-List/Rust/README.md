@@ -5,6 +5,7 @@
     - [main.rs](#mainrs)
     - [linked_list.rs](#linked_listrs)
     - [node.rs](#noders)
+- [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
 
 
 ## Divisão
@@ -34,3 +35,21 @@ Essas funções permitem ao usuário criar, modificar e visualizar uma lista enc
 ### node.rs
 
 O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Linked-List/Rust/node.rs">`node.rs`</a> apresenta a implementação de um nó, destinado a ser utilizado em uma lista encadeada, juntamente com seu construtor. Este nó é uma estrutura fundamental na construção de uma lista encadeada em Rust. O construtor definido no arquivo permite a criação de instâncias de nó com facilidade, atribuindo um valor inicial e inicializando o próximo nó como nulo, indicando que inicialmente não há conexão com outro nó.
+
+## Rodando o programa com Rust:
+
+Você pode compilar e executar o código Rust usando `rustc`, o compilador da linguagem Rust. 
+
+Para compilar e executar o programa, você pode usar o seguinte comando:
+
+```
+rustc main.rs
+```
+
+Isso compilará o código e gerará um executável chamado `main`. Você pode então executá-lo com o seguinte comando:
+
+```
+./main
+```
+
+Isso executará o programa, que pode crir uma Linked List.

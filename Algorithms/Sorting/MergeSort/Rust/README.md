@@ -1,22 +1,34 @@
-# Merge Sort em C
+# Merge Sort em Rust
 
 ## Sumário
 
 - [Divisão](#divisão)
+    -[mergeSort.rs](mergeSort.rs)
+- [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
 
 ## Divisão 
 
-Estes arquivos constituem a implementação de um algoritmo de Merge Sort em C, organizada em um componente: `merge-sort.c`
+Aqui está a implementação do algoritmo Merge Sort em Rust:
+
+### mergeSort.rs
+
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Rust/merge_sort.rs">`merge_sort.rs`</a>  bem como a implementação do algoritmo de Merge Sort.
 
 
-### merge-sort.c
+## Rodando o programa com Rust:
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/C">`merge-sort.c`</a>  bem como a implementação do algoritmo de Merge Sort.
+Você pode compilar e executar o código Rust usando `rustc`, o compilador da linguagem Rust. 
 
+Para compilar e executar o programa, você pode usar o seguinte comando:
 
-## Rodando o programa com GCC:
-
-O comando para rodar o código pelo compilador GCC:
 ```
-gcc merge-sort.c -o programa
+rustc merge_sort.rs
 ```
+
+Isso compilará o código e gerará um executável chamado `merge_sort`. Você pode então executá-lo com o seguinte comando:
+
+```
+./merge_sort
+```
+
+Isso executará o programa, que ordenará um array usando o algoritmo de Merge Sort e imprimirá o resultado.
