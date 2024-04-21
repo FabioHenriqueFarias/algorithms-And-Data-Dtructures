@@ -12,7 +12,7 @@ void merge(int arr[],int left_, int right_, int middl);
 void printArray(int arr[], int size);
 
 int main(){
-    int arr[] = {84,9,4,52,62,55,12,98};
+    int arr[] = {4,5,9,10,85,74};
     int size = sizeof(arr)/sizeof(arr[0]);
 
     mergeSort(arr, 0, size-1);
