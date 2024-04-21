@@ -3,14 +3,14 @@
 ## Sumário
 
 - [Divisão](#divisão)
-    - [mergeSort.rs](mergeSort.rs)
+    - [merge_sort.rs](#merge_sortrs)
 - [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
 
 ## Divisão 
 
 Aqui está a implementação do algoritmo Merge Sort em Rust:
 
-### mergeSort.rs
+### merge_sort.rs
 
 O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Rust/merge_sort.rs">`merge_sort.rs`</a>  bem como a implementação do algoritmo de Merge Sort.
 
