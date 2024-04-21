@@ -3,7 +3,7 @@
 ## Sumário
 
 - [Divisão](#divisão)
-    -[mergeSort.rs](mergeSort.rs)
+    - [mergeSort.rs](mergeSort.rs)
 - [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
 
 ## Divisão 
