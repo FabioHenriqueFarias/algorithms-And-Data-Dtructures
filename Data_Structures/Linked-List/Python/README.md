@@ -6,7 +6,7 @@
     - [main.py](#mainpy)
     - [linkedList.py](#linkedlistpy)
     - [node.py](#nodepy)
-
+- [Rodando o programa com Python:](#rodando-o-programa-com-python)
 
 ## Divisão
 
@@ -37,3 +37,13 @@ Essas funções permitem ao usuário criar, modificar e visualizar uma lista enc
 ### node.py
 
 O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Linked-List/Python/node.py">`node.py`</a> apresenta a implementação de um nó, destinado a ser utilizado em uma lista encadeada, juntamente com seu construtor. Este nó é uma estrutura fundamental na construção de uma lista encadeada em Python. O construtor definido no arquivo permite a criação de instâncias de nó com facilidade, atribuindo um valor inicial e inicializando o próximo nó como nulo, indicando que inicialmente não há conexão com outro nó.
+
+## Rodando o programa com Python:
+
+Você pode executar o código Python usando `python3`, o interpretador da linguagem Python. 
+
+Para executar o programa, você pode usar o seguinte comando:
+
+```
+python3 main.py
+```

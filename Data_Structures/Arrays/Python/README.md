@@ -5,6 +5,7 @@
 - [Divisão](#divisão)
     - [main.py](#mainpy)
     - [_array.py](#_arraypy)
+- [Rodando o programa com Python:](#rodando-o-programa-com-python)
 
 
 ## Divisão:
@@ -38,3 +39,13 @@ As funções implementadas são as seguintes:
 - Imprimir os elementos presentes no array.
 
 
+
+## Rodando o programa com Python:
+
+Você pode executar o código Python usando `python3`, o interpretador da linguagem Python. 
+
+Para executar o programa, você pode usar o seguinte comando:
+
+```
+python3 main.py
+```
