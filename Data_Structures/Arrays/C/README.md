@@ -41,8 +41,16 @@ As funções implementadas são as seguintes:
 
 ## Rodando o programa com GCC: 
 
-O comando para rodar o código pelo compilador GCC:
+Para compilar o código usando o compilador GCC, você pode usar o seguinte comando:
 
 ```
 gcc main.c array.c -o programa
 ```
+
+Isso compilará o código e gerará um executável chamado `programa`. Você pode então executá-lo com o seguinte comando:
+
+```
+./programa
+```
+
+Isso executará o programa, que ordenará um array usando o algoritmo de Merge Sort e imprimirá o resultado.
