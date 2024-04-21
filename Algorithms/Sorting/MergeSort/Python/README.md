@@ -22,5 +22,5 @@ Você pode executar o código Python usando `python3`, o interpretador da lingua
 Para executar o programa, você pode usar o seguinte comando:
 
 ```
-python3 main.py
+python3 mergeSort.py
 ```

@@ -25,7 +25,7 @@ gcc mergeSort.c -o programa
 Isso compilará o código e gerará um executável chamado `programa`. Você pode então executá-lo com o seguinte comando:
 
 ```
-./programa
+./mergeSort
 ```
 
 Isso executará o programa, que ordenará um array usando o algoritmo de Merge Sort e imprimirá o resultado.

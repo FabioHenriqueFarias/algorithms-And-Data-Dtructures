@@ -1,33 +1,35 @@
-function mergeSort(array){
-    if(array.length <= 1) return array;
-    let mid = Math.floor(array.length / 2);
-    let left = mergeSort(array.slice(0, mid));
-    let right = mergeSort(array.slice(mid));
-    return merge(left, right);
-}
+def mergeSort(array):
+    if len(array) <= 1:
+        return array
+    
+    mid = len(array) // 2
+    left = mergeSort(array[:mid])
+    right = mergeSort(array[mid:])
+    
+    return merge(left, right)
 
-function merge(listLeft, listRight) {
-    let result = [];
-    let i = 0;
-    let j = 0;
-    while(i < listLeft.length && j < listRight.length){
-        if(listLeft[i] < listRight[j]){
-            result.push(listLeft[i]);
-            i++;
-        } else {
-            result.push(listRight[j]);
-            j++;
-        }
-    }
-    while(i < listLeft.length){
-        result.push(listLeft[i]);
-        i++;
-    }
-    while(j < listRight.length){
-        result.push(listRight[j]);
-        j++;
-    }
-    return result;
-}
 
-console.log(mergeSort([3, 5, 1, 6]))
+def merge(listLeft, listRight):
+    result = []
+    i = 0
+    j = 0
+    while i < len(listLeft) and j < len(listRight):
+        if listLeft[i] < listRight[j]:
+            result.append(listLeft[i])
+            i += 1
+        else:
+            result.append(listRight[j])
+            j += 1
+
+    while i < len(listLeft):
+        result.append(listLeft[i])
+        i += 1
+
+    while j < len(listRight):
+        result.append(listRight[j])
+        j += 1
+
+    return result
+
+
+print(mergeSort([3, 5, 1, 6]))

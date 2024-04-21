@@ -31,8 +31,7 @@ quebrar continuamente sua lista pela metade até que sua lista original se torne
 
 ### 2 - Conquista
 - Cada sublista é ordenada recursivamente usando o mesmo algoritmo Merge Sort.<br>
-- Depois de classificar as listas contendo um item cada, você mescla suas
-sublistas duas de cada vez, comparando o primeiro item de cada lista. Mesclar suas listas significa combiná-las em ordem de
+- Depois de classificar as listas contendo um item cada, você mescla suas sublistas duas de cada vez, comparando o primeiro item de cada lista. Mesclar suas listas significa combiná-las em ordem de
 classificação.
 
 - Primeiro, você mescla ``[6]`` e ``[3]``, depois mescla ``[9]`` e ``[2]``.<br> 

@@ -7,82 +7,94 @@
 #include <stdio.h>
 
 
-void  mergeSort(int arr[], int size);
-void merge(int left[],int sizeLeft, int right[], int sizeRight, int arr[]);
+void  mergeSort(int arr[], int left, int right);
+void merge(int arr[],int left_, int right_, int middl);
+void printArray(int arr[], int size);
 
 int main(){
     int arr[] = {84,9,4,52,62,55,12,98};
     int size = sizeof(arr)/sizeof(arr[0]);
 
-    mergeSort(arr, size);
+    mergeSort(arr, 0, size-1);
+
+    printArray(arr, size);
+    
+    return 0;
+}
+
+
+void printArray(int arr[], int size){
+    
+    printf("Sorted array: \n");
 
     for (int i = 0; i < size; i++)
     {
         printf("%d ", arr[i]);
     }
+    printf("\n");
+}
+
+void mergeSort(int arr[], int left, int right){
+
+    if (left < right)
+    {
+        int middle = left + (right - left) / 2;
+
+        mergeSort(arr, left, middle);
+        mergeSort(arr, middle+1, right);
+
+        merge(arr, left, right, middle);
+    }
     
-    return 0;
 }
 
-void mergeSort(int arr[], int size){
-    int middle = size/2;
+void merge(int arr[],int left, int right, int middle){
 
-    int arrayLeft[middle];
-    int arrayRight[size-middle];
+    int i, j, k;
+    int leftSize = middle - left + 1;
+    int rightSize = right - middle;
 
-    for (int i = 0; i < middle; i++)
+    int Left[leftSize], Right[rightSize];
+
+    for (i = 0; i < leftSize; i++)
     {
-        arrayLeft[i] = arr[i];
+        Left[i] = arr[left + i];
     }
 
-    for (int i = middle; i < size; i++)
+    for (j = 0; j < rightSize; j++)
     {
-        arrayRight[i] = arr[i];
+        Right[j] = arr[middle + 1 + j];
     }
 
-    merge(arrayLeft, middle, arrayRight, size-middle, arr);
-}
+    i = 0;
+    j = 0;
+    k = left;
 
-void merge(int left[],int sizeLeft, int right[], int sizeRight, int arr[]){
-
-    int result[sizeLeft+sizeRight];
-
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
-    while (i < sizeLeft && j < sizeRight)
+    while (i < leftSize && j < rightSize)
     {
-        if (left[i] < right[j])
+        if (Left[i] <= Right[j])
         {
-            result[k] = left[i];
+            arr[k] = Left[i];
             i++;
-        }else
-        {
-            result[k] = right[j];
+        }else{
+            arr[k] = Right[j];
             j++;
         }
         k++;
     }
 
-     while (i < sizeLeft)
+    while (i < leftSize)
     {
-        result[k] = left[i];
+        arr[k] = Left[i];
         i++;
         k++;
     }
 
-    while (j < sizeRight)
+    while (j < rightSize)
     {
-        result[k] = right[j];
+        arr[k] = Right[j];
         j++;
         k++;
     }
-
-   
-    for (int i = 0; i < sizeLeft + sizeRight; i++) {
-        arr[i] = result[i];
-    }
-
 }
 
