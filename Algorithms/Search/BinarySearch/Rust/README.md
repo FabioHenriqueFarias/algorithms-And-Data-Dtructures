@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Binary Search em Rust:
 
 ### binary_search.rs
 
-O arquivo <a href="">`binary_search.rs`</a>  possui a implementação do algoritmo de Merge Sort.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Search/BinarySearch/Rust/binary_search.rs">`binary_search.rs`</a>  possui a implementação do algoritmo de Merge Sort.
 
 
 ## Rodando o programa com Rust:
@@ -25,11 +25,11 @@ Para compilar e executar o programa, você pode usar o seguinte comando:
 rustc binary_search.rs
 ```
 
-Isso compilará o código e gerará um executável chamado `merge_sort`. Você pode então executá-lo com o seguinte comando:
+Isso compilará o código e gerará um executável chamado `binary_search`. Você pode então executá-lo com o seguinte comando:
 
 ```
 ./binary_search
 ```
 
-Isso executará o programa, que ordenará um array usando o algoritmo de Merge Sort e imprimirá o resultado.
+Isso executará o programa, que encontrara um elemento do array usando o algoritmo de Binary Search e imprimirá o índice.
 ```
