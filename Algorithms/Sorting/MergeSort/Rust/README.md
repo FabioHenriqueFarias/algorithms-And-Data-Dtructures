@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Merge Sort em Rust:
 
 ### merge_sort.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Rust/merge_sort.rs">`merge_sort.rs`</a>  bem como a implementação do algoritmo de Merge Sort.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Rust/merge_sort.rs">`merge_sort.rs`</a>  possui a implementação do algoritmo de Merge Sort.
 
 
 ## Rodando o programa com Rust:

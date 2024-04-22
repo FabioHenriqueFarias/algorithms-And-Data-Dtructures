@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Merge Sort em Python:
 
 ### mergeSort.py
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Python/mergeSort.py">`mergeSort.py`</a>  bem como a implementação do algoritmo de Merge Sort.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/MergeSort/Python/mergeSort.py">`mergeSort.py`</a>  possui a implementação do algoritmo de Merge Sort.
 
 
 ## Rodando o programa com Python:
