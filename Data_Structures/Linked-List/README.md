@@ -12,10 +12,6 @@
 - [Implementações](#implementações)
 - [Referências](#referências)
 
-
-**Os Exemplos serão exemplificados em Linguagem C.**
-> Neste repositorio possui como fazer uma Linked List em três linguagens C, Javascript e Rust.
-
 ## O que é uma Linked List?
 
 Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam nós para armazenar elementos que não estão armazenados em locais de memória contíguos.
@@ -146,7 +142,6 @@ Palistha: <a href="https://www.freecodecamp.org/news/how-linked-lists-work/" tar
 
 João Arthur Brunet: <a href="https://joaoarthurbm.github.io/eda/posts/linkedlist/" target="_blank" >Listas Ligadas (LinkedList)
 </a>
-
 
 Thomas Cormen - <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática | Capítulo 10.2
 </a>
