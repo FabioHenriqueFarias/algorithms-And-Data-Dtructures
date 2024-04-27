@@ -2,6 +2,12 @@
 
 ## Sumário
 
+- [O que é uma Stack?](#o-que-é-uma-stack)
+- [Usos de uma stack:](#usos-de-uma-stack)
+    - [Call Stack](#call-stack)
+    - [Compiladores](#compiladores)
+    - [Backtracking](#backtracking)
+
 ## O que é uma Stack?
 Uma pilha é uma estrutura de *dados linear* e *abstrada* que segue o princípio `Last-In-First-Out` **(LIFO)** . 
 > LIFO (Last-In-First-Out), ou Último a Entrar, Primeiro a Sair, é um princípio em estruturas de dados onde o último elemento adicionado é o primeiro a ser removido.
@@ -24,17 +30,7 @@ No entanto, existem várias maneiras diferentes de criar uma estrutura de dados 
 
 ## Usos de uma stack:
 
-As pilhas são uma das estruturas de dados mais utilizadas na computação. Os cientistas da computação usam pilhas para implementar algoritmos de busca em largura para procurar dados em árvores e gráficos. 
-
-Os sistemas de tempo de execução para linguagens como Python e Java usam uma pilha internamente para lidar com chamadas de função. 
-
-Os compiladores usam pilhas para analisar expressões, especialmente quando você tem expressões que usam pares de parênteses aninhados, como em expressões aritméticas padrão, ou pares de colchetes ou colchetes aninhados. 
-
-Os cientistas da computação também usam pilhas nos algoritmos de retrocesso encontrados em machine learning e em outras áreas de intelligence artificielle. 
-
-Como adicionar e remover elementos de uma pilha são `O(1)`, eles são uma excelente escolha sempre que você adiciona e remove elementos de dados com frequência. Por exemplo, programas que precisam de um mecanismo de “desfazer” geralmente usam uma ou duas pilhas para lidar com “desfazer” e “refazer”. 
-
-Os navegadores da Web, por exemplo, costumam usar duas pilhas para retroceder e avançar no histórico de navegação. Como o acesso a cada elemento em uma pilha é O(n), eles não são a melhor escolha para algoritmos que precisam acessar continuamente todos os dados em uma coleta de dados.
+As pilhas são uma das estruturas de dados mais utilizadas na computação. 
 
 ### Call Stack
 
@@ -52,11 +48,39 @@ No entanto, é importante observar que a pilha de chamadas possui uma capacidade
 
 ![call stack](assents/02.png)
 
+### Compiladores
+
+Os compiladores usam pilhas para analisar expressões, especialmente quando você tem expressões que usam pares de parênteses aninhados, como em expressões aritméticas padrão, ou pares de colchetes ou colchetes aninhados. 
+
+Quando um compilador analisa uma expressão matemática ou qualquer outra expressão que envolva delimitadores aninhados, como `( )`, `[ ]` ou `{ }`, ele precisa garantir que esses delimitadores estejam corretamente balanceados. Isso significa que cada delimitador de abertura tenha um delimitador correspondente de fechamento e que eles estejam aninhados corretamente.
+
+Para fazer essa verificação, os compiladores geralmente usam uma pilha. Durante o processo de análise, quando um delimitador de abertura é encontrado, ele é empilhado na pilha. Conforme o compilador encontra os delimitadores de fechamento, ele os compara com os delimitadores no topo da pilha. Se os delimitadores correspondentes forem encontrados, eles são desempilhados. Se não, o compilador sabe que ocorreu um erro de sintaxe devido a delimitadores mal balanceados.
+
+### Backtracking
+
+Na área de machine learning e em outras áreas de inteligência artificial, os cientistas da computação frequentemente se deparam com problemas que requerem a implementação de algoritmos de retrocesso, também conhecidos como algoritmos de backtracking. 
+
+Os algoritmos de retrocesso são uma técnica poderosa para explorar todas as possíveis soluções para um determinado problema, testando sistematicamente diferentes opções até encontrar uma solução viável.
+
+A estratégia de retrocesso envolve tentar uma série de opções, fazendo uma escolha em cada passo e, em seguida, retrocedendo (backtracking) quando uma solução não é encontrada ou quando se atinge um beco sem saída. Isso significa que, ao encontrar uma solução inválida ou uma condição que impeça a solução, o algoritmo retrocede para o estado anterior e tenta uma alternativa diferente.
+
+Durante a execução de um algoritmo de retrocesso, as decisões tomadas em cada etapa são armazenadas em uma pilha. Por exemplo, se estivermos explorando um espaço de soluções, as escolhas feitas em cada nível da árvore de busca são empilhadas. Se uma determinada escolha levar a um beco sem saída, podemos desempilhar as escolhas anteriores e tentar uma alternativa diferente.
+
+Como adicionar e remover elementos de uma pilha são `O(1)`, eles são uma excelente escolha sempre que você adiciona e remove elementos de dados com frequência. 
 
 ## Operações comuns em Stack
 
+Para manipular uma pilha, diversas operações são oferecidas para a estrutura de dados Stack, que incluem:
+
+
+
 ### Inserção
+
+A operação ``push`` insere um elemento no topo da pilha.
+
 #### Complexidades de Inserção
+
+Para 
 
 ### Remoção
 #### Complexidades de Remoção
