@@ -80,7 +80,7 @@ A operação ``push`` insere um elemento no topo da pilha.
 
 #### Complexidades de Inserção
 
-Para 
+Para realizar a operação de inserção em uma **Stack** tem um pior caso de ```O(1)```.
 
 ### Remoção
 #### Complexidades de Remoção
