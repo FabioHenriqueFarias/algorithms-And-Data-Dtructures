@@ -14,22 +14,22 @@
 
 ## O que é uma Linked List?
 
-Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam nós para armazenar elementos que não estão armazenados em locais de memória contíguos.
+Uma lista encadeada é uma estrutura de dados linear usada para armazenar uma coleção de elementos. Ao contrário dos arrays, as listas encadeadas usam `nós` para armazenar elementos que não estão armazenados em locais de memória contíguos.
 
-Uma lista encadeada é uma estrutura de dados que consiste em uma sequência de elementos, chamados de nós. Cada nó contém dados e um ponteiro (ou referência) para o próximo nó na lista. Essa característica de "vinculação" entre os nós é fundamental para a estrutura, permitindo que os elementos sejam organizados de forma dinâmica na memória.
+Uma lista encadeada é uma estrutura de dados que consiste em uma sequência de elementos, chamados de `nós`. Cada nó contém dados e um ponteiro (ou referência) para o próximo nó na lista. Essa característica de "vinculação" entre os `nós` é fundamental para a estrutura, permitindo que os elementos sejam organizados de forma dinâmica na memória.
 
-Ao contrário de estruturas de dados estáticas, como arrays, onde os elementos são armazenados em posições contíguas de memória, os nós de uma lista encadeada podem estar dispersos em diferentes locais da memória. Isso confere flexibilidade à lista, pois novos elementos podem ser adicionados ou removidos de forma eficiente, sem a necessidade de realocação contígua de memória.
+Ao contrário de estruturas de dados estáticas, como arrays, onde os elementos são armazenados em posições contíguas de memória, os `nós` de uma lista encadeada podem estar dispersos em diferentes locais da memória. Isso confere flexibilidade à lista, pois novos elementos podem ser adicionados ou removidos de forma eficiente, sem a necessidade de realocação contígua de memória.
 
-Essa flexibilidade torna as listas encadeadas uma escolha popular em muitas aplicações, especialmente quando o tamanho da lista é desconhecido antecipadamente ou sujeito a alterações frequentes. No entanto, é importante notar que o acesso aos elementos em uma lista encadeada pode ser menos eficiente do que em estruturas de dados estáticas, já que o acesso sequencial pode exigir a travessia de todos os nós anteriores até chegar ao desejado.
+Essa flexibilidade torna as listas encadeadas uma escolha popular em muitas aplicações, especialmente quando o tamanho da lista é desconhecido antecipadamente ou sujeito a alterações frequentes. No entanto, é importante notar que o acesso aos elementos em uma lista encadeada pode ser menos eficiente do que em estruturas de dados estáticas, já que o acesso sequencial pode exigir a travessia de todos os `nós` anteriores até chegar ao desejado.
 
 ![Ilustração de uma linked list com três nós
 ](assents/linkedlist_01-1.png)
 
-Aqui você pode ver que os endereços dos nós não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801, em vez de 201 como seria de esperar.
+Aqui você pode ver que os endereços dos `nós` não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801, em vez de 201 como seria de esperar.
 
-Então, como os nós são armazenados linearmente?
+Então, como os `nós` são armazenados linearmente?
 
-Mesmo que os nós não estejam em uma memória contígua, os nós são armazenados linearmente através de links. Cada nó possui o endereço do nó seguinte. É assim que cada nó pode acessar o nó seguinte.
+Mesmo que os `nós` não estejam em uma memória contígua, os `nós` são armazenados linearmente através de links. Cada nó possui o endereço do nó seguinte. É assim que cada nó pode acessar o nó seguinte.
 
 ## O que é um Nó?
 
@@ -41,7 +41,7 @@ Cada Nó possui pelo menos dois componentes:
 
 - Dados: Essa é a informação que o Nó armazena. Pode ser um número, um texto, um objeto, ou qualquer tipo de dado que a Lista precisa armazenar.
 
-- Referência (pointer): Esta referência aponta para o próximo Nó na lista. É o que dá o sentido de "ligação" à Lista Ligada, pois une os Nós sequencialmente.
+- Referência (pointer): Esta referência aponta para o próximo Nó na lista. É o que dá o sentido de "ligação" à Lista Ligada, pois une os `Nós` sequencialmente.
 
 Cada Nó é ligado formando uma lista encadeada. Veja como pode ser criado um Nó:
 
@@ -54,7 +54,7 @@ struct Node {
 ```
 A struct Node representa um nó em uma lista encadeada, com duas variáveis: data (mantém os dados armazenados no nó) e next (mantém uma referência ao próximo nó na lista).
 
-Agora você pode criar nós e adicionas dados a eles:
+Agora você pode criar `nós` e adicionas dados a eles:
 
 ```
 int main() {
@@ -82,17 +82,17 @@ int main() {
 }
 ```
 
-Crianmos 3 nós.
+Crianmos 3 `nós`.
 
 ![Mostrando os três nós que criamos com o código acima](assents/linkedlist_03.png)
 
 ## Vincular os nós em uma lista encadeada
 
-Após criar e adicionar os dados nos nós, é necessário estabelecer as ligações entre eles para formar a lista encadeada.
+Após criar e adicionar os dados nos `nós`, é necessário estabelecer as ligações entre eles para formar a lista encadeada.
 
-Para conectar os nós em uma lista encadeada, o processo envolve atribuir o endereço de memória do próximo nó ao ponteiro next do nó atual. Isso cria uma cadeia de referências que conecta cada nó ao seu sucessor na lista.
+Para conectar os `nós` em uma lista encadeada, o processo envolve atribuir o endereço de memória do próximo nó ao ponteiro next do nó atual. Isso cria uma cadeia de referências que conecta cada nó ao seu sucessor na lista.
 
-Por exemplo, suponha que temos três nós, newNode1, newNode2, e newNode3, com dados distintos armazenados neles. Para vincular esses nós, podemos usar a seguinte abordagem:
+Por exemplo, suponha que temos três `nós`, newNode1, newNode2, e newNode3, com dados distintos armazenados neles. Para vincular esses `nós`, podemos usar a seguinte abordagem:
 
 ```
 newNode1->next = newNode2;
@@ -109,14 +109,14 @@ Nesse caso, newNode1 aponta para newNode2 como seu próximo nó, e newNode2 apon
 Algumas Operações comuns em listas encadeadas.
 
 ### Inserção de um Novo Nó
-Para inserir um novo nó em uma lista encadeada, geralmente é necessário atualizar os ponteiros dos nós vizinhos para que o novo nó seja corretamente inserido na sequência. Existem diferentes abordagens para inserção, como no início, no final ou em uma posição específica da lista.
+Para inserir um novo nó em uma lista encadeada, geralmente é necessário atualizar os ponteiros dos `nós` vizinhos para que o novo nó seja corretamente inserido na sequência. Existem diferentes abordagens para inserção, como no início, no final ou em uma posição específica da lista.
 
-Operações de adicionar nós tem uma complexidade **O(1)** pois exigem apenas uma modificação do ponteiro do nó anterior para indicar o próximo nó.
+Operações de adicionar `nós` tem uma complexidade **O(1)** pois exigem apenas uma modificação do ponteiro do nó anterior para indicar o próximo nó.
 
 ### Remoção de um Nó Existente
-Para remover um nó de uma lista encadeada, é necessário ajustar os ponteiros dos nós vizinhos para "pular" o nó a ser removido. Após isso, o nó removido pode ser liberado da memória para evitar vazamentos de memória.
+Para remover um nó de uma lista encadeada, é necessário ajustar os ponteiros dos `nós` vizinhos para "pular" o nó a ser removido. Após isso, o nó removido pode ser liberado da memória para evitar vazamentos de memória.
 
-Operações de remoção de nós também possui uma complexidade de **O(1)** pois é necessário mudar apenas o endereço para o qual o elemento anterior está apontando. 
+Operações de remoção de `nós` também possui uma complexidade de **O(1)** pois é necessário mudar apenas o endereço para o qual o elemento anterior está apontando. 
 
 ### Leitura da Lista
 Na leitura da lista, o objetivo é acessar um elemento específico na lista.
@@ -134,7 +134,7 @@ Embora essa abordagem garanta que o elemento será encontrado, em alguns casos p
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação de uma estrutura de dados Linked List em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Rust">Rust</a>
+Neste repositório, você encontrará a implementação da estrutura de dados Linked List em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Rust">Rust</a>
 
 ## Referências
 
@@ -143,5 +143,7 @@ Palistha: <a href="https://www.freecodecamp.org/news/how-linked-lists-work/" tar
 João Arthur Brunet: <a href="https://joaoarthurbm.github.io/eda/posts/linkedlist/" target="_blank" >Listas Ligadas (LinkedList)
 </a>
 
-Thomas Cormen - <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática | Capítulo 10.2
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática | Capítulo 10.2
 </a>
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>

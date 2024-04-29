@@ -12,9 +12,9 @@
 Uma pilha é uma estrutura de *dados linear* e *abstrada* que segue o princípio `Last-In-First-Out` **(LIFO)** . 
 > LIFO (Last-In-First-Out), ou Último a Entrar, Primeiro a Sair, é um princípio em estruturas de dados onde o último elemento adicionado é o primeiro a ser removido.
 
-É como uma pilha de pratos: você adiciona um novo prato no topo da pilha e, quando precisa remover um prato, você retira o que está no topo, ou seja, o último que foi adicionado.
+É como uma pilha de pratos: você adiciona um novo prato no topo da pilha e, quando precisa remover um prato, você retira o que está no topo, ou seja, o último adicionado.
 
-As pilhas têm duas operações principais: `push` e `pop`. `Pushing` um item em uma pilha significa colocar um novo item nela. `Popping` um item de uma pilha significa remover o último item dela. As pilhas também podem ter operações adicionais, como `peek`, que significa olhar para o elemento superior de uma pilha sem removê-lo.
+As pilhas têm duas operações principais: `push` e `pop`. `Pushing` um item em uma pilha significa colocar um novo item nela. `Popping` um item de uma pilha significa remover o último item dela. As pilhas também podem ter operações adicionais, como `peek`, que significa olhar para o elemento superior de uma pilha sem o remover.
 
 
 Para implementar uma estrutura de dados como essa, é necessário manter um ponteiro para o topo da pilha. Este ponteiro indica onde está o último elemento que foi inserido, permitindo acessar e manipular apenas o elemento mais recente adicionado à pilha.
@@ -24,7 +24,7 @@ Para implementar uma estrutura de dados como essa, é necessário manter um pont
 
 As pilhas podem ser limitadas ou ilimitadas. Uma pilha limitada é uma pilha que limita quantos itens você pode adicionar a ela, enquanto uma pilha ilimitada é uma pilha que não limita quantos elementos você pode adicionar a ela. 
 
-Se você ainda está confuso sobre a diferença entre um tipo de dados abstrato e uma estrutura de dados, uma pilha pode ajudá-lo a entender a diferença. O tipo de dados abstrato pilha descreve a ideia de uma estrutura de dados que permite acessar apenas o item mais recente colocado nela. 
+Se você continua confuso sobre a diferença entre um tipo de dados abstrato e uma estrutura de dados, uma pilha pode ajudá-lo a entender a diferença. O tipo de dados abstrato pilha descreve a ideia de uma estrutura de dados que permite acessar apenas o item mais recente colocado nela. 
 
 No entanto, existem várias maneiras diferentes de criar uma estrutura de dados como esta. Por exemplo, você pode criar uma pilha definindo uma classe que usa internamente uma lista vinculada ou um array para rastrear os itens da pilha. Ao escrever o código para uma pilha usando um array ou uma lista vinculada, **você passou da ideia abstrata de uma pilha para uma estrutura de dados: a implementação real de um tipo de dados abstrato.**
 
@@ -70,26 +70,64 @@ Como adicionar e remover elementos de uma pilha são `O(1)`, eles são uma excel
 
 ## Operações comuns em Stack
 
-Para manipular uma pilha, diversas operações são oferecidas para a estrutura de dados Stack, que incluem:
-
+Para manipular uma pilha, diversas operações são oferecidas para a estrutura de dados **Stack**, que incluem:
 
 
 ### Inserção
 
-A operação ``push`` insere um elemento no topo da pilha.
+Quando utilizamos a operação ``push``, um novo elemento é adicionado no topo da pilha, tornando-se o elemento mais recente da estrutura. 
 
 #### Complexidades de Inserção
 
-Para realizar a operação de inserção em uma **Stack** tem um pior caso de ```O(1)```.
+A operação de inserção em uma pilha, realizada através da operação ``push``, possui uma complexidade de tempo constante no pior caso, expressa como ``O(1)``. Isso significa que a quantidade de operações necessárias para inserir um elemento na pilha não depende do número total de elementos já presentes na pilha. Independentemente do tamanho da pilha, a inserção de um novo elemento ocorre em tempo constante.
 
 ### Remoção
+
+Quando utilizamos a operação `pop`, o elemento que está no topo da pilha é removido, resultando na retirada do elemento mais recentemente adicionado à estrutura. 
+
 #### Complexidades de Remoção
+
+A operação de remoção de uma pilha, é realixada por meio da operação ``pop`` possui uma complexidade de tempo constante no pior caso, expressa como ``O(1)``. Isso significa que a quantidade de operações necessárias para remover um elemento na pilha não depende do número total de elementos já presentes na pilha. Independentemente do tamanho da pilha, a remoção de um  elemento ocorre em tempo constante.
+
+### Leitura
+
+Quando realizamos a operação de leitura em uma pilha, estamos obtendo o último elemento inserido na pilha, ou seja, o elemento que está no topo da pilha. Essa operação de leitura, também conhecida como ```espiar```, ```peek``` ou ```top```, permite acessar o elemento mais recente sem removê-lo da pilha.
+
+#### Complexidades de Leitura
+
+A operação de leitura em uma pilha é geralmente realizada por meio das operações `peek` ou `top`. Essa operação tem uma complexidade de tempo constante no pior caso, expressa como ``O(1)``. Isso significa que levará um tempo constante para retornar o elemento no topo da pilha de uma **Stack**.
+
+### Complexidades
+
+O tempo de realização das operações de inserção, remoção e leitura em uma Stack é uma das razões pelas quais elas são amplamente utilizadas em diferentes contextos na computação.
+
+| Operação | Complexidade |
+|---|---|
+| Inserção (push) | O(1) |
+| Remoção (pop) | O(1) |
+| Leitura (peek ou top) | O(1) |
+
+Essas complexidades de tempo constante (O(1)) indicam que o tempo necessário para realizar cada uma dessas operações não depende do tamanho total da pilha. Independentemente do número de elementos presentes na pilha, a inserção, remoção e leitura podem ser executadas em tempo constante, tornando as pilhas uma escolha eficiente e eficaz para muitas aplicações computacionais.
 
 ## Implementações
 
+Neste repositório, você encontrará a implementação da estrutura de dados Stack em três diferentes tecnologias: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>
+
 ## Referências
 
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática - Thomas Cormen 
+</a>
+
+Geeks for Geeks: <a href="https://www.geeksforgeeks.org/basic-operations-in-stack-data-structure-with-implementations/" target="_blank">Basic Operations in Stack Data Structure with Implementations
+</a>
 
 
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
 
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
 
+Geeks for Geeks: <a href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank">Stack Data Structure
+</a>
+
+Programiz: <a  href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank">Stack Data Structure
+</a>
