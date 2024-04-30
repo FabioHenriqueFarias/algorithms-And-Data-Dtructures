@@ -111,7 +111,7 @@ Essas complexidades de tempo constante (O(1)) indicam que o tempo necessário pa
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação da estrutura de dados Stack em três diferentes tecnologias: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>
+Neste repositório, você encontrará a implementação da estrutura de dados Stack em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/Rust">Rust</a>
 
 ## Referências
 

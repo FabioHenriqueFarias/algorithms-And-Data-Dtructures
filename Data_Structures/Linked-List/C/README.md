@@ -50,4 +50,4 @@ Isso compilará o código e gerará um executável chamado `programa`. Você pod
 ./programa
 ```
 
-Isso executará o programa, que ordenará um array usando o algoritmo de Merge Sort e imprimirá o resultado.
+Isso executará o código que implementa uma **Linked List** em **C**
