@@ -40,7 +40,15 @@ int desempilha(Pilha *p) {
         printf("Erro: A pilha está vazia.\n");
         exit(1);
     }
+
     p->qtd--;
+    if(p->qtd == 0) {
+        p->topo = -1;
+        int elemento = p->arr[0];
+        p->arr[0] = -1;
+        return elemento;
+    }
+
     p->arr = (int*)realloc(p->arr, (p->qtd) * sizeof(int));
     if (p->arr == NULL) {
         printf("Erro: Não foi possível realocar memória para a pilha.\n");

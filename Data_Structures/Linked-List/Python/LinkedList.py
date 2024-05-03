@@ -8,37 +8,32 @@ class LinkedList:
         self.head = None
 
     # Método para adicionar um novo nó no final da lista
-    def append(self, data):
-        newNode = Node(data) # Cria um novo nó com os dados fornecidos
+    def adicionarFim(self, data):
+        newNode = Node(data) 
 
-        # Se a lista estiver vazia, o novo nó será o primeiro (head)
         if not self.head:
             self.head = newNode
             return
 
         current = self.head
-        # Percorre a lista até encontrar o último nó
+
         while current.next:
             current = current.next
-        # Adiciona o novo nó como o próximo do último nó
         current.next = newNode
 
     # Método para adicionar um novo nó no início da lista
-    def prepend(self, data):
-        newNode = Node(data) # Cria um novo nó com os dados fornecidos
-
-        # O próximo do novo nó será o atual head
+    def adicionarInicio(self, data):
+        newNode = Node(data) 
         newNode.next = self.head
-        # O novo nó será o novo head
         self.head = newNode
 
     # Método para adicionar um novo nó em uma posição específica
-    def insert(self, data, posicao):
+    def inserir(self, data, posicao):
         if posicao == 0:
-            self.prepend(data)
+            self.adicionarInicio(data)
             return
-        if posicao >= self.size():
-            self.append(data)
+        if posicao >= self.tamanho():
+            self.adicionarFim(data)
             return
 
         newNode = Node(data) # Cria um novo nó com os dados fornecidos
@@ -49,7 +44,7 @@ class LinkedList:
         current.next = newNode
 
     # Método para remover um nó da lista
-    def remove(self, data):
+    def remover(self, data):
         if self.head.data == data:
             self.head = self.head.next
             return
@@ -62,7 +57,7 @@ class LinkedList:
             current = current.next
 
     # Método para retornar o tamanho da lista
-    def size(self):
+    def tamanho(self):
         count = 0
         current = self.head
         while current:
@@ -71,9 +66,10 @@ class LinkedList:
         return count    
     
     # Método para imprimir os elementos da lista
-    def print(self):
+    def Exibir(self):
         current = self.head
         while current:
             print(current.data)
             current = current.next
+        print()
 
