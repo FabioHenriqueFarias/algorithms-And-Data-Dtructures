@@ -8,11 +8,14 @@ fn main() {
     stack.empilha(2);
     stack.empilha(3);
 
-    println!("Top Element: {}", stack.topo_elemento());
+    println!("Elemento no Topo: {}", stack.topo_elemento().unwrap_or(-1));
 
-    stack.pop();
+    stack.desempilha();
 
-    println!("Top Element: {}", stack.topo_elemento());
 
-    println!("Stack Size: {}", stack.tamanho());
+    println!("Pilha está Vazia: {} ", stack.esta_vazia());
+    
+    println!("Elemento no Topo: {}", stack.topo_elemento().unwrap_or(-1));
+
+    println!("Tamanho da Pilha: {}", stack.tamanho());
 }

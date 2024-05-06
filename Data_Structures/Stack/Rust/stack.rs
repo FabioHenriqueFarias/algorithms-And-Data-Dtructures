@@ -1,10 +1,7 @@
-use std::io::{self, Write};
-
-
 pub struct Stack {
     pub items: Vec<i32>,
-    topo: i32,
-    qtd: i32,
+    topo: Option<i32>,
+    qtd: usize,
 }
 
 impl Stack{
@@ -13,7 +10,7 @@ impl Stack{
     pub fn new() -> Self {
         Stack {
             items: Vec::new(),
-            topo: -1,
+            topo: None,
             qtd: 0, 
         }
     }
@@ -21,31 +18,31 @@ impl Stack{
     // Método para adicionar um novo elemento no topo da pilha
     pub fn empilha(&mut self, data: i32) {
         self.items.push(data);
-        self.topo = data;
+        self.topo = Some(data);
         self.qtd += 1;
     }
 
     // Método para remover o elemento do topo da pilha
-    pub fn desempilha(&mut self) -> i32{
-        if !self.qtd > 0 {
-            return -1;
-        } 
+    pub fn desempilha(&mut self) -> Option<i32>{
+        if self.qtd == 0 {
+            return None; 
+        }
 
         let elemento_removido = self.items.pop();
-        self.topo = self.items[self.qtd - 1];
+        self.topo = self.items.last().cloned();  
         self.qtd -= 1;
 
-        return elemento_removido;
+        elemento_removido 
     }
 
     // Método para retornar o elemento do topo da pilha
-    pub fn topo_elemento(&self) -> i32 {
+    pub fn topo_elemento(&self) -> Option<i32> {
         return self.topo;
     }
 
     // Método para retornar o tamanho da pilha
     pub fn tamanho(&self) -> i32 {
-        return self.qtd;
+        return self.qtd as i32;
     }
 
     // Método para verificar se a pilha está vazia
