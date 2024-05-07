@@ -7,6 +7,16 @@
     - [Call Stack](#call-stack)
     - [Compiladores](#compiladores)
     - [Backtracking](#backtracking)
+- [Operações comuns em Stack](#operações-comuns-em-stack)
+    - [Inserção](#inserção)
+        - [Complexidades de Inserção](#complexidades-de-inserção)
+    - [Remoção](#remoção)
+        - [Complexidades de Remoção](#complexidades-de-remoção)
+    - [Leitura](#leitura)
+        - [Complexidades de Leitura](#complexidades-de-leitura)
+    - [Complexidades](#complexidades)
+- [Implementações](#implementações)
+- [Referências](#referências)
 
 ## O que é uma Stack?
 Uma pilha é uma estrutura de *dados linear* e *abstrada* que segue o princípio `Last-In-First-Out` **(LIFO)** . 
