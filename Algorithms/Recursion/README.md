@@ -3,6 +3,8 @@
 ## Sumário
 
 - [O que é Recursão?](#o-que-é-recursão)
+    - [Definição](#definição)
+    - [O que são funções?](#o-que-são-funções)
 - [Referências](#referências)
 
 ## O que é Recursão?
@@ -37,6 +39,9 @@ O resultado benéfico é um programa mais curto e mais legível. O programa tamb
 3. As funções retornam um valor de retorno . Esta é a saída da função, embora algumas linguagens de programação permitam que as funções não retornem nada ou retornem valores nulos como `undefinedou` ou `None`.
 
 4. O programa lembra qual linha de código chamou a função e retorna a ela quando a função termina sua execução.
+
+Diferentes linguagens de programação podem ter recursos adicionais ou diferentes opções de como chamar funções, mas todas possuem esses quatro elementos gerais. Você pode ver visualmente os três primeiros desses elementos porque os escreve no código-fonte, **mas como um programa controla para onde a execução deve retornar quando a função retornar?**
+
 
 
 
