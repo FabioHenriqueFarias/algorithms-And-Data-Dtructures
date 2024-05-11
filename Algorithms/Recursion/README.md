@@ -42,7 +42,34 @@ O resultado benéfico é um programa mais curto e mais legível. O programa tamb
 
 Diferentes linguagens de programação podem ter recursos adicionais ou diferentes opções de como chamar funções, mas todas possuem esses quatro elementos gerais. Você pode ver visualmente os três primeiros desses elementos porque os escreve no código-fonte, **mas como um programa controla para onde a execução deve retornar quando a função retornar?**
 
+Para ter uma ideia melhor do problema, crie um programa functionCalls.py que tenha três funções: `a()`, que chama `b()`, que chama `c()`:
 
+```
+def a():
+    print('a() was called.')
+    b()
+    print('a() is returning.')
+
+def b():
+    print('b() was called.')
+    c()
+    print('b() is returning.')
+
+def c():
+    print('c() was called.')
+    print('c() is returning.')
+
+a()
+```
+
+Quando você executa este código, a saída fica assim:
+
+    a() was called.
+    b() was called.
+    c() was called.
+    c() is returning.
+    b() is returning.
+    a() is returning.
 
 
 ## Referências
