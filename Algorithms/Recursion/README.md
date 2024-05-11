@@ -36,7 +36,7 @@ O resultado benéfico é um programa mais curto e mais legível. O programa tamb
 
 2. Argumentos (ou seja, valores) são passados ​​para a função quando ela é chamada. Esta é a entrada da função e as funções podem ter zero ou mais argumentos.
 
-3. As funções retornam um valor de retorno . Esta é a saída da função, embora algumas linguagens de programação permitam que as funções não retornem nada ou retornem valores nulos como `undefinedou` ou `None`.
+3. As funções retornam um valor de retorno . Esta é a saída da função, embora algumas linguagens de programação permitam que as funções não retornem nada ou retornem valores nulos como `undefined` ou `None`.
 
 4. O programa lembra qual linha de código chamou a função e retorna a ela quando a função termina sua execução.
 
