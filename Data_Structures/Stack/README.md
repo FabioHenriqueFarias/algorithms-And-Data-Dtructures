@@ -68,9 +68,9 @@ Para fazer essa verificação, os compiladores geralmente usam uma pilha. Durant
 
 ### Backtracking
 
-Na área de machine learning e em outras áreas de inteligência artificial, os cientistas da computação frequentemente se deparam com problemas que requerem a implementação de algoritmos de retrocesso, também conhecidos como algoritmos de backtracking. 
+Na área de **Machine Learning** e em outras áreas de inteligência artificial, os cientistas da computação frequentemente se deparam com problemas que requerem a implementação de algoritmos de retrocesso, também conhecidos como algoritmos de backtracking. 
 
-Os algoritmos de retrocesso são uma técnica poderosa para explorar todas as possíveis soluções para um determinado problema, testando sistematicamente diferentes opções até encontrar uma solução viável.
+Os algoritmos de retrocesso é uma técnica para explorar todas as possíveis soluções para um determinado problema, testando sistematicamente diferentes opções até encontrar uma solução viável.
 
 A estratégia de retrocesso envolve tentar uma série de opções, fazendo uma escolha em cada passo e, em seguida, retrocedendo (backtracking) quando uma solução não é encontrada ou quando se atinge um beco sem saída. Isso significa que, ao encontrar uma solução inválida ou uma condição que impeça a solução, o algoritmo retrocede para o estado anterior e tenta uma alternativa diferente.
 
