@@ -101,4 +101,35 @@ Mas como o programa lembra se foi `a()` ou `b()` que chamou `c()`?
 
 Este detalhe é tratado implicitamente pelo programa com uma **pilha de chamadas**. Para entender como as pilhas de chamadas lembram onde a execução retorna no final de uma chamada de função, precisamos primeiro entender o que é uma <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack"> Pilha</a>.
 
+## O que são pilhas?
+
+Para realmente entender a recursão, é fundamental compreender as pilhas.
+
+Uma pilha é uma das **estruturas de dados** mais simples da ciência da computação. Ela armazena valores de forma semelhante a uma lista, mas com uma restrição: você só pode adicionar ou remover valores do topo da pilha.
+
+Em implementações de pilhas usando listas ou arrays, o "topo" é o último item, localizado na extremidade direita da lista ou array. Adicionar valores é conhecido como *"empilhar"* ou *"empurrar"* valores para a pilha, enquanto remover valores é chamado de *"desempilhar"* ou *"pop"*.
+
+Imagine que você está envolvido em uma conversa sinuosa com alguém. Você está falando sobre sua amiga Alice, o que então te lembra de uma história sobre seu colega de trabalho Bob, mas para que essa história faça sentido, primeiro você precisa explicar algo sobre sua prima Carol. 
+
+Você termina sua história sobre Carol e volta a falar sobre Bob, e quando termina sua história sobre Bob, volta a falar sobre Alice. 
+Então você se lembra de seu irmão David e conta uma história sobre ele. Eventualmente, você consegue terminar sua história original sobre Alice.
+
+![Sua pilha de conversas sinuosas](assents/image.png)
+
+Em nossa pilha de conversas, os novos tópicos são adicionados ao topo da pilha e retirados à medida que são concluídos. Os tópicos anteriores são “lembrados” abaixo do tópico atual na pilha.
+
+Pilhas são uma estrutura de dados **LIFO** , que significa último a entrar, primeiro a sair , uma vez que o último valor colocado na pilha é o primeiro valor retirado dela. Esse comportamento é semelhante ao botão Voltar do seu navegador. 
+
+O histórico da guia do navegador funciona como uma pilha que contém todas as páginas que você visitou na ordem em que as visitou. O navegador está sempre exibindo a página da web no “topo” da “pilha” do histórico. Clicar em um link *empurra* uma nova página da web para a pilha de histórico, enquanto clicar no botão Voltar abre a página superior e revela a que está *“embaixo”*.
+
+## O que é a pilha de chamadas?
+
+Os programas também usam pilhas. A *pilha de chamadas* do programa , também chamada simplesmente de *pilha* , é criada durante a execução de um programa.
+
+Uma pilha armazena quadros, também chamados de “quadros de pilha”.
+
+uma pilha de objetos de quadro. Os *objetos Frame* , também chamados simplesmente de *frames*, contêm informações sobre uma única chamada de função, incluindo qual linha de código chamou a função, para que a execução possa voltar para lá quando a função retornar.
+
+
+
 ## Referências
