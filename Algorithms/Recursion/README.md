@@ -126,10 +126,20 @@ O histórico da guia do navegador funciona como uma pilha que contém todas as p
 
 Os programas também usam pilhas. A *pilha de chamadas* do programa , também chamada simplesmente de *pilha* , é criada durante a execução de um programa.
 
-Uma pilha armazena quadros, também chamados de “quadros de pilha”.
+Uma pilha armazena coleções de **stack frames**, que são segmentos de memória do aplicativo usados para armazenar informações sobre a execução de funções ou métodos. 
 
-uma pilha de objetos de quadro. Os *objetos Frame* , também chamados simplesmente de *frames*, contêm informações sobre uma única chamada de função, incluindo qual linha de código chamou a função, para que a execução possa voltar para lá quando a função retornar.
+Quando um programa é iniciado, um **stack frame** inicialmente é criado para representar a execução do programa principal.  q
+À medida que novas funções são chamadas durante a execução do programa, novos **stack frames** são criados e adicionados à pilha de chamadas para representar a ativação dessas funções. 
 
+Cada **stack frame** contém informações essenciais para a execução da função ou método, como variáveis locais, parâmetros da função e o endereço de retorno, que indica onde a execução deve continuar após o término da função. 
 
+Os programadores geralmente não precisam escrever código que lide diretamente com as **stack frames**, já que a linguagem de programação trata disso automaticamente. As stack frames são gerenciadas internamente pela linguagem, 
+diferentes linguagens de programação têm maneiras diferentes de implementar as stack frames, mas, em geral, elas contêm:
+
+1. O endereço de retorno, indicando para onde a execução deve se mover quando a função retornar.
+
+2. Os argumentos passados para a chamada da função.
+
+3. Um conjunto de variáveis locais criadas durante a execução da função.
 
 ## Referências
