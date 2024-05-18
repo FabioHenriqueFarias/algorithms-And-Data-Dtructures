@@ -193,4 +193,17 @@ O fato de a pilha de chamadas não existir no código-fonte é o principal motiv
 
 Revelar como funcionam as estruturas de dados da pilha e a pilha de chamadas remove grande parte do mistério por trás da recursão. Funções e pilhas são conceitos simples e podemos usá-los juntos para entender como funciona a recursão.
 
+## O que são funções recursivas e estouros de pilha?
+
+Uma função recursiva é uma função que chama a si mesma. Este shortest.py é o exemplo mais curto possível de uma função recursiva:
+
+```
+def shortest():
+    shortest()
+
+shortest()
+```
+
+A função **shortest()** não faz nada além de chamar a si mesma.
+
 ## Referências
