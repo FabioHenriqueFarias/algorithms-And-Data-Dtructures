@@ -5,6 +5,10 @@
 - [O que é Recursão?](#o-que-é-recursão)
     - [Definição](#definição)
     - [O que são funções?](#o-que-são-funções)
+- [O que são pilhas?](#o-que-são-pilhas)
+- [O que é a pilha de chamadas?](#o-que-é-a-pilha-de-chamadas)
+- [O que são funções recursivas e estouros de pilha?](#o-que-são-funções-recursivas-e-estouros-de-pilha)
+- [Casos Base e Casos Recursivos](#casos-base-e-casos-recursivos)
 - [Referências](#referências)
 
 ## O que é Recursão?
