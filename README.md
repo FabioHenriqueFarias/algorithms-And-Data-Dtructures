@@ -4,7 +4,7 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
 ## Estrutura Repositório:
 
 - [Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms)
-    - [Recursion](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
+    - [Recursion](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Recursion)
     - [Search Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
         - [Binary Search](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/BinarySearch)
     - [Sorting Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting)
