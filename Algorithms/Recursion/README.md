@@ -124,7 +124,7 @@ O histórico da guia do navegador funciona como uma pilha que contém todas as p
 
 ## O que é a pilha de chamadas?
 
-Os programas também usam pilhas. A *pilha de chamadas* do programa, também chamada simplesmente de *pilha*, é criada durante a execução de um programa.
+Os programas também usam pilhas. A **pilha de chamadas** do programa, também chamada simplesmente de *pilha*, é criada durante a execução de um programa.
 
 Uma pilha armazena coleções de **stack frames**, que são segmentos de memória do aplicativo usados para armazenar informações sobre a execução de funções ou métodos. 
 
@@ -204,6 +204,41 @@ def shortest():
 shortest()
 ```
 
-A função **shortest()** não faz nada além de chamar a si mesma.
+A função **shortest()** não faz nada além de chamar a si mesma.<br>
+Cada vez que isso acontece, ela chama a si mesma mais uma vez, criando um ciclo infinito de chamadas.
+
+Como a pilha de chamadas utiliza a memória finita do computador, este programa não pode continuar para sempre, como acontece com um loop infinito. A única coisa que este programa faz é travar e exibir uma mensagem de erro.
+
+
+
+A saída Python shortest.py é assim:
+```
+Traceback (most recent call last):
+  File "shortest.py", line 4, in <module>
+    shortest()
+  File "shortest.py", line 2, in shortest
+    shortest()
+  File "shortest.py", line 2, in shortest
+    shortest()
+  File "shortest.py", line 2, in shortest
+    shortest()
+  [Previous line repeated 996 more times]
+RecursionError: maximum recursion depth exceeded
+```
+
+Esse tipo de bug é chamado de **stack overflow** (É aqui que o popular site [https://stackoverflow.com](https://stackoverflow.com) recebeu seu nome).
+
+As chamadas de função constantes sem retorno aumentam a pilha de chamadas até que toda a memória do computador alocada para a pilha de chamadas seja usada. Para evitar isso, o *interpretador* do Python trava o programa após um certo limite de chamadas de função que não retornam um valor.
+
+Esse limite é chamado de *maximum recursion depth     (profundidade máxima de recursão 
+)* ou *maximum call stack size (tamanho máximo da pilha de chamadas
+)*
+
+Estouros de pilha não danificam o computador. O computador apenas detecta que o limite de chamadas de função sem retorno foi atingido e encerra o programa. Na pior das hipóteses, você perderá qualquer trabalho não salvo que o programa tenha. Estouros de pilha podem ser evitados com algo chamado **caso base** , que é explicado a seguir.
+
+## Casos Base e Casos Recursivos
+
+
 
 ## Referências
+
