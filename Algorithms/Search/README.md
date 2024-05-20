@@ -5,7 +5,8 @@
 - [O que é um Algoritmo de Busca?](#o-que-é-um-algoritmo-de-busca)
 - [Importância](#impotância)
 - [Qual o melhor algoritmo de Busca?](#qual-o-melhor-algoritmo-de-busca)
-- [Um pouco sobre a complexidade de alguns algoritmos de ordenação](#um-pouco-sobre-a-complexidade-de-alguns-algitmos-de-ordenação)
+- [Um pouco sobre a complexidade de alguns algoritmos de ordenação](#um-pouco-sobre-a-complexidade-de-alguns-algoritmos-de-busca)
+- [Alguns algoritmos de Busca](#alguns-algoritmos-de-busca)
 - [Referências](#refências)
 
 ## O que é um Algoritmo de Busca?
