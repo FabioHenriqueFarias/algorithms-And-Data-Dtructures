@@ -242,7 +242,72 @@ Estouros de pilha não danificam o computador. O computador apenas detecta que o
 
 ## Casos Base e Casos Recursivos
 
+O exemplo de estouro de pilha possui uma função `shortest()` que chama, ``shortest()`` mas nunca retorna nenhum valor. 
+Para evitar essa situação, é essencial que exista um caso ou um conjunto de condições em que a função interrompa as chamadas recursivas e apenas retorne um resultado. Isso é conhecido como **caso base**. Já um caso em que a função chama a si mesma recursivamente é denominado **caso recursivo**.
 
+Todas as funções recursivas requerem pelo menos um caso base e pelo menos um caso recursivo.
+Se não houver caso base, a função nunca para de fazer chamadas recursivas e eventualmente causa um estouro de pilha. Se não houver caso recursivo, a função nunca chama a si mesma e é uma função comum, não recursiva. Quando você começa a escrever suas próprias funções recursivas, um bom primeiro passo é descobrir qual deve ser o caso base e o caso recursivo.
+
+
+Dê uma olhada neste programa shortestWithBaseCase.py, que define a função recursiva mais curta que não falhará devido a um estouro de pilha:
+
+```
+def shortestWithBaseCase(makeRecursiveCall):
+    print('shortestWithBaseCase(%s) called.' % makeRecursiveCall)
+    if not makeRecursiveCall:
+        # BASE CASE
+        print('Returning from base case.')
+      ❶ return
+    else:
+        # RECURSIVE CASE
+      ❷ shortestWithBaseCase(False)
+        print('Returning from recursive case.')
+        return
+
+print('Calling shortestWithBaseCase(False):')
+❸ shortestWithBaseCase(False)
+print()
+print('Calling shortestWithBaseCase(True):')
+❹ shortestWithBaseCase(True)
+```
+
+Quando você executa este código, a saída fica assim:
+
+```
+Calling shortestWithBaseCase(False):
+shortestWithBaseCase(False) called.
+Returning from base case.
+
+Calling shortestWithBaseCase(True):
+shortestWithBaseCase(True) called.
+shortestWithBaseCase(False) called.
+Returning from base case.
+Returning from recursive case.
+```
+
+Na função vemos o caso base:
+```
+if not makeRecursiveCall:
+    # BASE CASE
+    print('Returning from base case.')
+    return
+```
+- Condição: Se `makeRecursiveCall` for `False`, a função entra no caso base.
+- Ação: Imprime "Returning from base case." e retorna, encerrando a execução da função.
+
+E o caso recursivo:
+```
+else:
+    # RECURSIVE CASE
+    shortestWithBaseCase(False)
+    print('Returning from recursive case.')
+    return
+
+```
+- Condição: Se makeRecursiveCall for True, a função entra no caso recursivo.
+- Ação Recursiva: Chama a si mesma com o argumento False. Esta chamada irá entrar diretamente no caso base na próxima iteração.
+- Impressão Após Recursão: Após a chamada recursiva retornar, imprime "Returning from recursive case." e então retorna.
+Esta função não faz nada de útil, exceto fornecer um pequeno exemplo de recursão. Quando `shortestWithBaseCase(False)`❸  é chamadado, o caso base é executado e a função apenas retorna 
 
 ## Referências
 
