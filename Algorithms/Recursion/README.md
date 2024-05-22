@@ -15,6 +15,10 @@
   -[Comportamento do Programa](#comportamento-do-programa)
     -[Primeira Chamada: `shortestWithBaseCase(False)`](#primeira-chamada-shortestwithbasecasefalse)
     -[Segunda Chamada: `shortestWithBaseCase(True)`](#segunda-chamada-shortestwithbasecasetrue)
+- [Código antes e depois da chamada recursiva](#código-antes-e-depois-da-chamada-recursiva)
+  - [Análise do Funcionamento](#análise-do-funcionamento)
+  - [Conceitos de Recursão](#conceitos-de-recursão)
+  - [Execução Passo a Passo](#execução-passo-a-passo)
 - [Referências](#referências)
 
 ## O que é Recursão?
@@ -348,9 +352,101 @@ else:
 
 Esta função não faz nada de útil, exceto fornecer um pequeno exemplo de recursão. Quando a função `shortestWithBaseCase(False)`❸ é chamado, o caso base é executado e a função apenas retorna❶ . Porém, quando a função `shortestWithBaseCase(True)`❹ é chamado, o caso recursivo é executado e `shortestWithBaseCase(False)`❷ é chamado.
 
-É importante observar que quando a função `shortestWithBaseCase(False)`❷ é chamado recursivamente e depois retorna, a execução não volta imediatamente para a chamada de função original em ❹. O restante do código no caso recursivo após a chamada recursiva ainda é executado, e é por isso que `Returning from recursive case` aparece na saída. Retornar do caso base não retorna imediatamente de todas as chamadas recursivas que aconteceram antes dele, é importante ter isso em mente.
+É importante observar que quando `shortestWithBaseCase(False)`❷ é chamada recursivamente e retorna, a execução não volta imediatamente para a chamada original em ❹. O código restante no caso recursivo, após a chamada recursiva, ainda é executado. Por isso, a mensagem "Returning from recursive case" aparece na saída. Retornar do caso base não encerra imediatamente todas as chamadas recursivas anteriores; apenas conclui a execução da chamada atual. É essencial ter isso em mente ao lidar com recursão.
+
+## Código antes e depois da chamada recursiva
+
+O código em um caso recursivo pode ser dividido em duas partes: o código antes da chamada recursiva e o código depois da chamada recursiva.
+
+É importante entender que alcançar o caso base não significa necessariamente o fim do algoritmo recursivo. Significa apenas que, no caso base, a função não fará mais chamadas recursivas.
+
+Por exemplo, considere este programa countDownAndUp.py, onde a função recursiva conta de qualquer número até zero e depois retorna ao número original:
+
+```
+def countDownAndUp(number):
+  ❶ print(number)
+    if number == 0:
+        # BASE CASE
+      ❷ print('Reached the base case.')
+        return
+    else:
+        # RECURSIVE CASE
+      ❸ countDownAndUp(number - 1)
+      ❹ print(number, 'returning')
+        return
+
+❺ countDownAndUp(3)
+```
+
+Quando você executa este código, a saída fica assim:
+
+```
+3
+2
+1
+0
+Reached the base case.
+1 returning
+2 returning
+3 returning
+```
+
+### Análise do Funcionamento
+
+1. **Primeira Parte do Caso Recursivo**:
+   - A função imprime o número atual (`print(number)`)❶.
+   - Se o número for 0, entra no caso base, imprime "Reached the base case."❷ e retorna.
+
+2. **Segunda Parte do Caso Recursivo**:
+   - Se o número não for 0, a função chama a si mesma com `number - 1`❸.
+   - Após a chamada recursiva retornar, imprime `<número> returning`❹ e retorna.
+
+### Conceitos de Recursão
+
+Toda vez que uma função é chamada, um novo quadro é criado e colocado na pilha de chamadas. Este quadro contém todas as variáveis e parâmetros locais (como `number`). Portanto, existe uma variável `number` separada para cada quadro na pilha de chamadas.
+
+Isso é importante para entender a recursão: embora, pelo código-fonte, pareça que existe apenas uma variável `number`, na verdade, cada chamada de função tem sua própria instância da variável `number`.
+
+Esse padrão de fazer chamadas de função recursivas consecutivas e depois retornar das chamadas recursivas é o que gera a contagem regressiva de números. Quando countDownAndUp(0) é chamada, o caso base é alcançado❷ e nenhuma chamada recursiva adicional é feita. No entanto, este não é o fim do programa! Quando o caso base é atingido, a variável local number é 0. Mas, quando esse caso base retorna e o quadro é removido da pilha de chamadas, o quadro abaixo dele ainda tem sua própria variável number local, com o valor que sempre teve, no caso, 1. À medida que a execução retorna aos quadros anteriores na pilha de chamadas, o código após a chamada recursiva é executado❹. Isso é o que faz com que a contagem crescente de números apareça.
 
 
+### Execução Passo a Passo
+
+- **Primeira Chamada**: `countDownAndUp(3)`❺
+  - Imprime `3`❶ e faz uma chamada recursiva com `2`❸.
+- **Segunda Chamada**: `countDownAndUp(2)`
+  - Imprime `2`❶ e faz uma chamada recursiva com `1`❸.
+- **Terceira Chamada**: `countDownAndUp(1)`
+  - Imprime `1`❶ e faz uma chamada recursiva com `0`❸.
+- **Quarta Chamada**: `countDownAndUp(0)`
+  - Imprime `0`❶, entra no caso base, imprime "Reached the base case."❷ e retorna.
+- **Retorno da Terceira Chamada**:
+  - Imprime `1 returning`❹ e retorna.
+- **Retorno da Segunda Chamada**:
+  - Imprime `2 returning`❹ e retorna.
+- **Retorno da Primeira Chamada**:
+  - Imprime `3 returning`❹ e retorna.
+
+A imagem a seguir ilustra como a pilha de chamadas é manipulada ao adicionar e remover dados durante a execução da função recursiva:
+
+![Ilustração da pilha de chamadas](assents/Image03.png)
+
+Lembre-se de que qualquer código após o caso recursivo ainda precisa ser executado.
+
+Neste ponto, você pode estar pensando que a função recursiva `countDownAndUp()` é excessivamente complexa e difícil de seguir. Por que não usar uma solução iterativa para imprimir os números? Uma abordagem iterativa, que utiliza loops para repetir uma tarefa até que ela seja concluída, é geralmente considerada o oposto da recursão.
+
+Sempre que você se perguntar: “Não seria mais fácil usar um loop?”, a resposta quase sempre é “Sim”, e você deve evitar a solução recursiva.
+
+A recursão pode ser complicada tanto para programadores iniciantes quanto para experientes, e o código recursivo não é automaticamente "melhor" ou "mais elegante" do que o código iterativo. Código legível e fácil de entender é mais importante do que qualquer suposta elegância que a recursão possa oferecer.
+
+No entanto, em algumas situações, um algoritmo se adapta claramente a uma abordagem recursiva. Algoritmos que envolvem estruturas de dados semelhantes a árvores e que requerem retrocesso são especialmente adequados para a recursão. Essas ideias serão exploradas com mais detalhes posteriormente.
 
 ## Referências
 
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
+</a>
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://nostarch.com/recursive-book-recursion">The Recursive Book of Recursion: Ace the Coding Interview with Python and JavaScript
+</a>
