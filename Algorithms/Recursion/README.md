@@ -9,6 +9,12 @@
 - [O que é a pilha de chamadas?](#o-que-é-a-pilha-de-chamadas)
 - [O que são funções recursivas e estouros de pilha?](#o-que-são-funções-recursivas-e-estouros-de-pilha)
 - [Casos Base e Casos Recursivos](#casos-base-e-casos-recursivos)
+  - [Análise da Função](#análise-da-função)
+    - [Caso Base](#caso-base)
+    - [Caso Recursivo](#caso-recursivo)
+  -[Comportamento do Programa](#comportamento-do-programa)
+    -[Primeira Chamada: `shortestWithBaseCase(False)`](#primeira-chamada-shortestwithbasecasefalse)
+    -[Segunda Chamada: `shortestWithBaseCase(True)`](#segunda-chamada-shortestwithbasecasetrue)
 - [Referências](#referências)
 
 ## O que é Recursão?
@@ -30,7 +36,7 @@ As **chamadas de função** são tão comuns e tão integradas ao processo de pr
 
 ### O que são funções?
 
-As funções podem ser descritas como miniprogramas dentro do seu programa. Eles são um recurso de quase todas as linguagens de programação. Se você precisar executar idênticoinstruções em três locais diferentes de um programa, em vez de copiar e colar o código-fonte três vezes, você pode escrever o código em uma função uma vez e chamar a função três vezes. 
+As funções podem ser descritas como miniprogramas dentro do seu programa. Eles são um recurso de quase todas as linguagens de programação. Se você precisar executar idêntica instruções em três locais diferentes de um programa, em vez de copiar e colar o código-fonte três vezes, você pode escrever o código em uma função uma vez e chamar a função três vezes. 
 
 O resultado benéfico é um programa mais curto e mais legível. O programa também é mais fácil de alterar: se você precisar corrigir um bug ou adicionar recursos, será necessário alterar o programa em apenas um lugar, em vez de três.
 
@@ -109,7 +115,7 @@ Este detalhe é tratado implicitamente pelo programa com uma **pilha de chamadas
 
 Para realmente entender a recursão, é fundamental compreender as pilhas.
 
-Uma pilha é uma das **estruturas de dados** mais simples da ciência da computação. Ela armazena valores de forma semelhante a uma lista, mas com uma restrição: você só pode adicionar ou remover valores do topo da pilha.
+Uma pilha é uma das **estruturas de dados** mais simples da ciência da computação. Ela armazena valores semelhantemente a uma lista, mas com uma restrição: você só pode adicionar ou remover valores do topo da pilha.
 
 Em implementações de pilhas usando listas ou arrays, o "topo" é o último item, localizado na extremidade direita da lista ou array. Adicionar valores é conhecido como *"empilhar"* ou *"empurrar"* valores para a pilha, enquanto remover valores é chamado de *"desempilhar"* ou *"pop"*.
 
@@ -122,7 +128,7 @@ Então você se lembra de seu irmão David e conta uma história sobre ele. Even
 
 Em nossa pilha de conversas, os novos tópicos são adicionados ao topo da pilha e retirados à medida que são concluídos. Os tópicos anteriores são “lembrados” abaixo do tópico atual na pilha.
 
-Pilhas são uma estrutura de dados **LIFO** , que significa último a entrar, primeiro a sair , uma vez que o último valor colocado na pilha é o primeiro valor retirado dela. Esse comportamento é semelhante ao botão Voltar do seu navegador. 
+Pilhas são uma estrutura de dados **LIFO**, que significa último a entrar, primeiro a sair , uma vez que o último valor colocado na pilha é o primeiro valor retirado dela. Esse comportamento é semelhante ao botão Voltar do seu navegador. 
 
 O histórico da guia do navegador funciona como uma pilha que contém todas as páginas que você visitou na ordem em que as visitou. O navegador está sempre exibindo a página da web no “topo” da “pilha” do histórico. Clicar em um link *empurra* uma nova página da web para a pilha de histórico, enquanto clicar no botão Voltar abre a página superior e revela a que está *“embaixo”*.
 
@@ -246,32 +252,31 @@ O exemplo de estouro de pilha possui uma função `shortest()` que chama, ``shor
 Para evitar essa situação, é essencial que exista um caso ou um conjunto de condições em que a função interrompa as chamadas recursivas e apenas retorne um resultado. Isso é conhecido como **caso base**. Já um caso em que a função chama a si mesma recursivamente é denominado **caso recursivo**.
 
 Todas as funções recursivas requerem pelo menos um caso base e pelo menos um caso recursivo.
-Se não houver caso base, a função nunca para de fazer chamadas recursivas e eventualmente causa um estouro de pilha. Se não houver caso recursivo, a função nunca chama a si mesma e é uma função comum, não recursiva. Quando você começa a escrever suas próprias funções recursivas, um bom primeiro passo é descobrir qual deve ser o caso base e o caso recursivo.
+Se não houver *caso base*, a função nunca para de fazer chamadas recursivas e eventualmente causa um estouro de pilha. Se não houver *caso recursivo*, a função nunca chama a si mesma e é uma função comum, não recursiva. Quando você começa a escrever suas próprias funções recursivas, um bom primeiro passo é descobrir qual deve ser o caso base e o caso recursivo.
 
+O programa `shortestWithBaseCase.py` define uma função recursiva mínima que evita o estouro de pilha:
 
-Dê uma olhada neste programa shortestWithBaseCase.py, que define a função recursiva mais curta que não falhará devido a um estouro de pilha:
-
-```
+```python
 def shortestWithBaseCase(makeRecursiveCall):
     print('shortestWithBaseCase(%s) called.' % makeRecursiveCall)
     if not makeRecursiveCall:
-        # BASE CASE
+        # CASO BASE
         print('Returning from base case.')
-      ❶ return
+        return ❶
     else:
-        # RECURSIVE CASE
-      ❷ shortestWithBaseCase(False)
+        # CASO RECURSIVO
+        shortestWithBaseCase(False) ❷
         print('Returning from recursive case.')
         return
 
 print('Calling shortestWithBaseCase(False):')
-❸ shortestWithBaseCase(False)
+shortestWithBaseCase(False) ❸
 print()
 print('Calling shortestWithBaseCase(True):')
-❹ shortestWithBaseCase(True)
+shortestWithBaseCase(True) ❹
 ```
 
-Quando você executa este código, a saída fica assim:
+Quando você executa este código, a saída é:
 
 ```
 Calling shortestWithBaseCase(False):
@@ -285,29 +290,67 @@ Returning from base case.
 Returning from recursive case.
 ```
 
-Na função vemos o caso base:
-```
+### Análise da Função
+
+#### Caso Base
+
+```python
 if not makeRecursiveCall:
-    # BASE CASE
+    # CASO BASE
     print('Returning from base case.')
     return
 ```
-- Condição: Se `makeRecursiveCall` for `False`, a função entra no caso base.
-- Ação: Imprime "Returning from base case." e retorna, encerrando a execução da função.
 
-E o caso recursivo:
-```
+- **Condição**: Se `makeRecursiveCall` for `False`, a função entra no caso base.
+- **Ação**: Imprime "Returning from base case." e retorna, encerrando a execução da função.
+
+#### Caso Recursivo
+
+```python
 else:
-    # RECURSIVE CASE
+    # CASO RECURSIVO
     shortestWithBaseCase(False)
     print('Returning from recursive case.')
     return
-
 ```
-- Condição: Se makeRecursiveCall for True, a função entra no caso recursivo.
-- Ação Recursiva: Chama a si mesma com o argumento False. Esta chamada irá entrar diretamente no caso base na próxima iteração.
-- Impressão Após Recursão: Após a chamada recursiva retornar, imprime "Returning from recursive case." e então retorna.
-Esta função não faz nada de útil, exceto fornecer um pequeno exemplo de recursão. Quando `shortestWithBaseCase(False)`❸  é chamadado, o caso base é executado e a função apenas retorna 
+
+- **Condição**: Se `makeRecursiveCall` for `True`, a função entra no caso recursivo.
+- **Ação Recursiva**: Chama a si mesma com o argumento `False`, que fará com que a próxima chamada entre diretamente no caso base.
+- **Impressão Após Recursão**: Após a chamada recursiva retornar, imprime "Returning from recursive case." e então retorna.
+
+### Comportamento do Programa
+
+#### Primeira Chamada: `shortestWithBaseCase(False)`
+
+- A função é chamada com `False`, entra no caso base, imprime as mensagens e retorna.
+
+  Saída:
+  ```
+  Calling shortestWithBaseCase(False):
+  shortestWithBaseCase(False) called.
+  Returning from base case.
+  ```
+
+#### Segunda Chamada: `shortestWithBaseCase(True)`
+
+- A função é chamada com `True`, entra no caso recursivo e chama `shortestWithBaseCase(False)`.
+- A chamada recursiva com `False` entra no caso base, imprime as mensagens e retorna.
+- Após retornar da chamada recursiva, imprime "Returning from recursive case." e retorna.
+
+  Saída:
+  ```
+  Calling shortestWithBaseCase(True):
+  shortestWithBaseCase(True) called.
+  shortestWithBaseCase(False) called.
+  Returning from base case.
+  Returning from recursive case.
+  ```
+
+Esta função não faz nada de útil, exceto fornecer um pequeno exemplo de recursão. Quando a função `shortestWithBaseCase(False)`❸ é chamado, o caso base é executado e a função apenas retorna❶ . Porém, quando a função `shortestWithBaseCase(True)`❹ é chamado, o caso recursivo é executado e `shortestWithBaseCase(False)`❷ é chamado.
+
+É importante observar que quando a função `shortestWithBaseCase(False)`❷ é chamado recursivamente e depois retorna, a execução não volta imediatamente para a chamada de função original em ❹. O restante do código no caso recursivo após a chamada recursiva ainda é executado, e é por isso que `Returning from recursive case` aparece na saída. Retornar do caso base não retorna imediatamente de todas as chamadas recursivas que aconteceram antes dele, é importante ter isso em mente.
+
+
 
 ## Referências
 
