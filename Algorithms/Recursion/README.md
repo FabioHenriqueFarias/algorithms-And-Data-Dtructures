@@ -441,6 +441,11 @@ A recursão pode ser complicada tanto para programadores iniciantes quanto para 
 
 No entanto, em algumas situações, um algoritmo se adapta claramente a uma abordagem recursiva. Algoritmos que envolvem estruturas de dados semelhantes a árvores e que requerem retrocesso são especialmente adequados para a recursão. Essas ideias serão exploradas com mais detalhes posteriormente.
 
+## Próximos assuntos
+
+1 - <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Recursividade vs Iteratividade
+</a>
+
 ## Referências
 
 Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
