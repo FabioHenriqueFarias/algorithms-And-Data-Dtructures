@@ -77,3 +77,12 @@ A próxima vez que o código continuar a partir do quadro antigo será após `fa
 
 Portanto, a multiplicação final só é resolvida após todas as chamadas recursivas terem retornado, seguindo a cadeia de retornos até a chamada original.
 
+### Por que o algoritmo fatorial recursivo é terrível
+
+A implementação recursiva para cálculo de fatoriais tem uma fraqueza crítica. Calcular o fatorial de 5 requer cinco chamadas de função recursivas. Isso significa que cinco objetos de quadro são colocados na pilha de chamadas antes que o caso base seja alcançado. Isso não escala.
+
+Se você quiser calcular o fatorial de 1.001, a função recursiva `factorial()`  deverá fazer 1.001 chamadas de função recursiva. No entanto, é provável que seu programa cause um estouro de pilha antes de terminar, porque fazer tantas chamadas de função sem retornar excederia o tamanho máximo da pilha de chamadas do interpretador. *Isso é terrível*; você nunca iria querer usar uma função fatorial recursiva em código do mundo real.
+
+![Pilha de Chamads](../assents/image05.png)
+
+Por outro lado, o algoritmo iterativo para calcular fatoriais completa o cálculo de forma rápida e eficiente. O estouro de pilha pode ser evitado usando uma técnica disponível em algumas linguagens de programação chamada *otimização de chamadas em cauda* (tail-call optimization, TCO). No entanto, essa técnica complica ainda mais a implementação da função recursiva. Para calcular fatoriais, a abordagem iterativa é a mais simples e direta.
