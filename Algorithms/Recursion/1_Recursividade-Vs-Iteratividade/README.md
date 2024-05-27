@@ -5,7 +5,12 @@
 ## Sumário
 
 - [Calculando Fatoriais](#calculando-fatoriais)
-
+    - [O Algoritmo Fatorial Iterativo](#o-algoritmo-fatorial-iterativo)
+    - [O Algoritmo Fatorial Recursivo](#o-algoritmo-fatorial-recursivo)
+    - [Por que o algoritmo fatorial recursivo é terrível](#por-que-o-algoritmo-fatorial-recursivo-é-terrível)
+- [Quando você precisa usar a recursão?](#quando-você-precisa-usar-a-recursão)
+- [Criando Algoritmos Recursivos](#criando-algoritmos-recursivos)
+- [Referências](#referências)
 
 ## Calculando Fatoriais
 
@@ -86,3 +91,52 @@ Se você quiser calcular o fatorial de 1.001, a função recursiva `factorial()`
 ![Pilha de Chamads](../assents/image05.png)
 
 Por outro lado, o algoritmo iterativo para calcular fatoriais completa o cálculo de forma rápida e eficiente. O estouro de pilha pode ser evitado usando uma técnica disponível em algumas linguagens de programação chamada *otimização de chamadas em cauda* (tail-call optimization, TCO). No entanto, essa técnica complica ainda mais a implementação da função recursiva. Para calcular fatoriais, a abordagem iterativa é a mais simples e direta.
+
+## Quando você precisa usar a recursão?
+
+A recursão nunca é uma necessidade absoluta. Nenhum problema de programação requer exclusivamente recursão. Este repositório demonstra que a recursão não possui um poder mágico que o código iterativo, utilizando loops e estruturas de dados como pilhas, não possa replicar. De fato, uma função recursiva pode muitas vezes ser uma solução desnecessariamente complexa para o problema que você está tentando resolver.
+
+A recursão, no entanto, pode fornecer novos insights sobre como abordar nossos problemas de programação. Três características específicas de um problema o tornam especialmente adequado para uma abordagem recursiva:
+
+- Envolve uma estrutura semelhante a uma árvore.
+- Requer retrocesso.
+- Não é tão profundamente recursivo a ponto de causar um estouro de pilha.
+
+Uma árvore tem uma estrutura **autossimilar**: seus pontos de ramificação são semelhantes às raízes de subárvores menores. A recursão lida bem com essa autossemelhança e com problemas que podem ser divididos em subproblemas menores e semelhantes. Pense na raiz da árvore como a primeira chamada para uma função recursiva, os pontos de ramificação como as chamadas recursivas e as folhas como os casos base onde as chamadas recursivas param.
+
+Um labirinto também é um excelente exemplo de problema que possui uma estrutura semelhante a uma árvore e requer retrocesso. Em um labirinto, os pontos de ramificação ocorrem onde você escolhe um dos muitos caminhos a seguir. Se você chegar a um beco sem saída, encontrou o caso base. Você deve então voltar a um ponto de ramificação anterior para selecionar um caminho diferente.
+
+![Labirinto](../assents/Image04.png)
+
+A imagem mostra o caminho de um labirinto visualmente transformado para se parecer com uma árvore biológica. Apesar da diferença visual entre os caminhos do labirinto e os caminhos em forma de árvore, seus pontos de ramificação estão relacionados de maneira semelhante. Matematicamente, esses gráficos são equivalentes.
+
+![Arvore](../assents/Image05.png)
+
+Procurar um nome de arquivo específico em uma pasta é um problema recursivo: você pesquisa a pasta e, em seguida, pesquisa recursivamente as subpastas. Pastas sem subpastas são os casos base que fazem com que a pesquisa recursiva pare. Se o seu algoritmo recursivo não encontrar o nome do arquivo, ele voltará para uma pasta pai anterior e continuará a pesquisa a partir daí.
+
+O terceiro ponto é uma questão de praticidade. Se sua estrutura de árvore tiver tantos níveis de ramificação que uma função recursiva causaria um estouro de pilha antes de atingir as folhas, então a recursão não é uma solução adequada.
+
+Por outro lado, a recursão é a melhor abordagem para criar compiladores de linguagens de programação. O design de compiladores é um assunto amplo e não será abordado em detalhes aqui, mas as linguagens de programação têm um conjunto de regras gramaticais que podem dividir o código-fonte em uma estrutura de árvore, semelhante a como as regras gramaticais podem dividir frases em um diagrama de árvore. A recursão é uma técnica ideal para aplicar em compiladores.
+
+Exploraremos muitos algoritmos recursivos neste conteúdo, e eles geralmente possuem uma estrutura semelhante a uma árvore ou características de retrocesso que se prestam bem à recursão.
+
+## Criando Algoritmos Recursivos
+
+Para criar um algoritmo recursivo com mais facilidade, o primeiro passo é sempre identificar o caso base e o caso recursivo. Você pode adotar uma abordagem de cima para baixo, dividindo o problema em subproblemas menores e semelhantes ao problema original; esse é o seu caso recursivo. Depois, considere quando os subproblemas são pequenos o suficiente para ter uma solução trivial; esse é o seu caso base. Sua função recursiva pode ter mais de um caso recursivo ou caso base, mas todas as funções recursivas sempre terão pelo menos um caso recursivo e pelo menos um caso base.
+
+
+O algoritmo recursivo de Fibonacci é um bom exemplo. Um número de Fibonacci é a soma dos dois números de Fibonacci anteriores. Podemos dividir o problema de encontrar um número de Fibonacci nos subproblemas de encontrar dois números de Fibonacci menores. Sabemos que os dois primeiros números de Fibonacci são 1, o que fornece a resposta do caso base quando os subproblemas são pequenos o suficiente.
+
+
+Às vezes, é útil adotar uma abordagem de baixo para cima, considerando primeiro o caso base e depois vendo como problemas maiores são construídos e resolvidos a partir daí. O problema do cálculo fatorial recursivo é um exemplo. O fatorial de 1! é 1. Isso forma o caso base. O próximo fatorial é 2!, e você o obtém multiplicando 1! por 2. O fatorial depois disso, 3!, é obtido multiplicando 2! por 3, e assim por diante. A partir desse padrão geral, podemos descobrir qual será o caso recursivo do nosso algoritmo.
+
+
+## Referências
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
+</a>
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://nostarch.com/recursive-book-recursion">The Recursive Book of Recursion: Ace the Coding Interview with Python and JavaScript
+</a>
