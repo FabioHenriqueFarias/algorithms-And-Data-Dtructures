@@ -35,7 +35,7 @@ Como o tail é um elemento a menos que a lista original, eventualmente chamaremo
 3. **Como esse argumento se aproxima do caso base?** 
     - A lista diminui em um elemento a cada chamada recursiva até que se torne uma lista vazia.
 
-Aqui está <a href="">``sumHeadTail.py``</a>, um programa Python para somar uma lista de números:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/sumHeadTail.py">``sumHeadTail.py``</a>, um programa Python para somar uma lista de números:
 
 ``` Python
 def sum(numbers):
@@ -176,7 +176,7 @@ Vamos fazer três perguntas sobre o algoritmo recursivo da função `rev()`:
 
 ![Pilha de chamadas](../assents/Image08.png)
 
-Aqui está <a href="">`reverseString.py`</a> , um programa Python para reverter uma string:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/reverseString.py">`reverseString.py`</a> , um programa Python para reverter uma string:
 
 ```python
 def rev(theString):
