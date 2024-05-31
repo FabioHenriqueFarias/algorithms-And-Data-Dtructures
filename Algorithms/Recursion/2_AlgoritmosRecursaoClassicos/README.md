@@ -137,3 +137,82 @@ A chave para identificar se nossa função recursiva é desnecessária é verifi
 
 Além disso, a função de soma recursiva em Python é cerca de 100 vezes mais lenta que um algoritmo iterativo simples. Mesmo que o desempenho não fosse um problema, a função `sum()` causaria um estouro de pilha se tentássemos somar uma lista com dezenas de milhares de números. A recursão é uma técnica avançada, mas nem sempre é a melhor abordagem.
 
+
+## Invertendo uma String
+
+Inverter uma string é um exemplo clássico de um algoritmo recursivo, embora a solução iterativa seja bastante direta. Como uma string é essencialmente um array de caracteres, podemos empregar a abordagem head-tail para nossa função `rev()`, assim como fizemos para o algoritmo de soma.
+Para strings maiores, vamos tentar dividir a string em cabeça (apenas o primeiro caractere) e cauda (todos os caracteres após o primeiro). Para uma string de dois caracteres como 'XY', 'X'é a cabeça e 'Y'é a cauda. Para inverter a corda, precisamos colocar a cabeça atrás da cauda: 'YX'.
+
+Para strings maiores, dividimos a string em cabeça (o primeiro caractere) e cauda (todos os caracteres após o primeiro). Por exemplo, para uma string de dois caracteres como 'XY', 'X' é a cabeça e 'Y' é a cauda. Para inverter a string, colocamos a cabeça atrás da cauda: 'YX'.
+
+Mas será que esse algoritmo funciona para strings mais longas? Considere a string 'CAT'. Dividimos em cabeça 'C' e cauda 'AT'. Colocar a cabeça atrás da cauda simplesmente nos dá 'ATC', o que não é o que queremos. O que realmente queremos é inverter a cauda e então colocar a cabeça no final. Ou seja, 'AT' se torna 'TA' e adicionar 'C' ao final resulta em 'TAC'.
+
+Então, como podemos inverter a cauda? Podemos fazer isso chamando recursivamente `rev()` passando a cauda como argumento. Vamos nos concentrar nas entradas e saídas da nossa função: `rev()` recebe uma string e retorna a string invertida.
+
+Implementar uma função recursiva como `rev()` pode parecer complicado porque envolve um problema de ovo e galinha. Para escrever o caso recursivo de `rev()`, precisamos chamar uma função que inverte uma string – ou seja, `rev()` em si. Ao confiar na técnica do "salto de fé", podemos escrever nosso caso recursivo assumindo que a chamada para `rev()` retorna o valor correto, mesmo que ainda não tenhamos terminado de escrever a função.
+
+O "salto de fé" não é uma técnica mágica que garante que seu código funcionará sem erros. É uma maneira de superar o bloqueio mental ao pensar em como implementar sua função recursiva. Essa técnica funciona quando você tem um entendimento claro dos argumentos e do valor de retorno da sua função recursiva.
+
+Lembre-se de que o "salto de fé" ajuda apenas a escrever o caso recursivo. Você deve passar um argumento que esteja mais próximo do caso base a cada chamada recursiva. Não adianta passar o mesmo argumento repetidamente. Vamos ver como isso se aplica na prática com o exemplo da função `rev()`.
+
+```python
+def rev(theString): 
+    return rev(theString) # Isso não funcionará magicamente.
+```
+
+Para continuar nosso exemplo 'CAT', ao passarmos a string 'AT' para a função `rev()`, a cabeça (primeiro caractere) é 'A' e a cauda (restante da string) é 'T' nessa chamada de função. Já sabemos que o inverso de uma string de um único caractere, como 'T', é simplesmente 'T'. Esse é o nosso caso base. Portanto, essa segunda chamada de `rev()` retornará 'TA' ao inverter 'AT', que é exatamente o que a chamada anterior de `rev()` precisa. A imagem abaixo mostra o estado da pilha de chamadas durante todas as chamadas recursivas para `rev()`.
+
+Vamos fazer três perguntas sobre o algoritmo recursivo da função `rev()`:
+
+1. **Qual é o caso base?**
+   O caso base é uma string de zero ou um caractere.
+
+2. **Qual argumento é passado para a chamada de função recursiva?**
+   A cauda da string original, ou seja, a string original sem o primeiro caractere.
+
+3. **Como esse argumento se aproxima do caso base?**
+   A cada chamada recursiva, o argumento da string é reduzido em um caractere, aproximando-se assim do caso base, que é uma string de comprimento um ou zero.
+
+
+![Pilha de chamadas](../assents/Image08.png)
+
+Aqui está *reverseString.py* , um programa Python para reverter uma string:
+
+```python
+def rev(theString):
+  ❶ if len(theString) == 0 or len(theString) == 1:
+        # CASO BASE
+        return theString
+    else:
+        # CASO RECURSIVO
+      ❷ head = theString[0]
+      ❸ tail = theString[1:]
+      ❹ return rev(tail) + head
+
+print(rev('abcdef'))
+print(rev('Hello, world!'))
+print(rev(''))
+print(rev('X'))
+```
+
+Aqui está a saída desse programa:
+
+```
+fedcba
+!dlrow ,olleH
+
+X
+```
+
+Nossa função recursiva `rev()` retorna a string que é o inverso do argumento, `theString`. Vamos considerar as strings mais simples de reverter: a string vazia e uma string de um único caractere. Ambas seriam “revertidas” para si mesmas. Esses são os casos base que utilizamos (embora os combinemos com um operador booleano `or` em ❶).
+
+Para o caso recursivo, separamos o primeiro caractere da string em ❷ (`head`) e todos os caracteres após o primeiro em ❸ (`tail`). O caso recursivo então retorna o inverso de `tail` seguido pelo caractere `head` em ❹.
+
+Vamos analisar detalhadamente:
+
+1. **Caso Base**: Se a string é vazia ou contém apenas um caractere (`if len(theString) == 0 or len(theString) == 1`), retornamos a string como está.
+
+2. **Caso Recursivo**: 
+   - ❷ Separamos o primeiro caractere da string (`head = theString[0]`).
+   - ❸ Pegamos todos os caracteres após o primeiro (`tail = theString[1:]`).
+   - ❹ Retornamos o resultado da chamada recursiva para `rev(tail)`, adicionando `head` ao final (`return rev(tail) + head`).
