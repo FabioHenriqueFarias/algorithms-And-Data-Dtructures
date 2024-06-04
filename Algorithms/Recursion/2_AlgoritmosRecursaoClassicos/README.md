@@ -216,3 +216,54 @@ Vamos analisar detalhadamente:
    - ❷ Separamos o primeiro caractere da string (`head = theString[0]`).
    - ❸ Pegamos todos os caracteres após o primeiro (`tail = theString[1:]`).
    - ❹ Retornamos o resultado da chamada recursiva para `rev(tail)`, adicionando `head` ao final (`return rev(tail) + head`).
+
+## Detectando Palíndromos
+
+Um palíndromo é uma palavra ou frase que tem a mesma grafia quando escrita para frente e para trás, como "radar" ou "A grama é amarga". Para detectar se uma string é um palíndromo, podemos escrever uma função recursiva chamada `isPalindrome()`.
+
+O caso base é uma sequência de zero ou um caractere, que por natureza é sempre a mesma quando escrita para frente ou para trás. Usaremos uma abordagem semelhante à técnica de divisão em cabeça e cauda, exceto que, neste caso, dividiremos a string em três partes: cabeça (`head`), meio (`middle`) e última (`last`). Se o primeiro e o último caractere forem iguais e a parte do meio também for um palíndromo, então a string inteira é um palíndromo. A recursão acontece ao passarmos a string do meio para a função `isPalindrome()`.
+
+Qual é o caso básico? Uma sequência de zero ou um caractere, que retorna Trueporque é sempre um palíndromo.
+
+Qual argumento é passado para a chamada de função recursiva? Os caracteres do meio do argumento de string.
+
+Como esse argumento se aproxima do caso base? O argumento string diminui em dois caracteres para cada chamada recursiva até se tornar uma string com zero ou um caractere.
+
+1. **Qual é o caso base?** 
+    - Uma lista vazia, cuja soma é 0.
+
+2. **Qual argumento é passado para a chamada recursiva?** 
+    - Os caracteres do meio do argumento da string.
+
+3. **Como esse argumento se aproxima do caso base?** 
+    - O argumento da string diminui em dois caracteres a cada chamada recursiva até se tornar uma string com zero ou um caractere.
+
+Aqui está <a href="">`isPalindrome()`</a>, um programa Python para detectar palíndromos:
+
+```
+def isPalindrome(theString):
+    if len(theString) == 0 or len(theString) == 1:
+        # CASO BASE
+        return True
+    else:
+        #  CASO RECURSIVO
+      ❶ head = theString[0]
+      ❷ middle = theString[1:-1]
+      ❸ last = theString[-1]
+      ❹ return head == last and isPalindrome(middle)
+
+text = 'reviver'
+print(text + ' is a palindrome: ' + str(isPalindrome(text)))
+text = 'omissíssimo'
+print(text + ' is a palindrome: ' + str(isPalindrome(text)))
+text = 'romaeamor'
+print(text + ' is a palindrome: ' + str(isPalindrome(text)))
+text = 'saias'
+print(text + ' is a palindrome: ' + str(isPalindrome(text)))
+```
+
+O caso base retorna `True` porque uma sequência de zero ou um caractere é sempre um palíndromo. Caso contrário, o argumento da string será dividido em três partes: o primeiro caractere ❶, o último caractere ❸, e os caracteres intermediários entre eles ❷.
+
+A instrução `return` no caso recursivo ❹ faz uso de curto-circuito booleano, um recurso presente em quase todas as linguagens de programação. Em uma expressão com operadores booleanos `and` ou `&&`, se a expressão do lado esquerdo for `False`, não importa se a expressão do lado direito é `True` ou `False`, porque a expressão inteira será `False`. O curto-circuito booleano é uma otimização que ignora a avaliação da expressão do lado direito de um operador `and` se o lado esquerdo for `False`. Portanto, na expressão `head == last and isPalindrome(middle)`, se `head == last` for `False`, a chamada recursiva para `isPalindrome()` é ignorada. Isso significa que assim que os caracteres `head` e `last` não corresponderem, a recursão para e simplesmente retorna `False`.
+
+Esse algoritmo recursivo ainda é sequencial, como as funções de soma e de inversão de string das seções anteriores, exceto que, em vez de percorrer os dados do início ao fim, ele percorre de ambas as extremidades em direção ao meio. A versão iterativa deste algoritmo, que usa um loop simples, é mais direta. No entanto, abordamos a versão recursiva neste livro porque é um problema comum em entrevistas de codificação.
