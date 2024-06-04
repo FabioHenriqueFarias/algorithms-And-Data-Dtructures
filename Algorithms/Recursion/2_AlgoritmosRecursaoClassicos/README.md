@@ -5,6 +5,10 @@
 - [Somando números em uma matriz](#somando-números-em-uma-matriz)
     - [Análise do processo recursivo:](#análise-do-processo-recursivo)
     - [Resumo da Retomada das Chamadas:](#resumo-da-retomada-das-chamadas)
+- [Invertendo uma String](#invertendo-uma-string)
+- [Detectando Palíndromos](#detectando-palíndromos)
+- [Torre de Hanói](#torre-de-hanói)
+
 
 Vamos começar com três algoritmos simples: somar os números em um array, inverter uma string de texto e detectar se uma string é um palíndromo. Em seguida, exploramos um algoritmo para resolver o quebra-cabeça da Torre de Hanói, implementamos o algoritmo de preenchimento de regiões em desenhos e abordamos a complexa função de Ackermann, que é altamente recursiva.
 
@@ -238,7 +242,7 @@ Como esse argumento se aproxima do caso base? O argumento string diminui em dois
 3. **Como esse argumento se aproxima do caso base?** 
     - O argumento da string diminui em dois caracteres a cada chamada recursiva até se tornar uma string com zero ou um caractere.
 
-Aqui está <a href="">`isPalindrome()`</a>, um programa Python para detectar palíndromos:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/isPalindrome.py">`isPalindrome()`</a>, um programa Python para detectar palíndromos:
 
 ```
 def isPalindrome(theString):
@@ -266,4 +270,38 @@ O caso base retorna `True` porque uma sequência de zero ou um caractere é semp
 
 A instrução `return` no caso recursivo ❹ faz uso de curto-circuito booleano, um recurso presente em quase todas as linguagens de programação. Em uma expressão com operadores booleanos `and` ou `&&`, se a expressão do lado esquerdo for `False`, não importa se a expressão do lado direito é `True` ou `False`, porque a expressão inteira será `False`. O curto-circuito booleano é uma otimização que ignora a avaliação da expressão do lado direito de um operador `and` se o lado esquerdo for `False`. Portanto, na expressão `head == last and isPalindrome(middle)`, se `head == last` for `False`, a chamada recursiva para `isPalindrome()` é ignorada. Isso significa que assim que os caracteres `head` e `last` não corresponderem, a recursão para e simplesmente retorna `False`.
 
-Esse algoritmo recursivo ainda é sequencial, como as funções de soma e de inversão de string das seções anteriores, exceto que, em vez de percorrer os dados do início ao fim, ele percorre de ambas as extremidades em direção ao meio. A versão iterativa deste algoritmo, que usa um loop simples, é mais direta. No entanto, abordamos a versão recursiva neste livro porque é um problema comum em entrevistas de codificação.
+Esse algoritmo recursivo ainda é sequencial, como as funções de soma e de inversão de string das seções anteriores, exceto que, em vez de percorrer os dados do início ao fim, ele percorre de ambas as extremidades em direção ao meio. A versão iterativa deste algoritmo, que usa um loop simples, é mais direta. 
+
+## Torre de Hanói
+
+A Torre de Hanói é um clássico quebra-cabeça que envolve uma torre de discos empilhados de tamanhos variados. O quebra-cabeça começa com todos os discos empilhados em um poste, organizados do maior na parte inferior ao menor no topo. Cada disco tem um orifício no centro, permitindo que sejam empilhados uns sobre os outros em um poste.
+
+![Torre de Hanói](../assents/Image09.png)
+
+Para resolver o quebra-cabeça da Torre de Hanói, o jogador deve mover a pilha de discos de um poste para outro seguindo três regras:
+
+1. O jogador pode mover apenas um disco por vez.
+2. O jogador só pode mover discos do topo de uma torre para o topo de outra torre.
+3. O jogador nunca pode colocar um disco maior em cima de um disco menor.
+
+O módulo integrado `turtledemo` do Python tem uma demonstração da Torre de Hanói que você pode visualizar executando o seguinte comando no Windows:
+
+```bash
+python -m turtledemo
+```
+
+Ou no macOS/Linux:
+
+```bash
+python3 -m turtledemo
+```
+
+Em seguida, selecione `minimal_hanoi` no menu Exemplos. As animações da Torre de Hanói também são facilmente encontradas através de uma pesquisa na Internet.
+
+O algoritmo recursivo para resolver o quebra-cabeça da Torre de Hanói não é intuitivo. Vamos começar com o menor caso: uma Torre de Hanói com um disco. A solução é trivial: basta mover o disco para outro poste e está resolvido. Resolver o quebra-cabeça com dois discos é um pouco mais complicado: mova o disco menor para um poste temporário, o disco maior para o poste final, e finalmente mova o disco menor do poste temporário para o poste final. Ambos os discos estarão agora no poste final na ordem correta.
+
+Para resolver o quebra-cabeça com mais discos, seguimos estes passos recursivos:
+
+1. Resolva o quebra-cabeça para os n – 1 discos, movendo esses discos do poste inicial para o poste temporário.
+2. Mova o n-ésimo disco (o maior) do poste inicial para o poste final.
+3. Resolva o quebra-cabeça para os n – 1 discos restantes, movendo esses discos do poste temporário para o poste final.
