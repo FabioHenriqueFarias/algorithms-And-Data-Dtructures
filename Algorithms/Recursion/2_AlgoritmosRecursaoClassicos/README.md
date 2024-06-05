@@ -8,6 +8,7 @@
 - [Invertendo uma String](#invertendo-uma-string)
 - [Detectando Palíndromos](#detectando-palíndromos)
 - [Torre de Hanói](#torre-de-hanói)
+    - [Como Usar o Programa](#como-usar-o-programa)
 
 
 Vamos começar com três algoritmos simples: somar os números em um array, inverter uma string de texto e detectar se uma string é um palíndromo. Em seguida, exploramos um algoritmo para resolver o quebra-cabeça da Torre de Hanói, implementamos o algoritmo de preenchimento de regiões em desenhos e abordamos a complexa função de Ackermann, que é altamente recursiva.
@@ -305,3 +306,128 @@ Para resolver o quebra-cabeça com mais discos, seguimos estes passos recursivos
 1. Resolva o quebra-cabeça para os n – 1 discos, movendo esses discos do poste inicial para o poste temporário.
 2. Mova o n-ésimo disco (o maior) do poste inicial para o poste final.
 3. Resolva o quebra-cabeça para os n – 1 discos restantes, movendo esses discos do poste temporário para o poste final.
+
+Assim como o algoritmo de Fibonacci, o caso recursivo do algoritmo da Torre de Hanói faz duas chamadas recursivas em vez de apenas uma. Se desenharmos um diagrama em árvore das operações para resolver uma Torre de Hanói com quatro discos, ele se parecerá com a imagem abaixo:
+
+![alt text](../assents/Image10.png)
+
+Resolver o quebra-cabeça de quatro discos requer as mesmas etapas que resolver o quebra-cabeça de três discos, além de mover o quarto disco e executar as etapas de resolução do quebra-cabeça de três discos novamente. Da mesma forma, resolver o quebra-cabeça de três discos requer as mesmas etapas do quebra-cabeça de dois discos, além de mover o terceiro disco e assim por diante. Resolver o quebra-cabeça de um único disco é o caso básico trivial: envolve apenas mover o disco.
+
+A estrutura em forma de árvore, como na imagem, sugere que uma abordagem recursiva é ideal para resolver o quebra-cabeça da Torre de Hanói. Nesta árvore, a execução se move de cima para baixo e da esquerda para a direita.
+
+Embora uma Torre de Hanói de três ou quatro discos seja fácil de ser resolvida por um ser humano, um número crescente de discos requer um número exponencialmente crescente de operações para ser concluído. Para n discos, são necessários no mínimo 2^ n – 1 movimentos para resolver. Isso significa que uma torre de 30 discos requer mais de um bilhão de movimentos para ser concluída!
+
+Embora uma Torre de Hanói de três ou quatro discos seja relativamente fácil de resolver por um ser humano, um número crescente de discos requer um número exponencialmente maior de operações para ser concluído. Para n discos, são necessários no mínimo \(2^n - 1\) movimentos para resolver o quebra-cabeça. Isso significa que uma torre de 30 discos requer mais de um bilhão de movimentos para ser concluída!
+
+Vamos nos perguntar três questões para criar uma solução recursiva:
+
+1. **Qual é o caso básico?**
+   O caso básico é resolver uma torre de um disco, que é trivial: basta mover o disco para outro poste.
+
+2. **Qual argumento é passado para a chamada de função recursiva?**
+   O argumento passado é uma torre de tamanho um a menos que o tamanho atual, ou seja, estamos resolvendo a torre de \( n-1 \) discos.
+
+3. **Como esse argumento se aproxima do caso base?**
+   O tamanho da torre a ser resolvida diminui em um disco para cada chamada recursiva até se tornar uma torre de um disco.
+
+   O seguinte programa <a href="">`towerOfHanoiSolver.py`</a> resolve o quebra-cabeça da Torre de Hanói e exibe uma visualização de cada etapa:
+
+``` Python
+import sys
+
+# Configure as torres A, B e C. O final da lista é o topo da torre.
+  TOTAL_DISKS = 6 ❶
+
+# Preencher a Torre A:
+  TOWERS = {'A': list(reversed(range(1, TOTAL_DISKS + 1))), ❷
+          'B': [],
+          'C': []}
+
+def printDisk(diskNum):
+    # Imprima um único disco de largura diskNum.
+    emptySpace = ' ' * (TOTAL_DISKS - diskNum)
+    if diskNum == 0:
+        # Basta desenhar o poste.
+        sys.stdout.write(emptySpace + '||' + emptySpace)
+    else:
+        # Desenhe o disco.
+        diskSpace = '@' * diskNum
+        diskNumLabel = str(diskNum).rjust(2, '_')
+        sys.stdout.write(emptySpace + diskSpace + diskNumLabel + diskSpace + emptySpace)
+
+def printTowers():
+    # Imprima todas as três torres.
+    for level in range(TOTAL_DISKS, -1, -1):
+        for tower in (TOWERS['A'], TOWERS['B'], TOWERS['C']):
+            if level >= len(tower):
+                printDisk(0)
+            else:
+                printDisk(tower[level])
+        sys.stdout.write('\n')
+    # Imprima as etiquetas da torre A, B e C.
+    emptySpace = ' ' * (TOTAL_DISKS)
+    print('%s A%s%s B%s%s C\n' % (emptySpace, emptySpace, emptySpace, emptySpace, emptySpace))
+
+def moveOneDisk(startTower, endTower):
+    # Mova o disco superior de startTower para endTower.
+    disk = TOWERS[startTower].pop()
+    TOWERS[endTower].append(disk)
+
+def solve(numberOfDisks, startTower, endTower, tempTower):
+    # Mova os discos numberOfDisks superiores de startTower para endTower.
+    if numberOfDisks == 1:
+        # CASO BASE
+        moveOneDisk(startTower, endTower) ❸
+        printTowers()
+        return
+    else:
+        # CASE RECURSIVO
+        solve(numberOfDisks - 1, startTower, tempTower, endTower) ❹
+        moveOneDisk(startTower, endTower) ❺
+        printTowers()
+        solve(numberOfDisks - 1, tempTower, endTower, startTower) ❻
+        return
+
+# Resolver:
+printTowers()
+solve(TOTAL_DISKS, 'A', 'B', 'C')
+
+#Modo interativo para mover discos manualmente:
+#while True:
+#    printTowers()
+#    print('Enter letter of start tower and the end tower. (A, B, C) Or Q to quit.')
+#    move = input().upper()
+#    if move == 'Q':
+#        sys.exit()
+#    elif move[0] in 'ABC' and move[1] in 'ABC' and move[0] != move[1]:
+#        moveOneDisk(move[0], move[1])
+```
+
+Quando você executa este código, a saída mostra cada movimento dos discos até que toda a torre tenha sido movida da Torre A para a Torre B:
+
+![alt text](../assents/Image11.png)
+
+O código do programa `towerOfHanoiSolver.py` possui um modo interativo onde você pode resolver o quebra-cabeça por conta própria. Para ativar o modo interativo, remova os comentários das linhas de código no final do arquivo.
+
+### Como Usar o Programa
+
+1. **Executando o Programa**:
+   - Defina a constante `TOTAL_DISKS` ❶ no topo do programa como 1 ou 2 para começar com casos menores.
+   - Execute o programa para observar a solução automática do quebra-cabeça.
+   
+2. **Estrutura dos Dados**:
+   - Em nosso programa, um pólo é representado por uma lista de inteiros em Python.
+   - Cada número inteiro representa um disco, com números maiores representando discos maiores.
+   - O inteiro no início da lista está na parte inferior do pólo, e o inteiro no final está no topo. Por exemplo, `[6, 5, 4, 3, 2, 1]` representa um pólo com seis discos, onde o maior disco está na base.
+   - Uma lista vazia `[]` representa um pólo sem discos.
+   - A variável `TOWERS` ❷ contém três dessas listas, representando os três pólos A, B e C.
+O caso base apenas move o menor disco do pólo inicial para o pólo final ❸ . O caso recursivo para uma torre de n discos realiza três etapas: resolver o caso n – 1 ❹ , mover o n- ésimo disco ❺ e então resolver o caso n – 1 novamente ❻ 
+
+3. **Implementação Recursiva**:
+   - **Caso Base**:
+     - O menor disco é movido do pólo inicial para o pólo final ❸.
+   - **Caso Recursivo**:
+     - Para resolver uma torre de `n` discos, três etapas são realizadas:
+       1. Resolver o caso de `n – 1` discos ❹.
+       2. Mover o `n`-ésimo disco ❺.
+       3. Resolver novamente o caso de `n – 1` discos ❻.
