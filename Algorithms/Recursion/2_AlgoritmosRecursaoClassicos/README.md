@@ -40,7 +40,7 @@ Como o tail é um elemento a menos que a lista original, eventualmente chamaremo
 3. **Como esse argumento se aproxima do caso base?** 
     - A lista diminui em um elemento a cada chamada recursiva até que se torne uma lista vazia.
 
-Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/sumHeadTail.py">``sumHeadTail.py``</a>, um programa Python para somar uma lista de números:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/Algoritmos/sumHeadTail.py">``sumHeadTail.py``</a>, um programa Python para somar uma lista de números:
 
 ``` Python
 def sum(numbers):
@@ -181,7 +181,7 @@ Vamos fazer três perguntas sobre o algoritmo recursivo da função `rev()`:
 
 ![Pilha de chamadas](../assents/Image08.png)
 
-Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/reverseString.py">`reverseString.py`</a> , um programa Python para reverter uma string:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/Algoritmos/reverseString.py">`reverseString.py`</a> , um programa Python para reverter uma string:
 
 ```python
 def rev(theString):
@@ -243,7 +243,7 @@ Como esse argumento se aproxima do caso base? O argumento string diminui em dois
 3. **Como esse argumento se aproxima do caso base?** 
     - O argumento da string diminui em dois caracteres a cada chamada recursiva até se tornar uma string com zero ou um caractere.
 
-Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/isPalindrome.py">`isPalindrome()`</a>, um programa Python para detectar palíndromos:
+Aqui está <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/Algoritmos/isPalindrome.py">`isPalindrome()`</a>, um programa Python para detectar palíndromos:
 
 ```
 def isPalindrome(theString):
@@ -330,7 +330,7 @@ Vamos nos perguntar três questões para criar uma solução recursiva:
 3. **Como esse argumento se aproxima do caso base?**
    O tamanho da torre a ser resolvida diminui em um disco para cada chamada recursiva até se tornar uma torre de um disco.
 
-   O seguinte programa <a href="">`towerOfHanoiSolver.py`</a> resolve o quebra-cabeça da Torre de Hanói e exibe uma visualização de cada etapa:
+O seguinte programa <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Recursion/2_AlgoritmosRecursaoClassicos/Algoritmos/towerOfHanoiSolver.py">`towerOfHanoiSolver.py`</a> resolve o quebra-cabeça da Torre de Hanói e exibe uma visualização de cada etapa:
 
 ``` Python
 import sys
