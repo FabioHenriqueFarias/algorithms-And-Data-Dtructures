@@ -1,0 +1,3 @@
+# Algoritmos de Backtracking e Busca em Arvore
+
+> Você aprendeu que a recursão é especialmente adequada para problemas que envolvem estruturas em formato de árvore e retrocesso, como os algoritmos de resolução de labirintos. Para entender o motivo, considere que o tronco de uma árvore se divide em vários galhos, e esses galhos, por sua vez, se dividem em outros ramos. Em outras palavras, uma árvore tem uma forma recursiva e autossimilar.
