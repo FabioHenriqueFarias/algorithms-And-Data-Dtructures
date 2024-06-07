@@ -71,7 +71,7 @@ Outra característica é que sua eficiência é \( O(n) \) tanto para o pior cas
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação de um algoritmo de Linear Search em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/Rust">Rust</a>
+Neste repositório, você encontrará a implementação de um algoritmo de uma Pesquisa Linear em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/2_LinearSearch/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/2_LinearSearch/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/2_LinearSearch/Rust">Rust</a>
 
 
 ## Referência

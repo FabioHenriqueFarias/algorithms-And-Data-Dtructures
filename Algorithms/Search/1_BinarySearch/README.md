@@ -99,7 +99,7 @@ Uma característica crucial é sua eficiência constante, `O(1)`, no melhor caso
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação de um algoritmo de Pesquisa Binária em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Rust">Rust</a>
+Neste repositório, você encontrará a implementação de um algoritmo de uma Pesquisa Binária em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Rust">Rust</a>
 
 
 ## Referências
