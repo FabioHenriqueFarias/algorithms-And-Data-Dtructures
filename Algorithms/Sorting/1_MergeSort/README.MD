@@ -76,11 +76,11 @@ tanto para o melhor caso, pior caso quanto para o caso médio. Isso significa qu
 
 ### Complexidade do Merge Sort
 
-| Caso           | Complexidade |
-|----------------|--------------|
-| Melhor caso    | \( \Omega(n \log n) \) |
-| Caso médio     | \( \Theta(n \log n) \) |
-| Pior caso      | \( O(n \log n) \) |
+| Caso           | Complexidade       |
+|----------------|--------------------|
+| Melhor caso    | `( Omega(n log n))` |
+| Caso médio     | `( Theta(n log n))` |
+| Pior caso      | `( O(n log n))` |
 
 ## Implementações
 

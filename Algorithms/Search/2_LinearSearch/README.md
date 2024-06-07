@@ -57,17 +57,17 @@ Agora, ao comparar `arr[2]` com a chave, os valores correspondem. Portanto, o Al
 
 ## Complexidade
 
-A [Complexidade Assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation) deste algoritmo é de \( O(n) \) no pior caso, tornando-o uma opção viável para conjuntos de dados pequenos ou não ordenados.
+A [Complexidade Assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation) deste algoritmo é de `( O(n) )` no pior caso, tornando-o uma opção viável para conjuntos de dados pequenos ou não ordenados.
 
-Outra característica é que sua eficiência é \( O(n) \) tanto para o pior caso quanto para o caso médio, com uma complexidade de melhor caso de \( O(1) \). Isso significa que a Pesquisa Linear possui uma complexidade de tempo mínima de \( \Omega(1) \)\, no caso médio de \( \Theta(n) \)\ e também tem uma cota superior de \( O(n) \).
+Outra característica é que sua eficiência é `( O(n) )` tanto para o pior caso quanto para o caso médio, com uma complexidade de melhor caso de `( O(1) )`. Isso significa que a Pesquisa Linear possui uma complexidade de tempo mínima de `( Omega(1) )`, no caso médio de `( Theta(n) )` e também tem uma cota superior de `( O(n) )`.
 
 ### Complexidade da Pesquisa Linear
 
-| Caso           | Complexidade   |
-|----------------|----------------|
-| Melhor caso    | \( \Omega(1) \)|
-| Caso médio     | \( \Theta(n) \)|
-| Pior caso      | \( O(n) \)     |
+| Caso           | Complexidade |
+|----------------|------------|
+| Melhor caso    | `( Omega(1) )`|
+| Caso médio     | `( Theta(n) )`|
+| Pior caso      | `( O(n) )`   |
 
 ## Implementações
 

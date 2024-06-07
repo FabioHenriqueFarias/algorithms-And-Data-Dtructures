@@ -91,11 +91,11 @@ Uma característica crucial é sua eficiência constante, `O(1)`, no melhor caso
 
 ### Complexidade da Pesquisa Binária
 
-| Caso           | Complexidade   |
-|----------------|----------------|
-| Melhor caso    | \( \Omega(1) \)|
-| Caso médio     | \( \Theta(\log n) \)|
-| Pior caso      | \( O(\log n) \)|
+| Caso           | Complexidade |
+|----------------|------------|
+| Melhor caso    | `( Omega(1))`|
+| Caso médio     | `( Theta(log n))`|
+| Pior caso      | `( O(log n))`|
 
 ## Implementações
 
