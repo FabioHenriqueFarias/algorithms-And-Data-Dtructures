@@ -7,6 +7,7 @@
     - [Divisão](#1---divisão)
     - [Conquista](#2---conquista)
 - [Complexidade](#complexidade)
+  - [Complexidade do Merge Sort](#complexidade-do-merge-sort)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -73,9 +74,17 @@ A <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures
 Uma característica importante é que sua eficiência é ``(n∗log n)``
 tanto para o melhor caso, pior caso quanto para o caso médio. Isso significa que não apenas o Merge Sort possui uma complexidade de tempo mínima ``Ω(n∗log n)``,  mas também de caso médio de ``Θ(n∗log n)`` e tem uma cota superior de ``O(n * log n)``. Essa propriedade vai nos oferecer a garantia de que, independentemente da disposição dos dados no array, a ordenação será realizada de maneira eficiente.
 
+### Complexidade do Merge Sort
+
+| Caso           | Complexidade |
+|----------------|--------------|
+| Melhor caso    | \( \Omega(n \log n) \) |
+| Caso médio     | \( \Theta(n \log n) \) |
+| Pior caso      | \( O(n \log n) \) |
+
 ## Implementações
 
-Neste repositório, você encontrará a implementação de um algoritmo de Merge Sort em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/MergeSort/Rust">Rust</a>
+Neste repositório, você encontrará a implementação de um algoritmo de Merge Sort em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/Rust">Rust</a>
 
 ## Referências
 

@@ -9,6 +9,8 @@
     - [3° Passo:](#3°-passo)
     - [4° Passo:](#4°-passo)
 - [Complexidade](#complexidade)
+  - [Complexidade da Pesquisa Binária](#complexidade-da-pesquisa-binária)
+- [Implementações](#implementações)
 - [Referência](#referências)
 
 ## O que é?
@@ -79,13 +81,26 @@ Podemos então comparar novamente o elemento do meio com o valor que estamos pro
 
 Como `x == mid`, isso significa que encontramos o valor desejado. Portanto, retornamos a posição de `mid`.
 
-## Complexidade?
+## Complexidade
 
 A  <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation">Complexidade Assintótica</a>  deste algoritmo é de `O(log n)` no pior caso, tornando-o uma excelente opção para algoritmos de pesquisa. Até mesmo ordenar um conjunto de dados para utilizar a pesquisa binária pode ser uma escolha vantajosa.
 
 Uma característica crucial é sua eficiência constante, `O(1)`, no melhor caso, quando o elemento está exatamente no meio do conjunto. A Binary Search demonstra uma complexidade de tempo mínima, `Ω(O(1))`, indicando seu desempenho ótimo em cenários ideais. Além disso, no caso médio, sua complexidade é `Θ(O(log n))`, representando uma eficiência consistente em diversas situações.
 
 É importante observar que a Binary Search possui uma cota superior `O(n * log n)`, o que significa que mesmo em cenários menos ideais, seu desempenho ainda é muito bom em comparação com algoritmos de busca menos eficientes.
+
+### Complexidade da Pesquisa Binária
+
+| Caso           | Complexidade   |
+|----------------|----------------|
+| Melhor caso    | \( \Omega(1) \)|
+| Caso médio     | \( \Theta(\log n) \)|
+| Pior caso      | \( O(\log n) \)|
+
+## Implementações
+
+Neste repositório, você encontrará a implementação de um algoritmo de Pesquisa Binária em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch/Rust">Rust</a>
+
 
 ## Referências
 
