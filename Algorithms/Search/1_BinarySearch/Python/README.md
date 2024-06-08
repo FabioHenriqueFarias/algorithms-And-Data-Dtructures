@@ -1,4 +1,4 @@
-# Binary Search em Python
+# Implementação do algoritmo Binary Search em Python
 
 ## Sumário
 
@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Binary Search em Python:
 
 ### binarySearch.py
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Search/BinarySearch/Python/binarySearch.py">`binarySearch.py`</a> possui a implementação do algoritmo de Binary Search.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Search/1_BinarySearch/Python/binarySearch.py">`binarySearch.py`</a> possui a implementação do algoritmo de Binary Search.
 
 
 ## Rodando o programa com Python:

@@ -84,7 +84,7 @@ tanto para o melhor caso, pior caso quanto para o caso médio. Isso significa qu
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação de um algoritmo de Merge Sort em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/01_MergeSort/Rust">Rust</a>
+Neste repositório, você encontrará a implementação de um algoritmo de Merge Sort em três diferentes tecnologias:<a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort/Rust">Rust</a>
 
 ## Referências
 

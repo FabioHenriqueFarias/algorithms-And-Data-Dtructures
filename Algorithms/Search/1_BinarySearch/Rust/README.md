@@ -1,4 +1,4 @@
-# Binary Search em Rust
+# Implementação do algoritmo Binary Search em Rust
 
 ## Sumário
 
@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Binary Search em Rust:
 
 ### binary_search.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Search/BinarySearch/Rust/binary_search.rs">`binary_search.rs`</a>  possui a implementação do algoritmo de Binary Search.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Search/1_BinarySearch/Rust/binary_search.rs">`binary_search.rs`</a>  possui a implementação do algoritmo de Binary Search.
 
 
 ## Rodando o programa com Rust:
