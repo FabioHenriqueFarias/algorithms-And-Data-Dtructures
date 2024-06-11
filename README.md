@@ -7,6 +7,7 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
     - [Recursion](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Recursion)
     - [Search Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search)
         - [Binary Search](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/1_BinarySearch)
+        - [Linear Search](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Search/2_LinearSearch)
     - [Sorting Algorithms](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting)
         - [Merge Sort](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort)
 - [Asymptotic Notation](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation)

@@ -21,5 +21,3 @@ fn main() {
     println!("Index of target: {}", result);
 }
  
-//  Output 
-//  Index of target: 4
