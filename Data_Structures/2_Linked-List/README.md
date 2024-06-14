@@ -134,7 +134,7 @@ Embora essa abordagem garanta que o elemento será encontrado, em alguns casos p
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação da estrutura de dados Linked List em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Linked-List/Rust">Rust</a>
+Neste repositório, você encontrará a implementação da estrutura de dados Linked List em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/2_Linked-List/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/2_Linked-List/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/2_Linked-List/Rust">Rust</a>
 
 ## Referências
 

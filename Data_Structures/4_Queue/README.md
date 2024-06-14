@@ -66,28 +66,62 @@ Para manipular uma Queue, diversas operações são oferecidas para a estrutura 
 
 ### Enqueue
 
+A operação de enfileiramento (enqueue) adiciona um item ao final da fila. Em outras palavras, o item é inserido na parte de trás da fila.
+
 #### Complexidade de Enqueue
+
+A operação de enfileiramento possui uma complexidade de tempo constante no pior caso, expressa como ``O(1)``, o que significa que o tempo necessário para adicionar um item à fila é constante, independentemente do tamanho da fila.
 
 ### Dequeue
 
+A operação de desenfileiramento (dequeue) remove um item do início da fila. Em outras palavras, o item é removido da frente da fila.
+
 #### Complexidade de Dequeue
+
+A operação de desenfileiramento também possui uma complexidade de tempo constante no pior caso, expressa como ``O(1)``, o que significa que o tempo necessário para remover um item da fila é constante, independentemente do tamanho da fila.
 
 ### Search 
 
+A operação de pesquisa (search) é usada para encontrar um item específico na fila. Para pesquisar um item, você deve iterar pelos elementos da fila até encontrar o item desejado.
+
 #### Complexidade de Search
+
+A operação de pesquisa tem uma complexidade de tempo linear no pior caso, expressa como ``O(n)``, onde ``n`` é o número de elementos na fila. Isso significa que o tempo necessário para pesquisar um item na fila é proporcional ao número de elementos na fila.
 
 ### Peek
 
+A operação de peek é usada para acessar o item no início da fila sem removê-lo. Em outras palavras, você pode verificar o próximo item a ser removido da fila sem realmente removê-lo.
+
 #### Complexidade de Peek
 
+A operação de peek tem uma complexidade de tempo constante no pior caso, expressa como ``O(1)``, o que significa que o tempo necessário para acessar o item no início da fila é constante, independentemente do tamanho da fila.
 
 ### Complexidades
 
-Assim como as pilhas, as filas são eficientes para adicionar ou remover dados. O enfileiramento (enqueue) e o desenfileiramento (dequeue) têm complexidade **O(1)**, independentemente do tamanho da fila. No entanto, as filas não são eficientes para acessar dados individuais, pois é necessário iterar pelos elementos da fila para encontrar um item específico. Isso significa que tanto o acesso a um item quanto a pesquisa em uma fila possuem complexidade O(n).
+Assim como as pilhas, as filas são eficientes para adicionar ou remover dados. O enfileiramento (enqueue) e o desenfileiramento (dequeue) têm complexidade de pior caso `O(1)`, o que significa que o tempo para adicionar ou remover um elemento é constante, independentemente do tamanho da fila. No entanto, as filas não são eficientes para acessar dados individuais, pois é necessário iterar pelos elementos da fila para encontrar um item específico. Isso significa que a pesquisa em uma fila possui complexidade de pior caso `O(n)`.
+
+| Operação           | Complexidade |
+|--------------------|--------------|
+| Inserção (enqueue) | O(1)         |
+| Remoção (dequeue)  | O(1)         |
+| Leitura (peek)     | O(1)         |
+| Pesquisa (search)  | O(n)         |
+
+Essas complexidades de tempo constante (O(1)) indicam que o tempo necessário para realizar cada uma dessas operações não depende do tamanho total da pilha. Já a complexidade de tempo linear (O(n)) para a operação de pesquisa indica que o tempo necessário para pesquisar um item na fila é proporcional ao número de elementos na fila. Independentemente do número de elementos presentes na Queue, a inserção, remoção e leitura podem ser executadas em tempo constante, tornando as Queues uma escolha eficiente e eficaz para muitas aplicações computacionais.
 
 ## Implementações
 
+Neste repositório, você encontrará a implementação da estrutura de dados Queue em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/4_Queue/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/4_Queue/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/4_Queue/Rust">Rust</a>
+
+
 ## Referências
 
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a>
 
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
+</a>
+
+GeeksforGeeks: <a href="https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/#6-queue">Queue Data Structure</a>
 

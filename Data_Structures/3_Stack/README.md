@@ -121,7 +121,7 @@ Essas complexidades de tempo constante (O(1)) indicam que o tempo necessário pa
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação da estrutura de dados Stack em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/Stack/Rust">Rust</a>
+Neste repositório, você encontrará a implementação da estrutura de dados Stack em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack/Rust">Rust</a>
 
 ## Referências
 
@@ -135,6 +135,9 @@ Geeks for Geeks: <a href="https://www.geeksforgeeks.org/basic-operations-in-stac
 Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
 
 Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
+</a>
 
 Geeks for Geeks: <a href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank">Stack Data Structure
 </a>

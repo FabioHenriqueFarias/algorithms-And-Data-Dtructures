@@ -15,6 +15,7 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
     - [Arrays](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/1_Arrays)   
     - [Linked List](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/2_Linked-List) 
     - [Stack](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack)  
+    - [Queue](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/4_Queue)
 
 
 <br>
