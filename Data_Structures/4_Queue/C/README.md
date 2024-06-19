@@ -14,15 +14,15 @@ Estes códigos consistem na implementação de uma **Fila** em linguagem C, divi
 
 ### main.c
 
-O arquivo <a href="">`main.c`</a> é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/4_Queue/C/main.c">`main.c`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 ### queue.h
 
-O arquivo <a href="">`queue.h`</a> contém as declarações das funções disponíveis para manipulação da Fila. Ele serve como uma interface para o programa principal `(main.c)`, fornecendo os protótipos das funções que podem ser utilizadas.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/4_Queue/C/queue.c">`queue.h`</a> contém as declarações das funções disponíveis para manipulação da Fila. Ele serve como uma interface para o programa principal `(main.c)`, fornecendo os protótipos das funções que podem ser utilizadas.
 
 ### queue.c
 
-O arquivo <a href="">`queue.c`</a> contém uma implementação das funções necessárias para manipulação de uma fila em C. Cada função oferece a lógica necessária para realizar operações como inserção, exclução.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/4_Queue/C/queue.h">`queue.c`</a> contém uma implementação das funções necessárias para manipulação de uma fila em C. Cada função oferece a lógica necessária para realizar operações como inserção, exclução.
 
 As funções implementadas são as seguintes:
 
