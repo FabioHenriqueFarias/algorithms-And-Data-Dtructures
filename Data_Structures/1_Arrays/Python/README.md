@@ -21,7 +21,7 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### _array.py
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/Python/_array.py">`_array.py`</a> contém uma implementação das funções necessárias para manipulação de arrays em Python. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/1_Arrays/Python/_array.py">`_array.py`</a> contém uma implementação das funções necessárias para manipulação de arrays em Python. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
 
 As funções implementadas são as seguintes:
 

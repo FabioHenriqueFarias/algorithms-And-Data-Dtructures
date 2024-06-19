@@ -12,7 +12,7 @@ Estes arquivos constituem a implementação de um array em Rust, organizados em 
 
 ### main.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/Rust/main.rs">`main.rs`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/1_Arrays/Rust/main.rs">`main.rs`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 ### array.rs
 

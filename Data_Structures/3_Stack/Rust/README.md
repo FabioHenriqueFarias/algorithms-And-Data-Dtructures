@@ -1,7 +1,6 @@
 # Stack em Rust
 
-
-
+## Sumário
 - [Divisão]()
     - [main.rs](#mainrs)
     - [stack.rs]()
@@ -9,6 +8,8 @@
 
 
 ## Divisão
+
+Estes códigos consistem na implementação de uma **Pilha** na linguagem Rust, dividido em dois arquivos principais: `main.rs`, `stack.rs`. O `main.rs` é o arquivo principal do programa, `stack.rs` contém os métodos disponíveis para manipulação da pilha bem como sua implementação.
 
 ### main.rs 
 

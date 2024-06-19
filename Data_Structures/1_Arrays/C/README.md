@@ -22,7 +22,7 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### array.c
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Arrays/C/array.c">`array.c`</a> contém uma implementação das funções necessárias para manipulação de arrays em C. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/1_Arrays/C/array.c">`array.c`</a> contém uma implementação das funções necessárias para manipulação de arrays em C. Cada função oferece a lógica necessária para realizar operações como inserção, exclusão, busca e outras, em um array.
 
 As funções implementadas são as seguintes:
 

@@ -10,11 +10,11 @@
 
 ## Divisão
 
-Estes códigos consistem na implementação de uma **Pilha** em linguagem C, dividido em três arquivos principais: `main.c`, `stack.h`, e `stack.c`. O `main.c` é o arquivo principal do programa, `stack.h` contém os métodos disponíveis para manipulação do array, enquanto `stack.c` apresenta a implementação dos métodos declarados em `stack.h`.
+Estes códigos consistem na implementação de uma **Pilha** em linguagem C, dividido em três arquivos principais: `main.c`, `stack.h`, e `stack.c`. O `main.c` é o arquivo principal do programa, `stack.h` contém os métodos disponíveis para manipulação da pilha, enquanto `stack.c` apresenta a implementação dos métodos declarados em `stack.h`.
 
 ### main.c
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Stack/C/main.c">`main.c`</a> é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/3_Stack/C/main.c">`main.c`</a> é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 ### stack.h
 

@@ -12,7 +12,7 @@ Estes códigos consistem na implementação de uma **Pilha** na linguagem Python
 
 ### main.py
 
-O arquivo <a href="">`main.py`</a> é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack/Python">`main.py`</a> é o ponto de entrada do programa. Aqui,   ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 ### stack.py
 

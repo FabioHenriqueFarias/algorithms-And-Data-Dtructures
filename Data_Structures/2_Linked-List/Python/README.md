@@ -24,7 +24,7 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### LinkedList.py
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Linked-List/Python/LinkedList.py">`LinkedList.py`</a> contém a implementação das operações básicas para manipulação de uma lista encadeada em Python. Essas operações incluem:
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/2_Linked-List/Python/LinkedList.py">`LinkedList.py`</a> contém a implementação das operações básicas para manipulação de uma lista encadeada em Python. Essas operações incluem:
 
 - Adicionar um novo nó no final da lista.
 - Adicionar um novo nó no início da lista.

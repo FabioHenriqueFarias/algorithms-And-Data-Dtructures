@@ -22,7 +22,7 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 
 ### linked_list.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/Linked-List/Rust/linked_list.rs">`linked_list.rs`</a> contém a implementação das operações básicas para manipulação de uma lista encadeada em Rust. Essas operações incluem:
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/2_Linked-List/Rust/linked_list.rs">`linked_list.rs`</a> contém a implementação das operações básicas para manipulação de uma lista encadeada em Rust. Essas operações incluem:
 
 - Adicionar um novo nó no final da lista.
 - Adicionar um novo nó no início da lista.
