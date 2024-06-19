@@ -4,8 +4,8 @@
 
 - [Divisão](#divisão)
     - [main.c](#mainc)
-    - [queue.h](#stackh)
-    - [queue.c](#stackc)
+    - [queue.h](#queueh)
+    - [queue.c](#queuec)
 - [Rodando o programa com GCC:](#rodando-o-programa-com-gcc)
 
 ## Divisão 

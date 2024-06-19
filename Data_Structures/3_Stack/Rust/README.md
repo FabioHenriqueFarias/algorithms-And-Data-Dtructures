@@ -13,9 +13,21 @@ Estes códigos consistem na implementação de uma **Pilha** na linguagem Rust, 
 
 ### main.rs 
 
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/3_Stack/Rust/main.rs">`main.rs`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+
+
 ### stack.rs
 
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/3_Stack/Rust/stack.rs">`stack.rs`</a> contém uma implementação das funções necessárias para manipulação de uma pilha em Rusr. Cada função oferece a lógica necessária para realizar operações como inserção, exclução.
 
+As funções implementadas são as seguintes:
+
+- Criar a pilha
+- Adicionar um novo elemento no topo da pilha.
+- Remover um elemento no topo da pilha.
+- Verificar se a pilha está vazia.
+- Retornar o tamanho atual da pilha.
+- Imprimir o elemento no topo da pilha.
 
 ## Rodando o programa com Rust:
 
