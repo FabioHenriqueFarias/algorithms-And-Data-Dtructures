@@ -23,7 +23,7 @@ As funções implementadas são as seguintes:
 - Criar a Fila
 - Adicionar um novo elemento no topo da Fila.
 - Remover um elemento no topo da Fila.
-- Verificar se a Fila está vazia.
+- Verificar se a Fila está vazia.  
 - Retornar o tamanho atual da Fila.
 - Imprimir o elemento no topo da Fila.
 
