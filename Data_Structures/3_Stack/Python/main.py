@@ -1,6 +1,6 @@
 from stack import Stack
 
-# Criando uma pilha
+# Criando uma pilha 
 pilha = Stack()
 
 # Verificando se a pilha está vazia

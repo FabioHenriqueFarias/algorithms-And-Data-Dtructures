@@ -1,4 +1,5 @@
-class Fila():
+class Queue():
+
     # Construtor da classe
     def __init__(self):
         self.items = []
