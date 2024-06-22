@@ -2,10 +2,10 @@
 
 ## Sumário
 
-- [O que é](#o-que-é-o-algoritmo-merge-sort)
+- [O que é o algoritmo Merge Sort?](#o-que-é-o-algoritmo-merge-sort)
 - [Como Funciona?](#como-funciona)
-    - [Divisão](#1---divisão)
-    - [Conquista](#2---conquista)
+    - [1 - Divisão](#1---divisão)
+    - [2 - Conquista](#2---conquista)
 - [Complexidade](#complexidade)
   - [Complexidade do Merge Sort](#complexidade-do-merge-sort)
 - [Implementações](#implementações)
@@ -25,12 +25,14 @@ quebrar continuamente sua lista pela metade até que sua lista original se torne
 ![Merge Sort](../assents/image01.png)
 
 ### 1 - Divisão:
+
 - Iniciamos dividindo a lista original em duas sublistas de tamanho igual:<br>
 ``[6, 3] e [9, 2]``. <br>
 - Ela é dividiva novamente até cada lista possuir somente um elemento.<br>
 ``[6], [3], [9], [2]``.
 
 ### 2 - Conquista
+
 - Cada sublista é ordenada recursivamente usando o mesmo algoritmo Merge Sort.<br>
 - Depois de classificar as listas contendo um item cada, você mescla suas sublistas duas de cada vez, comparando o primeiro item de cada lista. Mesclar suas listas significa combiná-las em ordem de
 classificação.
