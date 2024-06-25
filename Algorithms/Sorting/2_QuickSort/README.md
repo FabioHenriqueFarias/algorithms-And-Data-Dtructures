@@ -19,6 +19,12 @@ O QuickSort é amplamente utilizado devido à sua baixa **complexidade**. Apesar
 
 ## Como Funciona?
 
+Primeiramente, precisamos identificar o caso base, onde o array vazio ou o array com um elemento é considerado o nosso caso base.
+
+### 1 - Divisão:
+
+- Iniciamos escolhendo um pivo.
+
 ## Complexidade
 
 ### Complexidade do Quick Sort
