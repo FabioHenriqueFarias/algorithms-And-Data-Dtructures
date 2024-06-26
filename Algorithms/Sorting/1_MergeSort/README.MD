@@ -6,6 +6,7 @@
 - [Como Funciona?](#como-funciona)
     - [1 - Divisão](#1---divisão)
     - [2 - Conquista](#2---conquista)
+    - [3 - Combinação](#3---combinação)
 - [Complexidade](#complexidade)
   - [Complexidade do Merge Sort](#complexidade-do-merge-sort)
 - [Implementações](#implementações)
@@ -19,55 +20,68 @@ O Merge Sort é amplamente utilizado, muito devido sua baixa <a href="#complexid
 
 ## Como Funciona?
 
-Primeiro, você usa a recursão para
-quebrar continuamente sua lista pela metade até que sua lista original se torne uma ou mais sublistas contendo apenas um número.
+Primeiro, você usa a recursão para quebrar continuamente sua lista pela metade até que sua lista original se torne uma ou mais sublistas contendo apenas um número.
 
 ![Merge Sort](../assents/image01.png)
 
 ### 1 - Divisão:
 
 - Iniciamos dividindo a lista original em duas sublistas de tamanho igual:<br>
-``[6, 3] e [9, 2]``. <br>
-- Ela é dividiva novamente até cada lista possuir somente um elemento.<br>
-``[6], [3], [9], [2]``.
+    ```python
+    # Lista original: 
+    [6, 3, 9, 2]
 
+    # Dividindo: 
+    [6, 3] e [9, 2]
+    ```
 ### 2 - Conquista
 
-- Cada sublista é ordenada recursivamente usando o mesmo algoritmo Merge Sort.<br>
-- Depois de classificar as listas contendo um item cada, você mescla suas sublistas duas de cada vez, comparando o primeiro item de cada lista. Mesclar suas listas significa combiná-las em ordem de
-classificação.
+- Esse processo é repetido até que cada sublista contenha apenas um elemento.
+    ```python
+    # Sublistas: 
+    [6], [3], [9], [2]
+    ```
 
-- Primeiro, você mescla ``[6]`` e ``[3]``, depois mescla ``[9]`` e ``[2]``.<br> 
+- Cada sublista contendo um único elemento é considerada ordenada. 
+
+
+### 3 - Combinação
+
+- Agora, começamos a combinar essas sublistas duas a duas, comparando os elementos e colocando-os em ordem.
+
+- Primeiro, mesclamos as sublistas `[6]` e `[3]` e, em seguida, `[9]` e `[2]`:
+    ```python
+    Comparando [6] e [3], resulta em [3, 6]
+    Comparando [9] e [2], resulta em [2, 9]
+    ```
+
     > Neste caso, cada lista contém apenas um número, então você compara os dois números e coloca o menor número no início da sua nova lista mesclada e o número maior no final.<br>
 
 - Agora, você tem duas listas
 classificadas:<br>
-``[3, 6] e [2, 9]`` 
-- Em seguida, você mescla essas duas listas:        
+    ```python
+    [3, 6] e [2, 9]
+    ``` 
+- Em seguida, mesclamos essas duas listas:
+
+    ```python
+        # Não mesclado: [3, 6], [2, 9]
+        # Mesclado: []
+
+        # Comparando 3 e 2, o menor (2) vai para a lista mesclada:
+        # Não mesclado: [3, 6], [9]
+        # Mesclado: [2]
+
+        # Comparando 3 e 9, o menor (3) vai para a lista mesclada:
+        # Não mesclado: [6], [9]
+        # Mesclado: [2, 3]
+
+        # Colocando o restante dos elementos:
+        # Mesclando 6 e 9:
+        # Não mesclado: []
+        # Mesclado: [2, 3, 6, 9]
     ```
-    # Não mesclado: [3, 6], [2, 9]
-    # Mesclado: []
-
-    > Primeiro, você compara 3 e 2. Como 2 é menor, ele entra na sua lista mesclada:
-
-    # Não mesclado: [3, 6], [9]
-    # Mesclado: [2]
-
-    > Agora você compara 3 e 9. Como 3 é menor, ele vai para sua lista mesclada:
-
-    # Não mesclado: [6], [9]
-    # Mesclado: [2,3]
-
-    > Finalmente, você compara 6 e 9. Como 6 é menor, ele vai para a sua lista mesclada. Então você coloca o 9 na lista mesclada:
-
-    # Não mesclado: []
-    # Mesclado: [2,3,6,9]
-
     > Agora que concluiu todas as mesclagens, você tem uma lista única e ordenada.
-
-
-    ```
-
 
 ## Complexidade
 

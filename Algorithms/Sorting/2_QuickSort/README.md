@@ -19,12 +19,71 @@ O QuickSort é amplamente utilizado devido à sua baixa **complexidade**. Apesar
 
 ## Como Funciona?
 
-Primeiramente, precisamos identificar o caso base, onde o array vazio ou o array com um elemento é considerado o nosso caso base.
+Primeiro, identificamos o caso base, onde o array vazio ou o array com um elemento é considerado já ordenado.
+
+![Array](image.png)
 
 ### 1 - Divisão:
 
-- Iniciamos escolhendo um pivo.
+- Inicialmente, escolha um elemento do array para ser o pivô. Neste exemplo, utilizaremos o primeiro item do array como pivô. Existem várias formas de escolher um bom pivô.
 
+  ```python
+  # Pivô escolhido: 33
+  [33, 15, 10]
+  ```
+
+- Encontre os elementos que são menores do que o pivô e também os elementos que são maiores. Isso é chamado de particionamento.
+
+  ```python
+  # Após particionamento:
+  [15, 10] >33< []
+  ```
+
+- Aqui já temos o caso base dos números maiores que o nosso pivô:
+
+  ```python
+  # Caso Base
+  []
+  ```
+
+### 2 - Conquista
+
+- Aplique recursivamente o mesmo processo para os subarrays contendo elementos menores e maiores do que o pivô.
+
+  ```python
+  # Aplicando recursivamente para o subarray [15, 10]:
+
+  # Pivô escolhido: 15
+  [15, 10]
+
+  # Após particionamento:
+  [10] >15< []
+  ```
+
+- Chegamos ao nosso caso base:
+
+  ```python
+  # Caso Base
+  [10]
+  ```
+
+### 3 - Combinação:
+
+- Agora o algoritmo volta mesclando os subarrays:
+
+  ```python
+  # Mesclado:
+  [10, 15]
+  ```
+
+- E então mescla novamente com o pivô original:
+
+  ```python
+  # Mesclado:
+  [10, 15, 33]
+  ```
+  
+  > Agora que concluiu todas as mesclagens, você tem uma lista única e ordenada.
 ## Complexidade
 
 ### Complexidade do Quick Sort
