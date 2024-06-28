@@ -86,6 +86,9 @@ Primeiro, identificamos o caso base, onde o array vazio ou o array com um elemen
   > Agora que concluiu todas as mesclagens, você tem uma lista única e ordenada.
 ## Complexidade
 
+A <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation">Complexidade Assintótica</a> deste Algoritmo é de ```O(n^2)``` no pior caso, tornando esse algoritmo 
+
+Uma característica importante é que sua eficiência é
 ### Complexidade do Quick Sort
 
 ## Implementações
