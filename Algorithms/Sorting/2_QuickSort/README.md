@@ -86,10 +86,18 @@ Primeiro, identificamos o caso base, onde o array vazio ou o array com um elemen
   > Agora que concluiu todas as mesclagens, você tem uma lista única e ordenada.
 ## Complexidade
 
-A <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation">Complexidade Assintótica</a> deste Algoritmo é de ```O(n^2)``` no pior caso, tornando esse algoritmo 
+A [Complexidade Assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation) do algoritmo QuickSort é de \(O(n^2)\) no pior caso, tornando esse algoritmo ineficiente para certas entradas específicas. Essa situação ocorre quando o pivô escolhido é sempre o menor ou o maior elemento restante, resultando em partições extremamente desequilibradas.
 
-Uma característica importante é que sua eficiência é
-### Complexidade do Quick Sort
+Uma característica importante do QuickSort é que sua eficiência pode ser muito melhor na maioria dos casos. A complexidade de tempo no melhor caso é \(O(n log n)\). Isso acontece quando o pivô escolhido divide o array em duas partes aproximadamente iguais em cada etapa da recursão. Neste cenário, a profundidade da recursão é \(log n\), e a cada nível da recursão, todos os \(n\) elementos são processados, resultando em \(O(n log n)\).
+
+A complexidade de tempo no caso médio também é \(O(n log n)\). Na maioria das vezes, a escolha do pivô resulta em partições relativamente equilibradas, de modo que a profundidade da recursão é aproximadamente \(log n\), e em cada nível, processamos todos os \(n\) elementos. Embora possa haver variações, a análise probabilística mostra que a complexidade esperada permanece \(O(n log n)\).
+
+
+### Por que a complexidade de melhor caso do QuickSort é melhor do que a do Merge Sort?
+
+A complexidade de melhor caso do QuickSort é \(O(n log n)\), assim como a do Merge Sort. No entanto, a constante escondida na notação \(O(n log n)\) é geralmente menor para o QuickSort, o que significa que, na prática, o QuickSort tende a ser mais rápido que o Merge Sort em muitos cenários.
+
+
 
 ## Implementações
 
