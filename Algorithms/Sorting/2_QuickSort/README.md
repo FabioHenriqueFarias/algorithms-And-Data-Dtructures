@@ -95,8 +95,11 @@ A complexidade de tempo no caso médio também é \(O(n log n)\). Na maioria das
 
 ### Por que a complexidade de melhor caso do QuickSort é melhor do que a do Merge Sort?
 
-A complexidade de melhor caso do QuickSort é \(O(n log n)\), assim como a do Merge Sort. No entanto, a constante escondida na notação \(O(n log n)\) é geralmente menor para o QuickSort, o que significa que, na prática, o QuickSort tende a ser mais rápido que o Merge Sort em muitos cenários.
+A complexidade do melhor caso para o QuickSort é \(O(n log n)\), assim como para o Merge Sort. No entanto, a constante oculta na notação \(O(n log n)\) é geralmente menor para o QuickSort. Isso significa que, na prática, QuickSort tende a ser mais rápido devido aos fatores constantes menores associados às suas operações.
 
+Os fatores constantes refletem que diferentes operações com a mesma complexidade assintótica podem levar diferentes quantidades de tempo para serem executadas. Por exemplo, realizar três operações de adição leva um pouco mais de tempo do que realizar uma única operação de adição. Outro exemplo é que, embora a busca binária em uma matriz e a inserção em um conjunto ordenado sejam ambas \(O(log n)\), a busca binária é visivelmente mais rápida.
+
+Os fatores constantes são totalmente ignorados na notação Big O. Na maioria das vezes, isso é aceitável, mas pode ser crucial quando os limites de tempo são particularmente apertados. Nesse caso, mesmo um algoritmo com a complexidade correta pode receber um "Time Limit Exceeded" (TLE). Nessas situações, é importante considerar os fatores constantes..
 
 
 ## Implementações
