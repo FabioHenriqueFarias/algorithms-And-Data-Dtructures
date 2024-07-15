@@ -104,4 +104,14 @@ Os fatores constantes são totalmente ignorados na notação Big O. Na maioria d
 
 ## Implementações
 
+Neste repositório, você encontrará a implementação de um algoritmo de Quick Sort em três diferentes tecnologias:<a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/2_QuickSort/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/2_QuickSort/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/2_QuickSort/Rust">Rust</a>
+
 ## Referências
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a> 
+
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
+
+Livro: <a href="https://www.grupogen.com.br/e-book-algoritmos-thomas-cormen-9788595159914">Algoritmos: Teoria e Prática</a> 
+
+Quicksort: <a href="https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/quick.html">Ordenação: Quicksort</a> 
