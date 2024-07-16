@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Quick Sort em Python:
 
 ### quickSort.py
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/1_MergeSort/Python/mergeSort.py">`quickSort.py`</a>  possui a implementação do algoritmo de Quick Sort.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/2_QuickSort/Python/quickSort.py">`quickSort.py`</a>  possui a implementação do algoritmo de Quick Sort.
 
 
 ## Rodando o programa com Python:
