@@ -12,7 +12,7 @@ Aqui está a implementação do algoritmo Quick Sort em C:
 
 ### quickSort.c
 
-Você pode encontrar a implementação do algoritmo de Quick Sort em C no arquivo [`mergeSort.c`](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort/C/mergeSort.c) possui a implementação do algoritmo de Quick Sort.
+Você pode encontrar a implementação do algoritmo de Quick Sort em C no arquivo [`quickSort.c`](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/2_QuickSort/C/quickSort.c) possui a implementação do algoritmo de Quick Sort.
 ## Compilando e Executando o Programa com GCC:
 
 Para compilar o código usando o compilador GCC, você pode usar o seguinte comando:
