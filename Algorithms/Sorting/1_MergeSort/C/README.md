@@ -3,14 +3,14 @@
 ## Sumário
 
 - [Implementação](#implementação)
-    - [merge-sort.c](#merge-sortc)
+    - [mergeSort.c](#mergesortc)
 - [Compilando e Executando o Programa com GCC:](#compilando-e-executando-o-programa-com-gcc)
 
 ## Implementação
 
 Aqui está a implementação do algoritmo Merge Sort em C:
 
-### merge-sort.c
+### mergeSort.c
 
 Você pode encontrar a implementação do algoritmo de Merge Sort em C no arquivo [`mergeSort.c`](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Algorithms/Sorting/1_MergeSort/C/mergeSort.c) possui a implementação do algoritmo de Merge Sort.
 ## Compilando e Executando o Programa com GCC:

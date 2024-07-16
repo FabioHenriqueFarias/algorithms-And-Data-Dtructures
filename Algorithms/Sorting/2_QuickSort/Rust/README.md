@@ -10,7 +10,7 @@ Aqui está a implementação do algoritmo Quick Sort em Rust:
 
 ### quick_sort.rs
 
-O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/2_QuickSort/Rust/quick_sort.rs">`merge_sort.rs`</a>  possui a implementação do algoritmo de Quick Sort.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Algorithms/Sorting/2_QuickSort/Rust/quick_sort.rs">`quick_sort.rs`</a>  possui a implementação do algoritmo de Quick Sort.
 
 ## Rodando o programa com Rust
 
