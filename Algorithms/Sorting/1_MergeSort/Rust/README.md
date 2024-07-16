@@ -4,7 +4,7 @@
 
 - [Divisão](#divisão)
     - [merge_sort.rs](#merge_sortrs)
-- [Rodando o programa com Rust:](#rodando-o-programa-com-rust)
+- [Rodando o programa com Rust](#rodando-o-programa-com-rust)
 
 ## Divisão 
 
