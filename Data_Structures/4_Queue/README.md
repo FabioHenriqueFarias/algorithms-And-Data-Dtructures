@@ -17,9 +17,9 @@
     - [Complexidade de Search](#complexidade-de-search)
   - [Peek](#peek)
       - [Complexidade de Peek](#complexidade-de-peek)
-  - [Complexidades](#complexidades)
-  - [Implementações](#implementações)
-  - [Referências](#referências)
+- [Complexidades](#complexidades)
+- [Implementações](#implementações)
+- [Referências](#referências)
 
 ## O que é uma Queue?
 
