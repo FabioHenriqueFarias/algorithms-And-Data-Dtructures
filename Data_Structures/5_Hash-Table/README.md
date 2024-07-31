@@ -15,6 +15,8 @@
 
 Uma **tabela hash** é uma implementação específica de um tipo de dado abstrato chamado **array associativo**. Existem várias maneiras de implementar um array associativo, e uma dessas maneiras é através de uma tabela hash.
 
+Uma tabela hash é uma estrutura de dados usada para inserir, procurar e remover pares de chave-valor rapidamente. Ela opera com base no conceito de **hashing**, onde cada chave é transformada por uma função hash em um índice distinto em um array. Esse índice funciona como um local de armazenamento para o valor correspondente. Em termos simples, a tabela hash mapeia chaves para valores, permitindo um acesso eficiente e rápido aos dados associados.
+
 ### O que é um Array Associativo?
 
 Um **array associativo**, também conhecido como **mapa**, **dicionário** ou **tabela de símbolos**, é uma estrutura de dados que armazena pares de chave-valor. Essa estrutura permite que os valores sejam acessados, manipulados e gerenciados de forma eficiente usando suas chaves associadas.
@@ -36,6 +38,8 @@ Arrays associativos possuem duas propriedades importantes: cada chave é única 
 Da mesma forma, cada número de telefone no diretório se refere a uma única pessoa, e cada chave em um array associativo mapeia para um único valor. No entanto, é possível que o mesmo valor seja associado a diferentes chaves. 
 
 Por exemplo, duas pessoas podem ter o mesmo número de telefone na lista, então é importante lembrar que um valor pode aparecer várias vezes em um array associativo, mas cada chave será exclusiva.
+
+
 
   ## Usos de uma Hash Table
 
