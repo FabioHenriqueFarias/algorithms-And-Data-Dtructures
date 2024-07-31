@@ -11,9 +11,31 @@
 - [Implementações](#implementações)
 - [Referências](#referências)
 
-  ## O que é uma Hash Table?
+## O que é uma Hash Table?
 
-Uma tabela hash, também conhecida como matriz associativa, é uma estrutura de dados abstrata que armazena pares de valores-chave, onde cada chave é exclusiva. Um par chave-valor consiste em dois dados associados: uma chave e um valor. A chave é o identificador exclusivo utilizado para recuperar o valor correspondente. O valor é o dado associado à chave, acessado quando a chave é fornecida. Em uma tabela hash, uma função hash é aplicada à chave para gerar um índice, que é então utilizado para armazenar e recuperar o valor de maneira eficiente.
+Uma **tabela hash** é uma implementação específica de um tipo de dado abstrato chamado **array associativo**. Existem várias maneiras de implementar um array associativo, e uma dessas maneiras é através de uma tabela hash.
+
+### O que é um Array Associativo?
+
+Um **array associativo**, também conhecido como **mapa**, **dicionário** ou **tabela de símbolos**, é uma estrutura de dados que armazena pares de chave-valor. Essa estrutura permite que os valores sejam acessados, manipulados e gerenciados de forma eficiente usando suas chaves associadas.
+
+Um par chave-valor consiste em dois elementos relacionados: uma **chave** e um **valor**. A **chave** é o identificador único usado para recuperar o **valor** correspondente. O **valor** é o dado associado à chave, que pode ser recuperado e utilizado através da chave específica.
+
+
+Você pode pensar em um array associativo como uma lista de contatos telefônicos. Nessa lista, você pode procurar o número de telefone de uma pessoa encontrando seu nome. O nome é a chave e o número de telefone é o valor. A tabela abaixo ilustra como essa lista de contatos seria organizada:
+
+| Nome        | Número de Telefone  |
+|-------------|----------------------|
+| Alice       | (11) 1234-5678       |
+| Bob         | (21) 8765-4321       |
+| Carol       | (31) 5555-1234       |
+| Dave        | (41) 9876-5432       |
+
+Arrays associativos possuem duas propriedades importantes: cada chave é única e cada chave mapeia para um único valor. Assim como em um diretório telefônico onde cada número de telefone só pode aparecer uma vez, em um array associativo, cada chave também deve ser única. 
+
+Da mesma forma, cada número de telefone no diretório se refere a uma única pessoa, e cada chave em um array associativo mapeia para um único valor. No entanto, é possível que o mesmo valor seja associado a diferentes chaves. 
+
+Por exemplo, duas pessoas podem ter o mesmo número de telefone na lista, então é importante lembrar que um valor pode aparecer várias vezes em um array associativo, mas cada chave será exclusiva.
 
   ## Usos de uma Hash Table
 
