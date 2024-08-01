@@ -39,6 +39,12 @@ Da mesma forma, cada número de telefone no diretório se refere a uma única pe
 
 Por exemplo, duas pessoas podem ter o mesmo número de telefone na lista, então é importante lembrar que um valor pode aparecer várias vezes em um array associativo, mas cada chave será exclusiva.
 
+### O que é Hashing?
+
+Hashing se refere ao processo de gerar uma saída de tamanho fixo a partir de uma entrada de tamanho variável usando as fórmulas matemáticas conhecidas como funções hash. Essa técnica determina um índice ou local para o armazenamento de um item em uma estrutura de dados.
+
+
+
 
 
   ## Usos de uma Hash Table
