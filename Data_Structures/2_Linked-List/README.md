@@ -45,7 +45,7 @@ Cada Nó possui pelo menos dois componentes:
 
 Cada Nó é ligado formando uma lista encadeada. Veja como pode ser criado um Nó:
 
-```
+```c
 struct Node {
 
     int data;           // Dados armazenados no Nó
@@ -56,7 +56,7 @@ A struct Node representa um nó em uma lista encadeada, com duas variáveis: dat
 
 Agora você pode criar `nós` e adicionas dados a eles:
 
-```
+```c
 int main() {
 
     // Criando novos Nós

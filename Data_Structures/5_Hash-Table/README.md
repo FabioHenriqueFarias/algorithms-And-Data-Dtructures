@@ -41,22 +41,86 @@ Por exemplo, duas pessoas podem ter o mesmo número de telefone na lista, então
 
 ### O que é Hashing?
 
-Hashing se refere ao processo de gerar uma saída de tamanho fixo a partir de uma entrada de tamanho variável usando as fórmulas matemáticas conhecidas como funções hash. Essa técnica determina um índice ou local para o armazenamento de um item em uma estrutura de dados.
+Hashing é uma técnica utilizada para mapear dados de tamanho arbitrário para dados de tamanho fixo. Esse mapeamento é feito usando fórmulas matemáticas conhecidas como funções hash. O resultado da função hash é um valor hash, que geralmente é utilizado como um índice em uma tabela hash (hash table) para facilitar a busca, inserção e remoção de dados.
+
+A **função hash**  recebe uma entrada (chave) e retorna um valor numérico, que é o índice na tabela hash onde o valor associado à chave será armazenado, idealmente, uma boa função hash distribui as chaves de forma uniforme na tabela, minimizando colisões.
+
+
+#### Exemplo
+
+Vamos considerar uma função hash simples que usa o operador módulo 10 para calcular o índice na tabela hash. A função hash é definida como:
+
+\[ \{hash(key)} = \{key} \% 10 \]
+
+Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 10. A tabela hash inicialmente está vazia e será representada por um array de tamanho 10 com todos os valores zerados.
+
+1. **Inserir chave 11**:
+   - Calcule o índice: `11 % 10 = 1`.
+   - Armazene o valor 11 na posição 1 da tabela hash.
+   
+   ```plaintext
+   hash table: [0, 11, 0, 0, 0, 0, 0, 0, 0, 0]
+   ```
+
+2. **Inserir chave 13**:
+   - Calcule o índice: `13 % 10 = 3`.
+   - Armazene o valor 13 na posição 3 da tabela hash.
+
+   ```plaintext
+   hash table: [0, 11, 0, 13, 0, 0, 0, 0, 0, 0]
+   ```
+
+3. **Inserir chave 40**:
+   - Calcule o índice: `40 % 10 = 0`.
+   - Armazene o valor 40 na posição 0 da tabela hash.
+
+   ```plaintext
+   hash table: [40, 11, 0, 13, 0, 0, 0, 0, 0, 0]
+   ```
+
+4. **Inserir chave 72**:
+   - Calcule o índice: `72 % 10 = 2`.
+   - Armazene o valor 72 na posição 2 da tabela hash.
+
+   ```plaintext
+   hash table: [40, 11, 72, 13, 0, 0, 0, 0, 0, 0]
+   ```
+
+**Tabela Hash:**
+
+```plaintext
+Índice | Valores
+-------|--------
+  0    | 40
+  1    | 11
+  2    | 72
+  3    | 13
+  4    | 0
+  5    | 0
+  6    | 0
+  7    | 0
+  8    | 0
+  9    | 0
+```
 
 
 
 
 
-  ## Usos de uma Hash Table
 
-  ## Operações comuns em Hash Table
 
-  ### Operação
 
-  #### Complexidade da Operações
 
-  ## Complexidades
+## Usos de uma Hash Table
 
-  ## Implementações
+## Operações comuns em Hash Table
 
-  ## Referências
+### Operação
+
+#### Complexidade da Operações
+
+## Complexidades
+
+## Implementações
+
+## Referências
