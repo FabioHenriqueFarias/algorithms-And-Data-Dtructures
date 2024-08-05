@@ -15,7 +15,9 @@
 
 Uma **tabela hash** é uma implementação específica de um tipo de dado abstrato chamado **array associativo**. Existem várias maneiras de implementar um array associativo, e uma dessas maneiras é através de uma tabela hash.
 
-Uma tabela hash é uma estrutura de dados usada para inserir, procurar e remover pares de chave-valor rapidamente. Ela opera com base no conceito de **hashing**, onde cada chave é transformada por uma função hash em um índice distinto em um array. Esse índice funciona como um local de armazenamento para o valor correspondente. Em termos simples, a tabela hash mapeia chaves para valores, permitindo um acesso eficiente e rápido aos dados associados.
+Uma tabela hash é uma estrutura de dados usada para inserir, procurar e remover pares de chave-valor rapidamente. Ela opera com base no conceito de **hashing**, onde cada chave é transformada por uma função hash em um índice distinto em um array. Esse índice funciona como um local de armazenamento para o valor correspondente. Em palavras simples, ele mapeia as chaves com o valor, permitindo um acesso eficiente e rápido aos dados associados.
+
+
 
 ### O que é um Array Associativo?
 
@@ -50,7 +52,7 @@ A **função hash**  recebe uma entrada (chave) e retorna um valor numérico, qu
 
 Vamos considerar uma função hash simples que usa o operador módulo 10 para calcular o índice na tabela hash. A função hash é definida como:
 
-\[ \{hash(key)} = \{key} \% 10 \]
+```hash(key) = key % 10```
 
 Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 10. A tabela hash inicialmente está vazia e será representada por um array de tamanho 10 com todos os valores zerados.
 
@@ -86,7 +88,7 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
    hash table: [40, 11, 72, 13, 0, 0, 0, 0, 0, 0]
    ```
 
-**Tabela Hash:**
+**Tabela Hash Resultante:**
 
 ```plaintext
 Índice | Valores
