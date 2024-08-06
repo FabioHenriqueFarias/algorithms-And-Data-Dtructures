@@ -13,11 +13,11 @@
 
 ## O que é uma Hash Table?
 
-Uma **tabela hash** é uma implementação específica de um tipo de dado abstrato chamado **array associativo**. Existem várias maneiras de implementar um array associativo, e uma dessas maneiras é através de uma tabela hash.
+Uma **tabela hash** é uma implementação específica de um tipo de dado abstrato chamado **array associativo**. Dentre várias maneiras de implementar um array associativo, uma das mais comuns é através de uma tabela hash.
 
-Uma tabela hash é uma estrutura de dados usada para inserir, procurar e remover pares de chave-valor rapidamente. Ela opera com base no conceito de **hashing**, onde cada chave é transformada por uma função hash em um índice distinto em um array. Esse índice funciona como um local de armazenamento para o valor correspondente. Em palavras simples, ele mapeia as chaves com o valor, permitindo um acesso eficiente e rápido aos dados associados.
+Uma tabela hash é uma estrutura de dados usada para inserir, procurar e remover pares de chave-valor rapidamente. Ela opera com base no conceito de **hashing**, onde cada chave é transformada por uma função hash em um índice distinto em um array. Esse índice funciona como um local de armazenamento para o valor correspondente. Em termos simples, a tabela hash mapeia as chaves aos valores, permitindo um acesso eficiente e rápido aos dados associados.
 
-
+Uma boa tabela hash possui um **fator de carga** equilibrado, normalmente entre 0 e 1. O fator de carga é a relação entre o número de elementos armazenados e o tamanho total da tabela. Se o fator de carga for muito alto, a tabela pode ficar desorganizada, resultando em tempos de busca mais longos e mais **colisões**. Por outro lado, um fator de carga muito baixo pode ser um desperdício de memória. Manter um fator de carga ideal envolve o uso de uma função hash eficiente e o redimensionamento adequado da tabela conforme necessário.
 
 ### O que é um Array Associativo?
 
@@ -105,6 +105,8 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
   9    | 0
 ```
 
+
+### O que é fator de Carga e colisões?
 
 
 
