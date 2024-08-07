@@ -52,7 +52,9 @@ A **função hash**  recebe uma entrada (chave) e retorna um valor numérico, qu
 
 Vamos considerar uma função hash simples que usa o operador módulo 10 para calcular o índice na tabela hash. A função hash é definida como:
 
-```hash(key) = key % 10```
+```plaintext
+hash(key) = key % 10
+```
 
 Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 10. A tabela hash inicialmente está vazia e será representada por um array de tamanho 10 com todos os valores zerados.
 
@@ -106,12 +108,51 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
 ```
 
 
-### O que é fator de Carga e colisões?
+Aqui está uma versão revisada e aprimorada do texto sobre o fator de carga e colisões:
 
+---
 
+### O que é Fator de Carga e Colisões?
 
+#### Fator de Carga
 
+O **fator de carga** \(α\) é uma métrica que indica a densidade de uma tabela hash. Ele é calculado pela fórmula:
 
+```α = m/n```​
+
+Onde:
+- \(n\) é o número de elementos (pares de chave-valor) armazenados na tabela.
+- \(m\) é o tamanho do array subjacente.
+
+Um fator de carga muito alto significa que a tabela está cheia e, portanto, pode haver muitas colisões, o que degrada a eficiência da tabela. Por outro lado, um fator de carga muito baixo significa que há muito espaço não utilizado, resultando em desperdício de memória. O ideal é manter o fator de carga em um equilíbrio que permita um bom desempenho, geralmente em torno de 0,7.
+
+#### Colisões
+
+Uma **colisão** ocorre quando duas chaves diferentes são mapeadas para o mesmo índice na tabela hash. Isso é inevitável devido ao princípio da **Pomba-Gale** (ou princípio da casa dos pombos), que afirma que se mais de \( n \) itens forem colocados em \( m \) compartimentos (com \( n > m \)), pelo menos um compartimento terá mais de um item.
+
+##### Exemplo de Colisão
+
+Vamos supor que temos uma tabela hash com um array de tamanho 10 e usamos uma função hash simples que calcula o índice tomando o valor da chave módulo 10.
+
+```plaintext
+hash(key) = key % 10
+```
+
+Vamos inserir as seguintes chaves: 12, 22 e 32.
+
+1. **Inserir a chave 12**:
+   - `hash_function(12) = 12 % 10 = 2`
+   - A chave 12 é armazenada no índice 2.
+
+2. **Inserir a chave 22**:
+   - `hash_function(22) = 22 % 10 = 2`
+   - A chave 22 também é mapeada para o índice 2.
+   - Temos uma colisão porque o índice 2 já está ocupado pela chave 12.
+
+3. **Inserir a chave 32**:
+   - `hash_function(32) = 32 % 10 = 2`
+   - A chave 32 é mapeada para o mesmo índice 2.
+   - Novamente, temos uma colisão porque o índice 2 já está ocupado pelas chaves 12 e 22.
 
 
 
