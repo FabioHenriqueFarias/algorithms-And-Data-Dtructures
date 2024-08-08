@@ -3,6 +3,13 @@
 ## Sumário 
 
 - [O que é uma Hash Table?](#o-que-é-uma-hash-table)
+   - [O que é um Array Associativo?](#o-que-é-um-array-associativo)
+   - [O que é Hashing?](#o-que-é-hashing)
+      - [Exemplo de uma Função Hash](#exemplo-de-uma-função-hash)
+   - [O que é Fator de Carga e Colisões?](#o-que-é-fator-de-carga-e-colisões)
+      - [Fator de Carga](#fator-de-carga)
+      - [Colisões](#colisões)
+         - [Exemplo de Colisão](#exemplo-de-colisão)
 - [Usos de uma Hash Table:](#usos-de-uma-hash-table)
 - [Operações comuns em Hash Table](#operações-comuns-em-hash-table)
   - [Operação]()
@@ -48,7 +55,7 @@ Hashing é uma técnica utilizada para mapear dados de tamanho arbitrário para 
 A **função hash**  recebe uma entrada (chave) e retorna um valor numérico, que é o índice na tabela hash onde o valor associado à chave será armazenado, idealmente, uma boa função hash distribui as chaves de forma uniforme na tabela, minimizando colisões.
 
 
-#### Exemplo
+#### Exemplo de uma Função Hash
 
 Vamos considerar uma função hash simples que usa o operador módulo 10 para calcular o índice na tabela hash. A função hash é definida como:
 
@@ -108,7 +115,6 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
 ```
 
 
-Aqui está uma versão revisada e aprimorada do texto sobre o fator de carga e colisões:
 
 ---
 
@@ -135,7 +141,7 @@ Uma **colisão** ocorre quando duas chaves diferentes são mapeadas para o mesmo
 Vamos supor que temos uma tabela hash com um array de tamanho 10 e usamos uma função hash simples que calcula o índice tomando o valor da chave módulo 10.
 
 ```plaintext
-hash(key) = key % 10
+hash_function(key) = key % 10
 ```
 
 Vamos inserir as seguintes chaves: 12, 22 e 32.
@@ -155,8 +161,15 @@ Vamos inserir as seguintes chaves: 12, 22 e 32.
    - Novamente, temos uma colisão porque o índice 2 já está ocupado pelas chaves 12 e 22.
 
 
-
 ## Usos de uma Hash Table
+
+Ao contrário de outras estruturas de dados em média, a busca por dados em uma tabela hash é O(1). Inserir e excluir dados em uma tabela hash também é O(1) em média. As colisões podem prejudicar a eficiência das tabelas hash, tornando a pesquisa, inserção e exclusão O(n) no pior cenário. Ainda assim, as tabelas hash são uma das estruturas mais eficientes para armazenar grandes conjuntos de dados. 
+
+A razão pela qual as tabelas hash são tão eficientes é que, para determinar se um dado está em uma tabela hash, tudo o que você precisa fazer é executar seus dados por meio de sua função hash e verificar uma matriz nesse índice, o que é apenas uma etapa.
+
+Esse método pesquisa dados em uma tabela hash, que é O(1), o que significa que pesquisar dados em uma tabela hash
+é a maneira mais rápida possível de pesquisar dados. A capacidade de pesquisar dados em tempo constante, em vez
+de fazer uma pesquisa linear ou binária, faz uma enorme diferença ao trabalhar com grandes conjuntos de dados.
 
 ## Operações comuns em Hash Table
 
