@@ -6,15 +6,21 @@
    - [O que é um Array Associativo?](#o-que-é-um-array-associativo)
    - [O que é Hashing?](#o-que-é-hashing)
       - [Exemplo de uma Função Hash](#exemplo-de-uma-função-hash)
-   - [O que é Fator de Carga e Colisões?](#o-que-é-fator-de-carga-e-colisões)
-      - [Fator de Carga](#fator-de-carga)
-      - [Colisões](#colisões)
-         - [Exemplo de Colisão](#exemplo-de-colisão)
+   - [Fator de Carga](#fator-de-carga)
+   - [Colisões](#colisões)
+      - [Exemplo de Colisão](#exemplo-de-colisão)
+      - [Formas de Tratar uma colisão](#formas-de-tratar-uma-colisão)
+         - [Encadeamento](#encadeamento)
+         - [Endereçamento Aberto](#endereçamento-aberto)
 - [Usos de uma Hash Table:](#usos-de-uma-hash-table)
 - [Operações comuns em Hash Table](#operações-comuns-em-hash-table)
-  - [Operação]()
-    - [Complexidade da Operação]()
-- [Complexidades](#complexidades)
+  - [Inserção](#inserção)
+    - [Complexidade da Inserção](#complexidade-da-inserção)
+  - [Remoção](#remoção)
+    - [Complexidade da Remoção](#complexidade-da-remoção)
+  - [Pesquisa](#pesquisa)
+    - [Complexidade da Pesquisa](#complexidade-da-pesquisa)
+   - [Complexidades](#complexidades)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -118,9 +124,7 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
 
 ---
 
-### O que é Fator de Carga e Colisões?
-
-#### Fator de Carga
+### O que é Fator de Carga  
 
 O **fator de carga** \(α\) é uma métrica que indica a densidade de uma tabela hash. Ele é calculado pela fórmula:
 
@@ -132,11 +136,11 @@ Onde:
 
 Um fator de carga muito alto significa que a tabela está cheia e, portanto, pode haver muitas colisões, o que degrada a eficiência da tabela. Por outro lado, um fator de carga muito baixo significa que há muito espaço não utilizado, resultando em desperdício de memória. O ideal é manter o fator de carga em um equilíbrio que permita um bom desempenho, geralmente em torno de 0,7.
 
-#### Colisões
+### Colisões
 
 Uma **colisão** ocorre quando duas chaves diferentes são mapeadas para o mesmo índice na tabela hash. Isso é inevitável devido ao princípio da **Pomba-Gale** (ou princípio da casa dos pombos), que afirma que se mais de \( n \) itens forem colocados em \( m \) compartimentos (com \( n > m \)), pelo menos um compartimento terá mais de um item.
 
-##### Exemplo de Colisão
+#### Exemplo de Colisão
 
 Vamos supor que temos uma tabela hash com um array de tamanho 10 e usamos uma função hash simples que calcula o índice tomando o valor da chave módulo 10.
 
@@ -161,23 +165,43 @@ Vamos inserir as seguintes chaves: 12, 22 e 32.
    - Novamente, temos uma colisão porque o índice 2 já está ocupado pelas chaves 12 e 22.
 
 
+#### Formas de Tratar uma colisão
+
+Quando ocorre uma colisão em uma tabela hash, ou seja, quando dois elementos distintos mapeiam para o mesmo índice na tabela, é essencial implementar uma estratégia para resolver esse conflito. As duas abordagens mais comuns para lidar com colisões são **Encadeamento** e **Endereçamento Aberto**.
+
+##### Encadeamento
+
+##### Endereçamento Aberto
+
 ## Usos de uma Hash Table
 
-Ao contrário de outras estruturas de dados em média, a busca por dados em uma tabela hash é O(1). Inserir e excluir dados em uma tabela hash também é O(1) em média. As colisões podem prejudicar a eficiência das tabelas hash, tornando a pesquisa, inserção e exclusão O(n) no pior cenário. Ainda assim, as tabelas hash são uma das estruturas mais eficientes para armazenar grandes conjuntos de dados. 
+As tabelas hash são amplamente utilizadas devido à sua eficiência, oferecendo operações de busca, inserção e exclusão com complexidade média de O(1). Isso significa que, na maioria dos casos, essas operações podem ser realizadas em tempo constante, independentemente do tamanho do conjunto de dados. 
 
-A razão pela qual as tabelas hash são tão eficientes é que, para determinar se um dado está em uma tabela hash, tudo o que você precisa fazer é executar seus dados por meio de sua função hash e verificar uma matriz nesse índice, o que é apenas uma etapa.
+No entanto, no pior cenário, colisões podem ocorrer, o que pode degradar o desempenho dessas operações para O(n). Apesar desse risco, as tabelas hash continuam sendo uma das estruturas de dados mais eficazes para armazenar grandes volumes de informações.
 
-Esse método pesquisa dados em uma tabela hash, que é O(1), o que significa que pesquisar dados em uma tabela hash
-é a maneira mais rápida possível de pesquisar dados. A capacidade de pesquisar dados em tempo constante, em vez
-de fazer uma pesquisa linear ou binária, faz uma enorme diferença ao trabalhar com grandes conjuntos de dados.
+A eficiência das tabelas hash se deve ao fato de que, para determinar se um dado está presente, basta passar a chave pela função hash e acessar o índice correspondente na matriz subjacente. Essa abordagem de busca em tempo constante torna as tabelas hash a escolha ideal para aplicações onde a velocidade de acesso aos dados é crucial. 
+
+Quando se trabalha com grandes conjuntos de dados, a capacidade de realizar operações de busca de forma instantânea, sem a necessidade de percorrer ou ordenar os dados, proporciona uma vantagem significativa em termos de desempenho.
 
 ## Operações comuns em Hash Table
 
-### Operação
+Diversas operações podem ser realizadas em uma estrutura de dados **Tabela Hash**. Entre as principais, estão:
 
-#### Complexidade da Operações
+### Inserção
 
-## Complexidades
+A operação de inserção, comumente chamada de `put`, adiciona um novo elemento à tabela hash. A posição desse elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diversas estratégias podem ser empregadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme mencionado anteriormente.
+
+#### Complexidade da Inserção
+
+### Remoção
+
+#### Complexidade da Remoção
+
+### Pesquisa
+
+#### Complexidade da Pesquisa
+
+### Complexidades
 
 ## Implementações
 
