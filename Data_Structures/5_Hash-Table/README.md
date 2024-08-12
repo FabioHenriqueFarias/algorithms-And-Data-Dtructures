@@ -10,7 +10,7 @@
    - [Colisões](#colisões)
       - [Exemplo de Colisão](#exemplo-de-colisão)
       - [Formas de Tratar uma colisão](#formas-de-tratar-uma-colisão)
-         - [Encadeamento](#encadeamento)
+         - [Encadeamento Separado](#encadeamento-separado)
          - [Endereçamento Aberto](#endereçamento-aberto)
 - [Usos de uma Hash Table:](#usos-de-uma-hash-table)
 - [Operações comuns em Hash Table](#operações-comuns-em-hash-table)
@@ -169,7 +169,15 @@ Vamos inserir as seguintes chaves: 12, 22 e 32.
 
 Quando ocorre uma colisão em uma tabela hash, ou seja, quando dois elementos distintos mapeiam para o mesmo índice na tabela, é essencial implementar uma estratégia para resolver esse conflito. As duas abordagens mais comuns para lidar com colisões são **Encadeamento** e **Endereçamento Aberto**.
 
-##### Encadeamento
+##### Encadeamento Separado
+
+No encadeamento separado, o crescimento das listas encadeadas nos índices da tabela permite que a tabela hash continue operando de forma eficiente, mesmo quando ocorrem múltiplas colisões. Isso significa que, independentemente do número de chaves diferentes mapeadas para o mesmo índice, a tabela pode armazenar vários pares de chave-valor em cada posição. No entanto, se essas listas encadeadas se tornarem muito longas, o desempenho da tabela pode ser comprometido, já que o tempo necessário para buscar ou remover um elemento aumenta proporcionalmente ao tamanho da lista.
+
+Esse processo funciona porque, quando um novo valor é inserido e ocorre uma colisão — ou seja, o índice gerado já está ocupado por outro valor — uma lista encadeada é criada naquele índice. Dessa forma, o novo valor é armazenado na lista associada e pode ser acessado de maneira eficiente, sem sobrescrever o valor anterior.
+
+O termo "encadeamento separado" refere-se ao fato de que, ao ocorrer uma colisão, o valor não é armazenado diretamente na tabela hash, mas em uma lista encadeada "separada", associada ao índice correspondente. Isso mantém a tabela hash organizada, permitindo que cada índice armazene múltiplos elementos sem comprometer a integridade dos dados, mesmo com um aumento no número de colisões.
+
+No entanto, se uma lista encadeada em um determinado índice se tornar excepcionalmente grande, o desempenho da estrutura como um todo pode ser afetado, já que a busca e a remoção de elementos nessa lista específica se tornam mais lentas, comprometendo a eficiência da tabela hash.
 
 ##### Endereçamento Aberto
 
