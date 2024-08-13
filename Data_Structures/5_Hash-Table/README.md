@@ -179,6 +179,44 @@ O termo "encadeamento separado" refere-se ao fato de que, ao ocorrer uma colisã
 
 No entanto, se uma lista encadeada em um determinado índice se tornar excepcionalmente grande, o desempenho da estrutura como um todo pode ser afetado, já que a busca e a remoção de elementos nessa lista específica se tornam mais lentas, comprometendo a eficiência da tabela hash.
 
+**Exemplo**
+
+Imagine que estamos armazenando informações de alunos, onde a chave é o número de matrícula do aluno e o valor é o nome do aluno.
+
+1. **Inserindo chaves**:
+
+   Vamos inserir as seguintes chaves (números de matrícula): 12, 22, 32 e 42.
+
+   - 12: A função hash calcula o índice como 12 % 10 = 2. A chave 12 é armazenada no índice 2.
+
+   - 22: A função hash calcula o índice como 22 % 10 = 2. Aqui ocorre uma colisão, pois o índice 2 já está ocupado pela chave 12. No encadeamento separado, 22 é armazenado em uma lista encadeada no índice 2.
+
+   - 32: Novamente, a função hash calcula o índice como 32 % 10 = 2. Outra colisão ocorre, e 32 é adicionado à lista encadeada no índice 2.
+
+   - 42: A função hash calcula o índice como 42 % 10 = 2. Mais uma colisão ocorre, e 42 é também adicionado à lista encadeada no índice 2.
+
+2. **Estrutura da Tabela**
+
+   ```plaintext
+   Índice | Valores
+   -------|--------
+   0    | 
+   1    | 
+   2    | [12, 22, 32 e 42]
+   3    | 
+   4    | 
+   5    | 
+   6    | 
+   7    | 
+   8    | 
+   9    | 
+   ```
+
+
+
+
+
+
 ##### Endereçamento Aberto
 
 ## Usos de uma Hash Table
