@@ -213,11 +213,13 @@ Imagine que estamos armazenando informações de alunos, onde a chave é o núme
    ```
 
 
-
-
-
-
 ##### Endereçamento Aberto
+
+O endereçamento aberto é uma técnica de tratamento de colisões em tabelas hash, onde, ao ocorrer uma colisão (quando duas ou mais chaves são mapeadas para o mesmo slot), o algoritmo busca por outro slot vazio na tabela para armazenar a chave que colidiu.
+
+Os principais métodos para encontrar esse slot alternativo são Sondagem Linear, Sondagem Quadrática e Hash Duplo.
+
+**Exemplo**
 
 ## Usos de uma Hash Table
 
