@@ -217,9 +217,26 @@ Imagine que estamos armazenando informações de alunos, onde a chave é o núme
 
 O endereçamento aberto é uma técnica de tratamento de colisões em tabelas hash, onde, ao ocorrer uma colisão (quando duas ou mais chaves são mapeadas para o mesmo slot), o algoritmo busca por outro slot vazio na tabela para armazenar a chave que colidiu.
 
-Os principais métodos para encontrar esse slot alternativo são Sondagem Linear, Sondagem Quadrática e Hash Duplo.
+Existem diferentes métodos para encontrar esse próximo espaço de armazenamento:
+
+- Sondagem Linear
+- Sondagem Quadrática
+- Hash Duplo
+
+
+**Sondagem Linear**
+
+A sondagem linear é uma técnica usada para resolver colisões em tabelas hash. Quando ocorre uma colisão — ou seja, quando duas chaves são mapeadas para o mesmo índice pela função hash —, a sondagem linear busca o próximo índice disponível de forma sequencial. Em vez de tentar resolver a colisão diretamente no índice original, a técnica verifica os índices subsequentes na tabela, um por um, até encontrar uma posição vazia onde a nova chave pode ser inserida.
+
+Para gerenciar a ocupação e a disponibilidade das posições na tabela, é possível marcar as posições com valores específicos. Inicialmente, todas as posições do vetor podem ser marcadas com -1 para indicar que estão vazias. Quando uma chave é inserida em uma posição, ela é ocupada com o valor correspondente. Se uma chave for removida, a posição pode ser marcada com -2 para indicar que está disponível para futuras inserções, mas que anteriormente estava ocupada.
+
+**Sondagem Quadrática**
+
+**Hash Duplo**
 
 **Exemplo**
+
+
 
 ## Usos de uma Hash Table
 
