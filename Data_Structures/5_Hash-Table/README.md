@@ -264,7 +264,7 @@ Vamos inserir as seguintes chaves: 12, 22, 32 e 42.
    0    | -1
    1    | -1
    2    | 12
-   3    | 22
+   3    | -2
    4    | 32
    5    | 42
    6    | -1
