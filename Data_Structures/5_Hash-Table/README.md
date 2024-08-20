@@ -197,6 +197,9 @@ Imagine que estamos armazenando informações de alunos, onde a chave é o núme
 
 2. **Estrutura da Tabela**
 
+   Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
+
+
    ```plaintext
    Índice | Valores
    -------|--------
@@ -229,6 +232,47 @@ Existem diferentes métodos para encontrar esse próximo espaço de armazenament
 A sondagem linear é uma técnica usada para resolver colisões em tabelas hash. Quando ocorre uma colisão — ou seja, quando duas chaves são mapeadas para o mesmo índice pela função hash —, a sondagem linear busca o próximo índice disponível de forma sequencial. Em vez de tentar resolver a colisão diretamente no índice original, a técnica verifica os índices subsequentes na tabela, um por um, até encontrar uma posição vazia onde a nova chave pode ser inserida.
 
 Para gerenciar a ocupação e a disponibilidade das posições na tabela, é possível marcar as posições com valores específicos. Inicialmente, todas as posições do vetor podem ser marcadas com -1 para indicar que estão vazias. Quando uma chave é inserida em uma posição, ela é ocupada com o valor correspondente. Se uma chave for removida, a posição pode ser marcada com -2 para indicar que está disponível para futuras inserções, mas que anteriormente estava ocupada.
+
+**Exemplo**
+
+Vamos imaginar uma tabela hash com um tamanho de 10, onde inicialmente todos os índices estão marcados como -1, indicando que estão vazios. A função hash usada é key % 10, que calcula o índice a partir da chave dividindo-a pelo tamanho da tabela e pegando o resto da divisão.
+
+1. **Inserindo chaves**:
+
+Vamos inserir as seguintes chaves: 12, 22, 32 e 42.
+
+- 12: A função hash calcula 12 % 10 = 2. O índice 2 está vazio (marcado como -1), então a chave 12 é inserida no índice 2.
+
+- 22: A função hash calcula 22 % 10 = 2. O índice 2 já está ocupado pela chave 12, então ocorre uma colisão. A sondagem linear verifica o próximo índice, que é o índice 3, e encontra que está vazio (marcado como -1). A chave 22 é inserida no índice 3.
+
+- 32: A função hash calcula 32 % 10 = 2. O índice 2 está ocupado pela chave 12, e o índice 3 está ocupado pela chave 22, resultando em mais uma colisão. A sondagem linear verifica o próximo índice, que é o índice 4, e encontra que está vazio (marcado como -1). A chave 32 é inserida no índice 4.
+
+- 42: A função hash calcula 42 % 10 = 2. Os índices 2, 3 e 4 estão ocupados pelas chaves 12, 22 e 32, respectivamente, gerando colisões sucessivas. A sondagem linear verifica o índice 5, que está vazio, e a chave 42 é inserida nesse índice.
+
+2. **Removendo chave**
+
+- 22: A chave 22 foi inserida no índice 3. Para removê-la, marcamos o índice 3 com um valor especial, como `-2`, para indicar que o slot está disponível para futuras inserções, mas que anteriormente estava ocupado. Isso é importante porque, durante o processo de busca, o algoritmo só interromperá a busca ao encontrar um slot marcado com `-1`, que indica um espaço nunca utilizado. No caso de um slot marcado com `-2`, a busca continua, já que esse valor indica que o slot foi ocupado anteriormente e pode conter elementos colididos que precisam ser verificados.
+
+3. **Estrutura da Tabela**
+
+   Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
+
+   ```plaintext
+
+   Índice | Valor
+   -------|-------
+   0    | -1
+   1    | -1
+   2    | 12
+   3    | 22
+   4    | 32
+   5    | 42
+   6    | -1
+   7    | -1
+   8    | -1
+   9    | -1
+   ```
+
 
 **Sondagem Quadrática**
 
