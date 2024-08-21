@@ -276,6 +276,13 @@ Vamos inserir as seguintes chaves: 12, 22, 32 e 42.
 
 **Sondagem Quadrática**
 
+A sondagem quadrática é uma técnica usada para resolver colisões em tabelas hash de forma mais eficiente que a sondagem linear. Quando ocorre uma colisão — ou seja, quando duas chaves são mapeadas para o mesmo índice pela função hash —, a sondagem quadrática procura o próximo índice disponível seguindo um padrão quadrático, em vez de seguir de forma sequencial como na sondagem linear. Isso significa que, em vez de verificar os índices subsequentes um a um, a técnica verifica posições que são progressivamente mais afastadas do índice original.
+
+Esse método é eficaz para reduzir o problema do agrupamento primário, que pode ocorrer na sondagem linear, onde muitos valores acabam se acumulando em uma sequência contínua de índices. Na sondagem quadrática, os índices subsequentes são calculados como uma função do número da sondagem elevada ao quadrado, o que espalha as chaves de forma mais uniforme na tabela.
+
+**Exemplo**
+
+
 **Hash Duplo**
 
 **Exemplo**
