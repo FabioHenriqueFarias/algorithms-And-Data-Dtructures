@@ -105,7 +105,6 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
 
 **Tabela Hash Resultante:**
 
-```plaintext
 Índice | Valores
 -------|--------
   0    | 40
@@ -118,7 +117,7 @@ Dado o array `[11, 13, 40, 72]`, vamos inseri-los em uma tabela hash de tamanho 
   7    | 0
   8    | 0
   9    | 0
-```
+
 
 
 
@@ -197,11 +196,10 @@ Imagine que estamos armazenando informações de alunos, onde a chave é o núme
 
 2. **Estrutura da Tabela**
 
-   Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
+      Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
 
 
-   ```plaintext
-   Índice | Valores
+      Índice | Valores
    -------|--------
    0    | 
    1    | 
@@ -213,7 +211,6 @@ Imagine que estamos armazenando informações de alunos, onde a chave é o núme
    7    | 
    8    | 
    9    | 
-   ```
 
 
 ##### Endereçamento Aberto
@@ -239,39 +236,38 @@ Vamos imaginar uma tabela hash com um tamanho de 10, onde inicialmente todos os 
 
 1. **Inserindo chaves**:
 
-Vamos inserir as seguintes chaves: 12, 22, 32 e 42.
+   Vamos inserir as seguintes chaves: 12, 22, 32 e 42.
 
-- 12: A função hash calcula 12 % 10 = 2. O índice 2 está vazio (marcado como -1), então a chave 12 é inserida no índice 2.
+   - 12: A função hash calcula 12 % 10 = 2. O índice 2 está vazio (marcado como -1), então a chave 12 é inserida no índice 2.
 
-- 22: A função hash calcula 22 % 10 = 2. O índice 2 já está ocupado pela chave 12, então ocorre uma colisão. A sondagem linear verifica o próximo índice, que é o índice 3, e encontra que está vazio (marcado como -1). A chave 22 é inserida no índice 3.
+   - 22: A função hash calcula 22 % 10 = 2. O índice 2 já está ocupado pela chave 12, então ocorre uma colisão. A sondagem linear verifica o próximo índice, que é o índice 3, e encontra que está vazio (marcado como -1). A chave 22 é inserida no índice 3.
 
-- 32: A função hash calcula 32 % 10 = 2. O índice 2 está ocupado pela chave 12, e o índice 3 está ocupado pela chave 22, resultando em mais uma colisão. A sondagem linear verifica o próximo índice, que é o índice 4, e encontra que está vazio (marcado como -1). A chave 32 é inserida no índice 4.
+   - 32: A função hash calcula 32 % 10 = 2. O índice 2 está ocupado pela chave 12, e o índice 3 está ocupado pela chave 22, resultando em mais uma colisão. A sondagem linear verifica o próximo índice, que é o índice 4, e encontra que está vazio (marcado como -1). A chave 32 é inserida no índice 4.
 
-- 42: A função hash calcula 42 % 10 = 2. Os índices 2, 3 e 4 estão ocupados pelas chaves 12, 22 e 32, respectivamente, gerando colisões sucessivas. A sondagem linear verifica o índice 5, que está vazio, e a chave 42 é inserida nesse índice.
+   - 42: A função hash calcula 42 % 10 = 2. Os índices 2, 3 e 4 estão ocupados pelas chaves 12, 22 e 32, respectivamente, gerando colisões sucessivas. A sondagem linear verifica o índice 5, que está vazio, e a chave 42 é inserida nesse índice.
 
 2. **Removendo chave**
 
-- 22: A chave 22 foi inserida no índice 3. Para removê-la, marcamos o índice 3 com um valor especial, como `-2`, para indicar que o slot está disponível para futuras inserções, mas que anteriormente estava ocupado. Isso é importante porque, durante o processo de busca, o algoritmo só interromperá a busca ao encontrar um slot marcado com `-1`, que indica um espaço nunca utilizado. No caso de um slot marcado com `-2`, a busca continua, já que esse valor indica que o slot foi ocupado anteriormente e pode conter elementos colididos que precisam ser verificados.
+   - 22: A chave 22 foi inserida no índice 3. Para removê-la, marcamos o índice 3 com um valor especial, como `-2`, para indicar que o slot está disponível para futuras inserções, mas que anteriormente estava ocupado. Isso é importante porque, durante o processo de busca, o algoritmo só interromperá a busca ao encontrar um slot marcado com `-1`, que indica um espaço nunca utilizado. No caso de um slot marcado com `-2`, a busca continua, já que esse valor indica que o slot foi ocupado anteriormente e pode conter elementos colididos que precisam ser verificados.
 
 3. **Estrutura da Tabela**
 
-   Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
+      Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
 
-   ```plaintext
 
-   Índice | Valor
-   -------|-------
-   0    | -1
-   1    | -1
-   2    | 12
-   3    | -2
-   4    | 32
-   5    | 42
-   6    | -1
-   7    | -1
-   8    | -1
-   9    | -1
-   ```
+   | Índice | Valor |
+   |--------|-------|
+      0    | -1
+      1    | -1
+      2    | 12
+      3    | -2
+      4    | 32
+      5    | 42
+      6    | -1
+      7    | -1
+      8    | -1
+      9    | -1
+
 
 
 **Sondagem Quadrática**
@@ -281,6 +277,40 @@ A sondagem quadrática é uma técnica usada para resolver colisões em tabelas 
 Esse método é eficaz para reduzir o problema do agrupamento primário, que pode ocorrer na sondagem linear, onde muitos valores acabam se acumulando em uma sequência contínua de índices. Na sondagem quadrática, os índices subsequentes são calculados como uma função do número da sondagem elevada ao quadrado, o que espalha as chaves de forma mais uniforme na tabela.
 
 **Exemplo**
+
+Vamos imaginar uma tabela hash com um tamanho de 10, onde inicialmente todos os índices estão marcados como -1, indicando que estão vazios. Vamos usar uma função hash simples `h(k) = k % 10` para calcular o índice a partir da chave, e aplicar a sondagem quadrática para resolver colisões. Na sondagem quadrática, se a posição calculada estiver ocupada, verificamos as próximas posições usando o padrão quadrático: `(i^2)` onde i é o número da tentativa de sondagem.
+
+
+1. **Inserindo chaves**:
+
+   Vamos inserir as seguintes chaves: 12, 22, 32.
+
+   - A função hash calcula 12 % 10 = 2. O índice 2 está vazio (marcado como -1), então a chave 12 é inserida no índice 2.
+
+   - A função hash calcula 22 % 10 = 2. O índice 2 já está ocupado pela chave 12, então ocorre uma colisão. Com a sondagem quadrática, verificamos o próximo índice usando (1^2) = 1, o que nos leva ao índice (2 + 1 = 3). O índice 3 está vazio (marcado como -1), então a chave 22 é inserida no índice 3.
+
+   - A função hash calcula 32 % 10 = 2. O índice 2 está ocupado pela chave 12, e o índice 3 está ocupado pela chave 22, resultando em mais uma colisão. Com a sondagem quadrática, verificamos o próximo índice usando (1^2) = 1 que nos leva ao índice (2 + 1 = 3), que também está ocupado. Agora usamos (2^2) = 4, o que nos leva ao índice (2 + 4 = 6). O índice 6 está vazio, então a chave 32 é inserida no índice 6.
+
+
+
+2. **Estrutura da Tabela**
+
+   Após as inserções, a estrutura da tabela hash é a seguinte:
+
+
+   | Índice | Valor |
+   |--------|-------|
+   |   0    |  -1   |
+   |   1    |  -1   |
+   |   2    |  12   |
+   |   3    |  22   |
+   |   4    |  -1   |
+   |   5    |  -1   |
+   |   6    |  32   |
+   |   7    |  -1   |
+   |   8    |  -1   |
+   |   9    |  -1   |
+
 
 
 **Hash Duplo**
