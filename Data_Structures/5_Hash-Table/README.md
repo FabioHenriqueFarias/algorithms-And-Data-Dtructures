@@ -315,9 +315,59 @@ Vamos imaginar uma tabela hash com um tamanho de 10, onde inicialmente todos os 
 
 **Hash Duplo**
 
+O hash duplo é uma técnica eficiente de resolução de colisões em tabelas hash. Ele funciona utilizando duas funções hash diferentes: uma para calcular o índice inicial e outra para determinar o passo de sondagem em caso de colisões. Esse método busca melhorar a distribuição de chaves na tabela, evitando o agrupamento de colisões que ocorre em técnicas como a sondagem linear e a quadrática.
+
+No hash duplo, a primeira função hash calcula o índice base da chave na tabela, assim como em outras técnicas de hashing. No entanto, se ocorrer uma colisão — ou seja, se esse índice já estiver ocupado por outra chave —, a segunda função hash entra em ação. Ela calcula um valor que será usado como o tamanho do passo para a sondagem. Isso significa que, ao invés de buscar sequencialmente ou de maneira quadrática pelo próximo índice disponível, o algoritmo "pula" de acordo com o valor calculado pela segunda função hash, espalhando as tentativas de inserção de forma mais eficiente.
+
+A vantagem do hash duplo é que ele reduz significativamente a probabilidade de colisões recorrentes. Como o segundo valor de sondagem é gerado por uma função hash distinta, as chaves que colidem inicialmente têm maior chance de serem distribuídas em índices diferentes ao longo da tabela, resultando em uma dispersão mais uniforme. Isso melhora o desempenho geral das operações de busca e inserção, tornando-as mais rápidas em comparação com outras técnicas.
+
+Apesar de sua eficiência, o hash duplo apresenta alguns desafios. Um deles é a necessidade de escolher duas boas funções hash, pois o desempenho do algoritmo depende diretamente da qualidade dessas funções. Se ambas as funções hash não forem adequadamente projetadas, a tabela pode continuar a ter muitas colisões, comprometendo o desempenho. Além disso, o uso de duas funções hash aumenta a complexidade computacional, tornando as operações de inserção e busca um pouco mais custosas em termos de tempo de processamento.
+
+
 **Exemplo**
 
+Vamos imaginar uma tabela hash de tamanho 10, onde inicialmente todos os índices estão marcados como -1, indicando que estão vazios. Para este exemplo de hash duplo, usaremos duas funções hash diferentes:
 
+- A primeira função hash será `h1(k) = k % 10`, que nos dará o índice inicial para a chave.
+- A segunda função hash, usada para calcular o tamanho do passo de sondagem em caso de colisão, será `h2(k) = 7 - (k % 7)`. Essa segunda função garante que o passo de sondagem seja diferente para cada chave.
+
+
+1. **Inserindo chaves**:
+   Vamos inserir as seguintes chaves: 12, 22, 32.
+
+   - Para a chave 12:
+
+      - A primeira função hash calcula 12 % 10 = 2. O índice 2 está vazio (marcado como -1), então a chave 12 é inserida no índice 2.
+   
+   - Para a chave 22:
+
+      - A primeira função hash calcula 22 % 10 = 2. O índice 2 já está ocupado pela chave 12, então ocorre uma colisão.
+      - Agora usamos a segunda função hash para calcular o tamanho do passo de sondagem: h2(22) = 7 - (22 % 7) = 7 - 1 = 6. Isso significa que devemos verificar o índice (2 + 6) % 10 = 8.
+      - O índice 8 está vazio (marcado como -1), então a chave 22 é inserida no índice 8.
+   
+   - Para a chave 32:
+
+      - A primeira função hash calcula 32 % 10 = 2. O índice 2 está ocupado pela chave 12, então ocorre uma colisão.
+      - Usamos a segunda função hash para calcular o passo de sondagem: h2(32) = 7 - (32 % 7) = 7 - 4 = 3. Isso significa que devemos verificar o índice (2 + 3) % 10 = 5.
+      - O índice 5 está vazio (marcado como -1), então a chave 32 é inserida no índice 5.
+
+2. Estrutura da Tabela
+
+   Após as inserções, a estrutura da tabela hash é a seguinte:
+
+
+   | Índice | Valor |
+   |--------|-------|
+   |   0    |  -1   |
+   |   1    |  -1   |
+   |   2    |  12   |
+   |   3    |  -1   |
+   |   4    |  -1   |
+   |   5    |  32   |
+   |   6    |  -1   |
+   |   7    |  -1   |
+   |   8    |  22   |
+   |   9    |  -1   |
 
 ## Usos de uma Hash Table
 
