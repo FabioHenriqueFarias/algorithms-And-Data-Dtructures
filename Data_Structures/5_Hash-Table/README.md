@@ -137,7 +137,7 @@ Um fator de carga muito alto significa que a tabela está cheia e, portanto, pod
 
 ### Colisões
 
-Uma **colisão** ocorre quando duas chaves diferentes são mapeadas para o mesmo índice na tabela hash. Isso é inevitável devido ao princípio da **Pomba-Gale** (ou princípio da casa dos pombos), que afirma que se mais de \( n \) itens forem colocados em \( m \) compartimentos (com \( n > m \)), pelo menos um compartimento terá mais de um item.
+Uma **colisão** ocorre quando duas chaves diferentes são mapeadas para o mesmo índice na tabela hash. Isso é inevitável devido ao princípio da **Pomba-Gale** (ou princípio da casa dos pombos), que afirma que se mais de \( n \) itens forem colocados em \( m \) compartimentos com \( n > m \), pelo menos um compartimento terá mais de um item.
 
 #### Exemplo de Colisão
 
@@ -385,9 +385,13 @@ Diversas operações podem ser realizadas em uma estrutura de dados **Tabela Has
 
 ### Inserção
 
-A operação de inserção, comumente chamada de `put`, adiciona um novo elemento à tabela hash. A posição desse elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diversas estratégias podem ser empregadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme mencionado anteriormente.
+A operação de inserção, comumente chamada de `put`, insere um novo elemento na tabela hash. A posição do elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diferentes estratégias podem ser aplicadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme discutido anteriormente.
 
-#### Complexidade da Inserção
+### Complexidade da Inserção
+
+A inserção em uma tabela hash, realizada pela função `put`, geralmente possui complexidade de tempo constante no **melhor caso**, ou seja, O(1). Isso significa que o número de operações para inserir um elemento não aumenta com o número total de elementos na tabela. Assim, a inserção ocorre em tempo constante, desde que não haja colisões.
+
+No **pior caso**, quando há muitas colisões ou a tabela está muito cheia (no caso de endereçamento aberto), ou quando as listas encadeadas ficam longas (no caso de encadeamento), a complexidade pode degradar para O(n), onde *n* é o número total de elementos na tabela. Isso acontece porque, no encadeamento, pode ser necessário percorrer uma lista de elementos no índice correspondente, e, no endereçamento aberto, podem ser necessárias várias sondagens para encontrar um espaço livre ou o local correto para inserção.
 
 ### Remoção
 
