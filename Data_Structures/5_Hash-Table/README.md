@@ -12,6 +12,7 @@
       - [Formas de Tratar uma colisão](#formas-de-tratar-uma-colisão)
          - [Encadeamento Separado](#encadeamento-separado)
          - [Endereçamento Aberto](#endereçamento-aberto)
+      - [Excluindo Itens em Tabelas Hash com Colisão](#excluindo-itens-em-tabelas-hash-com-colisão)
 - [Usos de uma Hash Table:](#usos-de-uma-hash-table)
 - [Operações comuns em Hash Table](#operações-comuns-em-hash-table)
   - [Inserção](#inserção)
@@ -246,11 +247,7 @@ Vamos imaginar uma tabela hash com um tamanho de 10, onde inicialmente todos os 
 
    - 42: A função hash calcula 42 % 10 = 2. Os índices 2, 3 e 4 estão ocupados pelas chaves 12, 22 e 32, respectivamente, gerando colisões sucessivas. A sondagem linear verifica o índice 5, que está vazio, e a chave 42 é inserida nesse índice.
 
-2. **Removendo chave**
-
-   - 22: A chave 22 foi inserida no índice 3. Para removê-la, marcamos o índice 3 com um valor especial, como `-2`, para indicar que o slot está disponível para futuras inserções, mas que anteriormente estava ocupado. Isso é importante porque, durante o processo de busca, o algoritmo só interromperá a busca ao encontrar um slot marcado com `-1`, que indica um espaço nunca utilizado. No caso de um slot marcado com `-2`, a busca continua, já que esse valor indica que o slot foi ocupado anteriormente e pode conter elementos colididos que precisam ser verificados.
-
-3. **Estrutura da Tabela**
+2. **Estrutura da Tabela**
 
       Após a inserção dessas chaves, a tabela hash fica organizada da seguinte forma:
 
@@ -369,6 +366,107 @@ Vamos imaginar uma tabela hash de tamanho 10, onde inicialmente todos os índice
    |   8    |  22   |
    |   9    |  -1   |
 
+
+####  Excluindo Itens em Tabelas Hash com Colisão
+
+Quando ocorre uma colisão e é necessário excluir um item, a forma de remoção dependerá da técnica de resolução de colisão utilizada: **encadeamento aberto** (como sondagem linear, quadrática ou hash duplo) ou **encadeamento fechado** (também conhecido como encadeamento separado). No encadeamento aberto, a exclusão envolve marcar o item removido com um indicador especial, como `-2`, para preservar a continuidade da sondagem nas buscas futuras. Já no encadeamento fechado, o item é removido diretamente da lista encadeada associada ao índice correspondente, sem afetar os outros itens.
+
+1. **Encadeamento Separado**
+
+   No **encadeamento separado**, cada posição da tabela hash armazena uma lista ou estrutura encadeada que contém todas as chaves que colidem no mesmo índice. Quando várias chaves mapeiam para o mesmo índice, elas são armazenadas nessa lista.
+
+   - **Remoção**: Para remover uma chave, aplicamos a função hash para identificar o índice. Se houver uma lista encadeada no índice, percorremos essa lista até encontrar a chave correspondente. Após localizá-la, removemos o elemento da lista. Se a lista ficar vazia após a remoção, o índice ainda permanece ocupado, mas sem elementos.
+
+   **Exemplo**:
+   - Imagine uma tabela hash de tamanho 10, com chaves `12`, `22` e `32` armazenadas no índice 2. A tabela ficaria assim:
+   
+   ```
+   Índice 2: [12, 22, 32]
+   ```
+
+   - Se quisermos remover a chave `22`, aplicamos a função hash, identificamos o índice 2 e percorremos a lista até encontrar o valor `22`. Após remover o valor, a tabela ficará assim:
+   
+   ```
+   Índice 2: [12, 32]
+   ```
+
+   A lista no índice 2 permanece intacta com os elementos restantes.
+
+<br>
+
+2. **Encadeamento Aberto**
+
+   No **encadeamento aberto**, as colisões são tratadas dentro da própria tabela hash, utilizando diferentes técnicas de sondagem (linear, quadrática ou hash duplo) para encontrar um espaço disponível. Ao remover um item em encadeamento aberto, é essencial garantir que a busca e inserção futuras ainda possam percorrer a tabela corretamente.
+
+   #### a) **Sondagem Linear**
+
+   Na sondagem linear, quando uma colisão ocorre, verificamos sequencialmente os próximos índices até encontrar um vazio. A remoção segue um processo semelhante.
+
+   - **Remoção**: Ao remover uma chave, localizamos a posição através de sondagem linear e marcamos o índice como removido (geralmente usando um marcador especial, como `-2`). Esse marcador indica que o espaço estava ocupado, mas agora está disponível para futuras inserções, sem quebrar a sequência de sondagem durante uma busca.
+
+   **Exemplo**:
+   - Se a chave `12` é inserida no índice 2 e a chave `22` colidir com `12`, ela será inserida no índice 3 após sondagem linear. A tabela ficaria assim:
+   
+   ```
+   Índice 2: 12
+   Índice 3: 22
+   ```
+
+   - Se removemos `22`, o índice 3 será marcado com `-2`:
+
+   ```
+   Índice 2: 12
+   Índice 3: -2
+   ```
+
+   Futuras buscas por elementos que sofreram colisão continuarão funcionando corretamente graças ao marcador especial `-2`, que indica uma posição previamente ocupada e agora vazia. A busca só será encerrada quando encontrar o marcador `-1`, que sinaliza que o índice está realmente vazio e que nenhum elemento foi armazenado ali anteriormente. Isso permite que o algoritmo de sondagem continue percorrendo a tabela sem interrupções até localizar o elemento desejado ou confirmar que ele não está presente.
+
+   ---
+
+   #### b) **Sondagem Quadrática**
+
+   Na sondagem quadrática, a sequência de sondagem segue um padrão quadrático, ou seja, a distância dos índices verificados aumenta com o quadrado do número de tentativas.
+
+   - **Remoção**: Assim como na sondagem linear, a chave é removida e o espaço é marcado como `-2`. A busca segue o padrão quadrático para garantir que o comportamento de sondagem se mantenha eficiente.
+
+   **Exemplo**:
+   - Se a chave `12` está no índice 2, e `22` colide com `12`, verificamos o próximo índice usando a fórmula `(i^2)`, levando ao índice 3. Se o índice 3 estiver ocupado, tentamos `(2^2)`, levando ao índice 6. A tabela ficaria assim:
+
+   ```
+   Índice 2: 12
+   Índice 6: 22
+   ```
+
+   - Ao remover `22`, o índice 6 será marcado como `-2`:
+
+   ```
+   Índice 2: 12
+   Índice 6: -2
+   ```
+
+   ---
+
+   #### c) **Hash Duplo**
+
+   No hash duplo, utilizamos duas funções hash diferentes. A primeira função calcula o índice inicial, e a segunda função determina o deslocamento de sondagem em caso de colisão.
+
+   - **Remoção**: Para remover uma chave, utilizamos a primeira função hash para localizar o índice, e, em caso de colisão, usamos a segunda função hash para continuar a busca. Quando a chave é removida, o índice é marcado como `-2`, para não interromper futuras inserções e buscas.
+
+   **Exemplo**:                                                                                                        
+   - Usando a função hash `h1(k) = k % 10` e `h2(k) = 1 + (k % 7)` para o deslocamento, se `12` for mapeado para o índice 2 e `22` colidir com `12`, verificamos a segunda função para determinar o deslocamento. Supondo que `h2(22) = 4`, a chave `22` será inserida no índice `2 + 4 = 6`.
+
+   ```
+   Índice 2: 12
+   Índice 6: 22       
+   ```
+
+   - Após remover `22`, o índice 6 será marcado como `-2`:
+
+   ```
+   Índice 2: 12
+   Índice 6: -2
+   ```
+
 ## Usos de uma Hash Table
 
 As tabelas hash são amplamente utilizadas devido à sua eficiência, oferecendo operações de busca, inserção e exclusão com complexidade média de O(1). Isso significa que, na maioria dos casos, essas operações podem ser realizadas em tempo constante, independentemente do tamanho do conjunto de dados. 
@@ -385,15 +483,20 @@ Diversas operações podem ser realizadas em uma estrutura de dados **Tabela Has
 
 ### Inserção
 
-A operação de inserção, comumente chamada de `put`, insere um novo elemento na tabela hash. A posição do elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diferentes estratégias podem ser aplicadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme discutido anteriormente.
+A operação de inserção, comumente chamada de `insert`, insere um novo elemento na tabela hash. A posição do elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diferentes estratégias podem ser aplicadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme discutido anteriormente.
 
 ### Complexidade da Inserção
 
-A inserção em uma tabela hash, realizada pela função `put`, geralmente possui complexidade de tempo constante no **melhor caso**, ou seja, O(1). Isso significa que o número de operações para inserir um elemento não aumenta com o número total de elementos na tabela. Assim, a inserção ocorre em tempo constante, desde que não haja colisões.
+A inserção em uma tabela hash, realizada pela função `insert`, geralmente possui complexidade de tempo constante no **melhor caso**, ou seja, O(1). Isso significa que o número de operações para inserir um elemento não aumenta com o número total de elementos na tabela. Assim, a inserção ocorre em tempo constante, desde que não haja colisões.
 
 No **pior caso**, quando há muitas colisões ou a tabela está muito cheia (no caso de endereçamento aberto), ou quando as listas encadeadas ficam longas (no caso de encadeamento), a complexidade pode degradar para O(n), onde *n* é o número total de elementos na tabela. Isso acontece porque, no encadeamento, pode ser necessário percorrer uma lista de elementos no índice correspondente, e, no endereçamento aberto, podem ser necessárias várias sondagens para encontrar um espaço livre ou o local correto para inserção.
 
 ### Remoção
+
+A operação de remoção, comumente chamada de `delete`, remove um elemento da tabela hash. A posição do elemento é determinada aplicando a função hash à sua chave, o que gera o índice correspondente na tabela. Se o índice calculado estiver ocupado pelo elemento que queremos remover, o processo é simples: o elemento é removido e o slot é marcado como disponível, geralmente com um valor especial, como `-2`, para indicar que estava ocupado, mas agora está livre para novas inserções.
+
+
+
 
 #### Complexidade da Remoção
 
