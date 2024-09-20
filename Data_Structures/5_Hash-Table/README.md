@@ -485,7 +485,7 @@ Diversas operações podem ser realizadas em uma estrutura de dados **Tabela Has
 
 A operação de inserção, comumente chamada de `insert`, insere um novo elemento na tabela hash. A posição do elemento é determinada pela aplicação de uma função hash à sua chave, que gera um índice correspondente na tabela. Se o índice já estiver ocupado por outro elemento (uma colisão), diferentes estratégias podem ser aplicadas para resolver o conflito, como encadeamento ou endereçamento aberto, conforme discutido anteriormente.
 
-### Complexidade da Inserção
+#### Complexidade da Inserção
 
 A inserção em uma tabela hash, realizada pela função `insert`, geralmente possui complexidade de tempo constante no **melhor caso**, ou seja, O(1). Isso significa que o número de operações para inserir um elemento não aumenta com o número total de elementos na tabela. Assim, a inserção ocorre em tempo constante, desde que não haja colisões.
 
@@ -495,16 +495,35 @@ No **pior caso**, quando há muitas colisões ou a tabela está muito cheia (no 
 
 A operação de remoção, comumente chamada de `delete`, remove um elemento da tabela hash. A posição do elemento é determinada aplicando a função hash à sua chave, o que gera o índice correspondente na tabela. Se o índice calculado estiver ocupado pelo elemento que queremos remover, o processo é simples: o elemento é removido e o slot é marcado como disponível, geralmente com um valor especial, como `-2`, para indicar que estava ocupado, mas agora está livre para novas inserções.
 
-
-
-
 #### Complexidade da Remoção
+
+A remoção em uma tabela hash, realizada pela operação `delete`, geralmente possui complexidade de tempo constante, ou seja, O(1), no **melhor cenário**. Isso ocorre quando o elemento está diretamente no índice calculado pela função hash, sem colisões, permitindo uma remoção imediata e eficiente.
+
+No **pior cenário**, quando há muitas colisões ou a tabela está próxima de sua capacidade máxima (no caso de encadeamento aberto), a complexidade pode aumentar para O(n), onde *n* é o número total de elementos na tabela. Isso ocorre porque, no caso de encadeamento, pode ser necessário percorrer toda uma lista encadeada de elementos no índice correspondente. Já no endereçamento aberto (sondagem linear, quadrática ou hash duplo), várias sondagens podem ser necessárias para localizar o elemento ou um espaço adequado para remoção, aumentando o número de operações.
+
 
 ### Pesquisa
 
+A operação de pesquisa, conhecida como `search`, é responsável por localizar um elemento em uma tabela hash. A posição do elemento é calculada aplicando a função hash à chave fornecida, que gera o índice correspondente na tabela. Se o índice calculado contiver o elemento desejado, a busca é concluída com sucesso de forma imediata, e o elemento é retornado.
+
+No entanto, se houver uma colisão, o processo de pesquisa varia conforme a estratégia de tratamento de colisão. No caso do **encadeamento fechado** (ou encadeamento separado), a tabela armazenará uma lista de elementos no índice correspondente, e a busca percorrerá essa lista até encontrar o elemento desejado ou determinar que ele não está presente.
+
+No **encadeamento aberto** (com sondagem linear, quadrática ou hashing duplo), a tabela buscará o elemento sondando os próximos índices de acordo com a técnica utilizada. A pesquisa continuará até que o elemento seja encontrado ou que se conclua que ele não está na tabela.
+
+
 #### Complexidade da Pesquisa
 
+A pesquisa em uma tabela hash, realizada pela operação `search`, geralmente tem complexidade de tempo **constante**, representada por O(1). Isso significa que, no **melhor cenário**, a função hash distribui os elementos de maneira uniforme, sem colisões, permitindo que o elemento desejado seja encontrado diretamente no índice calculado. Nesse caso, a eficiência da busca é extremamente alta, e o número de elementos na tabela não afeta o tempo necessário para encontrar o item.
+
+No entanto, no **pior cenário**, a complexidade de tempo pode degradar para **O(n)**, onde *n* representa o número total de elementos na tabela. Esse cenário acontece quando há muitas colisões, o que ocorre quando a função hash distribui as chaves de forma não uniforme, fazendo com que vários elementos acabem sendo mapeados para o mesmo índice ou índices adjacentes. Dependendo da técnica de tratamento de colisões utilizada (como encadeamento separado ou sondagem aberta), a busca pode precisar percorrer múltiplos elementos ou sondar várias posições, impactando o desempenho da operação.
+
 ### Complexidades
+
+| Operação | Complexidade |
+|---|---|
+| Inserção (insert) | O(1) |
+| Remoção (delete) | O(1) |
+| Pesquisa (search) | O(1) |
 
 ## Implementações
 
