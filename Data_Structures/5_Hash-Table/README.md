@@ -527,7 +527,7 @@ No entanto, no **pior cenário**, a complexidade de tempo pode degradar para **O
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação da estrutura de dados Hash Table em três diferentes tecnologias: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>
+Neste repositório, você encontrará a implementação da estrutura de dados Hash Table em três diferentes tecnologias: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/5_Hash-Table/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/5_Hash-Table/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/5_Hash-Table/Rust">Rust</a>
 
 ## Referências
 
