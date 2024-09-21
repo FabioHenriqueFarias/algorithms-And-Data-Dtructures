@@ -136,9 +136,6 @@ Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodi
 
 Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
 
-Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Thomas Cormen - Algoritmos: Teoria e Prática
-</a>
-
 Geeks for Geeks: <a href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank">Stack Data Structure
 </a>
 

@@ -527,4 +527,16 @@ No entanto, no **pior cenário**, a complexidade de tempo pode degradar para **O
 
 ## Implementações
 
+Neste repositório, você encontrará a implementação da estrutura de dados Hash Table em três diferentes tecnologias: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>
+
 ## Referências
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática - Thomas Cormen 
+</a>
+
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Geeks for Geeks: <a href="https://www.geeksforgeeks.org/hash-table-data-structure/" target="_blank">Hash Table Data Structure
+</a>
