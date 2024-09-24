@@ -1,4 +1,4 @@
-# Linked List em C
+# Hash Table em C
 
 ## Sumário 
 
@@ -19,12 +19,12 @@ Estes códigos consistem na implementação de uma Hash Table em linguagem C, di
 
 ### main.c
 
-O arquivo <a href="">`main.c`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/5_Hash-Table/C/main.c">`main.c`</a> é o ponto de entrada do programa. Aqui, ocorre a inicialização do programa, chamadas para funções e interações com o usuário, se necessário.
 
 
 ### hashTable.h
 
-O arquivo <a href="">`hashTable.h`</a> contém as declarações das funções disponíveis para manipulação da Hash Table. Ele serve como uma interface para o programa principal (main.c). Essas operações incluem:
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/5_Hash-Table/C/hashTable.h">`hashTable.h`</a> contém as declarações das funções disponíveis para manipulação da Hash Table. Ele serve como uma interface para o programa principal (main.c). Essas operações incluem:
 
 - Criar a Hash Table
 - Inserção
@@ -35,7 +35,7 @@ O arquivo <a href="">`hashTable.h`</a> contém as declarações das funções di
 
 ### hashTable.c
 
-O arquivo <a href="">`hashTable.c`</a> contém a implementação das funções declaradas em hashTable.h. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, na Linked List.
+O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/blob/main/Data_Structures/5_Hash-Table/C/hashTable.c">`hashTable.c`</a> contém a implementação das funções declaradas em hashTable.h. Aqui, cada função é definida, oferecendo a lógica necessária para realizar operações como inserção, exclusão, busca, entre outras, na Linked List.
 
 ## Rodando o programa com GCC:
 
