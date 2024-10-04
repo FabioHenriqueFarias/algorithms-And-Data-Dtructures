@@ -26,8 +26,8 @@ class HashTable:
         return index
 
     # Função que insere um valor na tabela
-    def insert(self, key, value):
-        index = self.get_hash(key)
+    def insert(self, value):
+        index = self.get_hash(value)
 
         # Usa a sondagem linear para encontrar um índice livre
         free_index = self._linear_probe(index)
@@ -48,7 +48,7 @@ class HashTable:
             if index == original_index:  # Voltou ao índice original
                 break
         
-        return None  # Chave não encontrada
+        return "Não Encontrado"  # Chave não encontrada
     
     # Função que remove um valor da tabela
     def delete(self, key):
@@ -68,4 +68,8 @@ class HashTable:
     
     # Função que imprime a tabela
     def __str__(self):
-        return str([item for item in self.arr if item != "-1"])
+        result = []
+        for index, item in enumerate(self.arr):
+            if item != "-1":
+                result.append(f"Index {index}: {item}")
+        return "\n".join(result)
