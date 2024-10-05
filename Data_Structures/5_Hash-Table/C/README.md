@@ -30,7 +30,7 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 - Inserção
 - Pesquisa
 - Exclusão
-- Tratamento de Colisões
+- Tratamento de Colisões (Endereçamento Fechado)
 - Função Hash
 
 ### hashTable.c

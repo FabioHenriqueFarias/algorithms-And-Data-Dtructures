@@ -4,7 +4,6 @@ class HashTable:
     def __init__(self):
         self.MAX = 100  # Tamanho máximo da tabela
         self.arr = ["-1" for _ in range(self.MAX)]  # Inicializa a tabela com "-1" para indicar que está vazia
-        self.count = 0
 
 
     # Função que calcula o índice hash para uma chave dada
@@ -52,7 +51,6 @@ class HashTable:
     
     # Função que remove um valor da tabela
     def delete(self, key):
-        """Remove um par chave-valor da tabela."""
         index = self.get_hash(key)
         original_index = index
         
