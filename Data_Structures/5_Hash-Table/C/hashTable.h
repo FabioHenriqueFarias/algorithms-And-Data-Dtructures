@@ -2,6 +2,8 @@
 #define HASHTABLE_H
 
 #include <stdlib.h>
+#include <string.h>
+
 
 // Estrutura para um item na tabela hash
 typedef struct Ht_item {
@@ -13,8 +15,8 @@ typedef struct Ht_item {
 typedef struct HashTable {
     Ht_item** items; // Array de ponteiros para itens
     int size;        // Tamanho da tabela hash
-    int count;       // Contador de itens armazenados
 } HashTable;
+
 
 // Funções para manipulação da tabela hash
 HashTable* inicializarTabelaHash(int size);
