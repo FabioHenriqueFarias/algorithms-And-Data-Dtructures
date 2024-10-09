@@ -4,17 +4,17 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // Estrutura para um item na tabela hash
-typedef struct Ht_item {
-    char* key;      // Chave do item
-    char* value;    // Valor do item
-} Ht_item;
+typedef struct Node {
+    char* key;          // Chave do item
+    char* value;        // Valor do item
+    struct Node* next;  // Ponteiro para o próximo nó
+} Node;
 
 // Estrutura da tabela hash
 typedef struct HashTable {
-    Ht_item** items; // Array de ponteiros para itens
-    int size;        // Tamanho da tabela hash
+    Node** array;       // Array de listas encadeadas
+    int size;           // Tamanho da tabela
 } HashTable;
 
 
@@ -24,5 +24,6 @@ void insert(HashTable* ht, const char* key, const char* value);
 char* search(HashTable* ht, const char* key);
 void delete(HashTable* ht, const char* key);
 void freeTable(HashTable* ht);
+int getHash(const char* key, int size);
 
 #endif // HASHTABLE_H

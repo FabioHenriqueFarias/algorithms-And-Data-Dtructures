@@ -5,17 +5,17 @@ ht = HashTable()
 
 # Inserindo valores que causam colisões
 print("Inserindo valores...")
-ht.insert("maria")    # Supondo que "maria" vai para o índice 5
-ht.insert("ariam")     # Supondo que "ariam" colide e vai para o índice 6 (ou próxima posição livre)
-ht.insert("Fernanda")  # Adicionando outro valor
-ht.insert("João")      # Adicionando outro valor
+ht.insert("maria", "valor_maria")    # Insere "maria" com um valor
+ht.insert("ariam", "valor_ariam")     # Insere "ariam" com um valor
+ht.insert("Fernanda", "valor_fernanda")  # Adiciona outro valor
+ht.insert("João", "valor_joao")      # Adiciona outro valor
 
 # Mostrando o estado da tabela após inserções
 print("\nEstado da tabela após inserções:")
 print(ht)
 
 # Buscando um valor
-print("\nBuscando 'maria':", ht.search("maria"))
+print("\nBuscando 'maria':", ht.search("maria"))  
 
 # Removendo "maria"
 print("\nRemovendo 'maria'...")
