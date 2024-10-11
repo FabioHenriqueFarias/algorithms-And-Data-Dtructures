@@ -24,6 +24,7 @@ void insert(HashTable* ht, const char* key, const char* value);
 char* search(HashTable* ht, const char* key);
 void delete(HashTable* ht, const char* key);
 void freeTable(HashTable* ht);
-int getHash(const char* key, int size);
+unsigned long getHash(const char* key, int size);
+void printTable(HashTable* ht);
 
 #endif // HASHTABLE_H

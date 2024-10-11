@@ -22,7 +22,7 @@ HashTable* inicializarTabelaHash(int size) {
 }
 
 // Função que calcula o índice hash para uma chave dada 
-unsigned long getHash(HashTable* ht, const char* key) {
+unsigned long getHash(const char* key, int size) {
      unsigned long hashvalue = 0; 
 
     // Itera sobre cada caractere na chave
@@ -30,12 +30,12 @@ unsigned long getHash(HashTable* ht, const char* key) {
         hashvalue += (unsigned char)(*p); // Adiciona o valor ASCII do caractere atual
     }
     
-    return hashvalue % ht->size; // Retorna o índice hash
+    return hashvalue % size; // Retorna o índice hash
 }
 
 // Função para inserir um novo item na tabela hash
 void insert(HashTable* ht, const char* key, const char* value) {
-    unsigned long index = getHash(ht, key);
+    unsigned long index = getHash(key, ht->size);
   
     // Cria um novo item
     Node* newItem = (Node*)malloc(sizeof(Node));
@@ -62,7 +62,7 @@ void insert(HashTable* ht, const char* key, const char* value) {
 
 // Função para buscar um item na tabela hash
 char* search(HashTable* ht, const char* key) {
-    unsigned long index = getHash(ht, key);
+    unsigned long index = getHash(key, ht->size);
     Node* current = ht->array[index]; // Pega o primeiro nó da lista encadeada
 
     // Itera sobre a lista encadeada
@@ -74,6 +74,30 @@ char* search(HashTable* ht, const char* key) {
     }
 
     return NULL; // Retorna NULL se a chave não for encontrada
+}
+
+// Função para deletar um item da tabela hash
+void delete(HashTable* ht, const char* key) {
+    unsigned long index = getHash(key, ht->size);
+    Node* current = ht->array[index]; // Pega o primeiro nó da lista encadeada
+    Node* previous = NULL;
+
+    // Itera sobre a lista encadeada
+    while (current != NULL) {
+        if (strcmp(current->key, key) == 0) {
+            if (previous == NULL) {
+                ht->array[index] = current->next; // Remove o primeiro nó
+            } else {
+                previous->next = current->next; // Remove o nó atual
+            }
+            free(current->key); // Libera a memória da chave
+            free(current->value); // Libera a memória do valor
+            free(current); // Libera a memória do nó
+            return;
+        }
+        previous = current; // Atualiza o nó anterior
+        current = current->next; // Avança para o próximo nó
+    }
 }
 
 // Função para liberar a memória da tabela hash
@@ -95,4 +119,21 @@ void freeTable(HashTable* ht) {
     free(ht->array); // Libera a memória do array
     free(ht); // Libera a memória da tabela hash em si
   
+}
+
+void printTable(HashTable* ht) {
+    for (int i = 0; i < ht->size; i++) {
+        if (ht->array[i] != NULL) {
+            Node* current = ht->array[i];
+            if (current != NULL) {
+                printf("Index %d: ", i);  // Indica o índice da tabela
+                while (current != NULL) {
+                    printf("%s -> %s\n", current->key, current->value);  // Imprime chave e valor
+                    current = current->next;  // Avança para o próximo nó
+                }
+            }
+        } else {
+            printf("Index %d: -1 (vazio)\n", i);  // Se o bucket estiver vazio
+        }
+    }
 }
