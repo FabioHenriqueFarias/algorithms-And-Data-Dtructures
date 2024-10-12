@@ -25,7 +25,7 @@ As funções implementadas são as seguintes:
 - Inserção
 - Pesquisa
 - Exclusão
-- Tratamento de Colisões
+- Tratamento de Colisões (Endereçamento Aberto usando Hash Duplo)
 - Função Hash
 
 ## Rodando o programa com Rust:

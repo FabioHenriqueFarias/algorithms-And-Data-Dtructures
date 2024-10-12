@@ -37,5 +37,4 @@ int main(){
     freeTable(ht);
 
     return 0;
-    
 }
