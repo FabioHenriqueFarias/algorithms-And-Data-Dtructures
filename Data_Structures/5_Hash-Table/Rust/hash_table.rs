@@ -62,4 +62,71 @@ impl HashTable {
         self.items[index] = Some((key, value));
         self.count += 1;
     }
+
+    // Retorna o valor associado a uma chave
+    pub fn search(&self, key: &str) -> Option<i32> {
+        let mut index = self.hash1(key);
+        let step = self.hash2(key);
+
+        while self.items[index].is_some() {
+            if let Some((existing_key, value)) = &self.items[index] {
+                if *existing_key == key {
+                    return Some(*value);
+                }
+            }
+
+            // Move para o próximo índice usando a segunda função de hash
+            index = (index + step) % self.size;
+        }
+
+        None
+    }
+
+    // Remove um elemento da tabela hash
+    pub fn remove(&mut self, key: &str) {
+        let mut index = self.hash1(key);
+        let step = self.hash2(key);
+
+        while self.items[index].is_some() {
+            if let Some((existing_key, _)) = &self.items[index] {
+                if *existing_key == key {
+                    self.items[index] = None;
+                    self.count -= 1;
+                    return;
+                }
+            }
+
+            // Move para o próximo índice usando a segunda função de hash
+            index = (index + step) % self.size;
+        }
+    }
+
+    // Limpa a tabela hash
+    pub fn free_table(&mut self) {
+        for i in 0..self.size {
+            self.items[i] = None;
+        }
+        self.count = 0;
+    }
+
+    // Exibe a tabela hash
+    pub fn print_table(&self) {
+        for i in 0..self.size {
+            if let Some(ref current) = self.array[i] {
+                print!("Index {}: ", i); // Indica o índice da tabela
+                let mut node = current;
+                while let Some(ref n) = node {
+                    print!("{} -> {}", n.key, n.value); // Imprime chave e valor
+                    node = n.next.as_deref(); // Avança para o próximo nó
+                    if node.is_some() {
+                        print!(" -> "); // Adiciona uma seta se houver mais nós
+                    }
+                }
+                println!(); // Nova linha após imprimir todos os nós
+            } else {
+                println!("Index {}: -1 (vazio)", i); // Se o bucket estiver vazio
+            }
+        }
+    }
+
 }
