@@ -6,19 +6,20 @@ fn main() {
 
     // Criação de uma nova tabela hash
     let mut tabela_hash = HashTable::new(10);
-    println!("Tabela hash criada com sucesso");
 
-    // // Adicionando elementos na tabela hash
-    // tabela_hash.adiciona("chave1".to_string(), 10);
-    // println!("Elemento adicionado na tabela hash");
+    //Inserindo valores que causam colisão
+    print!("Inserindo valores...\n");
+    tabela_hash.insert("maria", "valor_maria");
+    tabela_hash.insert("arim", "valor_ariam");
+    tabela_hash.insert("Fernanda", "valor_fernanda");
+    tabela_hash.insert("João", "valor_joao");
 
-    // // Verificando tamanho da tabela hash
-    // println!("Tamanho da tabela hash: {:?}", tabela_hash.tamanho_tabela());
+    // Mostrando o estado da tabela após inserções
+    print!("\nEstado da tabela após inserções:\n");
+    tabela_hash.print_table();
 
-    // // Adicionando mais elementos na tabela hash
-    // tabela_hash.adiciona("chave2".to_string(), 20);
-    // println!("Elemento adicionado na tabela hash");
+    // Buscando um valor
+    print!("\nBuscando valor para a chave 'maria':\n", tabela_hash.search("maria"));
 
-    // // Removendo elementos da tabela hash
-    // println!("Elemento removido da tabela hash: {:?}", tabela_hash.remove("chave1".to_string()));
+   
 }
