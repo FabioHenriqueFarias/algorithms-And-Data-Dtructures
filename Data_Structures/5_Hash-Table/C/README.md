@@ -32,6 +32,8 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 - Exclusão
 - Tratamento de Colisões (Endereçamento Fechado)
 - Função Hash
+- Imprimir os elementos presentes na tabela.
+
 
 ### hashTable.c
 

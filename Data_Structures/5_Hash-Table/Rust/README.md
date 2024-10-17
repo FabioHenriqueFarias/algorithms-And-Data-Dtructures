@@ -27,6 +27,7 @@ As funções implementadas são as seguintes:
 - Exclusão
 - Tratamento de Colisões (Endereçamento Aberto usando Hash Duplo)
 - Função Hash
+- Imprimir os elementos presentes na tabela.
 
 ## Rodando o programa com Rust:
 
@@ -44,4 +45,4 @@ Isso compilará o código e gerará um executável chamado `main`. Você pode en
 ./main
 ```
 
-Isso executará o programa, que pode crir uma **Queue**.
+Isso executará o programa, que pode crir uma **Tabela Hash** em **Rust**.

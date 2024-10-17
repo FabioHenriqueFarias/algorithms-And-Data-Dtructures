@@ -28,6 +28,8 @@ O arquivo <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dt
 - Exclusão
 - Tratamento de Colisões (Endereçamento Aberto usando Sondagem Linear)
 - Função Hash
+- Imprimir os elementos presentes na tabela.
+
 
 ## Rodando o programa com Python:
 

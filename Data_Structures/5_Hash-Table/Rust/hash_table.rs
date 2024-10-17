@@ -1,13 +1,13 @@
 pub struct HashTable {
-    items: Vec<Vec<(String, i32)>>,
-    size: i32,
-    count: i32,
+    items: Vec<Option<(String, String)>>,
+    size: usize,
+    count: usize,
 }
 
 impl HashTable {
-    pub fn new(size: i32) -> Self {
+    pub fn new(size: usize) -> Self {
         HashTable {
-            items: vec![Vec::new(); size as usize],
+            items: vec![None; size],
             size,
             count: 0,
         }
@@ -37,7 +37,7 @@ impl HashTable {
     }
 
     // Adiciona um novo elemento na tabela hash
-    pub fn insert(&mut self, key: String, value: i32) {
+    pub fn insert(&mut self, key: String, value: String) {
 
         if self.count >= self.size / 2 {
             println!("Tabela cheia, não é possível inserir mais elementos.");
@@ -64,14 +64,14 @@ impl HashTable {
     }
 
     // Retorna o valor associado a uma chave
-    pub fn search(&self, key: &str) -> Option<i32> {
+    pub fn search(&self, key: &str) -> Option<String> {
         let mut index = self.hash1(key);
         let step = self.hash2(key);
 
         while self.items[index].is_some() {
             if let Some((existing_key, value)) = &self.items[index] {
                 if *existing_key == key {
-                    return Some(*value);
+                    return Some(value.clone()); // Retorna um clone do valor, para evitar que o valor original seja movido
                 }
             }
 
@@ -79,7 +79,7 @@ impl HashTable {
             index = (index + step) % self.size;
         }
 
-        None
+        format!("Chave '{}' não encontrada.", key).into() // Retorna mensagem se não encontrado
     }
 
     // Remove um elemento da tabela hash
@@ -112,19 +112,10 @@ impl HashTable {
     // Exibe a tabela hash
     pub fn print_table(&self) {
         for i in 0..self.size {
-            if let Some(ref current) = self.array[i] {
-                print!("Index {}: ", i); // Indica o índice da tabela
-                let mut node = current;
-                while let Some(ref n) = node {
-                    print!("{} -> {}", n.key, n.value); // Imprime chave e valor
-                    node = n.next.as_deref(); // Avança para o próximo nó
-                    if node.is_some() {
-                        print!(" -> "); // Adiciona uma seta se houver mais nós
-                    }
-                }
-                println!(); // Nova linha após imprimir todos os nós
+            if let Some((key, value)) = &self.items[i] {
+                print!("Index {}: {} -> {}\n", i, key, value);
             } else {
-                println!("Index {}: -1 (vazio)", i); // Se o bucket estiver vazio
+                println!("Index {}: -1 (vazio)", i);
             }
         }
     }
