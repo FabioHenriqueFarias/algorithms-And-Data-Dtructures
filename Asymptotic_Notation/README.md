@@ -6,7 +6,13 @@
 - [O que é a Notação Assintótica?](#o-que-é-a-notação-assintótica)
     - [Tipos de Medição de Desempenho de Algoritmos](#tipos-de-medição-de-desempenho-de-algoritmos)
     - [Notações Assintóticas](#notações-assintóticas)
-    - [Classificações de Desempenho](#classificações-de-desempenho  )
+    - [Classificações de Desempenho](#classificações-de-desempenho)
+        - [Tempo constante: O(1)](#tempo-constante-o1)
+        - [Tempo logarítmico: O(log n)](#tempo-logarítmico-olog-n)
+        - [Tempo log-linear: O(n log n)](#tempo-log-linear-on-log-n)
+        - [Tempo quadrático: O(n²)](#tempo-quadrático-on)
+        - [Tempo exponencial: O(2ⁿ) ou O(cⁿ)](#tempo-exponencial-o2ⁿ-ou-ocⁿ)
+        - [Tempo fatorial O(n!)](#tempo-fatorial-on)
 
 ## Medindo o Desempenho de Algoritmos
 
@@ -68,8 +74,26 @@ Cada algoritmo pode ser classificado com base em como o tempo de execução cres
 - **Tempo linear**: **O(n)**
 - **Tempo log-linear**: **O(n log n)**
 - **Tempo quadrático**: **O(n²)**
-- **Tempo cúbico**: **O(n³)** 
+- **Tempo cúbico**: **O(n³)**
 - **Tempo exponencial**: **O(2ⁿ)** ou **O(cⁿ)**
 - **Tempo fatorial** (**O(n!)**)
 
-A **notação assintótica** é uma ferramenta essencial para analisar o desempenho de algoritmos, pois nos permite avaliar como eles se comportam à medida que o tamanho da entrada aumenta. Ignorando detalhes menores que se tornam irrelevantes em grandes volumes de dados, focamos nas operações que mais influenciam o tempo de execução. Para medir esse desempenho, utilizamos três formas principais de análise: o **pior caso**, que nos dá o limite superior do tempo de execução usando a notação **Big O**; o **caso médio**, representado pela notação **Big Θ**, que descreve o comportamento típico; e o **melhor caso**, medido pela notação **Big Ω**, que indica o tempo mínimo de execução. Esses tipos de medição são fundamentais para entender como o algoritmo se comporta em diferentes cenários, e nos ajudam a classificar seu desempenho de acordo com o crescimento do tempo de execução — desde **tempo constante** (O(1)) até **tempo fatorial** (O(n!)). Dessa forma, podemos prever e otimizar a eficiência dos algoritmos, escolhendo a melhor abordagem conforme a complexidade do problema aumenta.
+#### **Tempo constante**: **O(1)** 
+
+O tempo constante O(1) é extremamente valorizado pelos programadores, pois indica que o tempo de execução de um algoritmo permanece constante, independentemente do tamanho da entrada. Uma boa analogia para O(1) é acessar um valor em um array utilizando seu índice: não importa quantos elementos existam no array, a operação de recuperar um item específico pela sua posição leva sempre o mesmo tempo. 
+
+#### **Tempo logarítmico**: **O(log n)**
+#### **Tempo linear**: **O(n)**
+#### **Tempo log-linear**: **O(n log n)**
+#### **Tempo quadrático**: **O(n²)** 
+#### **Tempo cúbico**: **O(n³)** 
+#### **Tempo exponencial**: **O(2ⁿ)** ou **O(cⁿ)**
+#### **Tempo fatorial** (**O(n!)**) 
+
+A **notação assintótica** é uma ferramenta para analisar o desempenho de algoritmos, ajudando-nos a entender como eles se comportam à medida que o tamanho da entrada aumenta. Em vez de nos perdermos em detalhes que se tornam irrelevantes quando lidamos com grandes volumes de dados, focamos nas operações que mais impactam o tempo de execução. Para isso, usamos três formas principais de análise: 
+
+- O **pior caso**, que nos dá um limite superior do tempo de execução, utilizando a notação **Big O**.
+- O **caso médio**, representado pela notação **Big Θ**, que nos mostra o comportamento típico do algoritmo.
+- O **melhor caso**, medido pela notação **Big Ω**, que indica o tempo mínimo de execução.
+
+Essas medições são importantes para entendermos como um algoritmo pode se comportar em diferentes situações e nos ajudam a classificar seu desempenho conforme o tempo de execução cresce — desde **tempo constante** (O(1)) até **tempo fatorial** (O(n!)). Assim, conseguimos prever e otimizar a eficiência dos algoritmos, escolhendo a melhor abordagem à medida que a complexidade do problema aumenta.
