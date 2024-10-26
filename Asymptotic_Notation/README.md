@@ -83,6 +83,28 @@ Cada algoritmo pode ser classificado com base em como o tempo de execução cres
 O tempo constante O(1) é extremamente valorizado pelos programadores, pois indica que o tempo de execução de um algoritmo permanece constante, independentemente do tamanho da entrada. Uma boa analogia para O(1) é acessar um valor em um array utilizando seu índice: não importa quantos elementos existam no array, a operação de recuperar um item específico pela sua posição leva sempre o mesmo tempo. 
 
 #### **Tempo logarítmico**: **O(log n)**
+
+O tempo logarítmico é a segunda complexidade de tempo mais eficiente. Um algoritmo leva tempo logarítmico quando seu tempo de execução aumenta proporcionalmente ao logaritmo do tamanho da entrada.
+
+Por exemplo, imagine que você tenha uma lista de 1.000 pessoas e queira encontrar uma pessoa específica. Em um tempo logarítmico, o número de comparações necessárias cresce muito lentamente à medida que a lista aumenta. Para calcular o número de verificações necessárias, usamos a fórmula do logaritmo na base 2:
+
+```text
+    k = log₂(n)
+```
+
+onde ***\(n\)*** é o tamanho da lista.
+1. Para uma lista de 1.000 nomes:
+```text
+    k = log₂(1000) ≈ 9,97
+```
+Isso significa que, em média, seriam necessárias cerca de 10 comparações para encontrar a pessoa desejada.
+
+2. Agora, se aumentarmos o tamanho da lista para 1.000.000:
+```text
+    k = log₂(1.000.000) ≈ 19,93
+```
+Assim, mesmo com 1.000.000 de pessoas, o número de comparações necessárias seria ainda em torno de 20.
+
 #### **Tempo linear**: **O(n)**
 #### **Tempo log-linear**: **O(n log n)**
 #### **Tempo quadrático**: **O(n²)** 
