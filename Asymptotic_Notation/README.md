@@ -105,7 +105,20 @@ Isso significa que, em média, seriam necessárias cerca de 10 comparações par
 ```
 Assim, mesmo com 1.000.000 de pessoas, o número de comparações necessárias seria ainda em torno de 20.
 
-#### **Tempo linear**: **O(n)**
+#### **Tempo Linear**: **O(n)**
+
+Um algoritmo é considerado de tempo linear quando seu tempo de execução aumenta proporcionalmente ao tamanho da entrada. Isso significa que, se você dobrar a quantidade de dados, o tempo de execução também dobrará.
+
+Por exemplo, imagine que você tenha uma lista de 1.000 produtos em um estoque e queira encontrar o preço de um produto específico. Em um algoritmo de tempo linear, você teria que verificar cada produto um por um até encontrar o desejado. O número de comparações necessárias é diretamente proporcional ao tamanho da lista.
+
+1. Para uma lista de 1.000 produtos:
+   - No pior cenário, você pode ter que verificar todos os 1.000 produtos. Portanto, o tempo de execução seria O(1.000), ou seja, 1.000 operações.
+
+2. Agora, se aumentarmos a lista para 10.000 produtos:
+   - Da mesma forma, no pior cenário, você pode precisar verificar todos os 10.000 produtos, resultando em O(10.000) operações.
+
+Isso mostra como algoritmos de tempo linear são simples, mas podem se tornar ineficientes à medida que o tamanho da entrada aumenta, exigindo um número proporcional de operações.
+
 #### **Tempo log-linear**: **O(n log n)**
 #### **Tempo quadrático**: **O(n²)** 
 #### **Tempo cúbico**: **O(n³)** 
