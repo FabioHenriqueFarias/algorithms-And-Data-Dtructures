@@ -120,7 +120,54 @@ Por exemplo, imagine que você tenha uma lista de 1.000 produtos em um estoque e
 Isso mostra como algoritmos de tempo linear são simples, mas podem se tornar ineficientes à medida que o tamanho da entrada aumenta, exigindo um número proporcional de operações.
 
 #### **Tempo log-linear**: **O(n log n)**
-#### **Tempo quadrático**: **O(n²)** 
+
+Um algoritmo é considerado de tempo log-linear quando seu tempo de execução aumenta de forma proporcional ao tamanho da entrada, multiplicado pelo logaritmo desse tamanho. Isso significa que, embora o tempo de execução cresça rapidamente, ele não é tão rápido quanto o tempo quadrático, o que o torna mais eficiente para grandes volumes de dados.
+
+Um exemplo comum de algoritmo de tempo log-linear é o **Merge Sort**, um método eficiente de ordenação. Para entender melhor, considere o seguinte cenário:
+
+Imagine que você tenha uma lista de 1.000 números que deseja ordenar. O Merge Sort divide a lista em duas metades, ordena cada metade recursivamente e, em seguida, combina as duas metades ordenadas. Esse processo de divisão e combinação é o que leva ao tempo log-linear.
+
+1. **Divisão da Lista**:
+   - A lista de 1.000 números é dividida repetidamente até que cada sublista contenha apenas um número. Esse processo de divisão leva log₂(1.000) operações, que é aproximadamente 10.
+
+2. **Combinação das Listas**:
+   - Após a divisão, cada uma das sublistas é combinada de forma ordenada. Este processo de combinação leva O(n) operações, onde n é o número total de elementos na lista (1.000 neste caso).
+
+Portanto, o tempo total de execução para o Merge Sort se torna O(n log n), que pode ser detalhado assim:
+- Para uma lista de 1.000 números: 
+  - O número total de operações seria O(1.000 × 10), ou seja, 10.000 operações.
+
+3. **Aumento do Tamanho da Entrada**:
+   - Se aumentarmos a lista para 10.000 números, o tempo de execução será O(10.000 × log₂(10.000)). O log₂(10.000) é aproximadamente 14, resultando em aproximadamente 140.000 operações.
+
+Isso ilustra como algoritmos de tempo log-linear, como o Merge Sort, conseguem lidar com grandes volumes de dados de maneira mais eficiente em comparação com algoritmos de tempo quadrático, como o Bubble Sort, que teria um tempo de execução O(n²). O tempo log-linear é especialmente útil em situações que envolvem ordenação ou busca em grandes conjuntos de dados.
+
+#### **Tempo quadrático**: **O(n²)**
+
+Um algoritmo é considerado de tempo quadrático quando seu tempo de execução aumenta proporcionalmente ao quadrado do tamanho da entrada. Isso significa que, à medida que o tamanho da entrada cresce, o tempo de execução pode aumentar rapidamente, tornando esses algoritmos menos eficientes para grandes conjuntos de dados.
+
+Um exemplo clássico de algoritmo de tempo quadrático é o **Bubble Sort**, um método simples de ordenação. Para ilustrar melhor, considere o seguinte cenário:
+
+Imagine que você tenha uma lista de 1.000 números que deseja ordenar. O Bubble Sort funciona comparando pares de elementos adjacentes e trocando-os se estiverem na ordem errada. Este processo é repetido até que a lista esteja completamente ordenada.
+
+1. **Comparações e Trocas**:
+   - Para uma lista de 1.000 números, o algoritmo fará comparações e possíveis trocas em várias passagens. Na primeira passagem, ele realizará 999 comparações (entre os primeiros e os últimos números). Na segunda passagem, fará 998 comparações, e assim por diante, até a última passagem, que terá apenas uma comparação.
+
+2. **Total de Comparações**:
+   - O número total de comparações pode ser calculado como a soma dos primeiros 999 números, que é aproximadamente *\( n (n-1)/2 \)*. Para n = 1.000, isso resulta em cerca de 500.000 comparações.
+
+3. **Aumento do Tamanho da Entrada**:
+   - Se aumentarmos a lista para 10.000 números, o tempo de execução será O(10.000²), resultando em 100.000.000 operações. Isso ilustra como a eficiência do algoritmo diminui drasticamente à medida que o tamanho da entrada aumenta.
+
+Portanto, o tempo total de execução para o Bubble Sort em uma lista de 1.000 números é O(1.000²), que pode ser detalhado assim:
+   -    Para uma lista de 1.000 números: 
+
+         - O número total de operações seria O(1.000 × 1.000), ou seja, 1.000.000 operações.
+
+<br>
+
+Esse exemplo demonstra como algoritmos de tempo quadrático, como o Bubble Sort, são ineficientes para grandes volumes de dados, especialmente em comparação com algoritmos de tempo log-linear, como o Merge Sort, que podem lidar melhor com o aumento do tamanho da entrada. O tempo quadrático é geralmente aceitável apenas para listas pequenas, pois seu desempenho se deteriora rapidamente com o crescimento da entrada.
+
 #### **Tempo cúbico**: **O(n³)** 
 #### **Tempo exponencial**: **O(2ⁿ)** ou **O(cⁿ)**
 #### **Tempo fatorial** (**O(n!)**) 
