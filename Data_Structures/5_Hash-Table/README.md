@@ -49,11 +49,11 @@ Você pode pensar em um array associativo como uma lista de contatos telefônico
 | Carol       | (31) 5555-1234       |
 | Dave        | (41) 9876-5432       |
 
-Arrays associativos possuem duas propriedades importantes: cada chave é única e cada chave mapeia para um único valor. Assim como em um diretório telefônico onde cada número de telefone só pode aparecer uma vez, em um array associativo, cada chave também deve ser única. 
+Arrays associativos possuem duas propriedades importantes: cada chave é única e cada chave mapeia para um único valor. Assim como em um diretório telefônico, onde cada nome de pessoa é único e está associado a um único número de telefone, em um array associativo, cada chave é única e está associada a um único valor.
 
-Da mesma forma, cada número de telefone no diretório se refere a uma única pessoa, e cada chave em um array associativo mapeia para um único valor. No entanto, é possível que o mesmo valor seja associado a diferentes chaves. 
+Da mesma forma que um número de telefone em um diretório se refere a apenas uma pessoa, uma chave em um array associativo aponta para apenas um valor. No entanto, em um array associativo, o mesmo valor pode ser associado a diferentes chaves.
 
-Por exemplo, duas pessoas podem ter o mesmo número de telefone na lista, então é importante lembrar que um valor pode aparecer várias vezes em um array associativo, mas cada chave será exclusiva.
+Por exemplo, imagine um array que armazena informações sobre livros. A chave poderia ser o título do livro e o valor, o autor. Nesse caso, dois livros diferentes poderiam ter o mesmo autor (mesmo valor), mas cada título (chave) seria único.
 
 ### O que é Hashing?
 

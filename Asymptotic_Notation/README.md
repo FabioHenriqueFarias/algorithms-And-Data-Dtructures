@@ -168,7 +168,32 @@ Portanto, o tempo total de execução para o Bubble Sort em uma lista de 1.000 n
 
 Esse exemplo demonstra como algoritmos de tempo quadrático, como o Bubble Sort, são ineficientes para grandes volumes de dados, especialmente em comparação com algoritmos de tempo log-linear, como o Merge Sort, que podem lidar melhor com o aumento do tamanho da entrada. O tempo quadrático é geralmente aceitável apenas para listas pequenas, pois seu desempenho se deteriora rapidamente com o crescimento da entrada.
 
-#### **Tempo cúbico**: **O(n³)** 
+#### **Tempo cúbico**: **O(n³)**
+
+Um algoritmo é considerado de tempo cúbico quando seu tempo de execução aumenta proporcionalmente ao cubo do tamanho da entrada. Isso significa que, à medida que o tamanho da entrada cresce, o tempo de execução aumenta de forma ainda mais drástica do que nos algoritmos de tempo quadrático, tornando-os ineficientes para conjuntos de dados maiores.
+
+Um exemplo clássico de algoritmo de tempo cúbico é o **algoritmo de multiplicação de matrizes**. Para ilustrar melhor, considere o seguinte cenário:
+
+Imagine que você tenha duas matrizes quadradas de tamanho \( n \times n \) que deseja multiplicar. O processo de multiplicação de matrizes envolve calcular cada elemento da matriz resultante, que é feito por meio da soma dos produtos dos elementos correspondentes das linhas da primeira matriz e das colunas da segunda.
+
+1. **Operações para Cada Elemento**:
+   - Para calcular um único elemento da matriz resultante, é necessário realizar \( n \) multiplicações e \( n-1 \) adições. Como há \( n^2 \) elementos na matriz resultante, o número total de operações para a multiplicação completa será proporcional a \( n^3 \).
+
+2. **Total de Operações**:
+   - O número total de operações pode ser aproximado como \( O(n^3) \). Para uma matriz de 10 elementos (ou seja, \( n = 10 \)), teremos aproximadamente \( 10^3 = 1.000 \) operações. Para matrizes maiores, como \( n = 100 \), isso resulta em \( 100^3 = 1.000.000 \) operações.
+
+3. **Aumento do Tamanho da Entrada**:
+   - Se aumentarmos o tamanho das matrizes para \( n = 1.000 \), o tempo de execução se torna O(1.000³), resultando em 1.000.000.000.000 operações. Essa explosão no número de operações ilustra claramente a ineficiência dos algoritmos de tempo cúbico para grandes entradas.
+
+Portanto, o tempo total de execução para a multiplicação de matrizes em matrizes de \( 10 × 10 \) é O(10³), que pode ser detalhado assim:
+   - Para matrizes de \( 10 × 10 \):
+
+      - O número total de operações seria O(10 × 10 × 10), ou seja, 1.000 operações.
+
+<br>
+
+Esse exemplo demonstra como algoritmos de tempo cúbico, como o algoritmo de multiplicação de matrizes, são altamente ineficientes para grandes volumes de dados. Para conjuntos de dados maiores, algoritmos mais eficientes, como os que utilizam técnicas de multiplicação de matrizes mais avançadas (como Strassen), são preferidos, já que esses conseguem reduzir a complexidade para algo mais próximo de \( O(n^{2.81}) \). O tempo cúbico, assim como o tempo quadrático, é geralmente aceitável apenas para entradas pequenas, pois seu desempenho se deteriora rapidamente com o aumento do tamanho da entrada.
+
 #### **Tempo exponencial**: **O(2ⁿ)** ou **O(cⁿ)**
 #### **Tempo fatorial** (**O(n!)**) 
 
