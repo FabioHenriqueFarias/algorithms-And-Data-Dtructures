@@ -195,6 +195,35 @@ Portanto, o tempo total de execução para a multiplicação de matrizes em matr
 Esse exemplo demonstra como algoritmos de tempo cúbico, como o algoritmo de multiplicação de matrizes, são altamente ineficientes para grandes volumes de dados. Para conjuntos de dados maiores, algoritmos mais eficientes, como os que utilizam técnicas de multiplicação de matrizes mais avançadas (como Strassen), são preferidos, já que esses conseguem reduzir a complexidade para algo mais próximo de \( O(n^{2.81}) \). O tempo cúbico, assim como o tempo quadrático, é geralmente aceitável apenas para entradas pequenas, pois seu desempenho se deteriora rapidamente com o aumento do tamanho da entrada.
 
 #### **Tempo exponencial**: **O(2ⁿ)** ou **O(cⁿ)**
+
+Um algoritmo é considerado de tempo exponencial quando seu tempo de execução aumenta proporcionalmente a uma base elevada ao tamanho da entrada. Isso significa que, conforme o tamanho da entrada cresce, o tempo de execução cresce de forma extremamente rápida, tornando esses algoritmos inviáveis para conjuntos de dados relativamente pequenos.
+
+Um exemplo clássico de algoritmo de tempo exponencial é o **algoritmo de resolução do problema da mochila** (0/1 Knapsack Problem) ou o **algoritmo para a sequência de Fibonacci** na sua forma recursiva. Para ilustrar melhor, considere o seguinte cenário:
+
+Imagine que você deseja calcular o enésimo número de Fibonacci usando uma abordagem recursiva simples. O número de Fibonacci é definido como:
+
+- \( F(0) = 0 \)
+- \( F(1) = 1 \)
+- \( F(n) = F(n-1) + F(n-2) \) para \( n >=  2 \)
+
+1. **Chamadas Recursivas**:
+   - Para calcular \( F(n) \), o algoritmo faz chamadas recursivas para \( F(n-1) \) e \( F(n-2) \). Isso resulta em uma árvore de chamadas que cresce exponencialmente, com aproximadamente \( 2^n \) chamadas recursivas para calcular \( F(n) \).
+
+2. **Total de Operações**:
+   - O número total de operações pode ser aproximado como \( O(2^n) \). Por exemplo, para calcular \( F(10) \), o algoritmo pode realizar até \( 2^{10} = 1.024 \) operações. Para valores maiores, como \( n = 20 \), o número de operações salta para \( 2^{20} = 1.048.576 \).
+
+3. **Aumento do Tamanho da Entrada**:
+   - Se aumentarmos \( n \) para 30, o tempo de execução se torna O(2³⁰), resultando em mais de 1 bilhão de operações (aproximadamente 1.073.741.824). Essa explosão no número de operações destaca a ineficiência dos algoritmos de tempo exponencial, que rapidamente se tornam impraticáveis para entradas moderadas.
+
+Portanto, o tempo total de execução para calcular \( F(10) \) é O(2¹⁰), que pode ser detalhado assim:
+   - Para calcular \( F(10) \):
+
+      - O número total de operações seria O(2 × 2 × 2 × ... (10 vezes)), ou seja, 1.024 operações.
+
+<br>
+
+Esse exemplo demonstra como algoritmos de tempo exponencial, como o algoritmo recursivo para a sequência de Fibonacci, são extremamente ineficientes mesmo para entradas relativamente pequenas. Para resolver problemas de forma mais eficaz, é preferível utilizar abordagens que aplicam memoização ou programação dinâmica, que podem reduzir a complexidade para O(n), tornando o cálculo viável mesmo para entradas maiores. O tempo exponencial é geralmente aceitável apenas para problemas de pequeno a médio porte, pois seu desempenho se deteriora rapidamente com o aumento do tamanho da entrada.
+
 #### **Tempo fatorial** (**O(n!)**) 
 
 A **notação assintótica** é uma ferramenta para analisar o desempenho de algoritmos, ajudando-nos a entender como eles se comportam à medida que o tamanho da entrada aumenta. Em vez de nos perdermos em detalhes que se tornam irrelevantes quando lidamos com grandes volumes de dados, focamos nas operações que mais impactam o tempo de execução. Para isso, usamos três formas principais de análise: 
