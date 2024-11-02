@@ -224,7 +224,32 @@ Portanto, o tempo total de execução para calcular \( F(10) \) é O(2¹⁰), qu
 
 Esse exemplo demonstra como algoritmos de tempo exponencial, como o algoritmo recursivo para a sequência de Fibonacci, são extremamente ineficientes mesmo para entradas relativamente pequenas. Para resolver problemas de forma mais eficaz, é preferível utilizar abordagens que aplicam memoização ou programação dinâmica, que podem reduzir a complexidade para O(n), tornando o cálculo viável mesmo para entradas maiores. O tempo exponencial é geralmente aceitável apenas para problemas de pequeno a médio porte, pois seu desempenho se deteriora rapidamente com o aumento do tamanho da entrada.
 
-#### **Tempo fatorial** (**O(n!)**) 
+#### **Tempo fatorial**: **O(n!)**
+
+Um algoritmo é considerado de tempo fatorial quando seu tempo de execução aumenta de acordo com o fatorial do tamanho da entrada. Isso significa que, à medida que o tamanho da entrada cresce, o tempo de execução cresce de forma extremamente rápida, tornando esses algoritmos impraticáveis mesmo para entradas de tamanho moderado.
+
+Um exemplo clássico de algoritmo de tempo fatorial é o **problema do caixeiro viajante** (Traveling Salesman Problem), onde o objetivo é encontrar o caminho mais curto que visita um conjunto de cidades e retorna à cidade de origem. Para ilustrar melhor, considere o seguinte cenário:
+
+Imagine que você tem um conjunto de \( n \) cidades e deseja calcular todas as possíveis rotas que o caixeiro viajante pode fazer. A abordagem ingênua envolve gerar todas as permutações das cidades, o que resulta em uma complexidade de tempo fatorial.
+
+1. **Permutações**:
+   - Para \( n \) cidades, o número total de rotas possíveis é dado por \( n! \) (n fatorial), que representa todas as maneiras de arranjar \( n \) elementos. Por exemplo, se houver 3 cidades, o número total de permutações é \( 3! = 6 \).
+
+2. **Total de Operações**:
+   - O número total de operações requeridas para calcular todas as rotas e determinar o caminho mais curto pode ser aproximadamente \( O(n!) \). Para \( n = 4 \), existem \( 4! = 24 \) rotas possíveis. Para \( n = 5 \), o número de rotas aumenta para \( 5! = 120 \) e, para \( n = 6 \), salta para \( 6! = 720 \).
+
+3. **Aumento do Tamanho da Entrada**:
+   - Se aumentarmos \( n \) para 10, o número de rotas se torna \( 10! = 3.628.800 \). Para valores ainda maiores, como \( n = 20 \), o número de rotas cresce para \( 20! \), que é aproximadamente \( 2,43 \times 10^{18} \). Essa explosão no número de operações demonstra a ineficiência dos algoritmos de tempo fatorial, que rapidamente se tornam impraticáveis para entradas de tamanho moderado.
+
+Portanto, o tempo total de execução para calcular todas as rotas de um caixeiro viajante com 4 cidades é \( O(4!) \), que pode ser detalhado assim:
+- Para calcular todas as rotas possíveis:
+
+   - O número total de operações seria \( O(4 × 3 × 2 × 1) \), resultando em 24 operações.
+
+<br>
+
+Esse exemplo demonstra como algoritmos de tempo fatorial, como o algoritmo para o problema do caixeiro viajante, são extremamente ineficientes mesmo para entradas relativamente pequenas. Para resolver problemas de forma mais eficaz, é preferível utilizar abordagens como algoritmos aproximativos ou heurísticas, que podem oferecer soluções viáveis sem a necessidade de explorar todas as permutações. O tempo fatorial é geralmente aceitável apenas para problemas de pequeno porte, pois seu desempenho se deteriora rapidamente com o aumento do tamanho da entrada.
+
 
 A **notação assintótica** é uma ferramenta para analisar o desempenho de algoritmos, ajudando-nos a entender como eles se comportam à medida que o tamanho da entrada aumenta. Em vez de nos perdermos em detalhes que se tornam irrelevantes quando lidamos com grandes volumes de dados, focamos nas operações que mais impactam o tempo de execução. Para isso, usamos três formas principais de análise: 
 
