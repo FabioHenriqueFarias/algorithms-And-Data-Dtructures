@@ -13,6 +13,7 @@
         - [Tempo quadrático: O(n²)](#tempo-quadrático-on)
         - [Tempo exponencial: O(2ⁿ) ou O(cⁿ)](#tempo-exponencial-o2ⁿ-ou-ocⁿ)
         - [Tempo fatorial O(n!)](#tempo-fatorial-on)
+- [Referências](#referências)
 
 ## Medindo o Desempenho de Algoritmos
 
@@ -258,3 +259,15 @@ A **notação assintótica** é uma ferramenta para analisar o desempenho de alg
 - O **melhor caso**, medido pela notação **Big Ω**, que indica o tempo mínimo de execução.
 
 Essas medições são importantes para entendermos como um algoritmo pode se comportar em diferentes situações e nos ajudam a classificar seu desempenho conforme o tempo de execução cresce — desde **tempo constante** (O(1)) até **tempo fatorial** (O(n!)). Assim, conseguimos prever e otimizar a eficiência dos algoritmos, escolhendo a melhor abordagem à medida que a complexidade do problema aumenta.
+
+## Referências
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática - Thomas Cormen 
+</a>
+
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Geeks for Geeks: <a href="https://www.geeksforgeeks.org/types-of-asymptotic-notations-in-complexity-analysis-of-algorithms/" target="_blank">Types of Asymptotic Notations in Complexity Analysis of Algorithms
+</a>
