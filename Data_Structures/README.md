@@ -15,6 +15,15 @@
         - [Estruturas Estáticas](#estruturas-estáticas)
         - [Estruturas Dinâmicas](#estruturas-dinâmicas)
 - [Estruturas de Dados Comuns:](#estruturas-de-dados-comuns)
+    - [Array (Arranjo)](#array-arranjo)
+    - [Linked List (Lista Encadeada)](#linked-list-lista-encadeada)
+    - [Stack (Pilha)](#stack-pilha)
+    - [Queue (Fila)](#queue-fila)
+    - [Hash Table (Tabela de Hash)](#hash-table-tabela-de-hash)
+    - [Tree (Árvore)](#tree-árvore)
+    - [Graph (Grafo)](#graph-grafo)
+    - [Heap](#heap)
+- [Referências](#referências)
 
 ## O que são Dados?
 
@@ -70,15 +79,23 @@ Uma estrutura de dados em que os elementos são organizados sequencial ou linear
 
 Na estrutura de dados linear, todos os elementos são organizados em uma única dimensão ou nível, o que implica que não há ramificações ou subdivisões entre eles. Essa organização facilita a iteração por todos os elementos em uma única execução, tornando a implementação mais simples, especialmente devido à natureza linear da memória do computador.
 
-Um exemplo comum dessa estrutura é uma fila, na qual as pessoas entram no final e saem do início, seguindo uma ordem de chegada sequencial.
+Exemplos:
+- **Array**: uma coleção de elementos indexados.
+- **Linked List**: onde cada elemento aponta para o próximo.
+- **Stack**: elementos adicionados e removidos pela última posição.
+- **Queue**: elementos adicionados no final e removidos do início (FIFO - First In, First Out).
 
 ### Estruturas não Lineares:
 
-Estruturas de dados nas quais os elementos não são organizados sequencial ou linearmente.
+### Estruturas não Lineares
 
-Em uma estrutura de dados não linear, não há um único nível envolvido, impossibilitando a iteração por todos os elementos em uma única execução. Essas estruturas são mais complexas de implementar em comparação com as estruturas de dados lineares. No entanto, elas têm a capacidade de utilizar a memória do computador de forma mais eficiente do que as estruturas de dados lineares.
+Estruturas de dados não lineares organizam elementos de maneira complexa, sem seguir uma sequência única, o que permite representações mais flexíveis e dinâmicas de dados interconectados. Essas estruturas permitem múltiplas conexões entre os elementos, dificultando a iteração simples por todos eles em uma única execução. Embora sejam mais complexas de implementar, utilizam a memória do computador de maneira eficiente e representam dados interligados de modo natural.
 
-Um exemplo ilustrativo é uma rede social, onde os usuários estão interconectados de várias maneiras, formando uma teia de conexões. Cada usuário pode ter múltiplos amigos, e esses amigos, por sua vez, podem possuir suas próprias conexões, criando uma rede complexa e não linear. Essa estrutura não segue uma organização linear simples e não é hierárquica, o que significa que não há uma única linha de conexões.
+Na prática, um exemplo comum de estrutura não linear é uma **rede social**. Usuários estão conectados uns aos outros de várias formas, formando uma rede de relações sem uma única linha de conexão direta. Isso permite múltiplas associações entre os dados, como amizade entre usuários, onde cada amigo pode estar conectado a outros amigos, formando uma rede densa e interdependente.
+
+Principais exemplos de estruturas não lineares:
+- **Árvore (Tree)**: Estrutura hierárquica onde cada nó pode ter filhos, como a estrutura de um sistema de arquivos ou de uma organização.
+- **Grafo (Graph)**: Composto de nós (ou vértices) conectados por arestas, é útil para representar redes sociais, rotas de transporte, sistemas de recomendação, entre outros.
 
 ### Estruturas Homogêneas e Estruturas Heterogêneas
 
@@ -107,14 +124,63 @@ Por exemplo, considere uma lista de tarefas em um aplicativo de gerenciamento de
 
 ## Estruturas de Dados Comuns: 
 
-- Array (Arranjo)
-- Linked List (Lista Encadeada)
-- Stack (Pilha)
-- Queue (Fila)
-- Hash Table (Tabela de Hash)
-- Tree (Árvore)
-- Graph (Grafo)
-- Heap (Heap)
+### Array (Arranjo)
+
+- Armazena elementos em posições contíguas na memória.
+- Acesso rápido a qualquer elemento pelo índice.
+- Ideal para dados com tamanho fixo ou que não exigem muitas inserções e remoções.
+
+### Linked List (Lista Encadeada)
+
+- Cada elemento, ou "nó", contém um valor e uma referência ao próximo nó.
+- Facilita inserções e exclusões, mas o acesso a elementos específicos é mais lento.
+
+### Stack (Pilha)
+
+- Baseada no princípio LIFO (Last In, First Out).
+- Usada em algoritmos de recursão, navegação de histórico e operações de desfazer/refazer.
+- Operações principais: `push` (inserir no topo) e `pop` (remover do topo).
+
+### Queue (Fila)
+
+- Baseada no princípio FIFO (First In, First Out).
+- Útil para sistemas de fila de impressão, processamento de tarefas e mensagens.
+- Operações principais: `enqueue` (inserir no final) e `dequeue` (remover do início).
+
+### Hash Table (Tabela de Hash)
+
+- Estrutura que mapeia chaves a valores, usando uma função de hash.
+- Permite busca, inserção e exclusão rápidas com complexidade média constante (O(1)).
+- Pode ter colisões, que são resolvidas por técnicas como encadeamento ou sondagem linear.
+
+### Tree (Árvore)
+
+- Estrutura hierárquica com um nó raiz e filhos.
+- Usada em sistemas de arquivos, estrutura de diretórios e árvores de decisão.
+- Subtipos: árvores binárias, árvores AVL, árvores B.
+
+### Graph (Grafo)
+
+- Representa dados conectados, com vértices (nós) e arestas (conexões).
+- Aplicações em redes de computadores, redes sociais e rotas de transporte.
+- Tipos: grafos direcionados, grafos não-direcionados e grafos ponderados.
+
+### Heap
+
+- Tipo especial de árvore binária usada em algoritmos de ordenação e estruturas de prioridade.
+- Um heap mínimo garante que o menor elemento esteja sempre na raiz, enquanto um heap máximo mantém o maior elemento na raiz.
+- Muito usado em algoritmos de busca e ordenação, como o Heap Sort.
+
+## Referências
+
+Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-Cormen/dp/8535236996" target="_blank">Algoritmos: Teoria e Prática - Thomas Cormen 
+</a>
+
+Livro: <a href="https://www.novatec.com.br/livros/cientista-da-computacao-autodidata/">Cientista da Computação Autodidata</a> 
+
+Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://www.grupogen.com.br/livro-algoritmos-e-estruturas-de-dados-em-linguagem-c-andre-backes-editora-ltc-9788521638308">Algoritmos e Estruturas de Dados em Linguagem C</a>
 
 
-
+Geeks for Geeks: <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank">Data Structures Tutorial</a>
