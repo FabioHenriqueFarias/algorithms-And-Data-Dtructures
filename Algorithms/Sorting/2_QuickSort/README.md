@@ -21,7 +21,7 @@ O QuickSort é amplamente utilizado devido à sua baixa **complexidade**. Apesar
 
 Primeiro, identificamos o caso base, onde o array vazio ou o array com um elemento é considerado já ordenado.
 
-![Array](image.png)
+![Array](assents/image.png)
 
 ### 1 - Divisão:
 

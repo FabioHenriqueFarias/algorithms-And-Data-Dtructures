@@ -94,7 +94,7 @@ Para conectar os `nós` em uma lista encadeada, o processo envolve atribuir o en
 
 Por exemplo, suponha que temos três `nós`, newNode1, newNode2, e newNode3, com dados distintos armazenados neles. Para vincular esses `nós`, podemos usar a seguinte abordagem:
 
-```
+```c
 newNode1->next = newNode2;
 newNode2->next = newNode3;
 ```

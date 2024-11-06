@@ -21,7 +21,7 @@
     - [Complexidade da Remoção](#complexidade-da-remoção)
   - [Pesquisa](#pesquisa)
     - [Complexidade da Pesquisa](#complexidade-da-pesquisa)
-   - [Complexidades](#complexidades)
+  - [Complexidades](#complexidades)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
