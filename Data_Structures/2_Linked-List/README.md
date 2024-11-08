@@ -9,6 +9,7 @@
      - [Inserção de um Novo Nó](#inserção-de-um-novo-nó)
      - [Remoção de um Nó Existente](#remoção-de-um-nó-existente)
      - [Leitura da Lista](#leitura-da-lista)
+     - [Complexidades](#complexidades)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -109,28 +110,43 @@ Nesse caso, newNode1 aponta para newNode2 como seu próximo nó, e newNode2 apon
 Algumas Operações comuns em listas encadeadas.
 
 ### Inserção de um Novo Nó
-Para inserir um novo nó em uma lista encadeada, geralmente é necessário atualizar os ponteiros dos `nós` vizinhos para que o novo nó seja corretamente inserido na sequência. Existem diferentes abordagens para inserção, como no início, no final ou em uma posição específica da lista.
 
-Operações de adicionar `nós` tem uma complexidade **O(1)** pois exigem apenas uma modificação do ponteiro do nó anterior para indicar o próximo nó.
+A inserção de um novo nó em uma lista encadeada envolve atualizar os ponteiros dos nós vizinhos para garantir que o novo nó seja corretamente inserido na sequência. Dependendo do caso, o nó pode ser inserido no **início**, no **final** ou em uma **posição específica** da lista.
+
+A operação de inserção pode ser considerada **O(1)** quando estamos adicionando um nó no início ou no final da lista, já que o único ajuste necessário é atualizar o ponteiro do nó anterior para apontar para o novo nó (no caso do início) ou atualizar o ponteiro do nó anterior para o novo nó (no caso do final). No entanto, se a inserção precisar ocorrer em uma posição intermediária, será necessário primeiro percorrer a lista até encontrar o local desejado, o que aumenta a complexidade para **O(n)**, pois é preciso iterar pela lista até chegar no ponto certo. 
+
+Em resumo, se já soubermos onde o nó precisa ser inserido, a operação é bastante eficiente, ocorrendo em **O(1)**. Caso contrário, a busca pela posição correta pode tornar a inserção mais demorada.
 
 ### Remoção de um Nó Existente
-Para remover um nó de uma lista encadeada, é necessário ajustar os ponteiros dos `nós` vizinhos para "pular" o nó a ser removido. Após isso, o nó removido pode ser liberado da memória para evitar vazamentos de memória.
 
-Operações de remoção de `nós` também possui uma complexidade de **O(1)** pois é necessário mudar apenas o endereço para o qual o elemento anterior está apontando. 
+Na remoção de um nó em uma lista encadeada, o processo envolve ajustar os ponteiros dos nós vizinhos para que o nó a ser removido seja "pulando", ou seja, o nó anterior passa a apontar para o próximo nó do nó removido. Dessa forma, o nó que será excluído deixa de ser acessível, podendo então ser liberado da memória para evitar vazamentos.
+
+Embora o processo de remoção de um nó em si seja simples, a complexidade da operação pode variar dependendo do contexto. Se o nó a ser removido for o **primeiro** (cabeça) ou o **último** da lista, o ajuste dos ponteiros é direto e rápido. No entanto, se o nó a ser removido estiver no **meio** da lista, é necessário primeiro encontrar o nó anterior, o que exige percorrer a lista até o ponto desejado. Isso torna a operação de remoção **O(n)** no pior caso, já que é preciso iterar pelos nós para localizá-lo.
+
+No entanto, se já tivermos uma referência ao nó anterior, como no caso da remoção da cabeça (primeiro nó) ou quando mantemos um ponteiro direto para o nó anterior, a remoção pode ser feita em **O(1)**, ou seja, de forma imediata e sem a necessidade de percorrer a lista.
 
 ### Leitura da Lista
-Na leitura da lista, o objetivo é acessar um elemento específico na lista.
 
-Operações de leitura já possuem uma complexidade linear ***O(n)***  pois para acessar determinado elemento é necessario percorrer toda a lista, você precisa visitar cada nó uma vez.
+Na lista ligada, a operação de leitura de um elemento tem complexidade **O(n)**, pois é necessário percorrer os nós sequencialmente, começando do primeiro até o nó desejado. Diferente de estruturas como arrays, que permitem acesso direto aos elementos por índice, na lista ligada não há essa possibilidade, exigindo a iteração de cada nó até encontrar o desejado. Esse processo é eficiente em termos de memória, já que não há necessidade de alocar espaço contínuo para os elementos, mas pode ser ineficiente em termos de tempo quando a lista cresce.
 
-| - | Complexidade |
-|---|---|
-| Escrita | O(1) |
-| Remoção | O(1) |
-| Leitura | O(n) |
+Embora o acesso sequencial seja simples e eficiente em termos de uso de memória, ele se torna um ponto fraco quando o objetivo é acessar elementos rapidamente. Para encontrar o **n-ésimo** elemento, é necessário percorrer a lista até o nó desejado, o que pode ser demorado, especialmente em listas grandes.
+
+Para melhorar o desempenho em casos de leituras frequentes, algumas estratégias podem ser adotadas. Uma delas é o uso de **índices auxiliares** ou **ponteiros adicionais**, que mantêm referências a nós específicos, reduzindo o número de passos necessários para acessar determinados elementos. Outra abordagem seria o uso de **listas duplamente ligadas**, que permitem percorrer a lista tanto da cabeça para a cauda quanto da cauda para a cabeça, oferecendo maior flexibilidade no acesso. 
+
+Porém, apesar dessas melhorias, o acesso direto em listas ligadas nunca será tão rápido quanto em outras estruturas de dados, como arrays ou tabelas de hash, onde a complexidade de leitura é **O(1)**. Em casos onde o acesso rápido é crucial, pode ser mais eficiente considerar outras estruturas, como arrays dinâmicos ou árvores balanceadas, que proporcionam um acesso mais rápido e otimizado aos elementos.
 
 
-Embora essa abordagem garanta que o elemento será encontrado, em alguns casos pode ser desejável implementar estratégias mais eficientes, como manter um índice dos elementos para acesso direto ou usar uma estrutura de dados diferente que permita acesso mais rápido aos elementos desejados.
+### Complexidades
+
+**Listas Encadeadas** são uma estrutura de dados fundamental onde os elementos são armazenados de forma sequencial, mas cada elemento contém uma referência (ou ponteiro) para o próximo elemento. Isso permite uma flexibilidade nas operações de inserção e remoção, mas impacta a eficiência de outras operações, como leitura e pesquisa. Vamos explorar como essas operações se comportam em termos de [complexidade assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation).
+
+| Operação       | Complexidade |
+|----------------|--------------|
+| Inserção       | O(1)         |
+| Remoção        | O(1)         |
+| Leitura        | O(n)         |
+| Pesquisa       | O(n)         |
+
 
 ## Implementações
 

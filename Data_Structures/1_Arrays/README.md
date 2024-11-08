@@ -16,6 +16,7 @@
         - [Remoção no Meio](#remoção-no-meio)
         - [Remoção no Fim](#remoção-no-fim)
     - [Leitura](#leitura)
+    - [Pesquisa](#pesquisa)
     - [Complexidades](#complexidades)
 - [Implementações](#implementações)
 - [Referências](#referências)
@@ -161,31 +162,6 @@ Portanto, a remoção no fim é uma operação que, na maioria dos casos, possui
 | Meio | O(n) |
 | Fim | O(1) |
 
-**Inserção**
-
-A complexidade da operação de inserção varia conforme a posição no array:
-
-- **Inserção no Início**: `O(n)`. Essa operação exige o deslocamento de todos os elementos para abrir espaço no início.
-- **Inserção no Meio**: `O(n)`. Similar à inserção no início, essa operação requer o deslocamento dos elementos subsequentes.
-- **Inserção no Fim**: `O(1)`, contanto que haja espaço suficiente. Caso contrário, o tempo necessário pode aumentar.
-
-**Remoção**
-
-Assim como na inserção, a complexidade da remoção depende da posição do elemento:
-
-- **Remoção no Início**: `O(n)`, pois todos os elementos precisam ser deslocados para preencher o espaço deixado pelo elemento removido.
-- **Remoção no Meio**: `O(n)`, pela necessidade de realocar os elementos subsequentes.
-- **Remoção no Fim**: `O(1)`. A remoção no fim é direta, sem necessidade de realocação.
-
-**Leitura**
-
-A leitura de um elemento em uma posição específica do array é uma operação de tempo constante, `O(1)`, pois o acesso é feito diretamente ao índice, independentemente do tamanho do array.
-
-**Pesquisa**
-
-Para localizar um elemento em um array sem nenhuma ordem definida, é preciso percorrer o array até encontrar o item desejado, resultando em uma complexidade de `O(n)`. Isso ocorre porque, no pior caso, é necessário verificar todos os elementos.
-
-Para aprofundamento sobre o conceito de complexidade assintótica, acesse este link: [Complexidade Assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation).
 
 ### Leitura
 
@@ -196,9 +172,18 @@ Isso acontece porque, ao acessar um elemento específico do array, o acesso dire
 
 Essa característica torna a leitura de um array uma operação eficiente e rápida, independentemente do tamanho do array.
 
+
+### Pesquisa
+
+A busca por um elemento em um array sem ordem definida, também conhecida como busca linear, exige que o algoritmo percorra o array até encontrar o item desejado. Isso ocorre porque não há uma estrutura de dados ordenada ou indexada que permita um acesso direto ao elemento. No pior caso, o algoritmo pode ser forçado a verificar todos os elementos do array para garantir que o item procurado não está presente.
+
+Esse processo de verificação de cada elemento leva a uma complexidade de tempo O(n), onde *n* é o número total de elementos no array. Isso significa que, quanto maior o tamanho do array, maior será o número de comparações que o algoritmo precisa realizar, o que torna a busca linear menos eficiente para arrays grandes.
+
+Portanto, em termos de desempenho, a busca linear pode se tornar um processo custoso à medida que o tamanho do array cresce, pois o tempo necessário para encontrar o elemento está diretamente proporcional ao número de elementos no array.
+
 ### Complexidades
 
-Arrays, uma das estruturas de dados mais básicas, permitem operações de inserção, remoção e leitura, cada uma com características e complexidades distintas. Vamos explorar como essas operações se comportam em termos de complexidade assintótica.
+**Arrays**, uma das estruturas de dados mais básicas, permitem operações de inserção, remoção, pesquisa e leitura, cada uma com características e complexidades distintas. Vamos explorar como essas operações se comportam em termos de [complexidade assintótica](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Asymptotic_Notation).
 
 | Operação       | Complexidade |
 |----------------|--------------|
