@@ -11,10 +11,12 @@
         - [Inserção no Início](#inserção-no-início)
         - [Inserção no Meio](#inserção-no-meio)
         - [Inserção no Fim](#inserção-no-fim)
+        - [Complexidades de Inserção](#complexidades-de-inserção)
     - [Remoção](#remoção)
         - [Remoção no Início](#remoção-no-início)
         - [Remoção no Meio](#remoção-no-meio)
         - [Remoção no Fim](#remoção-no-fim)
+        - [Complexidades de Remoção](#complexidades-de-remoção)
     - [Leitura](#leitura)
     - [Pesquisa](#pesquisa)
     - [Complexidades](#complexidades)
@@ -113,11 +115,15 @@ Dessa forma, a inserção no fim é uma operação que tende a ser mais eficient
 
 #### Complexidades de Inserção
 
-| Inserção | Complexidade |
-|---|---|
-| Início | O(n) |
-| Meio | O(n) |
-| Fim | O(1) |
+A inserção em um array pode ter diferentes complexidades dependendo da posição do novo elemento. No caso de inserções no início ou no meio do array, é necessário deslocar os elementos existentes, o que resulta em uma complexidade de O(n). Já a inserção no final do array, desde que haja espaço disponível, pode ser feita em tempo constante, O(1).
+
+| Inserção         | Complexidade |
+|------------------|--------------|
+| Início          | O(n)         |
+| Meio            | O(n)         |
+| Fim             | O(1)         | 
+
+Assim, a inserção no início ou no meio exige mover elementos, enquanto a inserção no final é mais eficiente quando há espaço no array.
 
 ### Remoção
 
@@ -156,12 +162,15 @@ Portanto, a remoção no fim é uma operação que, na maioria dos casos, possui
 
 #### Complexidades de Remoção
 
-| Remoção | Complexidade |
-|---|---|
-| Início | O(n) |
-| Meio | O(n) |
-| Fim | O(1) |
+A remoção de um elemento em um array pode ter diferentes custos dependendo de onde o item está localizado. Se o elemento a ser removido estiver no início ou no meio do array, os elementos seguintes precisam ser deslocados para preencher o espaço vazio, o que torna a operação mais cara, com complexidade O(n). Por outro lado, a remoção de um elemento no final do array é muito mais eficiente, já que não há necessidade de mover outros elementos; essa operação é realizada em tempo constante, O(1).
 
+| Remoção         | Complexidade |
+|-----------------|--------------|
+| Início         | O(n)         |
+| Meio           | O(n)         |
+| Fim            | O(1)         |
+
+Ou seja, remover um item no início ou no meio envolve mais trabalho devido ao deslocamento dos elementos, enquanto a remoção no final do array é muito mais simples e rápida.
 
 ### Leitura
 
