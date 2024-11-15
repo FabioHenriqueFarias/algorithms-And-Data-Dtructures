@@ -18,6 +18,7 @@ Este repositório tem como objetivo principal apresentar temas relacionados a al
     - [Stack](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/3_Stack)
     - [Queue](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/4_Queue)
     - [Hash Table](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/5_Hash-Table)
+    - [Tree](https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/6_Tree)
 
 
 <br>
