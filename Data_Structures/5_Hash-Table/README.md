@@ -540,3 +540,5 @@ Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo
 
 Geeks for Geeks: <a href="https://www.geeksforgeeks.org/hash-table-data-structure/" target="_blank">Hash Table Data Structure
 </a>
+
+Livro: <a href="https://www.grupogen.com.br/livro-algoritmos-e-estruturas-de-dados-em-linguagem-c-andre-backes-editora-ltc-9788521638308">Algoritmos e Estruturas de Dados em Linguagem C</a>

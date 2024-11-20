@@ -212,3 +212,5 @@ Geek for Geeks: <a href="https://www.geeksforgeeks.org/what-is-array/">O que é 
 Rajput-Ji: <a href="https://www.geeksforgeeks.org/how-do-dynamic-arrays-work/">How do Dynamic arrays work?</a>
 
 Livro: <a href="https://novatec.com.br/livros/entendendo-algoritmos/">Entendendo Algoritmos</a>
+
+Livro: <a href="https://www.grupogen.com.br/livro-algoritmos-e-estruturas-de-dados-em-linguagem-c-andre-backes-editora-ltc-9788521638308">Algoritmos e Estruturas de Dados em Linguagem C</a>

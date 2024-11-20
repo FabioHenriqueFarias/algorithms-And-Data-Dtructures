@@ -125,3 +125,4 @@ Livro: <a href="https://www.amazon.com.br/Algoritmos-Teoria-Pr%C3%A1tica-Thomas-
 
 GeeksforGeeks: <a href="https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/#6-queue">Queue Data Structure</a>
 
+Livro: <a href="https://www.grupogen.com.br/livro-algoritmos-e-estruturas-de-dados-em-linguagem-c-andre-backes-editora-ltc-9788521638308">Algoritmos e Estruturas de Dados em Linguagem C</a>
