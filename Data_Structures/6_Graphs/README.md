@@ -3,6 +3,7 @@
 ## Sumário
 
 - [O que é uma Graph?](#o-que-é-uma-graph)
+- [Como funciona um Grafo?](#como-funciona-um-grafo)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -47,6 +48,13 @@ Cada escolha de rota reflete diferentes cenários do mundo real:
 - Por outro lado, se a flexibilidade é importante (como em uma viagem turística ou na análise de alternativas em um projeto), o trajeto passando pela Cidade 3 e Cidade 5 permite explorar mais opções antes de concluir a jornada.
 
 Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar soluções***, seja no planejamento de trajetos, na otimização de redes de transporte, ou até mesmo na análise de fluxos de trabalho. Ao pensar em vértices e arestas, você pode planejar estratégias, prever resultados e tomar decisões mais informadas.
+
+## Como funciona um Grafo?
+
+Uma característica importante dos grafos é a forma como eles podem ser representados em computadores. Uma das representações mais comuns é a **lista de adjacências**, onde cada vértice mantém uma lista de outros vértices aos quais está diretamente conectado. Esse tipo de representação é eficiente para grafos esparsos, ou seja, aqueles com poucas conexões entre os vértices. Outra representação é a **matriz de adjacências**, uma tabela bidimensional onde as linhas e colunas representam os vértices, e os valores nas células indicam a presença ou ausência de uma aresta entre os vértices correspondentes. Essa abordagem é mais adequada para grafos densos, com muitas conexões entre os vértices.
+
+
+### Terminologia de um Grafo:
 
 ## Implementações
 
