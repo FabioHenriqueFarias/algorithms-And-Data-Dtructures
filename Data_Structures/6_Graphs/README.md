@@ -51,10 +51,11 @@ Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar s
 
 ## Como funciona um Grafo?
 
-Uma característica importante dos grafos é a forma como eles podem ser representados em computadores. Uma das representações mais comuns é a **lista de adjacências**, onde cada vértice mantém uma lista de outros vértices aos quais está diretamente conectado. Esse tipo de representação é eficiente para grafos esparsos, ou seja, aqueles com poucas conexões entre os vértices. Outra representação é a **matriz de adjacências**, uma tabela bidimensional onde as linhas e colunas representam os vértices, e os valores nas células indicam a presença ou ausência de uma aresta entre os vértices correspondentes. Essa abordagem é mais adequada para grafos densos, com muitas conexões entre os vértices.
-
+Um **grafo**, como já foi mencionado, é uma estrutura de dados usada para representar como diferentes elementos estão relacionados entre si. Para entender melhor essa estrutura, é importante conhecer algumas terminologias essenciais, que vamos explorar a seguir. Além disso, os grafos são extremamente flexíveis, com várias variações que os tornam ideais para resolver uma ampla gama de problemas e serem aplicados em diversas áreas.
 
 ### Terminologia de um Grafo:
+
+### **Tipos de Grafos**
 
 ## Implementações
 
