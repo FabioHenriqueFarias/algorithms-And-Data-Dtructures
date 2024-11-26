@@ -51,7 +51,11 @@ Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar s
 
 ## Como funciona um Grafo?
 
-Um **grafo**, como já foi mencionado, é uma estrutura de dados usada para representar como diferentes elementos estão relacionados entre si. Para entender melhor essa estrutura, é importante conhecer algumas terminologias essenciais, que vamos explorar a seguir. Além disso, os grafos são extremamente flexíveis, com várias variações que os tornam ideais para resolver uma ampla gama de problemas e serem aplicados em diversas áreas.
+Um **grafo** é uma forma de organizar dados que ajuda a entender como diferentes elementos estão conectados entre si. Para compreender melhor essa estrutura, é importante conhecer alguns termos-chave, que vamos explicar a seguir.
+
+![Grafo](out/image_02.png)
+
+- ***Adjacência***: Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. Por exemplo, os vértices 3 e 2 são adjacentes porque há uma linha que os conecta diretamente.
 
 ### Terminologia de um Grafo:
 
