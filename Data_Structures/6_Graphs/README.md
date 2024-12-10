@@ -63,6 +63,9 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
 
 - **Grafo não direcionado**: Um ***grafo não direcionado*** é um tipo de grafo em que as arestas não possuem direção associada a elas. Ou seja, se existe uma aresta entre os vértices A e B, ela pode ser percorrida tanto de A para B quanto de B para A, sem que haja uma orientação específica. Dessa forma, não há distinção entre o ponto de origem e o ponto de chegada das arestas. Esse tipo de grafo é ilustrado na figura acima, onde as arestas não apresentam setas indicando direção.
 
+- **Grafo direcionado**: Um ***grafo direcionado*** é um tipo de grafo no qual as arestas possuem uma direção associada. Isso significa que, se existe uma aresta entre os vértices \( A \) e \( B \), ela indica um caminho de \( A \) para \( B \), mas não necessariamente de \( B \) para \( A \), a menos que haja uma segunda aresta específica na direção oposta. Essas arestas direcionadas são representadas graficamente por setas que apontam o sentido permitido de travessia. Assim, há uma distinção clara entre o ponto de origem (inicial) e o ponto de chegada (final) de cada aresta, o que confere ao grafo um caráter orientado. 
+
+- **Gráfico trivial**: Grafo trivial: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
 
 ### Terminologia de um Grafo:
 
