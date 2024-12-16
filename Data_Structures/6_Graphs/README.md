@@ -55,7 +55,9 @@ Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar s
 
 Um **grafo**, como já mencionado, é uma forma de organizar informações que ajuda a entender como diferentes elementos estão conectados entre si. Para compreender melhor essa estrutura, é importante conhecer alguns termos-chave, que vamos explicar a seguir.
 
-![Grafo](out/image_02.png)
+<div align="center">
+  <img src="out/image_02.png" alt="Grafo Direcionado">
+</div>
 
 - ***Adjacência***: Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. Por exemplo, os vértices 3 e 2 são adjacentes porque há uma linha que os conecta diretamente.
 
@@ -73,10 +75,7 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
   <img src="out/image_03.png" alt="Grafo Direcionado">
 </div>
 
-
-
-   
-- **Gráfico trivial**: Grafo trivial: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
+- **Gráfico trivial**: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
 
    Por exemplo, na imagem abaixo, podemos ver um grafo trivial representado por um único ponto (vértice) sem nenhuma linha (aresta) conectando a outros pontos. Este ponto isolado é o único componente do grafo, ilustrando a simplicidade e a ausência de conexões que caracterizam um grafo trivial.
 
@@ -85,6 +84,19 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
   <img src="out/image_04.png" alt="Grafo Direcionado" height="200">
 </div>
 
+- **Grau de um vértice**: O grau de um vértice é a quantidade de conexões que ele possui em um grafo. Imagine que um vértice é uma cidade em um mapa, e as arestas são as estradas que conectam essa cidade a outras. O grau desse vértice seria o número total de estradas que chegam ou saem dessa cidade. É como contar quantas formas diferentes existem para entrar ou sair de um ponto.
+
+   No caso de um **grafo não direcionado** (onde as arestas não têm sentido), cada aresta conta como uma conexão, independentemente da direção. Por exemplo, se a cidade \( A \) estiver conectada às cidades \( B \), \( C \) e \( D \), então o grau de \( A \) será 3, pois existem 3 estradas conectando \( A \) a outras cidades.
+
+   Em um **grafo direcionado** (onde as arestas têm sentido), precisamos observar duas coisas:  
+- **Grau de entrada**: é o número de arestas que chegam ao vértice, ou seja, as "estradas" que vêm de outras cidades e terminam ali. Por exemplo, se a cidade \( A \) recebe estradas de \( B \) e \( C \), o grau de entrada de \( A \) é 2.  
+- **Grau de saída**: é o número de arestas que saem do vértice, ou seja, as "estradas" que partem daquela cidade em direção a outras. Se de \( A \) saem estradas para \( D \) e \( E \), então o grau de saída de \( A \) é 2.
+
+
+
+<div align="center">
+  <img src="out/image_05.png" alt="Grafo Direcionado" height="200">
+</div>
 
 ### Terminologia de um Grafo:
 
