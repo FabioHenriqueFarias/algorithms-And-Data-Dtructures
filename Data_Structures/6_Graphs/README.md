@@ -49,6 +49,8 @@ Cada escolha de rota reflete diferentes cenários do mundo real:
 
 Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar soluções***, seja no planejamento de trajetos, na otimização de redes de transporte, ou até mesmo na análise de fluxos de trabalho. Ao pensar em vértices e arestas, você pode planejar estratégias, prever resultados e tomar decisões mais informadas.
 
+## Tipos de Grafos
+
 ## Como funciona um Grafo?
 
 ### Nomenclaturas
@@ -75,7 +77,7 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
   <img src="out/image_03.png" alt="Grafo Direcionado">
 </div>
 
-- **Gráfico trivial**: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
+- **Grafo trivial**: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
 
    Por exemplo, na imagem abaixo, podemos ver um grafo trivial representado por um único ponto (vértice) sem nenhuma linha (aresta) conectando a outros pontos. Este ponto isolado é o único componente do grafo, ilustrando a simplicidade e a ausência de conexões que caracterizam um grafo trivial.
 
@@ -83,6 +85,8 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
 <div align="center">
   <img src="out/image_04.png" alt="Grafo Direcionado" height="200">
 </div>
+
+- **Grafo cíclico**: 
 
 - **Grau de um vértice**: O grau de um vértice é a quantidade de conexões que ele possui em um grafo. Imagine que um vértice é uma cidade em um mapa, e as arestas são as estradas que conectam essa cidade a outras. O grau desse vértice seria o número total de estradas que chegam ou saem dessa cidade. É como contar quantas formas diferentes existem para entrar ou sair de um ponto.
 
