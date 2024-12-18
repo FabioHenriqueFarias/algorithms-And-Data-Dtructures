@@ -51,6 +51,37 @@ Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar s
 
 ## Tipos de Grafos
 
+Existem diversos tipos de grafos, cada um com suas características específicas e aplicabilidades em contextos distintos. Vamos explorar os principais tipos, entendendo como cada um pode ser útil na prática. Seja para modelar redes sociais, otimizar rotas de entrega ou resolver problemas complexos na ciência da computação, os grafos se mostram uma ferramenta poderosa e intuitiva. Eles nos ajudam a visualizar relações, conexões e fluxos de forma clara, permitindo resolver desafios do mundo real de maneira mais eficiente e estratégica.
+
+### **Grafo não direcionado**: 
+Um grafo **não direcionado** é uma estrutura composta por **vértices** (ou nós) e **arestas**, onde as conexões entre os vértices não possuem direção, ou seja, podemos percorrê-las em qualquer sentido. 
+
+Na imagem, temos um exemplo claro de grafo não direcionado, com cinco vértices representados pelas letras A, B, C, D e E. As arestas, que conectam os vértices, são como pontes entre eles: A está conectado a B e E, E está ligado a A, C e D, enquanto C compartilha arestas com E e D. Nesse tipo de grafo, se existe uma aresta entre A e E, significa que podemos ir de A para E e também de E para A. Além disso, o grafo é **conexo**, pois é possível alcançar qualquer vértice partindo de outro. Por exemplo, mesmo que não haja uma conexão direta entre os vértices A e D, podemos seguir o caminho A → E → D. Esse exemplo ilustra bem como um grafo não direcionado funciona, sendo uma representação simples e intuitiva de relações ou conexões bidirecionais.
+<div align="center">
+  <img src="out/image_06.png" alt="Grafo Direcionado">
+</div>
+
+### **Grafo direcionado**: 
+Um ***grafo direcionado*** é uma estrutura onde as conexões entre os elementos possuem uma direção específica. Isso significa que, se há uma ligação de \( A \) para \( B \), o caminho só pode ser feito nesse sentido, a menos que exista outra ligação separada permitindo o trajeto de \( B \) para \( A \). Esse tipo de grafo é muito útil em situações onde a ordem ou direção das relações importa, como em redes sociais (quem segue quem), diagramas de fluxo ou mapas de trânsito.
+
+   Na imagem apresentada, podemos ver exemplos claros disso. Por exemplo, a ligação de \( 5 \) para \( 7 \) permite que se vá de \( 5 \) para \( 7 \), mas o caminho inverso só é possível porque há outra seta indicando a direção oposta. Já o vértice \( 6 \) pode ser alcançado a partir de \( 2 \), \( 4 \) e \( 0 \), mas não há conexões diretas que permitam \( 6 \) retornar a esses vértices. Também é possível identificar ciclos, como o que conecta \( 5 \), \( 7 \) e \( 4 \), onde é possível percorrer esses vértices e retornar ao ponto de partida seguindo as direções indicadas.
+
+   Esse tipo de grafo ajuda a organizar e entender relações direcionadas, permitindo a análise de caminhos, acessos e dependências em diferentes contextos.   
+
+<div align="center">
+  <img src="out/image_03.png" alt="Grafo Direcionado">
+</div>
+
+### **Grafo trivial**: 
+Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
+
+   Por exemplo, na imagem abaixo, podemos ver um grafo trivial representado por um único ponto (vértice) sem nenhuma linha (aresta) conectando a outros pontos. Este ponto isolado é o único componente do grafo, ilustrando a simplicidade e a ausência de conexões que caracterizam um grafo trivial.
+
+
+<div align="center">
+  <img src="out/image_04.png" alt="Grafo Direcionado" height="200">
+</div>
+
 ## Como funciona um Grafo?
 
 ### Nomenclaturas
@@ -65,26 +96,7 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
 
 - ***Caminho***: Uma sequência de conexões (arestas) que nos permite ir de um ponto a outro. Por exemplo, no caso do vértice 5, existem diferentes maneiras de chegar ao vértice 2, passando por outros vértices, como 5-2, 5-1, 5-4 e depois 3-2. Essas são as rotas possíveis que podemos seguir a partir do vértice 5 para alcançar o vértice 2.
 
-- **Grafo não direcionado**: Um ***grafo não direcionado*** é um tipo de grafo em que as arestas não possuem direção associada a elas. Ou seja, se existe uma aresta entre os vértices A e B, ela pode ser percorrida tanto de A para B quanto de B para A, sem que haja uma orientação específica. Dessa forma, não há distinção entre o ponto de origem e o ponto de chegada das arestas. Esse tipo de grafo é ilustrado na figura acima, onde as arestas não apresentam setas indicando direção.
 
-- **Grafo direcionado**: Um ***grafo direcionado*** é uma estrutura onde as conexões entre os elementos possuem uma direção específica. Isso significa que, se há uma ligação de \( A \) para \( B \), o caminho só pode ser feito nesse sentido, a menos que exista outra ligação separada permitindo o trajeto de \( B \) para \( A \). Esse tipo de grafo é muito útil em situações onde a ordem ou direção das relações importa, como em redes sociais (quem segue quem), diagramas de fluxo ou mapas de trânsito.
-
-   Na imagem apresentada, podemos ver exemplos claros disso. Por exemplo, a ligação de \( 5 \) para \( 7 \) permite que se vá de \( 5 \) para \( 7 \), mas o caminho inverso só é possível porque há outra seta indicando a direção oposta. Já o vértice \( 6 \) pode ser alcançado a partir de \( 2 \), \( 4 \) e \( 0 \), mas não há conexões diretas que permitam \( 6 \) retornar a esses vértices. Também é possível identificar ciclos, como o que conecta \( 5 \), \( 7 \) e \( 4 \), onde é possível percorrer esses vértices e retornar ao ponto de partida seguindo as direções indicadas.
-
-   Esse tipo de grafo ajuda a organizar e entender relações direcionadas, permitindo a análise de caminhos, acessos e dependências em diferentes contextos.   
-
-<div align="center">
-  <img src="out/image_03.png" alt="Grafo Direcionado">
-</div>
-
-- **Grafo trivial**: Um grafo trivial é um tipo de grafo que consiste em um único vértice e nenhuma aresta. Esse grafo é considerado o caso mais simples, pois não há conexões entre vértices, já que existe apenas um vértice isolado. Não há caminhos ou ciclos possíveis, já que a ausência de arestas impede qualquer travessia entre vértices. O grafo trivial é uma representação mínima e serve como um exemplo base em muitos conceitos da teoria dos grafos, sendo utilizado em contextos teóricos ou como caso base em algoritmos.
-
-   Por exemplo, na imagem abaixo, podemos ver um grafo trivial representado por um único ponto (vértice) sem nenhuma linha (aresta) conectando a outros pontos. Este ponto isolado é o único componente do grafo, ilustrando a simplicidade e a ausência de conexões que caracterizam um grafo trivial.
-
-
-<div align="center">
-  <img src="out/image_04.png" alt="Grafo Direcionado" height="200">
-</div>
 
 - **Grafo cíclico**: 
 
