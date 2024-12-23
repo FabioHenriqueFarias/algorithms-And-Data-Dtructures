@@ -121,19 +121,28 @@ Um **grafo**, como já mencionado, é uma forma de organizar informações que a
 
 - ***Caminho***: Uma sequência de conexões (arestas) que nos permite ir de um ponto a outro. Por exemplo, no caso do vértice 5, existem diferentes maneiras de chegar ao vértice 2, passando por outros vértices, como 5-2, 5-1, 5-4 e depois 3-2. Essas são as rotas possíveis que podemos seguir a partir do vértice 5 para alcançar o vértice 2.
 
-- **Grau de um vértice**: O grau de um vértice é a quantidade de conexões que ele possui em um grafo. Imagine que um vértice é uma cidade em um mapa, e as arestas são as estradas que conectam essa cidade a outras. O grau desse vértice seria o número total de estradas que chegam ou saem dessa cidade. É como contar quantas formas diferentes existem para entrar ou sair de um ponto.
 
-   No caso de um **grafo não direcionado** (onde as arestas não têm sentido), cada aresta conta como uma conexão, independentemente da direção. Por exemplo, se a cidade \( A \) estiver conectada às cidades \( B \), \( C \) e \( D \), então o grau de \( A \) será 3, pois existem 3 estradas conectando \( A \) a outras cidades.
-
-   Em um **grafo direcionado** (onde as arestas têm sentido), precisamos observar duas coisas:  
-- **Grau de entrada**: é o número de arestas que chegam ao vértice, ou seja, as "estradas" que vêm de outras cidades e terminam ali. Por exemplo, se a cidade \( A \) recebe estradas de \( B \) e \( C \), o grau de entrada de \( A \) é 2.  
-- **Grau de saída**: é o número de arestas que saem do vértice, ou seja, as "estradas" que partem daquela cidade em direção a outras. Se de \( A \) saem estradas para \( D \) e \( E \), então o grau de saída de \( A \) é 2.
-
-
+**Grau de um vértice**: O grau de um vértice é o número de conexões (arestas) que ele tem em um grafo. Pense em um vértice como uma cidade em um mapa, e as arestas como estradas ligando essa cidade a outras. O grau do vértice é o total de estradas que chegam ou saem dessa cidade.
 
 <div align="center">
-  <img src="out/image_05.png" alt="Grafo Direcionado" height="200">
+  <img src="out/image_05.png" alt="Grafo Não Direcionado" height="200">
 </div>
+
+No caso de um **grafo não direcionado** (como o da imagem), cada aresta conta como uma conexão, independentemente da direção. Por exemplo:
+
+- O vértice A está conectado aos vértices B e D. Portanto, o grau de A é 2.
+- O vértice B está conectado aos vértices A, D e E. Portanto, o grau de B é 3.
+
+Em um **grafo direcionado**:
+
+<div align="center">
+  <img src="out/image_08.png" alt="Grafo Direcionado" height="200">
+</div>
+
+- **Grau de entrada**: o número de arestas que chegam ao vértice. Por exemplo, o vértice 2 recebe arestas dos vértices 1 e 4, então o grau de entrada de 2 é 2.
+- **Grau de saída**: o número de arestas que saem do vértice. Por exemplo, o vértice 2 tem arestas que saem para os vértices 0 e 3, então o grau de saída de 2 é 2.
+
+O grau de um vértice é uma medida usada em teoria dos grafos para entender a conectividade e a estrutura de um grafo. Em grafos não direcionados, o grau é apenas o número de conexões que um vértice tem com outros. Já em grafos direcionados, há duas maneiras de medir o grau: o grau de entrada, que conta quantas arestas entram no vértice, e o grau de saída, que conta quantas arestas saem dele. Isso ajuda a entender melhor como os vértices estão interligados de diferentes maneiras.
 
 ### Terminologia de um Grafo:
 
