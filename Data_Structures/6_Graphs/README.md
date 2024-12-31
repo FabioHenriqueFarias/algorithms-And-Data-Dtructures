@@ -158,55 +158,59 @@ O grau de um vértice é o número de conexões (arestas) que ele tem em um graf
 
 #### ***Conectividade***
 
-A conectividade em grafos, é uma maneira de entender o quão "bem conectados" estão os elementos de um grafo, ou seja, seus vértices e arestas.
 
-- **Grafo conexo**: Um grafo é dito conexo se, para quaisquer dois vértices \( u \) e \( v \), existe um caminho (sequência de arestas) que conecta \( u \) a \( v \). Ou seja, é possível ir de qualquer vértice para qualquer outro vértice do grafo.
-  
-- **Grafo desconexo**: Um grafo é desconexo se existir pelo menos um par de vértices \( u \) e \( v \) para os quais não existe nenhum caminho que os conecte. Ou seja, existem pelo menos dois vértices que estão em componentes separadas, ou seja, não há caminho que os relacione diretamente ou indiretamente.
+A **conectividade** nos grafos mostra como seus vértices e arestas estão ligados e nos ajuda a entender se é possível ir de um ponto a outro. Um grafo pode ser **conexo**, quando todos os vértices estão conectados de alguma forma, ou **desconexo**, quando existem partes separadas, onde alguns vértices não têm nenhuma ligação com outros. 
 
-Em termos de componentes conectadas:
+**Grafos Conexos**
 
-- Se o grafo for conexo, ele é composto por uma única **componente conectada**.
-- Se o grafo for desconexo, ele é composto por múltiplas **componentes conectadas**, que são subgrafos dentro do grafo original nos quais qualquer par de vértices está conectado, mas não há caminhos que conectam vértices entre diferentes componentes.
-
+Um grafo é considerado **conexo** quando existe um caminho entre qualquer par de vértices. Em outras palavras, é possível viajar de qualquer vértice para qualquer outro vértice do grafo, seja direta ou indiretamente. Isso significa que todos os vértices estão interligados de alguma forma, formando um único conjunto conectado.
 
 **Exemplo:**
 
-Imagina que temos uma cidade com bairros representados por vértices e ruas representadas por arestas.
+Imagine uma cidade com cinco bairros (A, B, C, D e E), onde as ruas (arestas) conectam os bairros da seguinte forma:
+- A está conectado a B e E.
+- B está conectado a C.
+- C está conectado a D.
+- D está conectado a E.
 
-**Exemplo de grafo **conexo**:**
+Nesse caso, o grafo é **conexo**, pois é possível ir de qualquer bairro a qualquer outro. Por exemplo:
+- Para ir de A ao D, podemos seguir o caminho A → E → D.
+- Para ir de A ao C, podemos seguir A → B → C.
 
-Imagine uma cidade com cinco bairros: A, B, C, D e E. As ruas (arestas) conectam os bairros da seguinte forma:
+Como todos os bairros estão interligados, o grafo forma uma única rede conectada, chamada de **componente conexa**.
 
-- A → B
-- B → C
-- C → D
-- D → E
-- E → A
 
-Neste caso, qualquer bairro pode ser alcançado a partir de qualquer outro. Por exemplo, para ir de A até E, podemos seguir o caminho: A → B → C → D → E. Ou então, de A para C, podemos seguir A → B → C. Todos os bairros estão interligados, formando um único conjunto conectado.
 
-Portanto, este grafo é **conexo**, pois existe um caminho entre qualquer par de vértices.
+**Grafos Desconexos**
 
-**Exemplo de grafo **desconexo**:**
+Um grafo é chamado de **desconexo** quando nem todos os vértices estão conectados entre si. Isso significa que existem pares de vértices que não possuem nenhum caminho ligando-os. Quando isso ocorre, o grafo é formado por partes separadas chamadas **componentes conexas**.
 
-Agora, imagine uma cidade com os mesmos cinco bairros (A, B, C, D e E), mas com ruas conectando-os de forma diferente:
+ ***O que são Componentes Conexas?***
 
-- A → B
-- C → D
-- E → C
+As **componentes conexas** são subpartes de um grafo onde todos os vértices estão conectados de alguma forma internamente, mas não possuem ligação com vértices de outras partes do grafo. Cada componente conexa é, por si só, um grafo conexo.
 
-Neste caso, temos dois grupos de bairros:
+**Exemplo:**
 
-1. A e B estão conectados, mas não têm ligação com os outros bairros.
-2. C, D e E estão conectados entre si, mas não têm ligação com A e B.
+Imagine os mesmos cinco bairros (A, B, C, D e E), mas as conexões entre eles mudaram:
+- A está conectado apenas a B.
+- C está conectado a D e E.
+- Não há conexão entre os grupos {A, B} e {C, D, E}.
 
-Portanto, não é possível ir de A até D, ou de B até E, por exemplo, sem sair da cidade ou passar por um local desconectado. Como existem componentes separadas que não estão conectadas entre si, o grafo é **desconexo**.
+Neste caso, o grafo é **desconexo**, pois os bairros estão divididos em dois grupos sem ligação entre si:
 
-Em resumo:
+1. A primeira **componente conexa** é formada pelos bairros A e B.
+2. A segunda **componente conexa** é formada pelos bairros C, D e E.
 
-- O primeiro exemplo (A, B, C, D, E conectados) é um grafo **conexo**.
-- O segundo exemplo (A e B desconectados de C, D, E) é um grafo **desconexo**.
+Por exemplo:
+- Podemos ir de C para E pelo caminho C → D → E.
+- Porém, não é possível ir de A para C, pois eles pertencem a diferentes componentes conexas.
+
+Resumidamente, temos:  
+
+- **Grafo conexo**: Todos os pontos (vértices) estão conectados de alguma forma, ou seja, é possível ir de qualquer vértice a outro. Exemplo: todos os bairros de uma cidade estão interligados por ruas.  
+- **Grafo desconexo**: Nem todos os pontos estão conectados, formando grupos separados. Exemplo: bairros de uma cidade divididos em dois ou mais grupos sem ligação entre eles.  
+- **Componentes conexas**: Em um grafo desconexo, cada grupo isolado de pontos conectados forma uma componente conexa. Dentro de cada componente, é possível ir de um vértice a outro, como se fosse um grafo separado.  
+
 
 ### Como Representar Grafos
 
