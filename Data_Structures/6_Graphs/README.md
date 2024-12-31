@@ -87,8 +87,6 @@ Um **grafo trivial** é o tipo mais simples de grafo, composto por um único vé
 Por exemplo, em um algoritmo de busca em grafos, o grafo trivial pode ser usado como o caso base, onde não há necessidade de busca, pois não há arestas para percorrer. Na imagem abaixo, podemos ver um grafo trivial representado por um único ponto (vértice) sem nenhuma linha (aresta) conectando a outros pontos. Esse único vértice é o único componente do grafo, ilustrando de forma simples a ausência de conexões que caracteriza um grafo trivial.
 
 
-
-
 <div align="center">
   <img src="out/image_04.png" alt="Grafo Direcionado" height="200" width="300">
 </div>
@@ -115,15 +113,17 @@ Na imagem abaixo, podemos ver exemplos de grafos cíclicos tanto dirigidos quant
 
 Um **grafo**, como já mencionado, é uma forma de organizar informações que ajuda a entender como diferentes elementos estão conectados entre si. Para compreender melhor essa estrutura, é importante conhecer alguns termos-chave, que vamos explicar a seguir.
 
+
+
+#### ***Adjacência*** 
+
+Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. Por exemplo, os vértices 3 e 2 são adjacentes porque há uma linha que os conecta diretamente.
+
 <div align="center">
   <img src="out/image_02.png" alt="Grafo Direcionado" height="250" width="600">
 </div>
 
 <br/>
-
-#### ***Adjacência*** 
-
-Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. Por exemplo, os vértices 3 e 2 são adjacentes porque há uma linha que os conecta diretamente.
 
 #### ***Caminho*** 
 
@@ -155,6 +155,58 @@ O grau de um vértice é o número de conexões (arestas) que ele tem em um graf
 
     O grau de um vértice é uma medida usada em teoria dos grafos para entender a conectividade e a estrutura de um grafo. Em grafos não direcionados, o grau é apenas o número de conexões que um vértice tem com outros. Já em grafos direcionados, há duas maneiras de medir o grau: o grau de entrada, que conta quantas arestas entram no vértice, e o grau de saída, que conta quantas arestas saem dele. Isso ajuda a entender melhor como os vértices estão interligados de diferentes maneiras.
 
+
+#### ***Conectividade***
+
+A conectividade em grafos, é uma maneira de entender o quão "bem conectados" estão os elementos de um grafo, ou seja, seus vértices e arestas.
+
+- **Grafo conexo**: Um grafo é dito conexo se, para quaisquer dois vértices \( u \) e \( v \), existe um caminho (sequência de arestas) que conecta \( u \) a \( v \). Ou seja, é possível ir de qualquer vértice para qualquer outro vértice do grafo.
+  
+- **Grafo desconexo**: Um grafo é desconexo se existir pelo menos um par de vértices \( u \) e \( v \) para os quais não existe nenhum caminho que os conecte. Ou seja, existem pelo menos dois vértices que estão em componentes separadas, ou seja, não há caminho que os relacione diretamente ou indiretamente.
+
+Em termos de componentes conectadas:
+
+- Se o grafo for conexo, ele é composto por uma única **componente conectada**.
+- Se o grafo for desconexo, ele é composto por múltiplas **componentes conectadas**, que são subgrafos dentro do grafo original nos quais qualquer par de vértices está conectado, mas não há caminhos que conectam vértices entre diferentes componentes.
+
+
+**Exemplo:**
+
+Imagina que temos uma cidade com bairros representados por vértices e ruas representadas por arestas.
+
+**Exemplo de grafo **conexo**:**
+
+Imagine uma cidade com cinco bairros: A, B, C, D e E. As ruas (arestas) conectam os bairros da seguinte forma:
+
+- A → B
+- B → C
+- C → D
+- D → E
+- E → A
+
+Neste caso, qualquer bairro pode ser alcançado a partir de qualquer outro. Por exemplo, para ir de A até E, podemos seguir o caminho: A → B → C → D → E. Ou então, de A para C, podemos seguir A → B → C. Todos os bairros estão interligados, formando um único conjunto conectado.
+
+Portanto, este grafo é **conexo**, pois existe um caminho entre qualquer par de vértices.
+
+**Exemplo de grafo **desconexo**:**
+
+Agora, imagine uma cidade com os mesmos cinco bairros (A, B, C, D e E), mas com ruas conectando-os de forma diferente:
+
+- A → B
+- C → D
+- E → C
+
+Neste caso, temos dois grupos de bairros:
+
+1. A e B estão conectados, mas não têm ligação com os outros bairros.
+2. C, D e E estão conectados entre si, mas não têm ligação com A e B.
+
+Portanto, não é possível ir de A até D, ou de B até E, por exemplo, sem sair da cidade ou passar por um local desconectado. Como existem componentes separadas que não estão conectadas entre si, o grafo é **desconexo**.
+
+Em resumo:
+
+- O primeiro exemplo (A, B, C, D, E conectados) é um grafo **conexo**.
+- O segundo exemplo (A e B desconectados de C, D, E) é um grafo **desconexo**.
 
 ### Como Representar Grafos
 
