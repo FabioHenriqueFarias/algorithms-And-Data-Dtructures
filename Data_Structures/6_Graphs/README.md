@@ -3,6 +3,10 @@
 ## Sumário
 
 - [O que é uma Graph?](#o-que-é-uma-graph)
+- [Elementos de um Grafo](#elementos-de-um-grafo)
+  - [Vértices](#vértices)
+  - [Arestas](#arestas)
+  - [Graus de Vértices](#grau-de-um-vértice)
 - [Tipos de Grafos](#tipos-de-grafos)
   - [Grafo direcionado:](#grafo-direcionado)
   - [Grafo nãodirecionado:](#grafo-não-direcionado)
@@ -15,19 +19,19 @@
 
 ## O que é uma Graph?
 
-Já parou para pensar como diferentes elementos do nosso dia a dia se conectam? Seja um grupo de amigos no WhatsApp, um mapa rodoviário ou até mesmo uma rede social, as conexões entre os elementos contam histórias importantes. É aqui que entra o conceito de **Grafos**.
+Já pensou em como elementos do nosso dia a dia se conectam? Seja um grupo de amigos no WhatsApp, um mapa de rodovias ou uma rede social, essas conexões contam histórias sobre relações e interações. É aqui que entra o conceito de **Grafos**.
 
 ![Grafos](out/image_01.png)
 
-Um **grafo** é formado por **vértices** e **arestas**:
-- Os **vértices( ou Nodes)** (também chamados de nós) representam os elementos, como cidades, pessoas ou até páginas da internet.
-- As **arestas (ou Edges)** (as conexões) mostram as relações entre esses elementos, como estradas, amizades ou links.
+Um **grafo** é como uma ferramenta mágica que usamos para organizar e entender essas conexões. Ele é composto de dois elementos principais:  
+- **Vértices (ou Nodes):** Representam os elementos individuais, como pessoas, cidades ou páginas de internet.  
+- **Arestas (ou Edges):** Representam as conexões entre os vértices, como amizades, estradas ou links.
 
-**Exemplo**
+**Entendendo os Grafos com um Exemplo**
 
-Imagine que você está planejando uma viagem. Cada cidade é um vértice, e cada estrada entre elas é uma aresta. Este grafo simples ajuda a visualizar os caminhos possíveis e como as cidades estão conectadas.
+Imagine que você está planejando uma viagem de carro por várias cidades. Cada cidade é um **vértice** e as estradas que ligam essas cidades são as **arestas**. O grafo ajuda a visualizar os caminhos possíveis e como as cidades estão conectadas.
 
-Representação:
+***Representação do Grafo:***
 ```
 (1) → (2) → (4)
  ↓
@@ -54,6 +58,49 @@ Cada escolha de rota reflete diferentes cenários do mundo real:
 - Por outro lado, se a flexibilidade é importante (como em uma viagem turística ou na análise de alternativas em um projeto), o trajeto passando pela Cidade 3 e Cidade 5 permite explorar mais opções antes de concluir a jornada.
 
 Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar soluções***, seja no planejamento de trajetos, na otimização de redes de transporte, ou até mesmo na análise de fluxos de trabalho. Ao pensar em vértices e arestas, você pode planejar estratégias, prever resultados e tomar decisões mais informadas.
+
+## Elementos de um Grafo
+
+Os elementos de um grafo são como as peças de um quebra-cabeça que, juntas, mostram como as coisas estão conectadas. Temos os **vértices**, que são os "pontos" representando os objetos ou lugares, como cidades, pessoas ou computadores. E temos as **arestas**, que são as "linhas" que ligam esses pontos, mostrando as relações ou caminhos entre eles, como estradas, amizades ou cabos de rede. Esses dois elementos trabalham juntos para ajudar a entender e visualizar como tudo está interligado.
+
+### Vértices
+
+### Vértices
+
+Como já mencionamos antes, os **vértices** são os "pontos" do grafo, representando os elementos que estão sendo conectados. Em uma analogia com uma viagem, cada cidade seria um vértice, um local de interesse ou um destino. Esses vértices podem ser qualquer tipo de entidade que estamos modelando, como pessoas, computadores, lugares ou até mesmo conceitos. São eles que definem os "pontos de partida" ou os "alvos" das conexões no grafo, e a partir deles é que conseguimos entender como as coisas se relacionam entre si. Cada vértice tem seu próprio papel, e a maneira como estão conectados por meio das arestas vai nos mostrar a estrutura e a dinâmica do sistema que estamos analisando.
+
+### Arestas
+
+### Arestas
+
+Como já mencionamos antes, as **arestas** são as "linhas" que conectam os vértices, ou seja, as relações entre os pontos. Para tornar mais claro, imagine que as arestas são as estradas que ligam as cidades em uma viagem. Elas são o que permite que você se mova de um lugar para outro, fazendo a ligação entre diferentes pontos. No grafo, essas conexões mostram como as coisas estão relacionadas ou como elas podem interagir. Assim como uma estrada pode ser de uma única direção ou ter pedágio, as arestas também podem ter características como direção (quando o caminho tem um sentido específico) ou peso (se há algum custo ou valor associado à conexão). Elas ajudam entender como a rede funciona, já que são as "pontes" que conectam os diferentes elementos entre si.
+
+### Graus de Vértices
+
+O grau de um vértice é o número de conexões (arestas) que ele tem em um grafo. Pense em um vértice como uma cidade em um mapa, e as arestas como estradas ligando essa cidade a outras. O grau do vértice é o total de estradas que chegam ou saem dessa cidade.
+
+<div align="center">
+  <img src="out/image_05.png" alt="Grafo Não Direcionado" height="200">
+</div>
+
+  No caso de um **grafo não direcionado** (como o da imagem), cada aresta conta como uma conexão, independentemente da direção. Por exemplo:
+
+  - O vértice A está conectado aos vértices B e D. Portanto, o grau de A é 2.
+  - O vértice B está conectado aos vértices A, D e E. Portanto, o grau de B é 3.
+
+  Em um **grafo direcionado**:
+
+  <div align="center">
+    <img src="out/image_08.png" alt="Grafo Direcionado" height="200">
+  </div>
+
+<br/>
+
+  - **Grau de entrada**: o número de arestas que chegam ao vértice. Por exemplo, o vértice 2 recebe arestas dos vértices 1 e 4, então o grau de entrada de 2 é 2.
+  - **Grau de saída**: o número de arestas que saem do vértice. Por exemplo, o vértice 2 tem arestas que saem para os vértices 0 e 3, então o grau de saída de 2 é 2.
+
+  O grau de um vértice é uma medida usada em teoria dos grafos para entender a conectividade e a estrutura de um grafo. Em grafos não direcionados, o grau é apenas o número de conexões que um vértice tem com outros. Já em grafos direcionados, há duas maneiras de medir o grau: o grau de entrada, que conta quantas arestas entram no vértice, e o grau de saída, que conta quantas arestas saem dele. Isso ajuda a entender melhor como os vértices estão interligados de diferentes maneiras.
+
 
 ## Tipos de Grafos
 
@@ -129,33 +176,6 @@ Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. 
 
 Uma sequência de conexões (arestas) que nos permite ir de um ponto a outro. Por exemplo, no caso do vértice 5, existem diferentes maneiras de chegar ao vértice 2, passando por outros vértices, como 5-2, 5-1, 5-4 e depois 3-2. Essas são as rotas possíveis que podemos seguir a partir do vértice 5 para alcançar o vértice 2.
 
-
-#### ***Grau de um vértice***
-O grau de um vértice é o número de conexões (arestas) que ele tem em um grafo. Pense em um vértice como uma cidade em um mapa, e as arestas como estradas ligando essa cidade a outras. O grau do vértice é o total de estradas que chegam ou saem dessa cidade.
-
-<div align="center">
-  <img src="out/image_05.png" alt="Grafo Não Direcionado" height="200">
-</div>
-
-  No caso de um **grafo não direcionado** (como o da imagem), cada aresta conta como uma conexão, independentemente da direção. Por exemplo:
-
-  - O vértice A está conectado aos vértices B e D. Portanto, o grau de A é 2.
-  - O vértice B está conectado aos vértices A, D e E. Portanto, o grau de B é 3.
-
-  Em um **grafo direcionado**:
-
-  <div align="center">
-    <img src="out/image_08.png" alt="Grafo Direcionado" height="200">
-  </div>
-
-<br/>
-
-  - **Grau de entrada**: o número de arestas que chegam ao vértice. Por exemplo, o vértice 2 recebe arestas dos vértices 1 e 4, então o grau de entrada de 2 é 2.
-  - **Grau de saída**: o número de arestas que saem do vértice. Por exemplo, o vértice 2 tem arestas que saem para os vértices 0 e 3, então o grau de saída de 2 é 2.
-
-    O grau de um vértice é uma medida usada em teoria dos grafos para entender a conectividade e a estrutura de um grafo. Em grafos não direcionados, o grau é apenas o número de conexões que um vértice tem com outros. Já em grafos direcionados, há duas maneiras de medir o grau: o grau de entrada, que conta quantas arestas entram no vértice, e o grau de saída, que conta quantas arestas saem dele. Isso ajuda a entender melhor como os vértices estão interligados de diferentes maneiras.
-
-
 #### ***Conectividade***
 
 
@@ -211,6 +231,18 @@ Resumidamente, temos:
 - **Grafo desconexo**: Nem todos os pontos estão conectados, formando grupos separados. Exemplo: bairros de uma cidade divididos em dois ou mais grupos sem ligação entre eles.  
 - **Componentes conexas**: Em um grafo desconexo, cada grupo isolado de pontos conectados forma uma componente conexa. Dentro de cada componente, é possível ir de um vértice a outro, como se fosse um grafo separado.  
 
+#### **Subgrafos**
+
+#### **Grafos Bipartidos**
+
+### Diferença entre Grafos e Árvores
+
+### Grafos Planos e Não Planos
+
+### Conceito de Caminho Mínimo
+
+
+
 
 ### Como Representar Grafos
 
@@ -218,6 +250,8 @@ Existem duas formas principais de representar grafos:
 
 
 ## Implementações
+
+Neste repositório, você encontrará a implementação de uma estrutura de dados baseada em grafos em três linguagens de programação distintas: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>.
 
 ## Referências
 
