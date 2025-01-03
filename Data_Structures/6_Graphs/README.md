@@ -27,7 +27,9 @@
 
 Já pensou em como elementos do nosso dia a dia se conectam? Seja um grupo de amigos no WhatsApp, um mapa de rodovias ou uma rede social, essas conexões contam histórias sobre relações e interações. É aqui que entra o conceito de **Grafos**.
 
-![Grafos](out/image_01.png)
+<div align="center">
+  <img src="out/image_01.png" alt="Grafo cíclico" height="200" width="300">
+</div>
 
 Um **grafo** é como uma ferramenta mágica que usamos para organizar e entender essas conexões. Ele é composto de dois elementos principais:  
 - **Vértices (ou Nodes):** Representam os elementos individuais, como pessoas, cidades ou páginas de internet.  
