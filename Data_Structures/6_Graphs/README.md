@@ -9,11 +9,17 @@
   - [Graus de Vértices](#grau-de-um-vértice)
 - [Tipos de Grafos](#tipos-de-grafos)
   - [Grafo direcionado:](#grafo-direcionado)
-  - [Grafo nãodirecionado:](#grafo-não-direcionado)
+  - [Grafo não direcionado:](#grafo-não-direcionado)
   - [Grafo trivial](#grafo-trivial)
   - [Grafo cíclico](#grafo-cíclico)
+  - [Grafo pesado](#grafo-pesado)
+  - [Grafo não pesado](#grafo-não-pesado)
+  - [Grafo bipartido](#grafo-bipartido)
+  - [Grafo plano](#grafo-plano)
+  - [Grafo não plano](#grafo-não-plano)
 - [Como funciona um Grafo?](#como-funciona-um-grafo)
   - [Nomenclaturas](#nomenclaturas)
+- [Operações Comuns em um Grafo](#operações-comuns-em-um-grafo)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -61,15 +67,11 @@ Essa estrutura pode ajudar a ***modelar problemas complexos*** e ***visualizar s
 
 ## Elementos de um Grafo
 
-Os elementos de um grafo são como as peças de um quebra-cabeça que, juntas, mostram como as coisas estão conectadas. Temos os **vértices**, que são os "pontos" representando os objetos ou lugares, como cidades, pessoas ou computadores. E temos as **arestas**, que são as "linhas" que ligam esses pontos, mostrando as relações ou caminhos entre eles, como estradas, amizades ou cabos de rede. Esses dois elementos trabalham juntos para ajudar a entender e visualizar como tudo está interligado.
-
-### Vértices
+Os elementos de um grafo são como as peças de um quebra-cabeça que, juntas, mostram como as coisas estão conectadas. Temos os **vértices**, que são os "pontos" representando os objetos ou lugares, como cidades, pessoas ou computadores. E temos as **arestas**, que são as "linhas" que ligam esses pontos, mostrando as relações ou caminhos entre eles, como estradas, amizades ou cabos de rede. Cada vértice também tem algo chamado **grau**, que é como contar quantas conexões ele possui. Por exemplo, em uma cidade, o grau seria o número de estradas que chegam ou saem dela. É uma forma de medir o quão "conectado" cada ponto está dentro do grafo. Esses dois elementos — vértices e arestas —, junto com o conceito de grau, trabalham juntos para ajudar a entender e visualizar como tudo está interligado.
 
 ### Vértices
 
 Como já mencionamos antes, os **vértices** são os "pontos" do grafo, representando os elementos que estão sendo conectados. Em uma analogia com uma viagem, cada cidade seria um vértice, um local de interesse ou um destino. Esses vértices podem ser qualquer tipo de entidade que estamos modelando, como pessoas, computadores, lugares ou até mesmo conceitos. São eles que definem os "pontos de partida" ou os "alvos" das conexões no grafo, e a partir deles é que conseguimos entender como as coisas se relacionam entre si. Cada vértice tem seu próprio papel, e a maneira como estão conectados por meio das arestas vai nos mostrar a estrutura e a dinâmica do sistema que estamos analisando.
-
-### Arestas
 
 ### Arestas
 
@@ -153,6 +155,39 @@ Na imagem abaixo, podemos ver exemplos de grafos cíclicos tanto dirigidos quant
   <img src="out/image_07.png" alt="Grafo cíclico" height="200" width="300">
 </div>
 
+### **Grafo pesado:**
+
+Um **grafo pesado** é como um mapa em que cada estrada tem um valor associado. Esse valor pode ser algo prático, como a distância entre dois lugares, o custo de uma viagem ou o tempo necessário para percorrer o caminho. Imagine olhar para um mapa onde cada estrada mostra quantos quilômetros você precisa viajar ou quanto custará o pedágio. Isso é exatamente o que um grafo pesado representa.  
+
+Esses grafos são muito úteis para resolver problemas reais. Por exemplo, se você quer descobrir a rota mais rápida ou barata para ir de casa ao trabalho, pode usar um grafo pesado para isso. Os pesos das conexões (arestas) indicam o que você deve levar em conta, como tempo, custo ou distância. Algoritmos como **Dijkstra** e **Bellman-Ford** ajudam a calcular essas rotas de forma eficiente.  
+
+Na imagem abaixo, temos um exemplo de grafo pesado. Os círculos representam os **vértices** (como cidades, por exemplo), e as linhas entre eles são as **arestas**, com os números indicando os pesos. Esses pesos podem simbolizar a distância entre os pontos, o custo para ir de um lugar ao outro, ou qualquer outro valor relevante.  
+
+<div align="center">
+  <img src="out/image_09.png" alt="Grafo pesado" height="200" width="300">
+</div>
+
+Os grafos pesados podem ser de dois tipos:  
+- **Grafo pesado não dirigido:** As conexões não têm direção, ou seja, você pode ir e voltar entre os pontos, e o peso será o mesmo. Pense em uma estrada de mão dupla com o mesmo custo ou distância nos dois sentidos.  
+- **Grafo pesado dirigido:** Aqui, as conexões têm uma direção específica. É como uma estrada de mão única, onde o custo ou o tempo pode ser diferente dependendo do sentido que você percorre.  
+
+Com grafos pesados, é possível entender não apenas se os pontos estão conectados, mas também como estão conectados e o que isso significa em termos de custo, tempo ou qualquer outra métrica que você precisa analisar. 
+
+### **Grafo não pesado:**
+
+
+
+### **Grafo bipartido:**
+
+
+
+### **Grafo plano:**
+
+
+
+### **Grafo não plano:**
+
+
 
 ## Como funciona um Grafo?
 
@@ -200,7 +235,6 @@ Nesse caso, o grafo é **conexo**, pois é possível ir de qualquer bairro a qua
 Como todos os bairros estão interligados, o grafo forma uma única rede conectada, chamada de **componente conexa**.
 
 
-
 **Grafos Desconexos**
 
 Um grafo é chamado de **desconexo** quando nem todos os vértices estão conectados entre si. Isso significa que existem pares de vértices que não possuem nenhum caminho ligando-os. Quando isso ocorre, o grafo é formado por partes separadas chamadas **componentes conexas**.
@@ -242,12 +276,11 @@ Resumidamente, temos:
 ### Conceito de Caminho Mínimo
 
 
-
-
 ### Como Representar Grafos
 
 Existem duas formas principais de representar grafos:
 
+## Operações Comuns em um Grafo
 
 ## Implementações
 
