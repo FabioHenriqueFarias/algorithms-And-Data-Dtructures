@@ -177,7 +177,21 @@ Com grafos pesados, é possível entender não apenas se os pontos estão conect
 
 ### **Grafo não pesado:**
 
+Um **grafo não pesado** é como um mapa em que as estradas entre os lugares não possuem valores associados, ou seja, não há uma medida de custo, distância ou tempo. Ele apenas indica se existe ou não uma conexão entre dois pontos, sem se preocupar com a "intensidade" dessa conexão. Imagine um mapa em que você sabe se dois lugares estão conectados diretamente por uma estrada, mas não sabe a distância ou o tempo que levaria para viajar entre eles. Isso é exatamente o que um grafo não pesado representa.
 
+Esses grafos são úteis quando o que importa é apenas a presença ou ausência de uma conexão entre os pontos, sem levar em conta nenhum valor adicional. Eles são frequentemente usados em problemas como verificação de conectividade, redes de comunicação, ou até em jogos de redes sociais para identificar relações entre pessoas.
+
+Na imagem abaixo, temos um exemplo de grafo não pesado. Os círculos representam os **vértices** (como cidades, por exemplo), e as linhas entre eles são as **arestas**, que simplesmente indicam se existe uma conexão entre os vértices, sem qualquer peso associado.
+
+<div align="center">
+  <img src="out/image_10.png" alt="Grafo não pesado" height="200" width="300">
+</div>
+
+Os grafos não pesados podem ser de dois tipos:  
+- **Grafo não pesado não dirigido:** As conexões não têm direção, ou seja, você pode ir de um ponto a outro e voltar, mas sem considerar a direção de cada conexão. Pense em ruas de mão dupla, onde é possível percorrer os dois sentidos de forma equivalente.
+- **Grafo não pesado dirigido:** Aqui, as conexões têm uma direção específica. Isso significa que você pode ir de um ponto para outro em um sentido, mas não necessariamente poderá retornar. Imagine uma estrada de mão única, onde a direção das conexões importa, mas não há um peso associado a essas conexões.
+
+Com grafos não pesados, você consegue entender como os pontos estão conectados entre si, mas não há informações adicionais sobre o "custo" ou a "distância" dessas conexões. Eles são usados principalmente quando a relação entre os vértices é mais importante do que a intensidade ou o valor dessas relações.
 
 ### **Grafo bipartido:**
 
