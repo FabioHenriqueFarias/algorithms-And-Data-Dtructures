@@ -195,6 +195,30 @@ Com grafos não pesados, você consegue entender como os pontos estão conectado
 
 ### **Grafo bipartido:**
 
+Um **grafo bipartido** é uma forma especial de grafo onde os vértices podem ser divididos em dois grupos distintos, de forma que **nenhuma aresta** liga dois vértices dentro do mesmo grupo. Ou seja, todas as conexões (arestas) sempre vão de um vértice de um grupo para um vértice do outro grupo.
+
+Imagine que você tem dois times de futebol. No primeiro time, estão os jogadores de ataque e, no segundo, os jogadores de defesa. Em um grafo bipartido, as arestas representariam as possíveis trocas de passes entre os jogadores, mas sempre com a regra de que o passe deve ir de um jogador de ataque para um jogador de defesa, e nunca entre dois jogadores do mesmo time.
+
+Esses grafos são úteis para representar situações onde há duas categorias de elementos que se relacionam de forma específica, como:
+
+- **Relacionamentos de contratos:** Em um cenário onde temos empresas e funcionários, um grafo bipartido poderia mostrar quais funcionários trabalham em quais empresas, com as arestas representando esses vínculos de trabalho.
+- **Recomendações de amigos:** Imagine uma rede social onde um grafo bipartido pode ser usado para mostrar, de um lado, os usuários e, do outro, os interesses ou hobbies. A conexão entre um usuário e um interesse indicaria que aquela pessoa gosta daquele hobby.
+
+Na imagem abaixo, podemos ver um exemplo de um grafo bipartido. Os dois conjuntos de círculos representam os dois grupos de vértices, e as linhas entre eles mostram as conexões, sempre cruzando de um grupo para o outro.
+
+<div align="center">
+  <img src="out/image_11.png" alt="Grafo bipartido" height="200" width="300">
+</div>
+
+Esse tipo de grafo é muito usado em algoritmos de **fluxo de redes**, **sistemas de recomendação** e até em **análise de redes sociais** para entender como diferentes grupos estão interconectados. O mais interessante é que, por ter essa estrutura de dois grupos bem definidos, ele facilita a análise e a solução de problemas envolvendo conexões entre diferentes tipos de elementos.
+
+**Propriedades importantes dos grafos bipartidos:**
+
+1. **2-coloribilidade**: Uma das propriedades mais notáveis dos grafos bipartidos é que eles são **sempre 2-coloríveis**. Isso significa que você pode colorir todos os vértices do grafo com apenas duas cores, de forma que vértices conectados por uma aresta tenham cores diferentes. Isso acontece porque os vértices dentro de um grupo não estão conectados entre si, e as arestas só ligam vértices de grupos diferentes. Portanto, ao atribuir uma cor a cada grupo, é garantido que nenhum vértice adjacente terá a mesma cor.
+
+2. **Ausência de ciclos ímpares**: Outra característica importante dos grafos bipartidos é que **eles nunca possuem ciclos ímpares**. Isso acontece porque, em um grafo bipartido, os vértices são alternadamente divididos entre os dois grupos, e um ciclo ímpar violaria essa alternância.
+
+Em resumo, os grafos bipartidos são estruturas que representam relações entre dois grupos distintos de elementos, onde as arestas sempre conectam vértices de grupos diferentes. Suas propriedades, como a 2-coloribilidade e a ausência de ciclos ímpares, facilitam a análise e a resolução de problemas. 
 
 
 ### **Grafo plano:**
@@ -283,7 +307,6 @@ Resumidamente, temos:
 
 #### **Subgrafos**
 
-#### **Grafos Bipartidos**
 
 ### Diferença entre Grafos e Árvores
 
