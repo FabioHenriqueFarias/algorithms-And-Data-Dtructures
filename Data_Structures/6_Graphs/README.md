@@ -223,7 +223,26 @@ Em resumo, os grafos bipartidos são estruturas que representam relações entre
 
 ### **Grafo plano:**
 
+**Grafo plano** é um tipo de grafo onde podemos desenhar as suas arestas de forma que **nenhuma aresta se cruze** com outra. Ou seja, é possível representar o grafo no plano (ou seja, em uma superfície plana, como uma folha de papel ou uma tela de computador) sem que as arestas se sobreponham ou se intersectem, exceto nos vértices onde elas se conectam.
 
+Imagine que você tem um conjunto de cidades e as estradas entre elas. Se você conseguir desenhar essas cidades e estradas no mapa sem que as estradas se cruzem, então você tem um **grafo plano**. Isso facilita muito a visualização e análise, pois torna as conexões mais claras e evita confusão.
+
+**Exemplo simples:**
+Pense em um grafo com 4 vértices: A, B, C e D. Se a conexão entre os vértices for feita de forma que as arestas não se cruzem, você terá um grafo plano. Agora, se ao tentar desenhar esse grafo você precisar que as arestas se cruzem, ele não será um grafo plano.
+
+**Propriedades importantes dos grafos planos:**
+
+1. **Curvas sem cruzamentos:** Como já mencionamos, a característica principal de um grafo plano é que suas arestas podem ser desenhadas sem cruzar umas às outras, desde que respeitem a estrutura do grafo. Isso facilita a compreensão do grafo e a análise das relações entre os vértices.
+
+2. **Teorema de Kuratowski:** Um grafo é considerado **não plano** se ele contiver um subgrafo que seja uma versão do **grafo K5** (um grafo completo com 5 vértices) ou do **grafo K3,3** (um grafo bipartido com dois conjuntos de 3 vértices, onde todas as arestas conectam vértices de conjuntos diferentes). Ou seja, grafos que contêm esses dois subgrafos não podem ser desenhados no plano sem que as arestas se cruzem.
+
+3. **Fórmula de Euler:** Uma propriedade interessante de grafos planos é a fórmula de Euler, que relaciona o número de vértices \(V\), arestas \(E\) e faces \(F\) (as regiões delimitadas pelas arestas) de um grafo plano. A fórmula é:
+   \[
+   V - E + F = 2
+   \]
+   Essa fórmula ajuda a entender como as diferentes partes de um grafo plano estão interligadas.
+
+Em resumo, os grafos planos são estruturas em que as arestas podem ser desenhadas no plano sem se cruzarem. Isso significa que é possível representar as conexões entre os vértices de maneira clara, sem interferências. Essa característica é útil em várias situações práticas, como no planejamento de redes de transporte, onde é necessário evitar que as vias se sobreponham, ou no design de circuitos eletrônicos, onde é importante garantir que as conexões entre os componentes não se confundam.
 
 ### **Grafo não plano:**
 
