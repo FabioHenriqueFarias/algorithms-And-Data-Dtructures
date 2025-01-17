@@ -220,33 +220,57 @@ Esse tipo de grafo é muito usado em algoritmos de **fluxo de redes**, **sistema
 
 Em resumo, os grafos bipartidos são estruturas que representam relações entre dois grupos distintos de elementos, onde as arestas sempre conectam vértices de grupos diferentes. Suas propriedades, como a 2-coloribilidade e a ausência de ciclos ímpares, facilitam a análise e a resolução de problemas. 
 
+### **Grafo Plano:**
 
-### **Grafo plano:**
+Um **grafo plano** é um tipo de grafo onde podemos desenhar suas arestas de forma que **nenhuma aresta se cruze** com outra. Ou seja, é possível representar o grafo em uma superfície plana, como uma folha de papel ou uma tela de computador, sem que as arestas se sobreponham ou se intersectem, exceto nos vértices onde elas se conectam.
 
-**Grafo plano** é um tipo de grafo onde podemos desenhar as suas arestas de forma que **nenhuma aresta se cruze** com outra. Ou seja, é possível representar o grafo no plano (ou seja, em uma superfície plana, como uma folha de papel ou uma tela de computador) sem que as arestas se sobreponham ou se intersectem, exceto nos vértices onde elas se conectam.
+Imagine um conjunto de cidades e as estradas entre elas. Se você conseguir desenhar essas cidades e estradas no mapa de maneira que as estradas não se cruzem, então você tem um **grafo plano**. Esse tipo de grafo facilita muito a visualização e a análise, pois as conexões ficam claras e sem confusão.
 
-Imagine que você tem um conjunto de cidades e as estradas entre elas. Se você conseguir desenhar essas cidades e estradas no mapa sem que as estradas se cruzem, então você tem um **grafo plano**. Isso facilita muito a visualização e análise, pois torna as conexões mais claras e evita confusão.
+Na imagem abaixo, podemos ver um exemplo de um grafo plano. As arestas entre os vértices estão desenhadas de forma a **não se cruzar**, mostrando que ele pode ser representado de maneira simples e sem interferências.
 
-**Exemplo simples:**
-Pense em um grafo com 4 vértices: A, B, C e D. Se a conexão entre os vértices for feita de forma que as arestas não se cruzem, você terá um grafo plano. Agora, se ao tentar desenhar esse grafo você precisar que as arestas se cruzem, ele não será um grafo plano.
+<div align="center">
+  <img src="out/image_12.png" alt="Grafo plano" height="200" width="300">
+</div>
+
+Esse tipo de grafo é muito útil em situações práticas, como **planejamento de redes de transporte**, **design de circuitos eletrônicos** e até **visualização de mapas**, onde é importante garantir que as conexões não se sobreponham.
 
 **Propriedades importantes dos grafos planos:**
 
-1. **Curvas sem cruzamentos:** Como já mencionamos, a característica principal de um grafo plano é que suas arestas podem ser desenhadas sem cruzar umas às outras, desde que respeitem a estrutura do grafo. Isso facilita a compreensão do grafo e a análise das relações entre os vértices.
+1. **Curvas sem cruzamentos**: A principal característica de um grafo plano é que suas arestas podem ser desenhadas sem que se cruzem. Isso facilita a análise do grafo e torna mais claro como as conexões entre os vértices acontecem.
 
-2. **Teorema de Kuratowski:** Um grafo é considerado **não plano** se ele contiver um subgrafo que seja uma versão do **grafo K5** (um grafo completo com 5 vértices) ou do **grafo K3,3** (um grafo bipartido com dois conjuntos de 3 vértices, onde todas as arestas conectam vértices de conjuntos diferentes). Ou seja, grafos que contêm esses dois subgrafos não podem ser desenhados no plano sem que as arestas se cruzem.
+2. **Teorema de Kuratowski**: Um grafo é considerado **não plano** se ele contiver um subgrafo que seja uma versão do **grafo K5** (um grafo completo com 5 vértices) ou do **grafo K3,3** (um grafo bipartido com dois conjuntos de 3 vértices, onde todas as arestas conectam vértices de conjuntos diferentes). Ou seja, grafos que contêm esses subgrafos não podem ser desenhados no plano sem que as arestas se cruzem.
 
-3. **Fórmula de Euler:** Uma propriedade interessante de grafos planos é a fórmula de Euler, que relaciona o número de vértices \(V\), arestas \(E\) e faces \(F\) (as regiões delimitadas pelas arestas) de um grafo plano. A fórmula é:
+3. **Fórmula de Euler**: Uma propriedade interessante dos grafos planos é a **fórmula de Euler**, que relaciona o número de vértices \(V\), arestas \(E\) e faces \(F\) (as regiões delimitadas pelas arestas) de um grafo plano. A fórmula é:
    \[
    V - E + F = 2
    \]
-   Essa fórmula ajuda a entender como as diferentes partes de um grafo plano estão interligadas.
+   Essa fórmula ajuda a entender como as diferentes partes de um grafo plano estão interligadas e como as arestas e faces estão distribuídas no grafo.
 
-Em resumo, os grafos planos são estruturas em que as arestas podem ser desenhadas no plano sem se cruzarem. Isso significa que é possível representar as conexões entre os vértices de maneira clara, sem interferências. Essa característica é útil em várias situações práticas, como no planejamento de redes de transporte, onde é necessário evitar que as vias se sobreponham, ou no design de circuitos eletrônicos, onde é importante garantir que as conexões entre os componentes não se confundam.
+Em resumo, os grafos planos são estruturas em que as arestas podem ser desenhadas no plano sem se cruzarem, facilitando a visualização das conexões entre os vértices. Eles são usados em várias áreas, como no planejamento de redes de transporte, onde é necessário garantir que as vias não se sobreponham, ou no design de circuitos, onde é importante que as conexões não interfiram umas nas outras.
 
-### **Grafo não plano:**
+### **Grafo Não Plano:**
 
+Um **grafo não plano** é um tipo de grafo que **não pode ser desenhado** em uma superfície plana sem que as arestas se cruzem. Ou seja, não há como representar esse grafo de forma que todas as conexões entre os vértices sejam feitas sem que alguma aresta se sobreponha ou se intersecte com outra.
 
+Imagine que você tem um conjunto de cidades e as estradas entre elas. Se, ao tentar desenhar esse mapa, você se deparar com a necessidade de fazer as estradas se cruzarem, então você está lidando com um **grafo não plano**. Isso ocorre quando a estrutura do grafo é complexa demais para ser representada de maneira simples em uma superfície plana.
+
+Na imagem abaixo, podemos ver um exemplo de um grafo não plano. A presença de cruzamentos entre as arestas mostra que ele não pode ser desenhado sem interferências em um plano simples.
+
+<div align="center">
+  <img src="out/image_13.png" alt="Grafo não plano" height="200" width="300">
+</div>
+
+Esse tipo de grafo aparece em várias situações onde a estrutura do grafo é mais complexa ou não pode ser simplificada para se ajustar à definição de grafos planos. Por exemplo, quando há muitas conexões entre vértices que exigem cruzamentos para serem representadas.
+
+**Propriedades importantes dos grafos não planos:**
+
+1. **Presença de subgrafos K5 ou K3,3**: Um grafo é considerado **não plano** se ele contém um subgrafo que seja uma versão do **grafo K5** (um grafo completo com 5 vértices) ou do **grafo K3,3** (um grafo bipartido com dois conjuntos de 3 vértices, onde todas as arestas conectam vértices de conjuntos diferentes). Esses dois grafos são exemplos de estruturas que não podem ser desenhadas no plano sem que suas arestas se cruzem.
+
+2. **Não pode ser desenhado sem cruzamentos**: A característica fundamental dos grafos não planos é que não há como desenhá-los em uma superfície plana sem que as arestas se sobreponham. Isso acontece porque a complexidade das conexões entre os vértices exige que algumas arestas se cruzem.
+
+3. **Desafios na visualização**: Devido aos cruzamentos inevitáveis, a visualização de grafos não planos pode ser mais difícil. Em algumas áreas, como na teoria de redes e no design de circuitos, é necessário recorrer a representações alternativas, como a utilização de múltiplas camadas ou a projeção do grafo em uma superfície tridimensional.
+
+Em resumo, os grafos não planos são aqueles cujas arestas não podem ser desenhadas de maneira que não se cruzem em uma superfície plana. Esse tipo de grafo surge quando a estrutura do grafo é mais complexa, com muitas conexões que exigem cruzamentos para serem representadas. Isso ocorre, por exemplo, em problemas de redes ou em situações que envolvem múltiplas interações entre elementos de um sistema.
 
 ## Como funciona um Grafo?
 
