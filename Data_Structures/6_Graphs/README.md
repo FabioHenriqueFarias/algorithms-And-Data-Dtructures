@@ -17,8 +17,11 @@
   - [Grafo bipartido](#grafo-bipartido)
   - [Grafo plano](#grafo-plano)
   - [Grafo não plano](#grafo-não-plano)
-- [Como funciona um Grafo?](#como-funciona-um-grafo)
-  - [Nomenclaturas](#nomenclaturas)
+- [Entendendo os conceitos](#entendendo-os-conceitos)
+  - [Adjacência](#adjacência)
+  - [Caminho](#caminho)
+  - [Conectividade](#conectividade)
+  - [Subgrafos](#subgrafos)
 - [Operações Comuns em um Grafo](#operações-comuns-em-um-grafo)
 - [Implementações](#implementações)
 - [Referências](#referências)
@@ -272,15 +275,12 @@ Esse tipo de grafo aparece em várias situações onde a estrutura do grafo é m
 
 Em resumo, os grafos não planos são aqueles cujas arestas não podem ser desenhadas de maneira que não se cruzem em uma superfície plana. Esse tipo de grafo surge quando a estrutura do grafo é mais complexa, com muitas conexões que exigem cruzamentos para serem representadas. Isso ocorre, por exemplo, em problemas de redes ou em situações que envolvem múltiplas interações entre elementos de um sistema.
 
-## Como funciona um Grafo?
 
-### Nomenclaturas
+## Entendendo os conceitos
 
-Um **grafo**, como já mencionado, é uma forma de organizar informações que ajuda a entender como diferentes elementos estão conectados entre si. Para compreender melhor essa estrutura, é importante conhecer alguns termos-chave, que vamos explicar a seguir.
+Um **grafo** é uma forma simples de organizar informações e visualizar como diferentes elementos estão conectados. Para facilitar a compreensão dessa estrutura, vamos explorar alguns termos e conceitos essenciais que ajudam a entender melhor como tudo funciona.
 
-
-
-#### ***Adjacência*** 
+### ***Adjacência*** 
 
 Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. Por exemplo, os vértices 3 e 2 são adjacentes porque há uma linha que os conecta diretamente.
 
@@ -290,11 +290,11 @@ Um vértice é dito adjacente a outro vértice se há uma aresta conectando-os. 
 
 <br/>
 
-#### ***Caminho*** 
+### ***Caminho*** 
 
 Uma sequência de conexões (arestas) que nos permite ir de um ponto a outro. Por exemplo, no caso do vértice 5, existem diferentes maneiras de chegar ao vértice 2, passando por outros vértices, como 5-2, 5-1, 5-4 e depois 3-2. Essas são as rotas possíveis que podemos seguir a partir do vértice 5 para alcançar o vértice 2.
 
-#### ***Conectividade***
+### ***Conectividade***
 
 
 A **conectividade** nos grafos mostra como seus vértices e arestas estão ligados e nos ajuda a entender se é possível ir de um ponto a outro. Um grafo pode ser **conexo**, quando todos os vértices estão conectados de alguma forma, ou **desconexo**, quando existem partes separadas, onde alguns vértices não têm nenhuma ligação com outros. 
@@ -348,7 +348,7 @@ Resumidamente, temos:
 - **Grafo desconexo**: Nem todos os pontos estão conectados, formando grupos separados. Exemplo: bairros de uma cidade divididos em dois ou mais grupos sem ligação entre eles.  
 - **Componentes conexas**: Em um grafo desconexo, cada grupo isolado de pontos conectados forma uma componente conexa. Dentro de cada componente, é possível ir de um vértice a outro, como se fosse um grafo separado.  
 
-#### **Subgrafos**
+### **Subgrafos**
 
 
 ### Diferença entre Grafos e Árvores
