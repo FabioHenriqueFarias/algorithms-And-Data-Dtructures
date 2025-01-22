@@ -278,7 +278,7 @@ Em resumo, os grafos não planos são aqueles cujas arestas não podem ser desen
 
 ## Entendendo os conceitos
 
-Um **grafo** é uma forma simples de organizar informações e visualizar como diferentes elementos estão conectados. Para facilitar a compreensão dessa estrutura, vamos explorar alguns termos e conceitos essenciais que ajudam a entender melhor como tudo funciona.
+Um **grafo**, como já vimos, é uma maneira prática de organizar informações e mostrar como diferentes elementos estão conectados. Para deixar tudo mais claro, vamos explorar alguns conceitos e termos essenciais que vão ajudar a entender como essa estrutura funciona e como ela pode ser útil no dia a dia.
 
 ### ***Adjacência*** 
 
@@ -348,7 +348,25 @@ Resumidamente, temos:
 - **Grafo desconexo**: Nem todos os pontos estão conectados, formando grupos separados. Exemplo: bairros de uma cidade divididos em dois ou mais grupos sem ligação entre eles.  
 - **Componentes conexas**: Em um grafo desconexo, cada grupo isolado de pontos conectados forma uma componente conexa. Dentro de cada componente, é possível ir de um vértice a outro, como se fosse um grafo separado.  
 
-### **Subgrafos**
+### Subgráfico
+
+Um **subgráfico** é um gráfico formado por um subconjunto de **vértices** e **arestas** de um gráfico maior. Ou seja, ele pega parte do gráfico original e mantém as conexões entre os vértices, mas com menos elementos. Isso significa que, ao selecionar alguns vértices e as arestas que os conectam, você cria um subgráfico que mantém a estrutura de relações do gráfico original, mas com menos componentes.
+
+***Exemplo de Subgráfico:***
+
+Imagine que você está em uma **cidade**, onde as **ruas** são as **arestas** e os **bairros** são os **vértices**. Agora, pense que a cidade inteira é o **gráfico original**, com muitos bairros conectados por ruas.
+
+Se você decidir explorar apenas alguns bairros específicos, mantendo as ruas que os conectam, você está criando um **subgráfico**. Nesse caso, os bairros selecionados são os vértices e as ruas entre eles são as arestas. Mesmo sendo um grupo menor de bairros, as ruas que ligam esses bairros continuam existindo, ou seja, a conexão entre eles é mantida, mas em uma versão reduzida da cidade original.
+
+Por exemplo, imagine que na cidade existem 4 bairros (A, B, C e D) e várias ruas conectando-os. Se você escolher explorar apenas os bairros A, B e D, e decidir andar pelas ruas que ligam A a B, A a D e B a D, você estará criando um subgráfico, com os bairros A, B e D as ruas entre eles.
+
+<div align="center">
+  <img src="out/image_14.png" alt="Exemplo de Subgráfico" height="250" width="600">
+</div>
+
+<br/>
+
+Em resumo, um **subgráfico** é como escolher explorar um conjunto menor de bairros de uma cidade, mas mantendo as ruas que conectam esses bairros. Ele é uma versão simplificada da cidade original, com menos bairros e ruas, mas ainda assim mantendo as conexões entre eles.
 
 
 ### Diferença entre Grafos e Árvores
