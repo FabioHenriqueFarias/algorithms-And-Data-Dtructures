@@ -399,6 +399,37 @@ Resumindo, embora ambos mostrem como os dados se conectam, eles fazem isso de ma
 
 ### Grafos Planos e Não Planos
 
+Uma forma de classificar grafos é em **grafos planos** e **não planos**. Isso basicamente diz respeito à possibilidade de desenhar o grafo no papel sem que as linhas se cruzem. Vamos ver com mais detalhes o que isso significa.
+
+#### Grafos Planos
+
+Um **grafo plano** é aquele em que podemos desenhar os nós e as arestas em um **plano** (ou seja, em uma superfície como uma folha de papel, por exemplo) de tal forma que **nenhuma aresta se cruza com outra**. Em outras palavras, todos os nós e as conexões entre eles podem ser organizados de maneira que as arestas não se interceptem, mesmo se tentarmos desenhar o grafo de diferentes formas.
+
+Imagine uma **rede de amizade** onde as pessoas são os nós e as amizades são as arestas. Se você puder desenhar essa rede sem que as linhas das amizades se cruzem, então esse grafo é considerado **plano**.
+
+#### Grafos Não Planos
+
+Já os **grafos não planos** são aqueles em que, **independentemente de como tentamos desenhá-los**, sempre teremos **arestas se cruzando**. Ou seja, esses grafos não podem ser representados em um plano de forma que todas as arestas fiquem separadas, sem se interceptarem.
+
+Uma maneira simples de entender isso é imaginar o grafo como uma rede de cidades conectadas por estradas. Em um grafo não plano, não há como arranjar as estradas de modo que elas não se cruzem em algum momento. Isso pode ocorrer, por exemplo, em um grafo onde as conexões entre os nós são complexas ou muito entrelaçadas.
+
+#### Como Saber Se um Grafo é Plano ou Não?
+
+Para saber se um grafo é plano, usamos um conceito matemático chamado **teorema de Kuratowski**, que nos diz que um grafo será plano se não contiver certas configurações de subgrafos que são conhecidos por não poderem ser desenhados de forma plana. São elas:
+
+1. **K5**: Um grafo completo com 5 nós, onde cada nó está conectado a todos os outros.
+2. **K3,3**: Um grafo bipartido com 3 nós de um conjunto conectados a 3 nós de outro conjunto.
+
+Se o grafo contiver esses subgrafos, então ele **não é plano**. Caso contrário, ele pode ser desenhado de forma plana.
+
+**Exemplo de Grafo Plano e Não Plano**
+
+- **Grafo Plano**: Imagine uma rede de conexões entre amigos onde ninguém tem mais de 3 amigos em comum. Esse grafo pode ser desenhado em um papel sem as linhas se cruzarem.
+  
+- **Grafo Não Plano**: Um exemplo clássico de grafo não plano é o **grafo K5**. Esse grafo, com 5 nós todos conectados entre si, sempre vai ter arestas que se cruzam quando tentamos desenhá-lo de forma plana.
+
+Resumindo, **grafos planos** são aqueles em que conseguimos desenhar os nós e as arestas de forma que elas não se cruzem, em um plano. Já os **grafos não planos** são aqueles em que, não importa como tentemos desenhá-los, sempre haverá arestas se cruzando.
+
 ### Conceito de Caminho Mínimo
 
 
