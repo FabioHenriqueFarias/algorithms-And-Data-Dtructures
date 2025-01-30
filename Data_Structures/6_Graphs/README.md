@@ -452,7 +452,7 @@ Em um grafo, o caminho mínimo é a sequência de arestas que conectam dois vér
 
   Nesse caso, o caminho mínimo é **Casa -> Padaria -> Mercado**, porque leva apenas 10 minutos.
 
-**### Algoritmos para Encontrar o Caminho Mínimo**
+**Algoritmos para Encontrar o Caminho Mínimo**
 
 Existem alguns métodos (algoritmos) famosos para calcular o caminho mínimo em grafos. Dois dos mais conhecidos são:
 
@@ -468,7 +468,122 @@ Resumidamente, o **caminho mínimo em grafos** nos ajuda a tomar decisões mais 
 
 ### Como Representar Grafos
 
-Existem duas formas principais de representar grafos:
+Como já comentamos antes, os grafos podem ser **ponderados** (com pesos nas arestas) ou **não ponderados** (sem pesos nas arestas), e essa diferença tem um grande impacto na forma como os representamos. A escolha da forma de representação do grafo vai depender do tipo de problema que queremos resolver e das operações que precisamos realizar. Entre as formas mais comuns de representar um grafo, estão a **matriz de adjacência** e a **lista de adjacência**, e a escolha entre elas pode variar bastante dependendo da situação.
+
+
+### Grafos Não Ponderados
+
+Em grafos não ponderados, as arestas apenas indicam a existência de uma conexão entre dois vértices, sem valores associados. Vamos ver como representá-los.
+
+**1. Matriz de Adjacência**
+
+A matriz de adjacência é uma tabela onde cada linha e cada coluna representam um vértice do grafo. Se houver uma conexão entre dois vértices, marcamos com **1**. Se não houver conexão, marcamos com **0**.
+
+**Exemplo:**
+- Vértices: A, B, C
+- Conexões: A-B, B-C
+
+A matriz de adjacência ficaria assim:
+
+|   | A | B | C |
+|---|---|---|---|
+| A | 0 | 1 | 0 |
+| B | 1 | 0 | 1 |
+| C | 0 | 1 | 0 |
+
+**Quando usar?**
+- Quando o grafo é **denso** (tem muitas conexões).
+- Quando precisamos verificar rapidamente se há uma conexão entre dois vértices.
+
+**Vantagens:**
+- Fácil de implementar.
+- Consulta rápida para verificar se há uma aresta entre dois vértices.
+
+**Desvantagens:**
+- Ocupa mais espaço, especialmente se o grafo for grande e tiver poucas conexões.
+
+**2. Lista de Adjacência**
+
+Na lista de adjacência, para cada vértice, criamos uma lista dos vértices que estão diretamente conectados a ele.
+
+**Exemplo:**
+- Vértices: A, B, C
+- Conexões: A-B, B-C
+
+A lista de adjacência ficaria assim:
+- A: [B]
+- B: [A, C]
+- C: [B]
+
+**Quando usar?**
+- Quando o grafo é **esparso** (tem poucas conexões).
+- Quando queremos economizar espaço.
+
+**Vantagens:**
+- Ocupa menos espaço.
+- É eficiente para percorrer os vizinhos de um vértice.
+
+**Desvantagens:**
+- Consultar se há uma aresta entre dois vértices pode ser mais lento.
+
+
+### Grafos Ponderados
+
+Em grafos ponderados, as arestas têm pesos associados, que podem representar distância, custo, tempo, etc. A representação é similar à dos grafos não ponderados, mas agora incluímos os pesos.
+
+**1. Matriz de Adjacência**
+
+Na matriz de adjacência, em vez de usar **1** para indicar uma conexão, usamos o peso da aresta. Se não houver conexão, marcamos com **0** (ou um valor que indique a ausência de conexão, como infinito).
+
+**Exemplo:**
+- Vértices: A, B, C
+- Conexões: A-B (peso 3), B-C (peso 5)
+
+A matriz de adjacência ficaria assim:
+
+|   | A | B | C |
+|---|---|---|---|
+| A | 0 | 3 | 0 |
+| B | 3 | 0 | 5 |
+| C | 0 | 5 | 0 |
+
+**Quando usar?**
+- Quando o grafo é **denso** e precisamos acessar os pesos das arestas rapidamente.
+
+**Vantagens:**
+- Fácil de implementar.
+- Consulta rápida para verificar o peso de uma aresta.
+
+**Desvantagens:**
+- Ocupa mais espaço, especialmente se o grafo for grande e tiver poucas conexões.
+
+**2. Lista de Adjacência**
+
+Na lista de adjacência, além de listar os vértices conectados, armazenamos também o peso da conexão.
+
+**Exemplo:**
+- Vértices: A, B, C
+- Conexões: A-B (peso 3), B-C (peso 5)
+
+A lista de adjacência ficaria assim:
+- A: [(B, 3)]
+- B: [(A, 3), (C, 5)]
+- C: [(B, 5)]
+
+**Quando usar?**
+- Quando o grafo é **esparso** e queremos economizar espaço.
+- Quando precisamos percorrer os vizinhos de um vértice com frequência.
+
+**Vantagens:**
+- Ocupa menos espaço.
+- É eficiente para percorrer os vizinhos de um vértice.
+
+**Desvantagens:**
+- Consultar o peso de uma aresta específica pode ser mais lento.
+
+---
+
+Resumidamente,  **matriz de adjacência** funciona como uma tabela que mostra todas as conexões de uma vez, enquanto a **lista de adjacência** é como uma lista de amigos para cada vértice. Para grafos **não ponderados**, usamos **1** ou **0** na matriz para indicar a presença ou ausência de conexões, ou simplesmente listamos os vértices conectados na lista de adjacência. Já para grafos **ponderados**, utilizamos os pesos das arestas na matriz ou incluímos esses pesos na lista de adjacência. A escolha entre uma representação e outra depende do tipo de grafo (se é denso ou esparso) e das operações que precisamos realizar, como consultas rápidas ou economia de espaço. 
 
 ## Operações Comuns em um Grafo
 
