@@ -587,6 +587,9 @@ Resumidamente,  **matriz de adjacência** funciona como uma tabela que mostra to
 
 ## Operações Comuns em um Grafo
 
+As operações em grafos envolvem uma série de ações que permitem manipular e explorar a estrutura de conexões entre os elementos. Entre as operações mais comuns, temos a inserção e remoção de vértices e arestas, que adicionam ou retiram pontos e suas ligações no grafo. Também podemos realizar buscas, como a busca em largura ou profundidade, para percorrer o grafo e encontrar elementos ou caminhos. Além disso, é possível verificar a conectividade entre vértices, ou seja, se há uma relação direta ou indireta entre eles. Outras operações incluem o cálculo de distâncias entre pontos, como em grafos ponderados, e a detecção de ciclos, que identificam se há uma sequência de conexões que retorna ao ponto inicial. 
+
+
 ## Implementações
 
 Neste repositório, você encontrará a implementação de uma estrutura de dados baseada em grafos em três linguagens de programação distintas: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>.

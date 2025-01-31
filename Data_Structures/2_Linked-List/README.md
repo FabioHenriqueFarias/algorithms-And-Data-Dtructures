@@ -23,8 +23,7 @@ Ao contrário de estruturas de dados estáticas, como arrays, onde os elementos 
 
 Essa flexibilidade torna as listas encadeadas uma escolha popular em muitas aplicações, especialmente quando o tamanho da lista é desconhecido antecipadamente ou sujeito a alterações frequentes. No entanto, é importante notar que o acesso aos elementos em uma lista encadeada pode ser menos eficiente do que em estruturas de dados estáticas, já que o acesso sequencial pode exigir a travessia de todos os `nós` anteriores até chegar ao desejado.
 
-![Ilustração de uma linked list com três nós
-](assents/linkedlist_01-1.png)
+![Ilustração de uma linked list com três nós](assents/linkedlist_01-1.png)
 
 Aqui você pode ver que os endereços dos `nós` não são necessariamente sequenciais imediatamente. O primeiro nó tem um endereço 200 e o segundo nó tem um endereço 801, em vez de 201 como seria de esperar.
 
