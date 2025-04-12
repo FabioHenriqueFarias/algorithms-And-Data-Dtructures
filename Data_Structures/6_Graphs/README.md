@@ -466,6 +466,109 @@ Existem alguns métodos (algoritmos) famosos para calcular o caminho mínimo em 
 
 Resumidamente, o **caminho mínimo em grafos** nos ajuda a tomar decisões mais inteligentes e eficientes, seja para escolher o trajeto mais rápido no GPS, otimizar entregas ou até mesmo planejar redes de comunicação. 
 
+### Buscas em Grafos: BFS e DFS
+
+Quando falamos de grafos, nem sempre queremos apenas encontrar o caminho mais curto. Às vezes, precisamos **explorar** o grafo para entender como os pontos estão conectados, descobrir se existe um caminho entre dois lugares ou até resolver problemas como labirintos. Para isso, usamos duas técnicas muito conhecidas: a **Busca em Largura (BFS)** e a **Busca em Profundidade (DFS)**. Vamos ver como elas funcionam e para que servem.
+
+#### Busca em Largura (BFS)
+
+A **Busca em Largura**, ou *Breadth-First Search* (BFS), é como jogar uma pedra em um lago e ver as ondas se espalhando. Ela começa em um ponto (um vértice) e visita **todos os pontos diretamente conectados** a ele antes de seguir para os pontos mais distantes. É uma exploração organizada, camada por camada.
+
+**Como funciona?**
+
+Imagine que você está em uma cidade e quer visitar todas as cidades vizinhas antes de ir para as mais afastadas. A BFS faz isso:
+- Começa em um vértice inicial.
+- Visita todos os seus "vizinhos" (os vértices conectados por uma aresta).
+- Depois, visita os vizinhos dos vizinhos, e assim por diante.
+- Para não se perder, ela usa uma **fila**, como uma lista de espera, para lembrar quem visitar próximo.
+
+**Exemplo:**
+
+Pense em uma rede social. Você quer saber quem está a dois graus de distância de você (seus amigos e os amigos deles). A BFS começa com você, lista seus amigos diretos e depois os amigos deles, garantindo que ninguém seja esquecido. Se fosse um mapa de cidades, seria como explorar todas as cidades a 1 km de distância, depois as que estão a 2 km, e assim por diante.
+
+**Quando usar?**
+
+A BFS é perfeita para:
+- Encontrar o **caminho mais curto** em grafos **não ponderados** (onde todas as arestas têm o mesmo "custo", como 1).
+- Verificar se todos os pontos de um grafo estão conectados.
+- Resolver problemas como "qual é a menor quantidade de passos para chegar de A a B?".
+
+#### Busca em Profundidade (DFS)
+
+A **Busca em Profundidade**, ou *Depth-First Search* (DFS), é como explorar um labirinto: você segue um caminho até onde ele te leva, e, se não der certo, volta e tenta outro. Ela mergulha fundo em uma direção antes de explorar outras opções.
+
+**Como funciona?**
+
+É como se você estivesse em uma aventura:
+- Começa em um vértice.
+- Escolhe um vizinho e segue para ele, depois para o vizinho desse vizinho, indo o mais longe possível.
+- Se chegar a um ponto sem saída, volta e tenta outro caminho.
+- A DFS usa uma **pilha** (muitas vezes de forma automática, com recursão) para lembrar por onde passou.
+
+**Exemplo:**
+
+Imagine que você está tentando resolver um quebra-cabeça, como transformar a palavra "SOL" em "LUA" mudando uma letra por vez. A DFS tenta um caminho (por exemplo, SOL → SÓ → LÓ → LUA) e, se não funcionar, volta e testa outro (SOL → SAL → MAL → LUA). Em um grafo de cidades, seria como seguir uma estrada até o fim antes de voltar e tentar outra rota.
+
+**Quando usar?**
+
+A DFS é ótima para:
+- Encontrar **grupos conectados** em um grafo (como ilhas de cidades que estão ligadas entre si).
+- Detectar **ciclos** (quando um caminho volta ao mesmo ponto).
+- Resolver problemas onde você quer explorar todas as possibilidades, como labirintos ou jogos.
+
+#### BFS vs. DFS: Qual escolher?
+
+- **BFS** é ideal quando você quer o **caminho mais curto** em grafos não ponderados ou precisa explorar tudo de forma organizada. Mas pode precisar de mais memória, porque guarda muitos pontos na fila.
+- **DFS** é melhor para explorar caminhos longos ou quando você quer uma resposta rápida sem se preocupar com o "mais curto". Ela usa menos memória, mas pode se perder em grafos muito grandes.
+
+**Exemplo prático:**
+
+Vamos imaginar um grafo que representa conexões entre quatro cidades: **A**, **B**, **C** e **D**. As estradas (arestas) entre elas são:
+
+- A está conectada a B e C.
+- B está conectada a D.
+- C está conectada a D.
+
+Podemos visualizar o grafo assim:
+
+```
+   A
+  / \
+ B   C
+  \ /
+   D
+```
+
+Ou, como uma lista de conexões:
+- A → B
+- A → C
+- B → D
+- C → D
+
+Agora, suponha que você quer viajar da cidade **A** até a cidade **D**. Vamos ver como a **BFS** e a **DFS** exploram esse grafo para encontrar um caminho.
+
+- **BFS (Busca em Largura):**
+  A BFS começa na cidade A e explora as cidades mais próximas primeiro, camada por camada:
+  1. Começa em A e coloca seus vizinhos (B e C) na fila.
+  2. Visita B (o próximo da fila) e adiciona seus vizinhos (D) à fila.
+  3. Visita C (o próximo da fila) e adiciona seus vizinhos (D, mas D já está na fila, então ignora).
+  4. Visita D (o próximo da fila) e encontra o destino!
+
+  Ordem de visita: A → B → C → D.  
+  Caminho encontrado: **A → B → D** (ou **A → C → D**), ambos com 2 passos. Como o grafo não tem pesos, esse é o caminho mais curto, garantido pela BFS.
+
+- **DFS (Busca em Profundidade):**
+  A DFS mergulha em um caminho até o fim antes de tentar outro:
+  1. Começa em A e escolhe um vizinho, digamos B (a escolha pode variar).
+  2. De B, vai para D (o único vizinho de B).
+  3. Chega em D e encontra o destino!
+
+  Ordem de visita (neste caso): A → B → D.  
+  Caminho encontrado: **A → B → D**.  
+  Mas, se a DFS tivesse escolhido C primeiro, iria de A → C → D. A DFS não garante o caminho mais curto, apenas que vai encontrar um caminho (se ele existir). A ordem depende de qual vizinho ela escolhe primeiro.
+
+Resumindo, **BFS** e **DFS** são como duas estratégias para explorar um mapa de conexões. A BFS é sistemática e acha o caminho mais curto em grafos simples, enquanto a DFS é aventureira e mergulha fundo em cada possibilidade. Ambas são ferramentas poderosas para resolver problemas com grafos!
+
 ### Como Representar Grafos
 
 Como já comentamos antes, os grafos podem ser **ponderados** (com pesos nas arestas) ou **não ponderados** (sem pesos nas arestas), e essa diferença tem um grande impacto na forma como os representamos. A escolha da forma de representação do grafo vai depender do tipo de problema que queremos resolver e das operações que precisamos realizar. Entre as formas mais comuns de representar um grafo, estão a **matriz de adjacência** e a **lista de adjacência**, e a escolha entre elas pode variar bastante dependendo da situação.
@@ -587,7 +690,18 @@ Resumidamente,  **matriz de adjacência** funciona como uma tabela que mostra to
 
 ## Operações Comuns em um Grafo
 
-As operações em grafos envolvem uma série de ações que permitem manipular e explorar a estrutura de conexões entre os elementos. Entre as operações mais comuns, temos a inserção e remoção de vértices e arestas, que adicionam ou retiram pontos e suas ligações no grafo. Também podemos realizar buscas, como a busca em largura ou profundidade, para percorrer o grafo e encontrar elementos ou caminhos. Além disso, é possível verificar a conectividade entre vértices, ou seja, se há uma relação direta ou indireta entre eles. Outras operações incluem o cálculo de distâncias entre pontos, como em grafos ponderados, e a detecção de ciclos, que identificam se há uma sequência de conexões que retorna ao ponto inicial. 
+As operações em grafos permitem manipular e analisar suas estruturas de conexões de forma eficiente. Entre as mais frequentes, destacam-se a inserção e remoção de vértices e arestas, que modificam os nós e suas ligações. Buscas, como a em largura (BFS) e em profundidade (DFS), são usadas para explorar o grafo, localizar elementos ou traçar caminhos. Além disso, é possível verificar a conectividade entre vértices, confirmando a existência de relações diretas ou indiretas. Outras operações incluem o cálculo de distâncias em grafos ponderados, para determinar o menor caminho entre pontos, e a detecção de ciclos, que identifica sequências de conexões que retornam ao ponto de origem. 
+
+### Inserção
+
+A **inserção** é o processo de adicionar algo novo ao grafo. Podemos inserir dois tipos de coisas:
+
+- **Inserção de vértices**: É como colocar um novo ponto no mapa. Por exemplo, se o grafo representa uma rede social, adicionar um vértice seria como cadastrar uma nova pessoa.
+- **Inserção de arestas**: Aqui, criamos uma conexão entre dois vértices. Na mesma rede social, seria como dizer que duas pessoas agora são amigas.
+
+#### Como funciona?
+
+Quando inserimos um vértice, ele geralmente começa "solto", sem conexões. Já para inserir uma aresta, precisamos dizer quais dois vértices ela vai ligar. Em grafos direcionados, também definimos a direção (quem aponta para quem). Se o grafo tiver pesos (como distâncias ou custos), a aresta pode incluir esse valor.
 
 
 ## Implementações
