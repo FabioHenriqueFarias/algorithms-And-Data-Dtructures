@@ -22,7 +22,17 @@
   - [Caminho](#caminho)
   - [Conectividade](#conectividade)
   - [Subgrafos](#subgrafos)
+  - [Diferença entre Grafos e Árvores](#diferença-entre-grafos-e-árvores)
+  - [Grafos Planos e Não Planos](#grafos-planos-e-não-planos)
+  - [Conceito de Caminho Mínimo](#conceito-de-caminho-mínimo)
+  - [Buscas em Grafos: BFS e DFS](#buscas-em-grafos-bfs-e-dfs)
+  - [Como Representar Grafos](#como-representar-grafos)
 - [Operações Comuns em um Grafo](#operações-comuns-em-um-grafo)
+  - [Inserção](#inserção)
+  - [Remoção](#remoção)
+  - [Pesquisa](#pesquisa)
+  - [Outras Operações Úteis](#outras-operações-úteis)
+  - [Complexidades](#complexidades)
 - [Implementações](#implementações)
 - [Referências](#referências)
 
@@ -703,10 +713,206 @@ A **inserção** é o processo de adicionar algo novo ao grafo. Podemos inserir 
 
 Quando inserimos um vértice, ele geralmente começa "solto", sem conexões. Já para inserir uma aresta, precisamos dizer quais dois vértices ela vai ligar. Em grafos direcionados, também definimos a direção (quem aponta para quem). Se o grafo tiver pesos (como distâncias ou custos), a aresta pode incluir esse valor.
 
+**Exemplo de inserção**:
+
+Imagine um grafo com três vértices, **A**, **B** e **C**, onde **A** está conectado a **B**.
+
+- **Antes da inserção**:
+  ```
+  Vértices: A, B, C
+  Arestas: A -- B
+  ```
+
+- **Inserção de um vértice (D)**:
+  - Ação: Adicionamos um novo vértice chamado **D**.
+  - Visual:
+  ```
+  Vértices: A, B, C, D
+  Arestas: A -- B
+  ```
+
+- **Inserção de uma aresta (B -- C)**:
+  - Ação: Conectamos **B** a **C** com uma nova aresta.
+  - Visual:
+  ```
+  Vértices: A, B, C, D
+  Arestas: A -- B, B -- C
+  ```
+
+#### Complexidade da Inserção
+- **Vértice**: Adicionar um vértice é bem rápido, geralmente com complexidade **O(1)**, porque é só incluir um novo ponto na estrutura (como numa lista ou matriz).
+- **Aresta**: Inserir uma aresta depende de como o grafo está organizado:
+  - Em uma **matriz de adjacência**, marcamos a conexão em uma posição específica, o que leva **O(1)**.
+  - Em uma **lista de adjacência**, adicionamos a aresta na lista de um vértice, o que também é **O(1)** na maioria dos casos.
+  - No pior caso, se precisarmos verificar se a aresta já existe, pode levar **O(n)**, onde *n* é o número de vértices.
+
+### Remoção
+
+A **remoção** é o oposto: tiramos algo do grafo. Podemos remover:
+
+- **Vértices**: É como apagar um ponto do mapa. Se o vértice tem conexões, todas as arestas ligadas a ele também somem.
+- **Arestas**: Aqui, só apagamos a conexão entre dois vértices, mantendo os pontos intactos.
+
+#### Como funciona?
+Para remover um vértice, precisamos primeiro cortar todas as suas arestas, o que exige checar suas conexões. Remover uma aresta é mais simples: apenas desfazemos o vínculo entre os dois vértices.
+
+**Exemplo de remoção**:
+
+Usando o grafo do exemplo anterior, temos **A -- B -- C**, com **D** isolado.
+
+- **Antes da remoção**:
+  ```
+  Vértices: A, B, C, D
+  Arestas: A -- B, B -- C
+  ```
+
+- **Remoção da aresta (B -- C)**:
+  - Ação: Apagamos a conexão entre **B** e **C**.
+  - Visual:
+  ```
+  Vértices: A, B, C, D
+  Arestas: A -- B
+  ```
+
+- **Remoção do vértice (B)**:
+  - Ação: Removemos o vértice **B** e todas as suas conexões.
+  - Visual:
+  ```
+  Vértices: A, C, D
+  Arestas: (nenhuma)
+  ```
+
+#### Complexidade da Remoção
+- **Vértice**: Depende da estrutura:
+  - Em uma **matriz de adjacência**, precisamos limpar a linha e a coluna do vértice, o que leva **O(n)**.
+  - Em uma **lista de adjacência**, removemos o vértice e suas arestas, o que pode levar **O(n + m)**, onde *m* é o número de arestas.
+- **Aresta**: 
+  - Na **matriz de adjacência**, é só apagar a posição correspondente, em **O(1)**.
+  - Na **lista de adjacência**, precisamos encontrar e remover a aresta na lista do vértice, o que pode levar **O(n)** no pior caso.
+
+### Pesquisa (ou Busca)
+
+A **pesquisa** é o processo de explorar um grafo para encontrar um vértice específico, entender como os pontos estão conectados ou até descobrir um caminho entre dois lugares. Como vimos na seção sobre buscas em grafos, as duas formas mais conhecidas são a **Busca em Largura (BFS)** e a **Busca em Profundidade (DFS)**. Vamos revisar como elas funcionam e conectá-las com o que já aprendemos.
+
+- **Busca em Largura (BFS)**: Começa em um vértice e explora todos os seus vizinhos antes de avançar para os vizinhos dos vizinhos. É como as ondas se espalhando em um lago, visitando o grafo camada por camada.
+- **Busca em Profundidade (DFS)**: Parte de um vértice e segue o mais longe possível por um caminho, voltando para tentar outro só quando necessário. É como explorar uma caverna, indo até o fim de cada túnel.
+
+#### Como funciona?
+
+Na **BFS**, usamos uma **fila** para organizar a visita aos vértices, garantindo que exploramos os mais próximos primeiro. Já na **DFS**, usamos uma **pilha** (muitas vezes de forma automática, com recursão) para mergulhar fundo em cada ramo do grafo. Ambas podem ser usadas para:
+- Encontrar um vértice específico, como uma cidade em um mapa.
+- Verificar se dois pontos estão conectados, como amigos em uma rede social.
+- Calcular o menor caminho em grafos não ponderados (especialmente com BFS, como vimos antes).
+
+**Exemplo de busca**:
+
+Vamos usar o mesmo grafo do exemplo prático anterior, com quatro cidades (**A**, **B**, **C**, **D**) e as seguintes conexões:
+
+```
+   A
+  / \
+ B   C
+  \ /
+   D
+```
+
+Ou, como uma lista de conexões:
+- A → B
+- A → C
+- B → D
+- C → D
+
+Queremos buscar a cidade **D** começando da cidade **A**, como fizemos antes.
+
+- **Busca em Largura (BFS)**:
+  - Passo a passo:
+    - Começa em **A** e coloca seus vizinhos (**B** e **C**) na fila.
+    - Visita **B** (o próximo da fila) e adiciona seu vizinho (**D**) à fila.
+    - Visita **C** (o próximo da fila) e não adiciona novos vizinhos, pois **D** já está na fila.
+    - Visita **D** (o próximo da fila) e encontra o destino!
+  - Visual do progresso:
+    ```
+    Passo 1: Visitado: A
+             Fila: B, C
+    Passo 2: Visitado: A, B
+             Fila: C, D
+    Passo 3: Visitado: A, B, C
+             Fila: D
+    Passo 4: Visitado: A, B, C, D
+             Fila: (vazia, encontrou D)
+    ```
+  - Resultado: Encontra **D** pelo caminho **A → B → D** (ou **A → C → D**), que é o menor caminho com 2 passos, como esperado em grafos não ponderados.
+
+- **Busca em Profundidade (DFS)**:
+  - Passo a passo:
+    - Começa em **A** e escolhe um vizinho, digamos **B**.
+    - De **B**, vai para **D** (o único vizinho de **B**).
+    - Chega em **D** e encontra o destino!
+  - Visual do progresso:
+    ```
+    Passo 1: Visitado: A
+             Pilha: B
+    Passo 2: Visitado: A, B
+             Pilha: D
+    Passo 3: Visitado: A, B, D
+             Pilha: (vazia, encontrou D)
+    ```
+  - Resultado: Encontra **D** pelo caminho **A → B → D**. Se tivesse escolhido **C** primeiro, o caminho seria **A → C → D**. A DFS não garante o menor caminho, mas neste caso simples chega ao destino rapidamente.
+
+*Nota*: Nesse grafo, os caminhos encontrados por BFS e DFS são parecidos porque ele tem poucas ramificações. Em grafos mais complexos, como redes sociais ou mapas maiores, a BFS exploraria de forma mais sistemática, enquanto a DFS poderia seguir caminhos bem diferentes, dependendo das escolhas.
+
+#### Complexidade da Pesquisa
+
+A complexidade de BFS e DFS depende de como o grafo é representado:
+- Em uma **matriz de adjacência**, checar os vizinhos de um vértice leva **O(n)**, então a busca completa (visitando todos os vértices) é **O(n²)**, onde *n* é o número de vértices.
+- Em uma **lista de adjacência**, visitamos cada vértice e suas arestas, o que resulta em **O(n + m)**, onde *n* é o número de vértices e *m* é o número de arestas. Essa é a forma mais comum para grafos grandes.
+- No melhor caso, se encontramos o vértice desejado logo no início (como **A** sendo o destino), a busca termina em **O(1)**, mas isso é raro.
+
+Resumindo, **BFS** e **DFS** são ferramentas poderosas para explorar grafos, como já vimos no exemplo das cidades. A BFS brilha quando queremos o caminho mais curto em grafos simples, enquanto a DFS é ótima para mergulhar fundo em caminhos longos ou explorar todas as possibilidades.
+
+### Outras Operações Úteis
+
+Além das operações básicas, há outras coisas que fazemos com grafos:
+
+- **Verificar Conectividade**: Descobrir se existe um caminho entre dois vértices. Podemos usar BFS ou DFS, com complexidade **O(n + m)** em listas de adjacência.
+- **Calcular Distâncias**: Em grafos ponderados, usamos algoritmos como Dijkstra ou Bellman-Ford para encontrar o menor caminho entre vértices. Para Dijkstra, a complexidade é **O((n + m) log n)** com uma fila de prioridade.
+- **Detectar Ciclos**: Verificar se o grafo tem um caminho que volta ao ponto inicial. Usando DFS, isso leva **O(n + m)**.
+
+#### Exemplo Visual: Verificar Conectividade
+No grafo **A -- B -- C -- D**, queremos saber se **A** está conectado a **D**.
+
+- **Estrutura**:
+  ```
+  Vértices: A, B, C, D
+  Arestas: A -- B, B -- C, C -- D
+  ```
+
+- **Processo (usando BFS)**:
+  ```
+  Passo 1: Começa em A, fila: B
+  Passo 2: Visita B, fila: C
+  Passo 3: Visita C, fila: D
+  Passo 4: Visita D, encontrou!
+  Resultado: Conectado
+  ```
+
+---
+
+### Complexidades
+
+| Operação | Complexidade (Lista de Adjacência) | Complexidade (Matriz de Adjacência) |
+|----------|------------------------------------|-------------------------------------|
+| Inserção de Vértice | O(1) | O(1) |
+| Inserção de Aresta | O(1) | O(1) |
+| Remoção de Vértice | O(n + m) | O(n) |
+| Remoção de Aresta | O(n) | O(1) |
+| Pesquisa (BFS/DFS) | O(n + m) | O(n²) |
+
+
 
 ## Implementações
 
-Neste repositório, você encontrará a implementação de uma estrutura de dados baseada em grafos em três linguagens de programação distintas: <a href="">C</a>, <a href="">Python</a> e <a href="">Rust</a>.
+Neste repositório, você encontrará a implementação de uma estrutura de dados baseada em grafos em três linguagens de programação distintas: <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/6_Graphs/C">C</a>, <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/6_Graphs/Python">Python</a> e <a href="https://github.com/FabioHenriqueFarias/algorithms-And-Data-Dtructures/tree/main/Data_Structures/6_Graphs/Rust">Rust</a>.
 
 ## Referências
 
